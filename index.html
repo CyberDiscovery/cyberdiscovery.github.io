@@ -20,7 +20,7 @@
             bottom: 20px;
             right: 20px;
         }
-        .Airweb-card-wide.mdl-card {
+        .Main-card-wide.mdl-card {
           width: 512px;
           height: 320px;
           position: relative;
@@ -28,15 +28,15 @@
           margin-left: 15px;
           margin-top: 15px;
         }
-        .Airweb-card-wide > .mdl-card__title {
+        .Main-card-wide > .mdl-card__title {
           color: #fff;
           height: 200px;
-          background: url('./AirWeb_Card_Home_Background.jpg') center / cover;
+          background: url('Initial_Card_Background.jpg') center / cover;
         }
-        .Airweb-card-wide > .mdl-card__menu {
+        .Main-card-wide > .mdl-card__menu {
           color: #fff;
         }
-        .Airweb-card-square.mdl-card {
+        .Main-card-square.mdl-card {
           width: 320px;
           height: 320px;
           position: relative;
@@ -44,9 +44,9 @@
           margin-left: 15px;
           margin-top: 15px;
         }
-        .Airweb-card-square > .mdl-card__title {
+        .Main-card-square > .mdl-card__title {
           color: #fff;
-          background: url('./padlock.png') bottom no-repeat #46B6AC;
+          /*background: url('./padlock.png') bottom no-repeat #46B6AC;*/
         }
         .mdl-card {
           float: left;
@@ -66,11 +66,6 @@
           color: #fff;
           background-color: #03a9f4;
         }
-        /* YELLOW: #ff9800
-           BLUE: #03a9f4
-        .mdl-layout__tab-bar, .mdl-layout__header, .mdl-layout__tab-bar-right-button, .mdl-layout__tab-bar-left-button {
-          background-color: #2196f3!important;
-        }*/
         .button-yellow:hover {
           background: #ffd740!important;
           background-color: #ffd740!important;
@@ -110,13 +105,13 @@
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
                 <!-- Add the tabs -->
-                <a href="#Airweb-tab-1" class="mdl-layout__tab is-active">Home</a>
-                <a href="#Airweb-tab-2" class="mdl-layout__tab">Discord Bot</a>
-                <a href="#Airweb-tab-3" class="mdl-layout__tab">Android App</a>
-                <a href="#Airweb-tab-4" class="mdl-layout__tab">IOS App</a>
-                <a href="#Airweb-tab-5" class="mdl-layout__tab">Challenge Master</a>
-                <a href="#Airweb-tab-6" class="mdl-layout__tab">Maths Bot</a>
-                <a href="#Airweb-tab-7" class="mdl-layout__tab">App Website</a>
+                <a href="#Project-tab-1" class="mdl-layout__tab is-active">Home</a>
+                <a href="#Project-tab-2" class="mdl-layout__tab">Discord Bot</a>
+                <a href="#Project-tab-3" class="mdl-layout__tab">Android App</a>
+                <a href="#Project-tab-4" class="mdl-layout__tab">IOS App</a>
+                <a href="#Project-tab-5" class="mdl-layout__tab">Challenge Master</a>
+                <a href="#Project-tab-6" class="mdl-layout__tab">Maths Bot</a>
+                <a href="#Project-tab-7" class="mdl-layout__tab">App Website</a>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -138,28 +133,42 @@
                 <a class="mdl-navigation__link" href="https://cyber-discovery-app.firebaseapp.com/">Companion Site
                   <i class="material-icons" style="margin-left: 5px;">launch</i>
                 </a>
+                <a class="mdl-navigation__link" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">CyberFirst Courses
+                  <i class="material-icons" style="margin-left: 5px;">vertical_split</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://www.cybersecuritychallenge.org.uk/">CSC UK
+                  <i class="material-icons" style="margin-left: 5px;">assessment</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://www.hackthebox.eu/">Hack The Box
+                  <i class="material-icons" style="margin-left: 5px;">games</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://www.redbubble.com/people/TheCultOfLyne/shop">Community Merch
+                  <i class="material-icons" style="margin-left: 5px;">shop</i>
+                </a>
             </nav>
         </div>
         <main class="mdl-layout__content">
           <!-- The Home Tab -->
-            <section class="mdl-layout__tab-panel is-active" id="Airweb-tab-1">
+            <section class="mdl-layout__tab-panel is-active" id="Project-tab-1">
                 <div class="page-content">
                   <!-- MDL style welcome Card -->
-                  <div class="Airweb-card-wide mdl-card mdl-shadow--2dp">
+                  <div class="Main-card-wide mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
-                      <h2 class="mdl-card__title-text">Welcome to Airweb-ng</h2>
+                      <h2 class="mdl-card__title-text">Welcome</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                      There are many supported tools in Airweb-ng, please check the documentation if you require futher information and guidance on usage.
+                      The Cyber-Discovery Community is a passionate community of people who are interested in information security and technology.
+                      This GitHub pages site aims to showcase some of the projects being undertaken by the members of our community. Please feel free
+                      to check-out some of our awesome, fully open-source projects!
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./airweb_documentation.php">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
                         Get Started
                       </a>
                     </div>
                   </div>
                   <!-- MDL card to Display resolved PSKs -->
-                  <div class="Airweb-card-square mdl-card mdl-shadow--2dp">
+                  <div class="Main-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Keys</h2>
                     </div>
@@ -175,7 +184,7 @@
                 </div>
             </section>
             <!-- The Aircrack-ng Tab -->
-            <section class="mdl-layout__tab-panel" id="Airweb-tab-2">
+            <section class="mdl-layout__tab-panel" id="Project-tab-2">
                 <div class="page-content">
                   <!-- standard handshake attack -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -225,7 +234,7 @@
                 </div>
             </section>
             <!-- The Reaver Tab -->
-            <section class="mdl-layout__tab-panel" id="Airweb-tab-3">
+            <section class="mdl-layout__tab-panel" id="Project-tab-3">
                 <div class="page-content">
                   <!-- straight reaver attack -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -260,7 +269,7 @@
                 </div>
             </section>
             <!-- The Host-AP Tab -->
-            <section class="mdl-layout__tab-panel" id="Airweb-tab-4">
+            <section class="mdl-layout__tab-panel" id="Project-tab-4">
                 <div class="page-content">
                   <!-- MITM-AP attack -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -295,7 +304,7 @@
                 </div>
             </section>
             <!-- The Decrypt Tab -->
-            <section class="mdl-layout__tab-panel" id="Airweb-tab-5">
+            <section class="mdl-layout__tab-panel" id="Project-tab-5">
                 <div class="page-content">
                   <!-- straight/dictonary attack -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -360,7 +369,7 @@
                 </div>
             </section>
             <!-- The MDK3 Tab -->
-            <section class="mdl-layout__tab-panel" id="Airweb-tab-6">
+            <section class="mdl-layout__tab-panel" id="Project-tab-6">
                 <div class="page-content">
                   <!-- MDK3 SSID FLOOD attack -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
