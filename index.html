@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add the CSS sources and JS animation classes -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Set the title and add the favicon to display at the top in base64 format -->
+    <title>Our Projects</title>
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAu0lEQVR4Ae3YtQECARBE0cFruKuNCBKkSVxyJMEKIMN1CbFzl/lTwL54wRIXY4yxEppYQgLYEk2UYJKCOSTAzaHCoAz6kIA3RAa6VSAhrArdRqGAxtDtEApoD93kY75m4RZB1kEEPQlyCSLoQVDcQHeXIIIIurkEEUTQ1SWIIIIuBMUNdCYoQaA9JIRto/awakftpVeGblkMAud0YZiKaaCcKRQrj/NNQI/zOor4SyI2gghKHogxxhiLdy/kB8KpL3Y7swAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+    <!-- Create the inline styles -->
+    <style>
+        .mdl-navigation__link, .mdl-layout__drawer-button, .mdl-layout__tab{
+            outline: none;
+        }
+        .fab_button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .Airweb-card-wide.mdl-card {
+          width: 512px;
+          height: 320px;
+          position: relative;
+          margin-right: 15px;
+          margin-left: 15px;
+          margin-top: 15px;
+        }
+        .Airweb-card-wide > .mdl-card__title {
+          color: #fff;
+          height: 200px;
+          background: url('./AirWeb_Card_Home_Background.jpg') center / cover;
+        }
+        .Airweb-card-wide > .mdl-card__menu {
+          color: #fff;
+        }
+        .Airweb-card-square.mdl-card {
+          width: 320px;
+          height: 320px;
+          position: relative;
+          margin-right: 15px;
+          margin-left: 15px;
+          margin-top: 15px;
+        }
+        .Airweb-card-square > .mdl-card__title {
+          color: #fff;
+          background: url('./padlock.png') bottom no-repeat #46B6AC;
+        }
+        .mdl-card {
+          float: left;
+          margin: 1rem;
+          position: relative;
+        }
+        /*Define the generic square card style */
+        .generic-card-square.mdl-card {
+          width: 320px;
+          height: 320px;
+          position: relative;
+          margin-right: 15px;
+          margin-left: 15px;
+          margin-top: 15px;
+        }
+        .generic-card-square > .mdl-card__title {
+          color: #fff;
+          background-color: #03a9f4;
+        }
+        /* YELLOW: #ff9800
+           BLUE: #03a9f4
+        .mdl-layout__tab-bar, .mdl-layout__header, .mdl-layout__tab-bar-right-button, .mdl-layout__tab-bar-left-button {
+          background-color: #2196f3!important;
+        }*/
+        .button-yellow:hover {
+          background: #ffd740!important;
+          background-color: #ffd740!important;
+        }
+        .mdl-card:hover {
+          box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Create any inline JS -->
+    <!-- USE RGB VALUES FOR COMPARISON! -->
+    <script>
+      function alternateButtonColor(docElement, firstColor, SecondColor){
+          curElement = document.getElementById(docElement);
+          if (curElement.style.backgroundColor == "rgb(255, 64, 129)"){
+            curElement.style.backgroundColor = SecondColor;
+          }
+          else {
+            curElement.style.backgroundColor = firstColor;
+          }
+      }
+    </script>
+    <!-- Create the MDL layout -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Cyber Discovery Community</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <!-- Add the navigation links -->
+                    <a class="mdl-navigation__link" href="">Page Source</a>
+                </nav>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <!-- Add the tabs -->
+                <a href="#Airweb-tab-1" class="mdl-layout__tab is-active">Home</a>
+                <a href="#Airweb-tab-2" class="mdl-layout__tab">Discord Bot</a>
+                <a href="#Airweb-tab-3" class="mdl-layout__tab">Android App</a>
+                <a href="#Airweb-tab-4" class="mdl-layout__tab">IOS App</a>
+                <a href="#Airweb-tab-5" class="mdl-layout__tab">Challenge Master</a>
+                <a href="#Airweb-tab-6" class="mdl-layout__tab">Maths Bot</a>
+                <a href="#Airweb-tab-7" class="mdl-layout__tab">App Website</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Useful Links</span>
+            <nav class="mdl-navigation">
+                <!-- Add the menu links -->
+                <a class="mdl-navigation__link" href="https://joincyberdiscovery.com/">Sign Up
+                  <i class="material-icons" style="margin-left: 5px;">keyboard_arrow_up</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://github.com/CyberDiscovery">GitHub Link
+                  <i class="material-icons" style="margin-left: 5px;">keyboard_arrow_up</i>
+                </a>
+                <a class="mdl-navigation__link" href="http://discord.gg/Kf8n5rT">Discord Invite
+                  <i class="material-icons" style="margin-left: 5px;">keyboard_arrow_up</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">App Download
+                  <i class="material-icons" style="margin-left: 5px;">keyboard_arrow_up</i>
+                </a>
+                <a class="mdl-navigation__link" href="https://cyber-discovery-app.firebaseapp.com/">Companion Site
+                  <i class="material-icons" style="margin-left: 5px;">keyboard_arrow_up</i>
+                </a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <!-- The Home Tab -->
+            <section class="mdl-layout__tab-panel is-active" id="Airweb-tab-1">
+                <div class="page-content">
+                  <!-- MDL style welcome Card -->
+                  <div class="Airweb-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                      <h2 class="mdl-card__title-text">Welcome to Airweb-ng</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      There are many supported tools in Airweb-ng, please check the documentation if you require futher information and guidance on usage.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./airweb_documentation.php">
+                        Get Started
+                      </a>
+                    </div>
+                  </div>
+                  <!-- MDL card to Display resolved PSKs -->
+                  <div class="Airweb-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Keys</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      View any resolved PSKs and associated Access Points.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        View PSKs
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </section>
+            <!-- The Aircrack-ng Tab -->
+            <section class="mdl-layout__tab-panel" id="Airweb-tab-2">
+                <div class="page-content">
+                  <!-- standard handshake attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Standard attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Use Aireplay-ng to deauth clients, get the handshake with Airodump-ng and crack it with Aircrack-ng
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- hashcat attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Hashcat attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Same as standard attack, but use Hashcat to retrieve the PSK instead of Aircrack-ng
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- straight/dictonary attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Deauth attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Continously de-authenticate all clients or a specific client, effectively creating a denial of service.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- The Reaver Tab -->
+            <section class="mdl-layout__tab-panel" id="Airweb-tab-3">
+                <div class="page-content">
+                  <!-- straight reaver attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Standard reaver attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Online Bruteforce the AP's wps pins.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- straight/dictonary attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Reaver & Pixiedust attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Obtain WPS information from reaver and supply it to the Pixiedust tool to bruteforce WPS pins offline.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- The Host-AP Tab -->
+            <section class="mdl-layout__tab-panel" id="Airweb-tab-4">
+                <div class="page-content">
+                  <!-- MITM-AP attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">MITM AP</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Create a MITM ap for capturing traffic.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Captive portal attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Captive portal attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Create a captive portal for phishing logins/credentials.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- The Decrypt Tab -->
+            <section class="mdl-layout__tab-panel" id="Airweb-tab-5">
+                <div class="page-content">
+                  <!-- straight/dictonary attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Dictionary attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Attempt to resolve the PSK from a Capture file by using a dictionary attack.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- brute-force/guessing attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Brute-force attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Attempt to resolve the PSK by guessing every possible combination in the key-space.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- rainbow-table/precomputed hash-table attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Look up the PSK from a precomputed rainbow (hash) table.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Hashcat's mask-based attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Bruteforce the combinations supplied by a Hashcat-style mask.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- The MDK3 Tab -->
+            <section class="mdl-layout__tab-panel" id="Airweb-tab-6">
+                <div class="page-content">
+                  <!-- MDK3 SSID FLOOD attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Beacon flood attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Run MDK3 to flood the air with hundreds of false SSIDs.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- MDK3 Auth DoS attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Auth DOS attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Run the MDK3 authentication denial-of-service attack.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- MDK3 Amok/Deauth DoS attack -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Deauth/Amok Dissaoc attack</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Continously disconnect all connected clients to the AP.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- Menu Button bottom left -->
+            <button id="additional-info-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fab_button mdl-button--colored button-yellow" onclick="alternateButtonColor('additional-info-button', '#ff4081','#ffd740')">
+                <i class="material-icons">keyboard_arrow_up</i>
+            </button>
+            <!-- Menu expanded buttons -->
+            <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="additional-info-button">
+              <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1" onclick="">Top secret menu :)</li>
+              <li class="mdl-menu__item" id="menu_2" onclick="">View License</li>
+              <li class="mdl-menu__item" id="menu_3" onclick="">About us</li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>
