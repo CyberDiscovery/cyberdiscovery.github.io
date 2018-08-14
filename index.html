@@ -16,7 +16,7 @@
             outline: none;
         }
         .fab_button {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             right: 20px;
         }
@@ -92,6 +92,9 @@
           else {
             curElement.style.backgroundColor = firstColor;
           }
+      }
+      function loadLicensePage(){
+        window.location.href = "https://raw.githubusercontent.com/CyberDiscovery/cyberdisc-bot/master/LICENSE";
       }
     </script>
     <!-- Create the MDL layout -->
@@ -406,14 +409,14 @@
                   <!-- End card here -->
                 </div>
             </section>
-            <!-- Menu Button bottom left -->
+            <!-- Menu Button bottom right -->
             <button id="additional-info-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fab_button mdl-button--colored button-yellow" onclick="alternateButtonColor('additional-info-button', '#ff4081','#ffd740')">
                 <i class="material-icons">keyboard_arrow_up</i>
             </button>
             <!-- Menu expanded buttons -->
             <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="additional-info-button">
-              <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1" onclick="">Top secret menu :)</li>
-              <li class="mdl-menu__item" id="menu_2" onclick="">View License</li>
+              <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1">Top secret menu :)</li>
+              <li class="mdl-menu__item" id="menu_2" onclick="loadLicensePage()">View License</li>
               <li class="mdl-menu__item" id="menu_3" onclick="">About us</li>
             </ul>
         </main>
