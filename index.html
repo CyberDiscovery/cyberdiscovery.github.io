@@ -78,6 +78,36 @@
         .mdl-layout__tab-bar-button{
           background-color: #0d2332!important;
         }
+        .logo-card-image.mdl-card {
+          width: 512px;
+          height: 320px;
+          background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;
+        }
+        .logo-card-image > .mdl-card__actions {
+          height: 52px;
+          padding: 16px;
+          background: rgba(0, 0, 0, 0.2);
+        }
+        .logo-card-image__filename {
+          color: #fff;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .image-card-generic.mdl-card {
+          width: 320px;
+          height: 320px;
+          background: center / cover;
+        }
+        .image-card-generic > .mdl-card__actions {
+          height: 52px;
+          padding: 16px;
+          background: rgba(0, 0, 0, 0.2);
+        }
+        .image-card-generic__filename {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -108,6 +138,7 @@
                 <a href="#Project-tab-5" class="mdl-layout__tab">Challenge Master</a>
                 <a href="#Project-tab-6" class="mdl-layout__tab">Maths Bot</a>
                 <a href="#Project-tab-7" class="mdl-layout__tab">App Website</a>
+                <a href="#Project-tab-8" class="mdl-layout__tab">Resources</a>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -150,6 +181,13 @@
           <!-- Home Tab -->
             <section class="mdl-layout__tab-panel is-active" id="Project-tab-1">
                 <div class="page-content">
+                  <!-- MDL Wide Logo card -->
+                  <div class="logo-card-image mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand"></div>
+                    <div class="mdl-card__actions">
+                      <span class="logo-card-image__filename">Welcome!</span>
+                    </div>
+                  </div>
                   <!-- MDL style welcome Card -->
                   <div class="Main-card-wide mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
@@ -166,20 +204,21 @@
                       </a>
                     </div>
                   </div>
-                  <!-- MDL card to Display resolved PSKs -->
-                  <div class="Main-card-square mdl-card mdl-shadow--2dp">
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Keys</h2>
+                      <h2 class="mdl-card__title-text">OverTheWire: Wargames</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                      View any resolved PSKs and associated Access Points.
+                      learn and practice security concepts via ssh in form of fun games.
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        View PSKs
+                        Visit
                       </a>
                     </div>
                   </div>
+                  <!-- End card here -->
                 </div>
             </section>
             <!-- Discord Bot Tab -->
@@ -431,6 +470,157 @@
                     <div class="mdl-card__actions mdl-card--border">
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         Start
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                </div>
+            </section>
+            <!-- Resources Tab -->
+            <section class="mdl-layout__tab-panel" id="Project-tab-8">
+                <div class="page-content">
+                  <!-- Image Card -->
+                  <div class="image-card-generic mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Resources_Card_Background.jpg') center/cover;">
+                    <div class="mdl-card__title mdl-card--expand"></div>
+                    <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0.8)!important;">
+                      <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;">
+                        Here are some cyber-security/programming related resources that are endorsed either by Cyber-Discovery or our community.
+                        These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills.
+                        We hope you find them as useful as we did.
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">OverTheWire: Wargames</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Resources
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">HackThisSite</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Resources
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">SmashTheStack: Wargames Network</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Resources
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Cybrary</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Udacity: Free courses and programs</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Codewars: Train coding skills</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">Codecademy: Learn to code!</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Binary_Reversing_Background.gif')!important;">
+                      <h2 class="mdl-card__title-text">Learn RE</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End card here -->
+                  <!-- Start MDL card -->
+                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">CSC: Online Challenges</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                      Practice
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Visit
                       </a>
                     </div>
                   </div>
