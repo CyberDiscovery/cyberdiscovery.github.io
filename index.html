@@ -66,10 +66,6 @@
           color: #fff;
           background-color: #03a9f4;
         }
-        .button-yellow:hover {
-          background: #ffd740!important;
-          background-color: #ffd740!important;
-        }
         .mdl-card:hover {
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
         }
@@ -79,15 +75,6 @@
     <!-- Create any inline JS -->
     <!-- USE RGB VALUES FOR COMPARISON! -->
     <script>
-      function alternateButtonColor(docElement, firstColor, SecondColor){
-          curElement = document.getElementById(docElement);
-          if (curElement.style.backgroundColor == "rgb(255, 64, 129)"){
-            curElement.style.backgroundColor = SecondColor;
-          }
-          else {
-            curElement.style.backgroundColor = firstColor;
-          }
-      }
       function loadLicensePage(){
         window.location.href = "https://raw.githubusercontent.com/CyberDiscovery/cyberdisc-bot/master/LICENSE";
       }
@@ -118,37 +105,40 @@
             <span class="mdl-layout-title">Useful Links</span>
             <nav class="mdl-navigation">
                 <!-- Add the menu links -->
-                <a class="mdl-navigation__link" href="https://joincyberdiscovery.com/">Sign Up
+                <a class="mdl-navigation__link" target="_blank" href="https://joincyberdiscovery.com/">Sign Up
                   <i class="material-icons" style="margin-left: 5px;">person_add</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://github.com/CyberDiscovery">GitHub Link
+                <a class="mdl-navigation__link" target="_blank" href="https://github.com/CyberDiscovery">GitHub Link
                   <i class="material-icons" style="margin-left: 5px;">link</i>
                 </a>
-                <a class="mdl-navigation__link" href="http://discord.gg/Kf8n5rT">Discord Invite
+                <a class="mdl-navigation__link" target="_blank" href="http://discord.gg/Kf8n5rT">Discord Invite
                   <i class="material-icons" style="margin-left: 5px;">card_giftcard</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">App Download
+                <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">App Download
                   <i class="material-icons" style="margin-left: 5px;">cloud_download</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://cyber-discovery-app.firebaseapp.com/">Companion Site
+                <a class="mdl-navigation__link" target="_blank" href="https://cyber-discovery-app.firebaseapp.com/">Companion Site
                   <i class="material-icons" style="margin-left: 5px;">launch</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">CyberFirst Courses
+                <a class="mdl-navigation__link" target="_blank" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">CyberFirst Courses
                   <i class="material-icons" style="margin-left: 5px;">vertical_split</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://www.cybersecuritychallenge.org.uk/">CSC UK
+                <a class="mdl-navigation__link" target="_blank" href="https://www.cybersecuritychallenge.org.uk/">CSC UK
                   <i class="material-icons" style="margin-left: 5px;">assessment</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://www.hackthebox.eu/">Hack The Box
+                <a class="mdl-navigation__link" target="_blank" href="https://www.hackthebox.eu/">Hack The Box
                   <i class="material-icons" style="margin-left: 5px;">games</i>
                 </a>
-                <a class="mdl-navigation__link" href="https://www.redbubble.com/people/TheCultOfLyne/shop">Community Merch
+                <a class="mdl-navigation__link" target="_blank" href="https://www.redbubble.com/people/TheCultOfLyne/shop">Community Merch
                   <i class="material-icons" style="margin-left: 5px;">shop</i>
+                </a>
+                <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/cyberdiscuk?lang=en">Twitter Page
+                  <i class="material-icons" style="margin-left: 5px;">share</i>
                 </a>
             </nav>
         </div>
         <main class="mdl-layout__content">
-          <!-- The Home Tab -->
+          <!-- Home Tab -->
             <section class="mdl-layout__tab-panel is-active" id="Project-tab-1">
                 <div class="page-content">
                   <!-- MDL style welcome Card -->
@@ -156,7 +146,7 @@
                     <div class="mdl-card__title">
                       <h2 class="mdl-card__title-text">Welcome</h2>
                     </div>
-                    <div class="mdl-card__supporting-text">
+                    <div class="mdl-card__supporting-text" style="overflow: visible;">
                       The Cyber-Discovery Community is a passionate community of people who are interested in information security and technology.
                       This GitHub pages site aims to showcase some of the projects being undertaken by the members of our community. Please feel free
                       to check-out some of our awesome, fully open-source projects!
@@ -183,10 +173,10 @@
                   </div>
                 </div>
             </section>
-            <!-- The Aircrack-ng Tab -->
+            <!-- Discord Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Project-tab-2">
                 <div class="page-content">
-                  <!-- standard handshake attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Standard attack</h2>
@@ -201,7 +191,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- hashcat attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Hashcat attack</h2>
@@ -216,7 +206,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- straight/dictonary attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Deauth attack</h2>
@@ -233,10 +223,10 @@
                   <!-- End card here -->
                 </div>
             </section>
-            <!-- The Reaver Tab -->
+            <!-- Android App Tab -->
             <section class="mdl-layout__tab-panel" id="Project-tab-3">
                 <div class="page-content">
-                  <!-- straight reaver attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Standard reaver attack</h2>
@@ -251,7 +241,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- straight/dictonary attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Reaver & Pixiedust attack</h2>
@@ -268,10 +258,10 @@
                   <!-- End card here -->
                 </div>
             </section>
-            <!-- The Host-AP Tab -->
+            <!-- IOS App Tab -->
             <section class="mdl-layout__tab-panel" id="Project-tab-4">
                 <div class="page-content">
-                  <!-- MITM-AP attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">MITM AP</h2>
@@ -286,7 +276,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- Captive portal attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Captive portal attack</h2>
@@ -303,10 +293,10 @@
                   <!-- End card here -->
                 </div>
             </section>
-            <!-- The Decrypt Tab -->
+            <!-- Challenge Master Tab -->
             <section class="mdl-layout__tab-panel" id="Project-tab-5">
                 <div class="page-content">
-                  <!-- straight/dictonary attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Dictionary attack</h2>
@@ -321,7 +311,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- brute-force/guessing attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Brute-force attack</h2>
@@ -336,7 +326,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- rainbow-table/precomputed hash-table attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
@@ -351,7 +341,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- Hashcat's mask-based attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
@@ -368,10 +358,10 @@
                   <!-- End card here -->
                 </div>
             </section>
-            <!-- The MDK3 Tab -->
+            <!-- Maths Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Project-tab-6">
                 <div class="page-content">
-                  <!-- MDK3 SSID FLOOD attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Beacon flood attack</h2>
@@ -386,7 +376,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- MDK3 Auth DoS attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Auth DOS attack</h2>
@@ -401,7 +391,7 @@
                     </div>
                   </div>
                   <!-- End card here -->
-                  <!-- MDK3 Amok/Deauth DoS attack -->
+                  <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
                       <h2 class="mdl-card__title-text">Deauth/Amok Dissaoc attack</h2>
@@ -419,9 +409,29 @@
                 </div>
             </section>
             <!-- Menu Button bottom right -->
-            <button id="additional-info-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fab_button mdl-button--colored button-yellow" onclick="alternateButtonColor('additional-info-button', '#ff4081','#ffd740')">
-                <i class="material-icons">keyboard_arrow_up</i>
+            <button id="additional-info-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fab_button" type="button">
+              <i class="material-icons">arrow_drop_up</i>
             </button>
+            <div id="info-button-toast" class="mdl-js-snackbar mdl-snackbar">
+              <div class="mdl-snackbar__text"></div>
+              <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+            <!-- JS to display toast quote -->
+            <script>
+              (function() {
+                'use strict';
+                var snackbarContainer = document.querySelector('#info-button-toast');
+                var showToastButton = document.querySelector('#additional-info-button');
+                showToastButton.addEventListener('click', function() {
+                  'use strict';
+                  var data = {
+                    message: window.atob("QWxsIHlvdXIgZ2FtZXMgYXJlIGJlbG9uZyB0byB1cyE="),
+                    timeout: 1200
+                  };
+                  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                });
+              }());
+            </script>
             <!-- Menu expanded buttons -->
             <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="additional-info-button">
               <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1">Top secret menu :)</li>
