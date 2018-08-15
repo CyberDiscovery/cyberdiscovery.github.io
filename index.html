@@ -64,7 +64,7 @@
         }
         .generic-card-square > .mdl-card__title {
           color: #fff;
-          background-color: #03a9f4;
+          background: #0d2332 center/cover;
         }
         .mdl-card:hover {
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
@@ -169,6 +169,9 @@
                 <a class="mdl-navigation__link" target="_blank" href="https://www.hackthebox.eu/">Hack The Box
                   <i class="material-icons" style="margin-left: 5px;">games</i>
                 </a>
+                <a class="mdl-navigation__link" target="_blank" href="https://github.com/VulnHub/ctf-writeups">CTF Writeups
+                  <i class="material-icons" style="margin-left: 5px;">library_books</i>
+                </a>
                 <a class="mdl-navigation__link" target="_blank" href="https://www.redbubble.com/people/TheCultOfLyne/shop">Community Merch
                   <i class="material-icons" style="margin-left: 5px;">shop</i>
                 </a>
@@ -206,11 +209,12 @@
                   </div>
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">OverTheWire: Wargames</h2>
+                    <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Kali_Logo_Background.png')!important;">
+                      <h2 class="mdl-card__title-text">Download: Kali Linux</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                      learn and practice security concepts via ssh in form of fun games.
+                      Kali Linux is an extremely powerful Linux distribution full of tools that is
+                      designed for penetration testing.
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -483,8 +487,8 @@
                   <div class="image-card-generic mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Resources_Card_Background.jpg') center/cover;">
                     <div class="mdl-card__title mdl-card--expand"></div>
                     <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0.8)!important;">
-                      <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;">
-                        Here are some cyber-security/programming related resources that are endorsed either by Cyber-Discovery or our community.
+                      <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;font-size: 18px!important;">
+                        Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community.
                         These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills.
                         We hope you find them as useful as we did.
                       </span>
@@ -582,11 +586,11 @@
                   <!-- End card here -->
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
+                    <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Codecademy_Logo_Background.png')!important;">
                       <h2 class="mdl-card__title-text">Codecademy: Learn to code!</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                      Practice
+                      An online platform that offers free interactive programming lessons.
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -601,7 +605,7 @@
                       <h2 class="mdl-card__title-text">Learn RE</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                      Practice
+                      Learn Reverse Engineering (x86) from scratch. Extremely useful for binary reversing CTFs.
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -613,7 +617,7 @@
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">CSC: Online Challenges</h2>
+                      <h2 class="mdl-card__title-text">Cyber-Challenge UK</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                       Practice
@@ -654,8 +658,22 @@
             <!-- Menu expanded buttons -->
             <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="additional-info-button">
               <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1">Top secret menu :)</li>
-              <li class="mdl-menu__item" id="menu_2" onclick="loadLicensePage()">View License</li>
-              <li class="mdl-menu__item" id="menu_3" onclick="">About us</li>
+              <li class="mdl-menu__item" id="menu_3" onclick="">
+                Disclaimer
+                <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">chrome_reader_mode</i>
+              </li>
+              <li class="mdl-menu__item" id="menu_2" onclick="loadLicensePage()">
+                View License
+                <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">description</i>
+              </li>
+              <li class="mdl-menu__item" id="menu_3" onclick="window.location.href = 'https://youtu.be/mActsx2nA90'">
+                The Kali
+                <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">https</i>
+              </li>
+              <li class="mdl-menu__item" id="menu_3" onclick="">
+                About us
+                <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">people_outline</i>
+              </li>
             </ul>
         </main>
     </div>
