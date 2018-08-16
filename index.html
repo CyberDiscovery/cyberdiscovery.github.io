@@ -114,8 +114,8 @@
     <!-- Create any inline JS -->
     <!-- USE RGB VALUES FOR COMPARISON! -->
     <script>
-      function loadLicensePage(){
-        window.location.href = "https://raw.githubusercontent.com/CyberDiscovery/cyberdisc-bot/master/LICENSE";
+      function loadNewPage(pageUrl){
+        window.location.href = pageUrl;
       }
     </script>
     <!-- Create the MDL layout -->
@@ -662,12 +662,12 @@
                 Disclaimer
                 <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">chrome_reader_mode</i>
               </li>
-              <li class="mdl-menu__item" id="menu_2" onclick="loadLicensePage()">
+              <li class="mdl-menu__item" id="menu_2" onclick="loadNewPage('https://raw.githubusercontent.com/CyberDiscovery/cyberdisc-bot/master/LICENSE')">
                 View License
                 <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">description</i>
               </li>
-              <li class="mdl-menu__item" id="menu_3" onclick="window.location.href = 'https://youtu.be/mActsx2nA90'">
-                The Kali
+              <li class="mdl-menu__item" id="menu_3" onclick="loadNewPage('https://youtu.be/fKvNg-_KHXQ?t=2s')">
+                Install The Kali
                 <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">https</i>
               </li>
               <li class="mdl-menu__item" id="menu_3" onclick="">
