@@ -114,7 +114,42 @@
     <!-- USE RGB VALUES FOR COMPARISON! -->
     <script>
       function loadNewPage(pageUrl){
-        window.location.href = pageUrl;
+        window.open(pageUrl, '_blank');
+      }
+      var toastMesgList = [
+        "QWdlbnQgSiBzYXlzIEhpIQ==",
+        "QWxsIHlvdXIgZ2FtZXMgYXJlIGJlbG9uZyB0byB1cyE=",
+        "RG9pbmcgeGNoZyBlYXgsIGVheCBzaW5jZSAnMDAh",
+        "RWxpdGUgQ2FtcHMgd2VyZSBhbWF6aW5nISBTaWduIFVwIQ==",
+        "TWFkZSBieSBzaDNsbGNvZDMgdXNpbmcgTURMIQ==",
+        "Q2FsbGluZyB0aGUgcm9iby1oYW1zdGVycyE=",
+        "U2VlbiBhbnlvbmUgd2l0aCBUaGUgS2FsaT8=",
+        "SGF2ZSB5b3UgdHJpZWQgaW5pdCA2J2luZyBpdCB5ZXQ/",
+        "S2VybmVsIFBhbmljOiBDYW4ndCBoYW5kbGUgbXkgc3dhZyE=",
+        "SSdkIGp1c3QgbGlrZSB0byBpbnRlcmplY3QgZm9yIGEgbW9tZW50Lg==",
+        "SGFsZiBsaWZlIDMgY29uZmlybWVkPw==",
+        "V2F0Y2hpbmcgTGludXNUZWNoVGlwcyBzaW5jZSAnMTIhIA=="
+      ]
+      var pageUrlList = [
+        "aHR0cHM6Ly95b3V0dS5iZS9mS3ZOZy1fS0hYUT90PTJz",
+        "aHR0cHM6Ly95b3V0dS5iZS9MR29qMlEwbklKYw==",
+        "aHR0cHM6Ly95b3V0dS5iZS95NjEyMFFPbHNmVQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS9kUXc0dzlXZ1hjUQ==",
+        "aHR0cHM6Ly9kb2NzLmthbGkub3JnL2luc3RhbGxhdGlvbi9rYWxpLWxpbnV4LWhhcmQtZGlzay1pbnN0YWxs",
+        "aHR0cDovL3d3dy5uYXRpb25hbGNyaW1lYWdlbmN5Lmdvdi51ay9hYm91dC11cy93aGF0LXdlLWRvL25hdGlvbmFsLWN5YmVyLWNyaW1lLXVuaXQ=",
+        "aHR0cHM6Ly93d3cubGVnaXNsYXRpb24uZ292LnVrL3VrcGdhLzE5OTAvMTgvY3Jvc3NoZWFkaW5nL2NvbXB1dGVyLW1pc3VzZS1vZmZlbmNlcw==",
+        "aHR0cHM6Ly95b3V0dS5iZS9WeHF1SGNmeGFCWQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS9fWFJSU21aSDdDTQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS9LRWtyV1JIQ0RRVQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS9LN0huMXJQUW91VQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS9jNnRRek1ocWhMYw==",
+        "aHR0cHM6Ly95b3V0dS5iZS9FZ2wtZDBvOWhaYw==",
+        "aHR0cHM6Ly95b3V0dS5iZS9aNjZiaEdKNE9ucw==",
+        "aHR0cHM6Ly95b3V0dS5iZS9XbTlzaWtkVkUxQT90PTlz"
+      ]
+      function selectRandItem(selectionArray) {
+        var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
+        return window.atob(selectionArray[chosenIndex]);
       }
     </script>
     <!-- Create the MDL layout -->
@@ -130,14 +165,13 @@
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
                 <!-- Add the tabs -->
-                <a href="#Project-tab-1" class="mdl-layout__tab is-active">Home</a>
-                <a href="#Project-tab-2" class="mdl-layout__tab">Discord Bot</a>
-                <a href="#Project-tab-3" class="mdl-layout__tab">Android App</a>
-                <a href="#Project-tab-4" class="mdl-layout__tab">IOS App</a>
-                <a href="#Project-tab-5" class="mdl-layout__tab">Challenge Master</a>
-                <a href="#Project-tab-6" class="mdl-layout__tab">Maths Bot</a>
-                <a href="#Project-tab-7" class="mdl-layout__tab">App Website</a>
-                <a href="#Project-tab-8" class="mdl-layout__tab">Resources</a>
+                <a href="#Home-tab" class="mdl-layout__tab is-active">Home</a>
+                <a href="#Discord-bot-tab" class="mdl-layout__tab">Discord Bot</a>
+                <a href="#App-tab" class="mdl-layout__tab">Android/IOS App</a>
+                <a href="#Challenge-Master-tab" class="mdl-layout__tab">Challenge Master</a>
+                <a href="#Maths-Bot-tab" class="mdl-layout__tab">Maths Bot</a>
+                <a href="#App-Website-tab" class="mdl-layout__tab">App Website</a>
+                <a href="#Resources-tab" class="mdl-layout__tab">Resources</a>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -181,7 +215,7 @@
         </div>
         <main class="mdl-layout__content">
           <!-- Home Tab -->
-            <section class="mdl-layout__tab-panel is-active" id="Project-tab-1">
+            <section class="mdl-layout__tab-panel is-active" id="Home-tab">
                 <div class="page-content">
                   <!-- MDL Wide Logo card -->
                   <div class="logo-card-image mdl-card mdl-shadow--2dp">
@@ -220,7 +254,7 @@
                 </div>
             </section>
             <!-- Discord Bot Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-2">
+            <section class="mdl-layout__tab-panel" id="Discord-bot-tab">
                 <div class="page-content">
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -270,7 +304,7 @@
                 </div>
             </section>
             <!-- Android App Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-3">
+            <section class="mdl-layout__tab-panel" id="App-tab">
                 <div class="page-content">
                   <div class="mdl-grid" style="padding: 0px!important;">
                     <!-- Image Card -->
@@ -348,43 +382,8 @@
                   </div>
                 </div>
             </section>
-            <!-- IOS App Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-4">
-                <div class="page-content">
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">MITM AP</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Create a MITM ap for capturing traffic.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Captive portal attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Create a captive portal for phishing logins/credentials.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                </div>
-            </section>
             <!-- Challenge Master Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-5">
+            <section class="mdl-layout__tab-panel" id="Challenge-Master-tab">
                 <div class="page-content">
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -449,7 +448,7 @@
                 </div>
             </section>
             <!-- Maths Bot Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-6">
+            <section class="mdl-layout__tab-panel" id="Maths-Bot-tab">
                 <div class="page-content">
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -499,7 +498,7 @@
                 </div>
             </section>
             <!-- App Website Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-7">
+            <section class="mdl-layout__tab-panel" id="App-Website-tab">
                 <div class="page-content">
                   <!-- Start MDL card -->
                   <div class="generic-card-square mdl-card mdl-shadow--2dp">
@@ -519,7 +518,7 @@
                 </div>
             </section>
             <!-- Resources Tab -->
-            <section class="mdl-layout__tab-panel" id="Project-tab-8">
+            <section class="mdl-layout__tab-panel" id="Resources-tab">
                 <div class="page-content">
                   <!-- Start MDL grid -->
                   <div class="mdl-grid" style="padding: 0px!important;">
@@ -689,8 +688,8 @@
                 showToastButton.addEventListener('click', function() {
                   'use strict';
                   var data = {
-                    message: window.atob("QWxsIHlvdXIgZ2FtZXMgYXJlIGJlbG9uZyB0byB1cyE="),
-                    timeout: 1200
+                    message: selectRandItem(toastMesgList),
+                    timeout: 2750
                   };
                   snackbarContainer.MaterialSnackbar.showSnackbar(data);
                 });
@@ -707,7 +706,7 @@
                 View License
                 <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">description</i>
               </li>
-              <li class="mdl-menu__item" id="menu_3" onclick="loadNewPage('https://youtu.be/fKvNg-_KHXQ?t=2s')">
+              <li class="mdl-menu__item" id="menu_3" onclick="loadNewPage(selectRandItem(pageUrlList))">
                 Install The Kali
                 <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">https</i>
               </li>
