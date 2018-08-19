@@ -107,6 +107,12 @@
           font-size: 16px;
           font-weight: 500;
         }
+        #scrollable-contrib-list {
+          overflow-y: hidden;
+        }
+        #scrollable-contrib-list:hover, #scrollable-contrib-list:active, #scrollable-contrib-list:focus {
+          overflow-y: auto;
+        }
     </style>
 </head>
 <body>
@@ -318,6 +324,119 @@
                       </div>
                     </div>
                     <!-- End card here -->
+                    <!-- MDL Image card -->
+                    <div id="Event_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_First.png') center/cover no-repeat #0d2332;">
+                    </div>
+                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Event_Card">
+                      Event information <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> info </i>
+                    </div>
+                    <!-- MDL Image card -->
+                    <div id="Sound_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Second.png') center/cover no-repeat #0d2332;">
+                    </div>
+                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Sound_Card">
+                      Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> equalizer </i>
+                    </div>
+                    <!-- MDL Image card -->
+                    <div id="Time_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Third.png') center/cover no-repeat #0d2332;">
+                    </div>
+                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Time_Card">
+                      Timetables <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event_note </i>
+                    </div>
+                    <!-- MDL Image card -->
+                    <div id="Com_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Fourth.png') center/cover no-repeat #0d2332;">
+                    </div>
+                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Com_Card">
+                      Community page <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-card mdl-shadow--2dp" id="scrollable-contrib-list">
+                      <div class="mdl-list" style="width: 300px!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider" style="width: 110%">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>Project Contributors</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Star">
+                      View this contributor's<br>commit activity <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>
+                    </div>
+                    <!-- End card here -->
                     <table id="Git_Stats" class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
                       <tbody>
                         <tr>
@@ -352,33 +471,8 @@
                     </div>
                     <!-- End Table here -->
                     <!-- MDL Wide Logo card -->
-                    <div class="logo-card-image mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;width: 760px;">
+                    <div class="logo-card-image mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;width: 670px;background-size: 100% 100%;">
                     </div>
-                    <!-- MDL Image card -->
-                    <div id="Event_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_First.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Event_Card">
-                      Event information <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> info </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Sound_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Second.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Sound_Card">
-                      Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> equalizer </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Time_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Third.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Time_Card">
-                      Timetables <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event_note </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Com_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Fourth.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Com_Card">
-                      Community page <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>
-                    </div>
-                    <!-- End card here -->
                   </div>
                 </div>
             </section>
