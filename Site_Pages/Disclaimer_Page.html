@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add the CSS sources and JS animation classes -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Set the title and add the favicon to display at the top in base64 format -->
+    <title>Disclaimer</title>
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAsklEQVR4Ae3ZAQaEUBSF4VPQGuYtbwbQOqeZFpBAtIgCcAMEEu5Bnv+/QJIPXnITERF5inNurt8HCBCgTr0WRXIW9epk6KVZYZpZRckafRXG+alRqrfCPB+l+ttBo1LtdtDmP97Z5wACBCgu5uKe1P2AANUGyh5X/3VAgOoG8R7ygwABet4nLCBAgDb/OubRC6sKVnqtBitnUKtkRZONM6m4FudrGrO6Fuf86wBkDRARER2k83t8BDrcmAAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+    <!-- Create the inline styles -->
+    <style>
+      /**
+       * Copyright 2015 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      .page-ribbon {
+        width: 100%;
+        height: 40vh;
+        background-color: #0d2332;
+        flex-shrink: 0;
+      }
+      .page-main {
+        margin-top: -35vh;
+        flex-shrink: 0;
+      }
+      .page-container {
+        max-width: 1600px;
+        width: calc(100% - 16px);
+        margin: 0 auto;
+      }
+      .main-page-content {
+        border-radius: 2px;
+        padding: 80px 56px;
+        margin-bottom: 80px;
+      }
+      .page-layout.is-small-screen .main-page-content {
+        padding: 40px 28px;
+      }
+      .main-page-content h3 {
+        margin-top: 48px;
+      }
+      .mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+        background-color: #0d2332;
+      }
+      #spaced_button {
+        margin-left: 15px;
+      }
+    </style>
+</head>
+<body>
+  <div class="page-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <div class="page-ribbon"></div>
+      <main class="page-main mdl-layout__content">
+        <div class="page-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="main-page-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <div class="mdl-color-text--grey-500">
+              Cyber-Discovery Community &gt; Disclaimer
+            </div>
+            <h3>THIS WEBSITE IS NOT DEVELOPED OR ENDORSED BY SANS INSTITUTE OR CYBER DISCOVERY.</h3>
+              <p>
+                This website was solely developed by the members of the Cyber Discovery Discord community. The intention of this website is to showcase the projects that the members of this community (students) are creating which revolves around the UK's Cyber-Discovery programme. All content on this website is publicly available (primarily through GitHub), i.e. Member information, Commit history, etc. If you are a contributor and have content that is featured on this website that you want removed, please get in touch by private-messaging someone on our discord server who possesses the 'Community Developer' role.
+              </p>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="window.location.href = 'https://joincyberdiscovery.com'">Cyber Discovery Website</button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="spaced_button" onclick="window.location.href = 'http://discord.gg/Kf8n5rT'">Get In Touch Via Discord</button>
+            <h3>THIS WEBSITE USES IMAGES UNDER FAIR USE FOR EDUCATIONAL PURPOSES</h3>
+            <p>
+              This website uses a mixture of self-created and downloaded images. All images are used are for educational purposes under fair use (e.g. to demonstrate learning resources for students). If you are the creator/owner of an image, and want it removed from this website, please create an issue on GitHub, and the members of our community will take action as soon as possible.
+            </p>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="window.location.href = 'https://www.gov.uk/guidance/exceptions-to-copyright'">View Fair Use Criteria</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="spaced_button" onclick="window.location.href = 'https://www.gov.uk/government/publications/copyright-acts-and-related-laws'">CDPA Act 1988</button>
+            <h3>THIS WEBSITE USES MDL-COMPONENTS</h3>
+              <p>
+                Material Design Lite (MDL) Components are front-end website components/templates created by Google Inc. These are licensed under the Open-Source Apache License 2.0. As per the conditions of the license, a full copy of the license is included with this website and can be found at the end of this paragraph. The other condition require code changes to be documented. Most of the code changes can be viewed by viewing the commit history of this repository from GitHub. Alternatively, you may click the second button at the end of this paragraph to link you to the page.
+              </p>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="window.location.href = './Apache_License.txt'">View The Apache License 2.0</button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="spaced_button" onclick="window.location.href = '#'">View Code Changes</button>
+          </div>
+        </div>
+      </main>
+    </div>
+</body>
+</html>
