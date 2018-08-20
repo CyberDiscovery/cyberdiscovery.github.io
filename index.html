@@ -60,6 +60,7 @@
           margin-right: 15px;
           margin-left: 15px;
           margin-top: 15px;
+          outline: none!important;
         }
         .generic-card-square > .mdl-card__title {
           color: #fff;
@@ -108,10 +109,13 @@
           font-weight: 500;
         }
         #scrollable-contrib-list {
-          overflow-y: hidden;
+          overflow: hidden;
         }
         #scrollable-contrib-list:hover, #scrollable-contrib-list:active, #scrollable-contrib-list:focus {
-          overflow-y: auto;
+          overflow: auto;
+        }
+        .material-icons {
+          outline: none!important;
         }
     </style>
 </head>
@@ -351,8 +355,8 @@
                     <!-- End card here -->
                     <!-- Start MDL card containing MDL list -->
                     <div class="generic-card-square mdl-card mdl-shadow--2dp" id="scrollable-contrib-list">
-                      <div class="mdl-list" style="width: 300px!important;">
-                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider" style="width: 110%">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
                             <div class="mdl-layout-spacer"></div>
                             <span>Project Contributors</span>
@@ -361,80 +365,97 @@
                         </div>
                         <div class="mdl-list__item">
                           <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4">
+                            <span>Daniel Milnes</span>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=thebeanogamer"><i class="material-icons" id="Contrib_Card_First">insert_chart_outlined</i></a>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/thebeanogamer"><i class="material-icons" id="Profile_Card_First">star</i></a>
                           </span>
                         </div>
                         <div class="mdl-list__item">
                           <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/19192864?s=400&v=4">
+                            <span>Ben Griffiths</span>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=Bentechy66"><i class="material-icons" id="Contrib_Card_Second">insert_chart_outlined</i></a>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/Bentechy66"><i class="material-icons" id="Profile_Card_Second">star</i></a>
                           </span>
                         </div>
                         <div class="mdl-list__item">
                           <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/31963635?s=400&v=4">
+                            <span>REDACTED</span>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=REDACTED-REDACTED"><i class="material-icons" id="Contrib_Card_Third">insert_chart_outlined</i></a>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/REDACTED-REDACTED"><i class="material-icons" id="Profile_Card_Third">star</i></a>
                           </span>
                         </div>
                         <div class="mdl-list__item">
                           <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4">
+                            <span>Dwouca</span>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">insert_chart_outlined</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=dwouca"><i class="material-icons" id="Contrib_Card_Fourth">insert_chart_outlined</i></a>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/dwouca"><i class="material-icons" id="Profile_Card_Fourth">star</i></a>
                           </span>
                         </div>
                         <div class="mdl-list__item">
                           <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/5558617?s=400&v=4">
+                            <span>Joseph Bywater</span>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">insert_chart_outlined</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/CyberDiscoveryiOS/commits?author=JosephBywater"><i class="material-icons" id="Contrib_Card_Fifth">insert_chart_outlined</i></a>
                           </span>
                           <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                          </span>
-                        </div>
-                        <div class="mdl-list__item">
-                          <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bob Odenkirk</span>
-                          </span>
-                          <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons" id="Contrib_Card_Star">insert_chart_outlined</i></a>
-                          </span>
-                          <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/JosephBywater"><i class="material-icons" id="Profile_Card_Fifth">star</i></a>
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Star">
-                      View this contributor's<br>commit activity <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>
+                    <!-- Tooltips for viewing contribution activity -->
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_First">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Second">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Third">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fourth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fifth">
+                      Commit activity
+                    </div>
+                    <!-- Tooltips for viewing profile -->
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_First">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Second">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Third">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fourth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
+                      GitHub profile
                     </div>
                     <!-- End card here -->
                     <table id="Git_Stats" class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
