@@ -117,6 +117,18 @@
         .material-icons {
           outline: none!important;
         }
+        #GitHub_Stats_Button {
+          background-color: #0d2332!important;
+        }
+        #table_item_no_padding {
+          padding: 0px!important;
+        }
+        #left_padded_table_item {
+          padding-left: 10px!important;
+        }
+        .mdl-data-table {
+          outline: none!important;
+        }
     </style>
 </head>
 <body>
@@ -465,32 +477,99 @@
                     <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
                       GitHub profile
                     </div>
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-card mdl-shadow--2dp" id="scrollable-contrib-list">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>GitHub Statistics</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Watchers</button>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Stargazers</button>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Forks</button>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">License</button>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">View page</button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                     <!-- End card here -->
                     <table id="Git_Stats" class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
                       <tbody>
                         <tr>
-                          <td class="mdl-data-table__cell--non-numeric">
+                          <td class="mdl-data-table__cell--non-numeric" id="left_padded_table_item">
                             <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
                           </td>
+                          <td class="mdl-data-table__cell--non-numeric" id="table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Watchers</button>
+                          </td>
                         </tr>
                         <tr>
-                          <td class="mdl-data-table__cell--non-numeric">
+                          <td class="mdl-data-table__cell--non-numeric" id="left_padded_table_item">
                             <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
                           </td>
+                          <td class="mdl-data-table__cell--non-numeric" id="table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Stargazers</button>
+                          </td>
                         </tr>
                         <tr>
-                          <td class="mdl-data-table__cell--non-numeric">
+                          <td class="mdl-data-table__cell--non-numeric" id="left_padded_table_item">
                             <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
                           </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          <td class="mdl-data-table__cell--non-numeric" id="table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">Forks</button>
                           </td>
                         </tr>
                         <tr>
-                          <td class="mdl-data-table__cell--non-numeric">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="License">
+                          <td class="mdl-data-table__cell--non-numeric" id="left_padded_table_item">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric" id="table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">License</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" id="left_padded_table_item">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric" id="table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="GitHub_Stats_Button" onclick="window.location.href = '#'">View page</button>
                           </td>
                         </tr>
                       </tbody>
