@@ -79,7 +79,7 @@
           background-color: #0d2332!important;
         }
         .logo-card-image.mdl-card {
-          width: 512px;
+          width: 670px;
           height: 320px;
           background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;
         }
@@ -108,10 +108,10 @@
           font-size: 16px;
           font-weight: 500;
         }
-        #scrollable-contrib-list {
+        .scrollable-contrib-list {
           overflow: hidden;
         }
-        #scrollable-contrib-list:hover, #scrollable-contrib-list:active, #scrollable-contrib-list:focus {
+        .scrollable-contrib-list:hover, .scrollable-contrib-list:active, .scrollable-contrib-list:focus {
           overflow: auto;
         }
         .material-icons {
@@ -175,7 +175,15 @@
         "aHR0cHM6Ly95b3V0dS5iZS9oNzFTWjkwbHdQUQ==",
         "aHR0cHM6Ly95b3V0dS5iZS9RTW9rTVE4QnU3WT90PTQycw==",
         "aHR0cHM6Ly95b3V0dS5iZS9iQ21TNEtRS2Y4SQ==",
-        "aHR0cHM6Ly95b3V0dS5iZS9Bei1tR1ItQ2VoWQ=="
+        "aHR0cHM6Ly95b3V0dS5iZS9Bei1tR1ItQ2VoWQ==",
+        "aHR0cHM6Ly95b3V0dS5iZS82NDU3YnBSdEE4MA==",
+        "aHR0cHM6Ly95b3V0dS5iZS9UNm9CemFYazZaaw==",
+        "aHR0cHM6Ly95b3V0dS5iZS9uQ2JHTWVzRUFhMA==",
+        "aHR0cHM6Ly95b3V0dS5iZS83NGd4MHY1Wkp6dw==",
+        "aHR0cHM6Ly95b3V0dS5iZS96LTNmb0NVMkNuaz90PTNtMjVz",
+        "aHR0cHM6Ly95b3V0dS5iZS9KS2hESFk0VVdCdz90PTFtNXM=",
+        "aHR0cHM6Ly95b3V0dS5iZS9NQlJxdTBZT0gxNA==",
+        "aHR0cHM6Ly95b3V0dS5iZS9XWVVPS25aa2drbw=="
       ]
       function selectRandItem(selectionArray) {
         var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
@@ -360,51 +368,311 @@
             <!-- Discord Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Discord-bot-tab">
                 <div class="page-content">
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Standard attack</h2>
+                  <div class="mdl-grid" style="padding: 0px!important;">
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Discord_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 100% !important;">
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features.
+                        For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link
+                        in menu.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                      Use Aireplay-ng to deauth clients, get the handshake with Airodump-ng and crack it with Aircrack-ng
+                    <!-- End card here -->
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>Project Contributors</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars1.githubusercontent.com/u/30086950?s=400&v=4" alt="Thumbnail">
+                            <span>Fractal Penguin</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=fractalpenguin"><i class="material-icons" id="Discord_Card_First">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/fractalpenguin"><i class="material-icons" id="Discord_Profile_First">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" alt="Thumbnail">
+                            <span>Daniel Milnes</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=thebeanogamer"><i class="material-icons" id="Discord_Card_Second">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/thebeanogamer"><i class="material-icons" id="Discord_Profile_Second">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/16269580?s=400&v=4" alt="Thumbnail">
+                            <span>George Omnet</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=Ge0rg3"><i class="material-icons" id="Discord_Card_Third">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/Ge0rg3"><i class="material-icons" id="Discord_Profile_Third">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars1.githubusercontent.com/u/28223854?s=400&v=4" alt="Thumbnail">
+                            <span>Sam Wedgwood</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=shadycake"><i class="material-icons" id="Discord_Card_Fourth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/shadycake"><i class="material-icons" id="Discord_Profile_Fourth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/7061144?s=400&v=4" alt="Thumbnail">
+                            <span>Callum Fraser</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=picapi"><i class="material-icons" id="Discord_Card_Fifth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/picapi"><i class="material-icons" id="Discord_Profile_Fifth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/31631620?s=400&v=4" alt="Thumbnail">
+                            <span>Nate Komodo</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=NateKomodo"><i class="material-icons" id="Discord_Card_Sixth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/NateKomodo"><i class="material-icons" id="Discord_Profile_Sixth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/8531139?s=400&v=4" alt="Thumbnail">
+                            <span>David Cooke</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=david-cooke"><i class="material-icons" id="Discord_Card_Seventh">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/david-cooke"><i class="material-icons" id="Discord_Profile_Seventh">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars1.githubusercontent.com/u/9433472?s=400&v=4" alt="Thumbnail">
+                            <span>Josh Holland</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=anowlcalledjosh"><i class="material-icons" id="Discord_Card_Eighth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/anowlcalledjosh"><i class="material-icons" id="Discord_Profile_Eighth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars1.githubusercontent.com/u/25161069?s=400&v=4" alt="Thumbnail">
+                            <span>Jeremiah Boby</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=AnonGuy"><i class="material-icons" id="Discord_Card_Ninth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/AnonGuy"><i class="material-icons" id="Discord_Profile_Ninth">star</i></a>
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
+                    <!-- Tooltips for viewing contribution activity -->
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_First">
+                      Commit activity
                     </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Second">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Third">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Fourth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Fifth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Sixth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Seventh">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Eighth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Ninth">
+                      Commit activity
+                    </div>
+                    <!-- Tooltips for viewing profile -->
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_First">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Second">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Third">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Fourth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Fifth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Sixth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Seventh">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Eighth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Ninth">
+                      GitHub profile
+                    </div>
+                    <!-- Start MDL card containing MDL table -->
+                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/watchers')">Watchers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/stars/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/stargazers')">Stargazers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/forks/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/network/members')">Forks</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/blob/master/LICENSE')">License</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/graphs/contributors')">View page</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Table here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Brute-force attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK by guessing every possible combination in the key-space.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Look up the PSK from a precomputed rainbow (hash) table.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Bruteforce the combinations supplied by a Hashcat-style mask.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Discord_Bot_Contribute.gif') center/cover no-repeat #0d2332;">
+                        <h2 class="mdl-card__title-text">Help us!</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Written a Discord bot in Python3 using asyncio? Want to help improve our bot?
+                        Consider contributing to this project by sending a pull request or helping out with some
+                        of the issues on GitHub!
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot">
+                          Fork me
+                        </a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/issues">
+                          View issues
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
                   </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Hashcat attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Same as standard attack, but use Hashcat to retrieve the PSK instead of Aircrack-ng
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Deauth attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Continously de-authenticate all clients or a specific client, effectively creating a denial of service.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
                 </div>
             </section>
             <!-- Android App Tab -->
@@ -448,7 +716,7 @@
                     </div>
                     <!-- End card here -->
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" id="scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -598,23 +866,23 @@
                     </table>
                     <!-- End Table here -->
                     <!-- MDL Wide Image card -->
-                    <div class="logo-card-image mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;width: 670px;background-size: 100% 100%;">
+                    <div class="logo-card-image mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;background-size: 100% 100%;">
                     </div>
                     <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand">
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Contribute_Programming.gif') center/cover no-repeat #0d2332;">
                         <h2 class="mdl-card__title-text">Help us!</h2>
                       </div>
                       <div class="mdl-card__supporting-text">
-                        Want to lend us some of your awesome app development skills, or feeling generous?
-                        Please fork the repository and send a pull request once you have done making your
-                        improvements!
+                        Programmed an app in flutter before? Want to lend us some of your awesome app-dev skills?
+                        Consider contributing to this project by sending a pull request or helping out with some
+                        of the issues on GitHub!
                       </div>
                       <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App">
                           Fork me
                         </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/issues">
                           View issues
                         </a>
                       </div>
@@ -626,136 +894,712 @@
             <!-- Challenge Master Tab -->
             <section class="mdl-layout__tab-panel" id="Challenge-Master-tab">
                 <div class="page-content">
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Dictionary attack</h2>
+                  <div class="mdl-grid" style="padding: 0px!important;">
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Dictionary attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK from a Capture file by using a dictionary attack.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                      Attempt to resolve the PSK from a Capture file by using a dictionary attack.
+                    <!-- End card here -->
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>Project Contributors</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" alt="Thumbnail">
+                            <span>Daniel Milnes</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=thebeanogamer"><i class="material-icons" id="Contrib_Card_First">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/thebeanogamer"><i class="material-icons" id="Profile_Card_First">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/19192864?s=400&v=4" alt="Thumbnail">
+                            <span>Ben Griffiths</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=Bentechy66"><i class="material-icons" id="Contrib_Card_Second">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/Bentechy66"><i class="material-icons" id="Profile_Card_Second">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/31963635?s=400&v=4" alt="Thumbnail">
+                            <span>Dan_</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=REDACTED-REDACTED"><i class="material-icons" id="Contrib_Card_Third">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/REDACTED-REDACTED"><i class="material-icons" id="Profile_Card_Third">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4" alt="Thumbnail">
+                            <span>Dwouca</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=dwouca"><i class="material-icons" id="Contrib_Card_Fourth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/dwouca"><i class="material-icons" id="Profile_Card_Fourth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/5558617?s=400&v=4" alt="Thumbnail">
+                            <span>Joseph Bywater</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/CyberDiscoveryiOS/commits?author=JosephBywater"><i class="material-icons" id="Contrib_Card_Fifth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/JosephBywater"><i class="material-icons" id="Profile_Card_Fifth">star</i></a>
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
+                    <!-- Tooltips for viewing contribution activity -->
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_First">
+                      Commit activity
                     </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Second">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Third">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fourth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fifth">
+                      Commit activity
+                    </div>
+                    <!-- Tooltips for viewing profile -->
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_First">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Second">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Third">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fourth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
+                      GitHub profile
+                    </div>
+                    <!-- Start MDL card containing MDL table -->
+                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/watchers')">Watchers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/stargazers')">Stargazers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/network/members')">Forks</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/blob/master/LICENSE')">License</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/graphs/contributors')">View page</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Table here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Brute-force attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK by guessing every possible combination in the key-space.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Look up the PSK from a precomputed rainbow (hash) table.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Bruteforce the combinations supplied by a Hashcat-style mask.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Responsive_Resize_Background.gif') center/cover no-repeat #0d2332;">
+                        <h2 class="mdl-card__title-text">Help us!</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Programmed an app in flutter before? Want to lend us some of your awesome app-dev skills?
+                        Consider contributing to this project by sending a pull request or helping out with some
+                        of the issues on GitHub!
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          Fork me
+                        </a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          View issues
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
                   </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Brute-force attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Attempt to resolve the PSK by guessing every possible combination in the key-space.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Look up the PSK from a precomputed rainbow (hash) table.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Bruteforce the combinations supplied by a Hashcat-style mask.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
                 </div>
             </section>
             <!-- Maths Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Maths-Bot-tab">
                 <div class="page-content">
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Beacon flood attack</h2>
+                  <div class="mdl-grid" style="padding: 0px!important;">
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Dictionary attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK from a Capture file by using a dictionary attack.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                      Run MDK3 to flood the air with hundreds of false SSIDs.
+                    <!-- End card here -->
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>Project Contributors</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" alt="Thumbnail">
+                            <span>Daniel Milnes</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=thebeanogamer"><i class="material-icons" id="Contrib_Card_First">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/thebeanogamer"><i class="material-icons" id="Profile_Card_First">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/19192864?s=400&v=4" alt="Thumbnail">
+                            <span>Ben Griffiths</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=Bentechy66"><i class="material-icons" id="Contrib_Card_Second">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/Bentechy66"><i class="material-icons" id="Profile_Card_Second">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/31963635?s=400&v=4" alt="Thumbnail">
+                            <span>Dan_</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=REDACTED-REDACTED"><i class="material-icons" id="Contrib_Card_Third">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/REDACTED-REDACTED"><i class="material-icons" id="Profile_Card_Third">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4" alt="Thumbnail">
+                            <span>Dwouca</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=dwouca"><i class="material-icons" id="Contrib_Card_Fourth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/dwouca"><i class="material-icons" id="Profile_Card_Fourth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/5558617?s=400&v=4" alt="Thumbnail">
+                            <span>Joseph Bywater</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/CyberDiscoveryiOS/commits?author=JosephBywater"><i class="material-icons" id="Contrib_Card_Fifth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/JosephBywater"><i class="material-icons" id="Profile_Card_Fifth">star</i></a>
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
+                    <!-- Tooltips for viewing contribution activity -->
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_First">
+                      Commit activity
                     </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Second">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Third">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fourth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fifth">
+                      Commit activity
+                    </div>
+                    <!-- Tooltips for viewing profile -->
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_First">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Second">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Third">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fourth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
+                      GitHub profile
+                    </div>
+                    <!-- Start MDL card containing MDL table -->
+                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/watchers')">Watchers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/stargazers')">Stargazers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/network/members')">Forks</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/blob/master/LICENSE')">License</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/graphs/contributors')">View page</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Table here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Brute-force attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK by guessing every possible combination in the key-space.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Look up the PSK from a precomputed rainbow (hash) table.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Bruteforce the combinations supplied by a Hashcat-style mask.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Hello_World_Background.gif') top 35% center no-repeat #0d2332;background-size: 220%;">
+                        <h2 class="mdl-card__title-text">Help us!</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Programmed an app in flutter before? Want to lend us some of your awesome app-dev skills?
+                        Consider contributing to this project by sending a pull request or helping out with some
+                        of the issues on GitHub!
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          Fork me
+                        </a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          View issues
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
                   </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Auth DOS attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Run the MDK3 authentication denial-of-service attack.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">Deauth/Amok Dissaoc attack</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                      Continously disconnect all connected clients to the AP.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End card here -->
                 </div>
             </section>
             <!-- App Website Tab -->
             <section class="mdl-layout__tab-panel" id="App-Website-tab">
                 <div class="page-content">
-                  <!-- Start MDL card -->
-                  <div class="generic-card-square mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title mdl-card--expand">
-                      <h2 class="mdl-card__title-text">App website</h2>
+                  <div class="mdl-grid" style="padding: 0px!important;">
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Dictionary attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK from a Capture file by using a dictionary attack.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                      App website
+                    <!-- End card here -->
+                    <!-- Start MDL card containing MDL list -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                      <div class="mdl-list" style="width: auto!important;">
+                        <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
+                          <span class="mdl-list__item-primary-content">
+                            <div class="mdl-layout-spacer"></div>
+                            <span>Project Contributors</span>
+                            <div class="mdl-layout-spacer"></div>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" alt="Thumbnail">
+                            <span>Daniel Milnes</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=thebeanogamer"><i class="material-icons" id="Contrib_Card_First">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/thebeanogamer"><i class="material-icons" id="Profile_Card_First">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/19192864?s=400&v=4" alt="Thumbnail">
+                            <span>Ben Griffiths</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=Bentechy66"><i class="material-icons" id="Contrib_Card_Second">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/Bentechy66"><i class="material-icons" id="Profile_Card_Second">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/31963635?s=400&v=4" alt="Thumbnail">
+                            <span>Dan_</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=REDACTED-REDACTED"><i class="material-icons" id="Contrib_Card_Third">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/REDACTED-REDACTED"><i class="material-icons" id="Profile_Card_Third">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4" alt="Thumbnail">
+                            <span>Dwouca</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/commits?author=dwouca"><i class="material-icons" id="Contrib_Card_Fourth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/dwouca"><i class="material-icons" id="Profile_Card_Fourth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/5558617?s=400&v=4" alt="Thumbnail">
+                            <span>Joseph Bywater</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/CyberDiscoveryiOS/commits?author=JosephBywater"><i class="material-icons" id="Contrib_Card_Fifth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/JosephBywater"><i class="material-icons" id="Profile_Card_Fifth">star</i></a>
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Start
-                      </a>
+                    <!-- Tooltips for viewing contribution activity -->
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_First">
+                      Commit activity
                     </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Second">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Third">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fourth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Contrib_Card_Fifth">
+                      Commit activity
+                    </div>
+                    <!-- Tooltips for viewing profile -->
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_First">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Second">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Third">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fourth">
+                      GitHub profile
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
+                      GitHub profile
+                    </div>
+                    <!-- Start MDL card containing MDL table -->
+                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/watchers')">Watchers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/stargazers')">Stargazers</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/network/members')">Forks</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/blob/master/LICENSE')">License</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/graphs/contributors')">View page</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- End Table here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Brute-force attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Attempt to resolve the PSK by guessing every possible combination in the key-space.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Rainbow-table attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Look up the PSK from a precomputed rainbow (hash) table.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Mask-based GPU attack</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Bruteforce the combinations supplied by a Hashcat-style mask.
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Start
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
+                    <!-- Start MDL card -->
+                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Responsive_Website_Background.gif') center/cover no-repeat #0d2332;">
+                        <h2 class="mdl-card__title-text">Help us!</h2>
+                      </div>
+                      <div class="mdl-card__supporting-text">
+                        Made a responsive and interactive website on firebase before?
+                        Consider contributing to this project by sending a pull request or helping out with some
+                        of the issues on GitHub!
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          Fork me
+                        </a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#">
+                          View issues
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End card here -->
                   </div>
-                  <!-- End card here -->
                 </div>
             </section>
             <!-- Resources Tab -->
