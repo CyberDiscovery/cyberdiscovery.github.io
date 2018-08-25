@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add the CSS sources and JS animation classes -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Set the title and add the favicon to display at the top in base64 format -->
+    <title>About us</title>
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAsUlEQVR4Ae3ZMQ6CQBBA0S8NZ5Djack5RT0AoSLhEFivLRUOMTuh+H9asnndJAxmZvarlp6ZUmlmelqId2WiVJ6JjmAXHpSEeXIh1I2SNHdCvdJAb0J90kArocpm/i/+viBBgsru7H8TeUdQDZAgQaEE1QHFE7TNXSYonKBg7jJBggS5ywQJ8v9QPkiQINb808L5jy/nPk81DCmcgYZgHWN1zkh39Ai8VMMsB4/AZmb2BelnnnVrky1sAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
+    <!-- Create the inline styles -->
+    <style>
+      /**
+       * Copyright 2015 Google Inc. All Rights Reserved.
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+       .transparent-page-layout {
+         background: url('../Image_Assets/PCMR_About_Us.png') center / cover no-repeat;
+       }
+       .transparent-page-layout .mdl-layout__header,
+       .transparent-page-layout .mdl-layout__drawer-button {
+         /* This background is dark, so we set text to white. Use 87% black instead if
+            your background is light. */
+         color: white;
+       }
+       /*Define the generic square card style */
+       .generic-card-square.mdl-card {
+         width: 320px;
+         height: 320px;
+         position: relative;
+         margin-right: 15px;
+         margin-left: 15px;
+         margin-top: 15px;
+         outline: none!important;
+       }
+       .generic-card-square > .mdl-card__title {
+         color: #fff;
+         background: #0d2332 center/cover no-repeat;
+       }
+       .mdl-card:hover {
+         box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+       }
+       .mdl-navigation__link, .mdl-layout__drawer-button, .mdl-layout__tab{
+           outline: none;
+       }
+       .image-card-generic.mdl-card {
+         width: 320px;
+         height: 320px;
+         background: center / cover no-repeat;
+       }
+       .image-card-generic > .mdl-card__actions {
+         height: 52px;
+         padding: 16px;
+         background: rgba(0, 0, 0, 0.2);
+       }
+       .image-card-generic__filename {
+         color: #fff;
+         font-size: 16px;
+         font-weight: 500;
+       }
+    </style>
+</head>
+<body>
+  <div class="transparent-page-layout mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">About</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Projects</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="https://github.com/Sh3llcod3/Airscript-ng">Airscript-ng</a>
+        <a class="mdl-navigation__link" href="https://github.com/Sh3llcod3/Memecrypt">Memecrypt</a>
+        <a class="mdl-navigation__link" href="https://github.com/Sh3llcod3/Easyparse">Easyparse</a>
+        <a class="mdl-navigation__link" href="https://github.com/thebeanogamer/starraid">Starraid</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="mdl-grid" style="padding: 0px!important;padding-left: 20px !important;">
+        <!-- Start MDL card -->
+        <div id="Alice_Card_Thanks" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Alice_Asset_Thanks.png') center/cover no-repeat #0d2332;background-size: 100%;width: 670px;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Alice_Card_Thanks">
+          Thanks for visiting! <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> sentiment_very_satisfied </i>
+        </div>
+        <!-- End card here -->
+        <!-- Start MDL card -->
+        <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand" style="background: url('../Image_Assets/Flat_Design_Stars.gif') center/cover no-repeat #0d2332;background-size: 100%;">
+          </div>
+          <div class="mdl-card__supporting-text">
+            Hey there! I'm sh3llcod3 (Sed) and as of yet, I am
+            the sole author of this site!
+            There's not much to say about me, so have these memes instead.
+            You can visit my GitHub profile below or view some of the projects
+            made by me and the community (which don't relate to Cyber Discovery)
+            in the menu.
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/sh3llcod3">
+              Visit
+            </a>
+          </div>
+        </div>
+        <div id="LTT" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/LTT_Ryzen_PC.jpg') center/cover no-repeat #0d2332;background-size: 100%;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="LTT">
+          Ryzen Launch <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> tv </i>
+        </div>
+        <!-- End card here -->
+        <div id="ERHMAGERD_ITS_LUKE" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Luke_LTT_GW.gif') center/cover no-repeat #0d2332;background-size: 100%;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="ERHMAGERD_ITS_LUKE">
+          Hey, there... <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> sentiment_satisfied_alt </i>
+        </div>
+        <!-- End card here -->
+        <div id="Snef_PC" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Snef_PC.jpg') center/cover no-repeat #0d2332;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Snef_PC">
+          A beautiful classic <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> favorite </i>
+        </div>
+        <!-- End card here -->
+        <div id="Corsair_PC_Display" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Corsair_Whoosh.gif') center/cover no-repeat #0d2332;background-size: 100%;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Corsair_PC_Display">
+          Delicious <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> tag_faces </i>
+        </div>
+        <!-- End card here -->
+        <div id="L_Gaben" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Steam_GW_Discount.gif') center/cover no-repeat #0d2332;background-size: 100%;width: 670px;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="L_Gaben">
+          Wallet.exe has stopped responding <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> money </i>
+        </div>
+        <!-- End card here -->
+        <div id="Rgb_Display" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Corsair_PC_GW.gif') center/cover no-repeat #0d2332;background-size: 100%;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Rgb_Display">
+          Pure liquid gold <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> wb_iridescent </i>
+        </div>
+        <!-- End card here -->
+        <div id="LTT_GW" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Razer_GW_Toast.jpg') center/cover no-repeat #0d2332;background-size: 100%;width: 670px;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--top" data-mdl-for="LTT_GW">
+          But can it run Crysis? <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> whatshot </i>
+        </div>
+        <!-- End card here -->
+        <div id="Razer_Prototype" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/LTT_Razer_Prototype.jpg') center/cover no-repeat #0d2332;background-size: 100%;width: 670px;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--top" data-mdl-for="Razer_Prototype">
+          Razer Prototype <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> laptop_chromebook </i>
+        </div>
+        <!-- End card here -->
+        <div id="Torvalds_GW" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('../Image_Assets/Torvalds_GW.gif') center/cover no-repeat #0d2332;background-size: 100% 120%;">
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--top" data-mdl-for="Torvalds_GW">
+          r/Torvalds_GW <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> explicit </i>
+        </div>
+        <!-- End card here -->
+      </div>
+    </main>
+  </div>
+</body>
+</html>
