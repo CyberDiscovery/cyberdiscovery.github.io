@@ -26,8 +26,8 @@
           z-index: 900;
         }
         .Main-card-wide.mdl-card {
-          width: 512px;
-          height: 320px;
+          /*width: 512px;
+          height: 320px;*/
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -42,8 +42,8 @@
           color: #fff;
         }
         .Main-card-square.mdl-card {
-          width: 320px;
-          height: 320px;
+          /*width: 320px;
+          height: 320px;*/
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -59,8 +59,8 @@
         }
         /*Define the generic square card style */
         .generic-card-square.mdl-card {
-          width: 320px;
-          height: 320px;
+          /*width: 320px;
+          height: 320px;*/
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -84,8 +84,8 @@
           background-color: #0d2332!important;
         }
         .logo-card-image.mdl-card {
-          width: 670px;
-          height: 320px;
+          /*width: 670px;
+          height: 320px;*/
           background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;
         }
         .logo-card-image > .mdl-card__actions {
@@ -99,8 +99,8 @@
           font-weight: 500;
         }
         .image-card-generic.mdl-card {
-          width: 320px;
-          height: 320px;
+          /*width: 320px;
+          height: 320px;*/
           background: center / cover;
         }
         .image-card-generic > .mdl-card__actions {
@@ -134,9 +134,33 @@
         .mdl-data-table {
           outline: none!important;
         }
+        .mdl-menu-nav-item {
+          padding: 16px 20px !important;
+        }
+        .mdl-menu-nav-icon {
+          margin-right: 32px!important;
+        }
     </style>
 </head>
 <body>
+    <!-- Create the 3 basic card templates -->
+     <template id="basic_card_template">
+       <!-- Start MDL card -->
+       <div class="generic-card-square mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell mdl-card mdl-shadow--2dp">
+         <div class="mdl-card__title mdl-card--expand" id="title_card_header" style="background: center/cover no-repeat #0d2332;">
+           <h2 class="mdl-card__title-text" id="card_title_text">Template</h2>
+         </div>
+         <div class="mdl-card__supporting-text" id="card_desc">
+           Template description
+         </div>
+         <div class="mdl-card__actions mdl-card--border">
+           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#" id="card_action_id">
+             Template action
+           </a>
+         </div>
+       </div>
+       <!-- End card here -->
+     </template>
     <!-- Create any inline JS -->
     <!-- USE RGB VALUES FOR COMPARISON! -->
     <script>
@@ -232,6 +256,17 @@
           loadNewPage("https://xkcd.com/" + xkcdNumber);
         }
       }
+      function createCardSquare(cardTitle, cardPicturePath, CardDesc, cardButtonName, cardButtonHref){
+        currentTab = document.getElementById(document.getElementsByClassName('is-active')[1].id);
+        currentTemplateCard = document.getElementById('basic_card_template');
+        currentTemplateCard.content.getElementById('card_title_text').innerHTML = cardTitle;
+        currentTemplateCard.content.getElementById('title_card_header').setAttribute('style','background-image: url("' + cardPicturePath + '");');
+        currentTemplateCard.content.getElementById('card_desc').innerHTML = CardDesc;
+        currentTemplateCard.content.getElementById('card_action_id').innerHTML = cardButtonName;
+        currentTemplateCard.content.getElementById('card_action_id').href = cardButtonHref;
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+      }
     </script>
     <!-- Create the MDL layout -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -259,38 +294,57 @@
             <span class="mdl-layout-title">Useful Links</span>
             <nav class="mdl-navigation">
                 <!-- Add the menu links -->
-                <a class="mdl-navigation__link" target="_blank" href="https://joincyberdiscovery.com/">Sign Up
-                  <i class="material-icons" style="margin-left: 5px;">person_add</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://joincyberdiscovery.com/">
+                  <i class="material-icons mdl-menu-nav-icon">person_add</i>
+                  Sign Up
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://github.com/CyberDiscovery">GitHub Link
-                  <i class="material-icons" style="margin-left: 5px;">link</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://github.com/CyberDiscovery">
+                  <i class="material-icons mdl-menu-nav-icon">link</i>
+                  GitHub Link
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="http://discord.gg/Kf8n5rT">Discord Invite
-                  <i class="material-icons" style="margin-left: 5px;">card_giftcard</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="http://discord.gg/Kf8n5rT">
+                  <i class="material-icons mdl-menu-nav-icon">card_giftcard</i>
+                  Discord Invite
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">App Download
-                  <i class="material-icons" style="margin-left: 5px;">cloud_download</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">
+                  <i class="material-icons mdl-menu-nav-icon">cloud_download</i>
+                  App Download
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://cyber-discovery-app.firebaseapp.com/">Companion Site
-                  <i class="material-icons" style="margin-left: 5px;">launch</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://cyber-discovery-app.firebaseapp.com/">
+                  <i class="material-icons mdl-menu-nav-icon">launch</i>
+                  Companion Site
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">CyberFirst Courses
-                  <i class="material-icons" style="margin-left: 5px;">vertical_split</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">
+                  <i class="material-icons mdl-menu-nav-icon">vertical_split</i>
+                  CyberFirst Courses
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://www.cybersecuritychallenge.org.uk/">CSC UK
-                  <i class="material-icons" style="margin-left: 5px;">assessment</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://www.cybersecuritychallenge.org.uk/">
+                  <i class="material-icons mdl-menu-nav-icon">assessment</i>
+                  CSC UK
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://www.hackthebox.eu/">Hack The Box
-                  <i class="material-icons" style="margin-left: 5px;">games</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://www.hackthebox.eu/">
+                  <i class="material-icons mdl-menu-nav-icon">games</i>
+                  Hack The Box
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://github.com/VulnHub/ctf-writeups">CTF Writeups
-                  <i class="material-icons" style="margin-left: 5px;">library_books</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://github.com/VulnHub/ctf-writeups">
+                  <i class="material-icons mdl-menu-nav-icon">library_books</i>
+                  CTF Writeups
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://www.redbubble.com/people/TheCultOfLyne/shop">Community Merch
-                  <i class="material-icons" style="margin-left: 5px;">shop</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://www.redbubble.com/people/TheCultOfLyne/shop">
+                  <i class="material-icons mdl-menu-nav-icon">shop</i>
+                  Community Merch
                 </a>
-                <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/cyberdiscuk?lang=en">Twitter Page
-                  <i class="material-icons" style="margin-left: 5px;">share</i>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="https://twitter.com/cyberdiscuk?lang=en">
+                  <i class="material-icons mdl-menu-nav-icon">share</i>
+                  Twitter Page
+                </a>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="./Site_Pages/Disclaimer_Page.html">
+                  <i class="material-icons mdl-menu-nav-icon">chrome_reader_mode</i>
+                  Disclaimer
+                </a>
+                <a class="mdl-navigation__link mdl-menu-nav-item" target="_blank" href="./Site_Pages/LICENSE.txt">
+                  <i class="material-icons mdl-menu-nav-icon">description</i>
+                  View License
                 </a>
             </nav>
         </div>
@@ -1590,19 +1644,11 @@
               <!-- Menu expanded buttons -->
               <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="additional-info-button">
                 <li disabled class="mdl-menu__item mdl-menu__item--full-bleed-divider" id="menu_1">Top secret menu :)</li>
-                <li class="mdl-menu__item" id="menu_2" onclick="loadNewPage('./Site_Pages/Disclaimer_Page.html')">
-                  Disclaimer
-                  <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">chrome_reader_mode</i>
-                </li>
-                <li class="mdl-menu__item" id="menu_3" onclick="loadNewPage('./Site_Pages/LICENSE.txt')">
-                  View License
-                  <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">description</i>
-                </li>
-                <li class="mdl-menu__item" id="menu_4" onclick="loadNewPage(selectRandItem(pageUrlList))">
+                <li class="mdl-menu__item" id="menu_2" onclick="loadNewPage(selectRandItem(pageUrlList))">
                   Install The Kali
                   <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">https</i>
                 </li>
-                <li class="mdl-menu__item" id="menu_5" onclick="loadNewPage('./Site_Pages/About_Page.html')">
+                <li class="mdl-menu__item" id="menu_3" onclick="loadNewPage('./Site_Pages/About_Page.html')">
                   About us
                   <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;">people_outline</i>
                 </li>
