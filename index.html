@@ -66,6 +66,7 @@
           margin-left: 15px;
           margin-top: 15px;
           outline: none!important;
+          min-width: 240px;
         }
         .generic-card-square > .mdl-card__title {
           color: #fff;
@@ -102,6 +103,7 @@
           /*width: 320px;*/
           height: 320px;
           background: center / cover;
+          min-width: 240px;
         }
         .image-card-generic > .mdl-card__actions {
           height: 52px;
@@ -163,8 +165,8 @@
      </template>
      <template id="basic-picture-template">
        <!-- Image Card with text-->
-       <div class="image-card-generic mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp" style="background: center/cover no-repeat #0d2332!important;" id="square_card_background">
-         <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0.6)!important;">
+       <div class="image-card-generic mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp" id="square_card_background">
+         <div id="card_action_style" class="mdl-card__actions">
            <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;font-size: 18px!important;" id="image_card_description">
            </span>
          </div>
@@ -278,10 +280,11 @@
         cardToAppend = currentTemplateCard.content.cloneNode(true);
         currentTab.appendChild(cardToAppend);
       }
-      function createCardImage(cardTab, cardImage, cardDescription) {
+      function createCardImage(cardTab, cardImage, cardStyle, cardDescription) {
         currentTab = document.getElementById(cardTab);
         currentTemplateCard = document.getElementById('basic-picture-template');
-        currentTemplateCard.content.getElementById('square_card_background').setAttribute('style','background-image: url("' + cardImage + '");');
+        currentTemplateCard.content.getElementById('square_card_background').setAttribute('style', cardImage);
+        currentTemplateCard.content.getElementById('card_action_style').setAttribute('style', cardStyle);
         currentTemplateCard.content.getElementById('image_card_description').innerHTML = cardDescription;
         cardToAppend = currentTemplateCard.content.cloneNode(true);
         currentTab.appendChild(cardToAppend);
@@ -371,7 +374,7 @@
           <!-- Home Tab -->
             <section class="mdl-layout__tab-panel is-active" id="Home-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;scroll-behavior: smooth;">
+                  <div class="mdl-grid" style="padding: 0px!important;scroll-behavior: smooth;" id="Home_Tab_Grid">
                     <!-- MDL Wide Logo card -->
                     <div class="logo-card-image mdl-cell mdl-card mdl-shadow--2dp">
                       <div class="mdl-card__title mdl-card--expand"></div>
@@ -379,47 +382,11 @@
                         <span class="logo-card-image__filename">Welcome!</span>
                       </div>
                     </div>
-                    <!-- Start MDL card -->
-                    <div class="image-card-generic mdl-cell mdl-card mdl-shadow--2dp" style="background: #0d2332 center/cover;">
-                      <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0)!important;margin-top: 25px!important;">
-                        <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;font-size: 18px!important;">
-                          The Cyber-Discovery Community is a passionate community of people who are interested in cyber security and technology.
-                          This GitHub pages site aims to showcase some of the projects being undertaken by the members of our community. Please feel free
-                          to check-out some of our awesome, fully open-source projects!
-                        </span>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/CD_Home_Resources.png') center/cover no-repeat #0d2332!important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        What is the HMG Cyber Schools programme? What is Cyber Discovery? Can I take part? Find full details regarding the programme here.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="loadNewPage('https://joincyberdiscovery.com/resources')">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/CD_Ticket_Background.png') bottom 20% right 95% #0d2332!important;">
-                        <h2 class="mdl-card__title-text">Medium</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        View the official Cyber Discovery medium blog.
-                        This is where they post different announcements, challenges and more!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="loadNewPage('https://medium.com/@CyberDiscUK')">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardImage("Home_Tab_Grid", "background: #0d2332 center/cover !important;overflow: auto;", "height: 100%!important;background: rgba(0, 0, 0, 0)!important;", "The Cyber Discovery Community is a passionate community of people who are interested in cyber security and technology. This GitHub pages site aims to showcase some of the projects being undertaken by the members of our community. Please feel free to check-out some of our awesome, fully open-source projects!");
+                      createCardSquare("Home_Tab_Grid", "", "background: url('./Image_Assets/CD_Home_Resources.png') center/cover no-repeat #0d2332!important;", "What is the HMG Cyber Schools programme? What is Cyber Discovery? Can I take part? Find full details regarding the programme here.", "Visit", "https://joincyberdiscovery.com/resources");
+                      createCardSquare("Home_Tab_Grid", "Medium", "background: url('./Image_Assets/CD_Ticket_Background.png') bottom 20% right 95% #0d2332!important;", "View the official Cyber Discovery medium blog. This is where they post different announcements, challenges and more!", "Visit", "https://medium.com/@CyberDiscUK");
+                    </script>
                   </div>
                 </div>
             </section>
@@ -1466,7 +1433,7 @@
                   <!-- Start MDL grid -->
                   <div class="mdl-grid" style="padding: 0px!important;" id="Res_Tab_Grid">
                     <script>
-                      createCardImage("Res_Tab_Grid", "./Image_Assets/CD_Background_Design.png","Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community. These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills. We hope you find them as useful as we did.");
+                      createCardImage("Res_Tab_Grid", "background: url('./Image_Assets/CD_Background_Design.png') center/cover no-repeat #0d2332!important;", "height: 100%!important;background: rgba(0, 0, 0, 0.6)!important;","Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community. These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills. We hope you find them as useful as we did.");
                       createCardSquare("Res_Tab_Grid", "OverTheWire", "background: url('./Image_Assets/OTW_Logo_Background.jpg') bottom 91% right 100% no-repeat #0d2332 !important;", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "Visit", "http://overthewire.org/wargames/");
                       createCardSquare("Res_Tab_Grid", "Replit", "background: url('./Image_Assets/Replit_Logo_Background.png') #0d2332 bottom 40% right 50% no-repeat !important;", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Replit allows you to Code, compile, and run code in 30+ programming languages.", "Visit", "https://repl.it/");
                       createCardSquare("Res_Tab_Grid", "SmashTheStack", "background-image: url('./Image_Assets/STS_Logo_Background.png') !important;", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "Visit", "http://smashthestack.org/wargames.html");
