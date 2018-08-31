@@ -26,8 +26,8 @@
           z-index: 900;
         }
         .Main-card-wide.mdl-card {
-          /*width: 512px;
-          height: 320px;*/
+          /*width: 512px;*/
+          height: 320px;
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -42,8 +42,8 @@
           color: #fff;
         }
         .Main-card-square.mdl-card {
-          /*width: 320px;
-          height: 320px;*/
+          /*width: 320px;*/
+          height: 320px;
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -59,8 +59,8 @@
         }
         /*Define the generic square card style */
         .generic-card-square.mdl-card {
-          /*width: 320px;
-          height: 320px;*/
+          /*width: 320px;*/
+          height: 320px;
           position: relative;
           margin-right: 15px;
           margin-left: 15px;
@@ -84,8 +84,8 @@
           background-color: #0d2332!important;
         }
         .logo-card-image.mdl-card {
-          /*width: 670px;
-          height: 320px;*/
+          /*width: 670px;*/
+          height: 320px;
           background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;
         }
         .logo-card-image > .mdl-card__actions {
@@ -99,8 +99,8 @@
           font-weight: 500;
         }
         .image-card-generic.mdl-card {
-          /*width: 320px;
-          height: 320px;*/
+          /*width: 320px;*/
+          height: 320px;
           background: center / cover;
         }
         .image-card-generic > .mdl-card__actions {
@@ -143,11 +143,11 @@
     </style>
 </head>
 <body>
-    <!-- Create the 3 basic card templates -->
+    <!-- Create the basic card templates -->
      <template id="basic_card_template">
        <!-- Start MDL card -->
-       <div class="generic-card-square mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell mdl-card mdl-shadow--2dp">
-         <div class="mdl-card__title mdl-card--expand" id="title_card_header" style="background: center/cover no-repeat #0d2332;">
+       <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+         <div class="mdl-card__title mdl-card--expand" id="title_card_header">
            <h2 class="mdl-card__title-text" id="card_title_text">Template</h2>
          </div>
          <div class="mdl-card__supporting-text" id="card_desc">
@@ -157,6 +157,16 @@
            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#" id="card_action_id">
              Template action
            </a>
+         </div>
+       </div>
+       <!-- End card here -->
+     </template>
+     <template id="basic-picture-template">
+       <!-- Image Card with text-->
+       <div class="image-card-generic mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp" style="background: center/cover no-repeat #0d2332!important;" id="square_card_background">
+         <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0.6)!important;">
+           <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;font-size: 18px!important;" id="image_card_description">
+           </span>
          </div>
        </div>
        <!-- End card here -->
@@ -256,14 +266,23 @@
           loadNewPage("https://xkcd.com/" + xkcdNumber);
         }
       }
-      function createCardSquare(cardTitle, cardPicturePath, CardDesc, cardButtonName, cardButtonHref){
-        currentTab = document.getElementById(document.getElementsByClassName('is-active')[1].id);
+      function createCardSquare(tabLocation, cardTitle, backgroundStyle, CardDesc, cardButtonName, cardButtonHref){
+        currentTab = document.getElementById(tabLocation);
+        //document.getElementById(document.getElementsByClassName('is-active')[1].id);
         currentTemplateCard = document.getElementById('basic_card_template');
         currentTemplateCard.content.getElementById('card_title_text').innerHTML = cardTitle;
-        currentTemplateCard.content.getElementById('title_card_header').setAttribute('style','background-image: url("' + cardPicturePath + '");');
+        currentTemplateCard.content.getElementById('title_card_header').setAttribute('style', backgroundStyle);
         currentTemplateCard.content.getElementById('card_desc').innerHTML = CardDesc;
         currentTemplateCard.content.getElementById('card_action_id').innerHTML = cardButtonName;
         currentTemplateCard.content.getElementById('card_action_id').href = cardButtonHref;
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+      }
+      function createCardImage(cardTab, cardImage, cardDescription) {
+        currentTab = document.getElementById(cardTab);
+        currentTemplateCard = document.getElementById('basic-picture-template');
+        currentTemplateCard.content.getElementById('square_card_background').setAttribute('style','background-image: url("' + cardImage + '");');
+        currentTemplateCard.content.getElementById('image_card_description').innerHTML = cardDescription;
         cardToAppend = currentTemplateCard.content.cloneNode(true);
         currentTab.appendChild(cardToAppend);
       }
@@ -711,7 +730,6 @@
                         <form onsubmit="checkPwnState()" action="javascript:void(0);">
                           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 65%;margin-left: 5px;">
                             <input class="mdl-textfield__input" type="text" id="Email_Field" style="color: #777777;">
-                            <input type="submit" hidden="true" />
                             <label class="mdl-textfield__label" for="Email_Field">Email...</label>
                           </div>
                           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="checkPwnState()">
@@ -1317,22 +1335,12 @@
             <!-- App Website Tab -->
             <section class="mdl-layout__tab-panel" id="App-Website-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;">
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Firebase_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 140% !important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu),
-                        but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App-Website">
-                          GitHub Page
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                  <div id="App_Website_Grid" class="mdl-grid" style="padding: 0px!important;">
+                    <script>
+                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 140% !important;", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "GitHub Page", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website");
+                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Fire_Base_Hosting.png') top 70% left 92% no-repeat #0d2332;background-size: 140%;", "Production-grade web content hosting from Google. Quickly and easily deploy web apps and static content to a global CDN for free. Go ahead, host your own!", "Visit", "https://firebase.google.com/docs/hosting/");
+                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Tutorials_Begin.jpeg') center/cover no-repeat #0d2332;background-size: 150%;", "Not sure where to start with firebase? Need a helpful, beginner-friendly guide for Android, IOS, Web, C++ and Unity?", "Visit", "https://firebase.google.com/docs/guides/");
+                    </script>
                     <!-- MDL Image card -->
                     <div id="Event_Times_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Event_Times.png') top 0% left 10% no-repeat #0d2332;background-size: 199%;">
                     </div>
@@ -1431,36 +1439,6 @@
                     <!-- End Table here -->
                     <!-- Start MDL card -->
                     <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Fire_Base_Hosting.png') top 70% left 92% no-repeat #0d2332;background-size: 140%;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Production-grade web content hosting from Google. Quickly and easily deploy web apps and static content to a global CDN for free.
-                        Go ahead, host your own!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://firebase.google.com/docs/hosting/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Firebase_Tutorials_Begin.jpeg') center/cover no-repeat #0d2332;background-size: 140%;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Not sure where to start with firebase? Need a helpful,
-                        beginner-friendly guide for Android, IOS, Web, C++ and Unity?
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://firebase.google.com/docs/guides/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
                       <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Responsive_Website_Background.gif') center/cover no-repeat #0d2332;">
                         <h2 class="mdl-card__title-text">Help us!</h2>
                       </div>
@@ -1486,152 +1464,19 @@
             <section class="mdl-layout__tab-panel" id="Resources-tab">
                 <div class="page-content">
                   <!-- Start MDL grid -->
-                  <div class="mdl-grid" style="padding: 0px!important;">
-                    <!-- Image Card -->
-                    <div class="image-card-generic mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/CD_Background_Design.png') center/cover;">
-                      <div class="mdl-card__actions" style="height: 100%!important;background: rgba(0, 0, 0, 0.6)!important;">
-                        <span class="image-card-generic__filename" style="color: rgba(255, 255, 255, 0.85)!important;font-size: 18px!important;">
-                          Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community.
-                          These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills.
-                          We hope you find them as useful as we did.
-                        </span>
-                      </div>
-                    </div>
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/OTW_Logo_Background.jpg') bottom 91% right 100% no-repeat #0d2332 !important;">
-                        <h2 class="mdl-card__title-text">OverTheWire</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="http://overthewire.org/wargames/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Replit_Logo_Background.png') #0d2332 bottom 40% right 50% no-repeat !important;">
-                        <h2 class="mdl-card__title-text">Replit</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        A free, powerful and simple online compiler, IDE, interpreter, and REPL. Replit allows you to Code, compile, and run code in 30+ programming languages.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://repl.it/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/STS_Logo_Background.png')!important;">
-                        <h2 class="mdl-card__title-text">SmashTheStack</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="http://smashthestack.org/wargames.html">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Cybrary_Logo_Background.png')!important;">
-                        <h2 class="mdl-card__title-text">Cybrary</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Online cyber-security training which you can learn anytime, anywhere with open-source, high quality training from experts, industry professionals and leading companies.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.cybrary.it/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Udacity_Logo_Background.jpg')!important;">
-                        <h2 class="mdl-card__title-text">Udacity</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to tech entrepreneurship.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://eu.udacity.com/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Codewars_Logo_Background.png')!important;">
-                        <h2 class="mdl-card__title-text">Codewars</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Where programmers achieve code mastery through solving different challenges in different programming languages, with a vibrant active community.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.codewars.com/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/Codecademy_Logo_Background.png')!important;">
-                        <h2 class="mdl-card__title-text">Codecademy: Learn to code!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        An online platform that offers free interactive programming lessons in various different programming languages. Quite a few of us learned Python here.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.codecademy.com/catalog/subject/all">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Binary_Reversing_Background.gif')!important;">
-                        <h2 class="mdl-card__title-text">Learn RE</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.begin.re/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background-image: url('./Image_Assets/CSC_Logo_Background.png')!important;">
-                        <h2 class="mdl-card__title-text">Cyber-Challenge UK</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        A series of national competitions & programmes, designed to enable more people to become cyber security professionals.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.cybersecuritychallenge.org.uk/">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                  <div class="mdl-grid" style="padding: 0px!important;" id="Res_Tab_Grid">
+                    <script>
+                      createCardImage("Res_Tab_Grid", "./Image_Assets/CD_Background_Design.png","Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community. These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills. We hope you find them as useful as we did.");
+                      createCardSquare("Res_Tab_Grid", "OverTheWire", "background: url('./Image_Assets/OTW_Logo_Background.jpg') bottom 91% right 100% no-repeat #0d2332 !important;", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "Visit", "http://overthewire.org/wargames/");
+                      createCardSquare("Res_Tab_Grid", "Replit", "background: url('./Image_Assets/Replit_Logo_Background.png') #0d2332 bottom 40% right 50% no-repeat !important;", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Replit allows you to Code, compile, and run code in 30+ programming languages.", "Visit", "https://repl.it/");
+                      createCardSquare("Res_Tab_Grid", "SmashTheStack", "background-image: url('./Image_Assets/STS_Logo_Background.png') !important;", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "Visit", "http://smashthestack.org/wargames.html");
+                      createCardSquare("Res_Tab_Grid", "Cybrary", "background-image: url('./Image_Assets/Cybrary_Logo_Background.png') !important;", "Online cyber-security training which you can learn anytime, anywhere with open-source, high quality training from experts, industry professionals and leading companies.", "Visit", "https://www.cybrary.it/");
+                      createCardSquare("Res_Tab_Grid", "Udacity", "background-image: url('./Image_Assets/Udacity_Logo_Background.jpg') !important;", "A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to tech entrepreneurship.", "Visit", "https://eu.udacity.com/");
+                      createCardSquare("Res_Tab_Grid", "Codewars", "background-image: url('./Image_Assets/Codewars_Logo_Background.png') !important;", "Where programmers achieve code mastery through solving different challenges in different programming languages, with a vibrant active community.", "Visit", "https://www.codewars.com/");
+                      createCardSquare("Res_Tab_Grid", "Codecademy: Learn to code!", "background-image: url('./Image_Assets/Codecademy_Logo_Background.png') !important;", "An online platform that offers free interactive programming lessons in various different programming languages. Quite a few of us learned Python here.", "Visit", "https://www.codecademy.com/catalog/subject/all");
+                      createCardSquare("Res_Tab_Grid", "Learn RE", "background: url('./Image_Assets/Binary_Reversing_Background.gif') !important;", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "Visit", "https://www.begin.re/");
+                      createCardSquare("Res_Tab_Grid", "Cyber-Challenge UK", "background-image: url('./Image_Assets/CSC_Logo_Background.png') !important;", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "Visit", "https://www.cybersecuritychallenge.org.uk/");
+                    </script>
                   </div>
                   <!-- End MDL grid -->
                 </div>
