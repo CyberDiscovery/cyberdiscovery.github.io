@@ -87,7 +87,6 @@
         .logo-card-image.mdl-card {
           /*width: 670px;*/
           height: 320px;
-          background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;
         }
         .logo-card-image > .mdl-card__actions {
           height: 52px;
@@ -142,6 +141,10 @@
         .mdl-menu-nav-icon {
           margin-right: 32px!important;
         }
+        .mdl-grid {
+          padding: 0px!important;
+          scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -172,6 +175,15 @@
          </div>
        </div>
        <!-- End card here -->
+     </template>
+     <template id="wide-card-caption">
+       <!-- MDL Wide Logo card -->
+       <div id="wide_card_background" class="logo-card-image mdl-layout--large-screen-only mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+         <div class="mdl-card__title mdl-card--expand"></div>
+         <div class="mdl-card__actions">
+           <span class="logo-card-image__filename" id="card_image_caption">#</span>
+         </div>
+       </div>
      </template>
     <!-- Create any inline JS -->
     <!-- USE RGB VALUES FOR COMPARISON! -->
@@ -289,6 +301,14 @@
         cardToAppend = currentTemplateCard.content.cloneNode(true);
         currentTab.appendChild(cardToAppend);
       }
+      function createCardCaption(captionTab, cardBackground, cardCaption) {
+        currentTab = document.getElementById(captionTab);
+        currentTemplateCard = document.getElementById('wide-card-caption');
+        currentTemplateCard.content.getElementById('wide_card_background').setAttribute('style', cardBackground);
+        currentTemplateCard.content.getElementById('card_image_caption').innerHTML = cardCaption;
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+      }
     </script>
     <!-- Create the MDL layout -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -374,15 +394,9 @@
           <!-- Home Tab -->
             <section class="mdl-layout__tab-panel is-active" id="Home-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;scroll-behavior: smooth;" id="Home_Tab_Grid">
-                    <!-- MDL Wide Logo card -->
-                    <div class="logo-card-image mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand"></div>
-                      <div class="mdl-card__actions">
-                        <span class="logo-card-image__filename">Welcome!</span>
-                      </div>
-                    </div>
+                  <div class="mdl-grid" id="Home_Tab_Grid">
                     <script>
+                      createCardCaption("Home_Tab_Grid", "background: url('./Image_Assets/Initial_Card_Background.jpg') center / cover;", "Welcome!");
                       createCardImage("Home_Tab_Grid", "background: #0d2332 center/cover !important;overflow: auto;", "height: 100%!important;background: rgba(0, 0, 0, 0)!important;", "The Cyber Discovery Community is a passionate community of people who are interested in cyber security and technology. This GitHub pages site aims to showcase some of the projects being undertaken by the members of our community. Please feel free to check-out some of our awesome, fully open-source projects!");
                       createCardSquare("Home_Tab_Grid", "", "background: url('./Image_Assets/CD_Home_Resources.png') center/cover no-repeat #0d2332!important;", "What is the HMG Cyber Schools programme? What is Cyber Discovery? Can I take part? Find full details regarding the programme here.", "Visit", "https://joincyberdiscovery.com/resources");
                       createCardSquare("Home_Tab_Grid", "Medium", "background: url('./Image_Assets/CD_Ticket_Background.png') bottom 20% right 95% #0d2332!important;", "View the official Cyber Discovery medium blog. This is where they post different announcements, challenges and more!", "Visit", "https://medium.com/@CyberDiscUK");
@@ -393,24 +407,10 @@
             <!-- Discord Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Discord-bot-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;">
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Alice_Discord_White.png') center/cover no-repeat #0d2332!important;background-size: 150% !important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features.
-                        For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link
-                        in menu.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot">
-                          GitHub Page
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- MDL Image card -->
+                  <div id="Discord_Bot_Grid" class="mdl-grid">
+                    <script>
+                      createCardSquare("Discord_Bot_Grid", "", "background: url('./Image_Assets/Alice_Discord_White.png') center/cover no-repeat #0d2332!important;background-size: 150% !important;", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "GitHub Page", "https://github.com/CyberDiscovery/cyberdisc-bot");
+                    </script>
                     <!-- MDL Image card -->
                     <div id="Lmgtfy_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Bot_Fun_Quotes.png') top left 70% no-repeat #0d2332;background-size: 120%;">
                     </div>
@@ -732,7 +732,7 @@
             <!-- Android App Tab -->
             <section class="mdl-layout__tab-panel" id="App-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;">
+                  <div class="mdl-grid">
                     <!-- Start MDL card -->
                     <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
                       <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Alice_App_Background.png') center/cover no-repeat #0d2332!important;">
@@ -952,7 +952,7 @@
             <!-- Challenge Master Tab -->
             <section class="mdl-layout__tab-panel" id="Challenge-Master-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;">
+                  <div class="mdl-grid">
                     <!-- Start MDL card -->
                     <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
                       <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Js_Logo_Background.png') center/cover no-repeat #0d2332!important;">
@@ -1167,7 +1167,7 @@
             <!-- Maths Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Maths-Bot-tab">
                 <div class="page-content">
-                  <div class="mdl-grid" style="padding: 0px!important;">
+                  <div class="mdl-grid">
                     <!-- Start MDL card -->
                     <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
                       <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Python_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 100% !important;">
@@ -1302,7 +1302,7 @@
             <!-- App Website Tab -->
             <section class="mdl-layout__tab-panel" id="App-Website-tab">
                 <div class="page-content">
-                  <div id="App_Website_Grid" class="mdl-grid" style="padding: 0px!important;">
+                  <div id="App_Website_Grid" class="mdl-grid">
                     <script>
                       createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 140% !important;", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "GitHub Page", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website");
                       createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Fire_Base_Hosting.png') top 70% left 92% no-repeat #0d2332;background-size: 140%;", "Production-grade web content hosting from Google. Quickly and easily deploy web apps and static content to a global CDN for free. Go ahead, host your own!", "Visit", "https://firebase.google.com/docs/hosting/");
@@ -1431,7 +1431,7 @@
             <section class="mdl-layout__tab-panel" id="Resources-tab">
                 <div class="page-content">
                   <!-- Start MDL grid -->
-                  <div class="mdl-grid" style="padding: 0px!important;" id="Res_Tab_Grid">
+                  <div class="mdl-grid" id="Res_Tab_Grid">
                     <script>
                       createCardImage("Res_Tab_Grid", "background: url('./Image_Assets/CD_Background_Design.png') center/cover no-repeat #0d2332!important;", "height: 100%!important;background: rgba(0, 0, 0, 0.6)!important;","Here are some information security/programming related resources that are endorsed either by Cyber-Discovery or our community. These have helped us, before and during the Cyber-Discovery events and stages, to practice and train our skills. We hope you find them as useful as we did.");
                       createCardSquare("Res_Tab_Grid", "OverTheWire", "background: url('./Image_Assets/OTW_Logo_Background.jpg') bottom 91% right 100% no-repeat #0d2332 !important;", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "Visit", "http://overthewire.org/wargames/");
