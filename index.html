@@ -127,7 +127,8 @@
           background-color: #0d2332!important;
         }
         .table_item_no_padding {
-          padding: 0px!important;
+          padding: 0px !important;
+          padding-right: 5px !important;
         }
         .left_padded_table_item {
           padding-left: 10px!important;
@@ -183,6 +184,83 @@
          <div class="mdl-card__actions">
            <span class="logo-card-image__filename" id="card_image_caption">#</span>
          </div>
+       </div>
+     </template>
+     <template id="contrib_card_end">
+       <!-- Start MDL card -->
+       <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+         <div class="mdl-card__title mdl-card--expand" id="contrib_card_style">
+           <h2 class="mdl-card__title-text">Help us!</h2>
+         </div>
+         <div id="contrib_card_desc" class="mdl-card__supporting-text">
+           #
+         </div>
+         <div class="mdl-card__actions mdl-card--border">
+           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#" id="contrib_fork_id">
+             Fork me
+           </a>
+           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="#" id="contrib_issue_id">
+             View issues
+           </a>
+         </div>
+       </div>
+       <!-- End card here -->
+     </template>
+     <template id="contributors_table">
+       <!-- Start MDL card containing MDL table -->
+       <table class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;height: 320px;margin: 1rem;">
+         <tbody>
+           <tr>
+             <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+               <img id="contrib_watchers" alt="Watchers">
+             </td>
+             <td class="mdl-data-table__cell--non-numeric table_item_no_padding" id="watchers_button_table">
+             </td>
+           </tr>
+           <tr>
+             <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+               <img id="contrib_stars" alt="Stars">
+             </td>
+             <td class="mdl-data-table__cell--non-numeric table_item_no_padding" id="stars_button_table">
+             </td>
+           </tr>
+           <tr>
+             <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+               <img id="contrib_forks" alt="Forks">
+             </td>
+             <td class="mdl-data-table__cell--non-numeric table_item_no_padding" id="fork_button_table">
+             </td>
+           </tr>
+           <tr>
+             <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+               <img id="contrib_license" alt="License">
+             </td>
+             <td class="mdl-data-table__cell--non-numeric table_item_no_padding" id="license_button_table">
+             </td>
+           </tr>
+           <tr>
+             <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
+               <img id="contrib_view" alt="Contributors">
+             </td>
+             <td class="mdl-data-table__cell--non-numeric table_item_no_padding" id="view_button_table">
+             </td>
+           </tr>
+         </tbody>
+       </table>
+       <!-- End Table here -->
+     </template>
+     <template id="Tooltip_Card">
+       <div id="ToolTip_ID" class="generic-card-square mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+       </div>
+       <div id="ToolTip_Str" class="mdl-tooltip mdl-tooltip--large">
+         #
+       </div>
+     </template>
+     <template id="Tooltip_Square_Card">
+       <div id="ToolTip_ID" class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+       </div>
+       <div id="ToolTip_Str" class="mdl-tooltip mdl-tooltip--large">
+         #
        </div>
      </template>
     <!-- Create any inline JS -->
@@ -309,6 +387,68 @@
         cardToAppend = currentTemplateCard.content.cloneNode(true);
         currentTab.appendChild(cardToAppend);
       }
+      function createCardContrib(currTab, CardImage, cardDesc, forkLink, issueLink) {
+        currentTab = document.getElementById(currTab);
+        currentTemplateCard = document.getElementById('contrib_card_end');
+        currentTemplateCard.content.getElementById('contrib_card_style').setAttribute('style', CardImage);
+        currentTemplateCard.content.getElementById('contrib_card_desc').innerHTML = cardDesc;
+        currentTemplateCard.content.getElementById('contrib_fork_id').href = forkLink;
+        currentTemplateCard.content.getElementById('contrib_issue_id').href = issueLink;
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+      }
+      function createCardTable(tabContext, repoString) {
+        currentTab = document.getElementById(tabContext);
+        currentTemplateCard = document.getElementById('contributors_table');
+        var image_list = [
+          "https://img.shields.io/github/watchers/" + repoString + ".svg?style=for-the-badge&label=Watch&colorA=273133",
+          "https://img.shields.io/github/stars/" + repoString + ".svg?style=for-the-badge&label=Stars&colorA=273133",
+          "https://img.shields.io/github/forks/" + repoString + ".svg?style=for-the-badge&label=Fork&colorA=273133",
+          "https://img.shields.io/github/license/" + repoString + ".svg?style=for-the-badge&label=License&colorA=273133",
+          "https://img.shields.io/github/contributors/" + repoString + ".svg?style=for-the-badge&label=Contributors&colorA=273133"
+        ]
+        var url_list = [
+          "https://github.com/" + repoString + "/watchers",
+          "https://github.com/" + repoString + "/stargazers",
+          "https://github.com/" + repoString + "/network/members",
+          "https://github.com/" + repoString + "/blob/master/LICENSE",
+          "https://github.com/" + repoString + "/graphs/contributors"
+        ]
+        currentTemplateCard.content.getElementById('contrib_watchers').src = image_list[0];
+        currentTemplateCard.content.getElementById('contrib_stars').src = image_list[1];
+        currentTemplateCard.content.getElementById('contrib_forks').src = image_list[2];
+        currentTemplateCard.content.getElementById('contrib_license').src = image_list[3];
+        currentTemplateCard.content.getElementById('contrib_view').src = image_list[4];
+        currentTemplateCard.content.getElementById('watchers_button_table').innerHTML = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button\" onclick=\"loadNewPage('" + url_list[0] + "');\">Watchers</button>";
+        currentTemplateCard.content.getElementById('stars_button_table').innerHTML = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button\" onclick=\"loadNewPage('" + url_list[1] + "');\">Stargazers</button>";
+        currentTemplateCard.content.getElementById('fork_button_table').innerHTML = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button\" onclick=\"loadNewPage('" + url_list[2] + "');\">Forks</button>";
+        currentTemplateCard.content.getElementById('license_button_table').innerHTML = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button\" onclick=\"loadNewPage('" + url_list[3] + "');\">License</button>";
+        currentTemplateCard.content.getElementById('view_button_table').innerHTML = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button\" onclick=\"loadNewPage('" + url_list[4] + "');\">View page</button>";
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+      }
+      function guidGenerator() {
+          var S4 = function() {
+             return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+          };
+          return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+      }
+      function createCardTooltip(tooltipCardContext, cardType, cardMainImage, cardTooltip) {
+        var totalCardTypes = [
+          "Tooltip_Card",
+          "Tooltip_Square_Card"
+        ]
+        currentTab = document.getElementById(tooltipCardContext);
+        currentTemplateCard = document.getElementById(totalCardTypes[cardType]);
+        currentTemplateCard.content.getElementById('ToolTip_ID').setAttribute('style', cardMainImage);
+        currentTemplateCard.content.getElementById('ToolTip_Str').innerHTML = cardTooltip;
+        var randomCardID = guidGenerator();
+        currentTemplateCard.content.getElementById('ToolTip_Str').setAttribute('data-mdl-for', randomCardID);
+        currentTemplateCard.content.getElementById('ToolTip_ID').id = randomCardID
+        cardToAppend = currentTemplateCard.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+        currentTemplateCard.content.getElementById(randomCardID).id = "ToolTip_ID";
+      }
     </script>
     <!-- Create the MDL layout -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -410,36 +550,61 @@
                   <div id="Discord_Bot_Grid" class="mdl-grid">
                     <script>
                       createCardSquare("Discord_Bot_Grid", "", "background: url('./Image_Assets/Alice_Discord_White.png') center/cover no-repeat #0d2332!important;background-size: 150% !important;", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "GitHub Page", "https://github.com/CyberDiscovery/cyberdisc-bot");
+                      createCardTooltip("Discord_Bot_Grid", 1, "background: url('./Image_Assets/Bot_Fun_Quotes.png') top left 70% no-repeat #0d2332;background-size: 120% 100%;", 'Quote of the day! <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> message </i>');
                     </script>
-                    <!-- MDL Image card -->
-                    <div id="Lmgtfy_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Bot_Fun_Quotes.png') top left 70% no-repeat #0d2332;background-size: 120%;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Lmgtfy_Card">
-                      Quote of the day! <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> message </i>
-                    </div>
-                    <div id="Bot_Level_Fetcher" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Bot_Level_Getter.png') center/cover no-repeat #0d2332;width: 670px;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Bot_Level_Fetcher">
-                      Fetch level briefing <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> assignment </i>
-                    </div>
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Discord_Dev_Background.png') top 40% left 65% no-repeat #0d2332;background-size: 100%;">
+                      <!-- Start MDL card -->
+                      <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand"  style="background: url('./Image_Assets/Bot_XKCD_Fetcher.png') no-repeat #0d2332;background-size: 100%;">
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                          The Discord bot on our server can fetch an XKCD by number or a random one.
+                          You can try out the same functionality here, leaving the number-field blank for
+                          a random one.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                          <!-- Numeric Textfield with Floating Label -->
+                          <form onsubmit="fetchXkcd()" action="javascript:void(0);">
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 80%;margin-left: 5px;">
+                              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="Number_Field" style="color: #777777;">
+                              <label class="mdl-textfield__label" for="Number_Field">Number...</label>
+                              <span class="mdl-textfield__error">Input is not a number!</span>
+                            </div>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                              <i class="material-icons">arrow_forward</i>
+                            </button>
+                            <div class="mdl-layout-spacer"></div>
+                          </form>
+                        </div>
                       </div>
-                      <div class="mdl-card__supporting-text">
-                        Want to program your own bot? Want to help us program ours,
-                        but don't know much of Discord's API? In that case, the
-                        developer documentation is a great place to start!
+                      <!-- End card here -->
+                      <!-- Start MDL card -->
+                      <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/HIBP_Logo_Background.png') center/cover no-repeat #0d2332!important;">
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                          Our bot can check if you have an account that has been compromised in a data breach,
+                          courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can test it out here!
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                          <!-- Textfield with Floating Label -->
+                          <form onsubmit="checkPwnState()" action="javascript:void(0);">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 80%;margin-left: 5px;">
+                              <input class="mdl-textfield__input" type="text" id="Email_Field" style="color: #777777;">
+                              <label class="mdl-textfield__label" for="Email_Field">Email...</label>
+                            </div>
+                            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                              <i class="material-icons">arrow_forward</i>
+                            </button>
+                          </form>
+                        </div>
                       </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://discordapp.com/developers/docs/intro">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                      <!-- End card here -->
+                    <script>
+                      createCardSquare("Discord_Bot_Grid", "", "background: url('./Image_Assets/Discord_Dev_Background.png') top 40% left 65% no-repeat #0d2332;background-size: 100%;", "Want to program your own bot? Want to help us program ours, but don't know much of Discord's API? In that case, the developer documentation is a great place to start!", "Visit", "https://discordapp.com/developers/docs/intro");
+                    </script>
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -556,6 +721,30 @@
                             <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/AnonGuy"><i class="material-icons" id="Discord_Profile_Ninth">star</i></a>
                           </span>
                         </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars0.githubusercontent.com/u/32690103?s=400&v=4" alt="Thumbnail">
+                            <span>Ben</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=BurnoutBen"><i class="material-icons" id="Discord_Card_Tenth">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/BurnoutBen"><i class="material-icons" id="Discord_Profile_Tenth">star</i></a>
+                          </span>
+                        </div>
+                        <div class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            <img class="material-icons mdl-list__item-avatar" src="https://avatars3.githubusercontent.com/u/7011823?s=400&v=4" alt="Thumbnail">
+                            <span>Sean Bull</span>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/commits?author=bullseye2030"><i class="material-icons" id="Discord_Card_Eleventh">insert_chart_outlined</i></a>
+                          </span>
+                          <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" target="_blank" href="https://github.com/bullseye2030"><i class="material-icons" id="Discord_Profile_Eleventh">star</i></a>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <!-- Tooltips for viewing contribution activity -->
@@ -586,6 +775,12 @@
                     <div class="mdl-tooltip" data-mdl-for="Discord_Card_Ninth">
                       Commit activity
                     </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Tenth">
+                      Commit activity
+                    </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Card_Eleventh">
+                      Commit activity
+                    </div>
                     <!-- Tooltips for viewing profile -->
                     <div class="mdl-tooltip" data-mdl-for="Discord_Profile_First">
                       GitHub profile
@@ -614,166 +809,33 @@
                     <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Ninth">
                       GitHub profile
                     </div>
-                    <!-- Start MDL card containing MDL table -->
-                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
-                      <tbody>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/watchers')">Watchers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/stars/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/stargazers')">Stargazers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/forks/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/network/members')">Forks</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/blob/master/LICENSE')">License</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/cyberdisc-bot.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/graphs/contributors')">View page</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Table here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand"  style="background: url('./Image_Assets/Bot_XKCD_Fetcher.png') no-repeat #0d2332;background-size: 100%;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        The Discord bot on our server can fetch an XKCD by number or a random one.
-                        You can try out the same functionality here, leaving the number-field blank for
-                        a random one.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <!-- Numeric Textfield with Floating Label -->
-                        <form onsubmit="fetchXkcd()" action="javascript:void(0);">
-                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 65%;margin-left: 5px;">
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="Number_Field" style="color: #777777;">
-                            <label class="mdl-textfield__label" for="Number_Field">Number...</label>
-                            <span class="mdl-textfield__error">Input is not a number!</span>
-                          </div>
-                          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="fetchXkcd()">
-                            Fetch
-                          </a>
-                        </form>
-                      </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Tenth">
+                      GitHub profile
                     </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/HIBP_Logo_Background.png') center/cover no-repeat #0d2332!important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Our bot can check if you have an account that has been compromised in a data breach,
-                        courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can test it out here!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <!-- Textfield with Floating Label -->
-                        <form onsubmit="checkPwnState()" action="javascript:void(0);">
-                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 65%;margin-left: 5px;">
-                            <input class="mdl-textfield__input" type="text" id="Email_Field" style="color: #777777;">
-                            <label class="mdl-textfield__label" for="Email_Field">Email...</label>
-                          </div>
-                          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="checkPwnState()">
-                            Check
-                          </a>
-                        </form>
-                      </div>
+                    <div class="mdl-tooltip" data-mdl-for="Discord_Profile_Eleventh">
+                      GitHub profile
                     </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Discord_Bot_Contribute.gif') center/cover no-repeat #0d2332;">
-                        <h2 class="mdl-card__title-text">Help us!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Written a Discord bot in Python3 using asyncio? Want to help improve our bot?
-                        Consider contributing to this project by sending a pull request or helping out with some
-                        of the issues on GitHub!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot">
-                          Fork me
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/cyberdisc-bot/issues">
-                          View issues
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardTable("Discord_Bot_Grid", "CyberDiscovery/cyberdisc-bot");
+                      createCardTooltip("Discord_Bot_Grid", 0, "background: url('./Image_Assets/Bot_Level_Getter.png') center/cover no-repeat #0d2332;", 'Fetch level briefing  <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> assignment </i>');
+                      createCardContrib("Discord_Bot_Grid", "background: url('./Image_Assets/Discord_Bot_Contribute.gif') center/cover no-repeat #0d2332;", "Written a Discord bot in Python3 using asyncio? Want to help improve our bot? Consider contributing to this project by sending a pull request or helping out with some of the issues on GitHub!", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues");
+                    </script>
                   </div>
                 </div>
             </section>
             <!-- Android App Tab -->
             <section class="mdl-layout__tab-panel" id="App-tab">
                 <div class="page-content">
-                  <div class="mdl-grid">
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Alice_App_Background.png') center/cover no-repeat #0d2332!important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App">
-                          GitHub Page
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- MDL Image card -->
-                    <div id="Event_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_First.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Event_Card">
-                      Event information <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> info </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Sound_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Second.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Sound_Card">
-                      Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> equalizer </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Time_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Third.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Time_Card">
-                      Timetables <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event_note </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="Com_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Fourth.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Com_Card">
-                      Medium blog <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>
-                    </div>
-                    <!-- End card here -->
+                  <div id="Android_IOS_App_Grid" class="mdl-grid">
+                    <script>
+                      createCardSquare("Android_IOS_App_Grid", "", "background: url('./Image_Assets/Alice_App_Background.png') center/cover no-repeat #0d2332!important;", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "GitHub Page", "https://github.com/CyberDiscovery/Cyber-Discovery-App");
+                      createCardTooltip("Android_IOS_App_Grid", 1, "background: url('./Image_Assets/App_First.png') center/cover no-repeat #0d2332;", 'Event information <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> info </i>');
+                      createCardTooltip("Android_IOS_App_Grid", 1, "background: url('./Image_Assets/App_Second.png') center/cover no-repeat #0d2332;", 'Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> equalizer </i>');
+                      createCardTooltip("Android_IOS_App_Grid", 1, "background: url('./Image_Assets/App_Third.png') center/cover no-repeat #0d2332;", 'Timetables <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event_note </i>');
+                      createCardTooltip("Android_IOS_App_Grid", 1, "background: url('./Image_Assets/App_Fourth.png') center/cover no-repeat #0d2332;", 'Medium blog <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> people </i>');
+                    </script>
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -877,104 +939,28 @@
                     <div class="mdl-tooltip" data-mdl-for="Profile_Card_Fifth">
                       GitHub profile
                     </div>
-                    <!-- Start MDL card containing MDL table -->
-                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
-                      <tbody>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/watchers')">Watchers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/stargazers')">Stargazers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/network/members')">Forks</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/blob/master/LICENSE')">License</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/graphs/contributors')">View page</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Table here -->
+                    <script>
+                      createCardTable('Android_IOS_App_Grid', 'CyberDiscovery/Cyber-Discovery-App');
+                    </script>
                     <!-- MDL Wide Image card -->
-                    <div class="logo-card-image mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;background-size: 100% 100%;">
+                    <div class="logo-card-image mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Compile_Instructions.png') center/cover no-repeat #0d2332;background-size: 100% 100%;">
                     </div>
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Contribute_Programming.gif') center/cover no-repeat #0d2332;">
-                        <h2 class="mdl-card__title-text">Help us!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Programmed an app in flutter before? Want to lend us some of your awesome app-dev skills?
-                        Consider contributing to this project by sending a pull request or helping out with some
-                        of the issues on GitHub!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App">
-                          Fork me
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App/issues">
-                          View issues
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardContrib("Android_IOS_App_Grid", "background: url('./Image_Assets/Contribute_Programming.gif') center/cover no-repeat #0d2332;", "Programmed an app in flutter before? Want to lend us some of your awesome app-dev skills? Consider contributing to this project by sending a pull request or helping out with some of the issues on GitHub!", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues");
+                    </script>
                   </div>
                 </div>
             </section>
             <!-- Challenge Master Tab -->
             <section class="mdl-layout__tab-panel" id="Challenge-Master-tab">
                 <div class="page-content">
-                  <div class="mdl-grid">
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Js_Logo_Background.png') center/cover no-repeat #0d2332!important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server.
-                        You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Challenge-Master">
-                          GitHub Page
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <div id="Chall_Master_Leaderboard" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/Challenge_Master_Challenges.png') center/cover no-repeat #0d2332;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Chall_Master_Leaderboard">
-                      Variety of challenges <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> toc </i>
-                    </div>
+                  <div id="Challenge_Master_Grid" class="mdl-grid">
+                    <script>
+                      createCardSquare("Challenge_Master_Grid", "", "background: url('./Image_Assets/Js_Logo_Background.png') center/cover no-repeat #0d2332!important;", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "GitHub Page", "https://github.com/CyberDiscovery/Challenge-Master");
+                      createCardTooltip("Challenge_Master_Grid", 1, "background: url('./Image_Assets/Challenge_Master_Challenges.png') center/cover no-repeat #0d2332;", 'Variety of challenges <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> toc </i>');
+                    </script>
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -1095,111 +1081,23 @@
                     <div class="mdl-tooltip" data-mdl-for="CMaster_Tip_Sixth">
                       GitHub profile
                     </div>
-                    <!-- Start MDL card containing MDL table -->
-                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
-                      <tbody>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Challenge-Master.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/watchers')">Watchers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Challenge-Master.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/stargazers')">Stargazers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Challenge-Master.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/network/members')">Forks</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/Challenge-Master.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/blob/master/LICENSE')">License</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Challenge-Master.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/graphs/contributors')">View page</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Table here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Responsive_Resize_Background.gif') center/cover no-repeat #0d2332;">
-                        <h2 class="mdl-card__title-text">Help us!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Are you good with JS? Want to lend us your beautiful CSS skills?
-                        Consider contributing to this project by sending a pull request or helping out with some
-                        of the issues on GitHub!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master">
-                          Fork me
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Challenge-Master/issues">
-                          View issues
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardTable('Challenge_Master_Grid', 'CyberDiscovery/Challenge-Master');
+                      createCardContrib('Challenge_Master_Grid', "background: url('./Image_Assets/Responsive_Resize_Background.gif') center/cover no-repeat #0d2332;", "Are you good with JS? Want to lend us your beautiful CSS skills? Consider contributing to this project by sending a pull request or helping out with some of the issues on GitHub!", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues");
+                    </script>
                   </div>
                 </div>
             </section>
             <!-- Maths Bot Tab -->
             <section class="mdl-layout__tab-panel" id="Maths-Bot-tab">
                 <div class="page-content">
-                  <div class="mdl-grid">
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Python_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 100% !important;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website.
-                        This includes the current weekly challenge, as well as a random problem from their archive.
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Discord-Maths-Bot">
-                          GitHub Page
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Maths_Calc_Background.jpg') top 20% left 40% no-repeat #0d2332;background-size: 100%;">
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Want to solve the Kings College maths challenge, but don't want to host
-                        your own Discord bot? We have you covered!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx">
-                          Visit
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                  <div id="Maths_Bot_Grid" class="mdl-grid">
+                    <script>
+                      createCardSquare("Maths_Bot_Grid", "", "background: url('./Image_Assets/Python_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 100% !important;", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "GitHub Page", "https://github.com/CyberDiscovery/Discord-Maths-Bot");
+                      createCardSquare("Maths_Bot_Grid", "", "background: url('./Image_Assets/Maths_Calc_Background.jpg') top 20% left 40% no-repeat #0d2332;background-size: 100%;", "Want to solve the Kings College maths challenge, but don't want to host your own Discord bot? We have you covered!", "Visit", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx");
+                    </script>
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -1230,72 +1128,10 @@
                     <div class="mdl-tooltip" data-mdl-for="Math_Prof_First">
                       GitHub profile
                     </div>
-                    <!-- Start MDL card containing MDL table -->
-                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
-                      <tbody>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Discord-Maths-Bot.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/watchers')">Watchers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Discord-Maths-Bot.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/stargazers')">Stargazers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Discord-Maths-Bot.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/network/members')">Forks</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/Discord-Maths-Bot.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/blob/master/LICENSE.txt')">License</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Discord-Maths-Bot.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/graphs/contributors')">View page</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Table here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Hello_World_Background.gif') center/cover no-repeat #0d2332;">
-                        <h2 class="mdl-card__title-text">Help us!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Are you good at maths? Or Python3? Or perhaps both?
-                        Consider contributing to this project by sending a pull request or helping out with some
-                        of the issues on GitHub!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot">
-                          Fork me
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Discord-Maths-Bot/issues">
-                          View issues
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardTable('Maths_Bot_Grid', 'CyberDiscovery/Discord-Maths-Bot');
+                      createCardContrib('Maths_Bot_Grid', "background: url('./Image_Assets/Hello_World_Background.gif') center/cover no-repeat #0d2332;", "Are you good at maths? Or Python3? Or perhaps both? Consider contributing to this project by sending a pull request or helping out with some of the issues on GitHub!", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues");
+                    </script>
                   </div>
                 </div>
             </section>
@@ -1305,29 +1141,12 @@
                   <div id="App_Website_Grid" class="mdl-grid">
                     <script>
                       createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Logo_Background.png') center/cover no-repeat #0d2332!important;background-size: 140% !important;", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "GitHub Page", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website");
-                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Fire_Base_Hosting.png') top 70% left 92% no-repeat #0d2332;background-size: 140%;", "Production-grade web content hosting from Google. Quickly and easily deploy web apps and static content to a global CDN for free. Go ahead, host your own!", "Visit", "https://firebase.google.com/docs/hosting/");
-                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Tutorials_Begin.jpeg') center/cover no-repeat #0d2332;background-size: 150%;", "Not sure where to start with firebase? Need a helpful, beginner-friendly guide for Android, IOS, Web, C++ and Unity?", "Visit", "https://firebase.google.com/docs/guides/");
+                      createCardTooltip("App_Website_Grid", 1, "background: url('./Image_Assets/App_Event_Times.png') top 0% left 10% no-repeat #0d2332;background-size: 199%;", 'Countdown <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event </i>');
+                      createCardTooltip("App_Website_Grid", 0, "background: url('./Image_Assets/App_Site_Soundboard.png') center/cover no-repeat #0d2332;width: 670px;", 'Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> library_music </i>');
+                      createCardTooltip("App_Website_Grid", 1, "background: url('./Image_Assets/App_Site_Timetables.png') top 0% left 05% no-repeat #0d2332;background-size: 152%;", 'Event Timings <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> reorder </i>');
                     </script>
-                    <!-- MDL Image card -->
-                    <div id="Event_Times_Card" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Event_Times.png') top 0% left 10% no-repeat #0d2332;background-size: 199%;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="Event_Times_Card">
-                      Countdown <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> event </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="SoundBoard_Site_Tip" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Site_Soundboard.png') center/cover no-repeat #0d2332;width: 670px;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="SoundBoard_Site_Tip">
-                      Soundboard <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> library_music </i>
-                    </div>
-                    <!-- MDL Image card -->
-                    <div id="CountDown_Tip" class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp" style="background: url('./Image_Assets/App_Site_Timetables.png') top 0% left 05% no-repeat #0d2332;background-size: 152%;">
-                    </div>
-                    <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="CountDown_Tip">
-                      Event Timings <i class="material-icons" style="margin-left: 5px;vertical-align: text-bottom!important;"> reorder </i>
-                    </div>
                     <!-- Start MDL card containing MDL list -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
+                    <div class="generic-card-square mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell mdl-card mdl-shadow--2dp scrollable-contrib-list">
                       <div class="mdl-list" style="width: auto!important;">
                         <div class="mdl-list__item mdl-menu__item--full-bleed-divider">
                           <span class="mdl-list__item-primary-content">
@@ -1358,72 +1177,12 @@
                     <div class="mdl-tooltip" data-mdl-for="Site_Profile_First">
                       GitHub profile
                     </div>
-                    <!-- Start MDL card containing MDL table -->
-                    <table class="generic-card-square mdl-data-table mdl-cell mdl-js-data-table mdl-shadow--2dp" style="background: center/cover no-repeat #fff;width: 320px;height: 320px;margin: 1rem;">
-                      <tbody>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/watchers/CyberDiscovery/Cyber-Discovery-App-Website.svg?style=for-the-badge&label=Watch&colorA=273133" alt="Watchers">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/watchers')">Watchers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/stars/CyberDiscovery/Cyber-Discovery-App-Website.svg?style=for-the-badge&label=Stars&colorA=273133" alt="Stars">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/stargazers')">Stargazers</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/forks/CyberDiscovery/Cyber-Discovery-App-Website.svg?style=for-the-badge&label=Fork&colorA=273133" alt="Forks">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/network/members')">Forks</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/license/CyberDiscovery/Cyber-Discovery-App-Website.svg?style=for-the-badge&label=License&colorA=273133" alt="License">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/blob/master/LICENSE.md')">License</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric left_padded_table_item">
-                            <img src="https://img.shields.io/github/contributors/CyberDiscovery/Cyber-Discovery-App-Website.svg?style=for-the-badge&label=Contributors&colorA=273133" alt="Contributors">
-                          </td>
-                          <td class="mdl-data-table__cell--non-numeric table_item_no_padding">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent GitHub_Stats_Button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/graphs/contributors')">View page</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- End Table here -->
-                    <!-- Start MDL card -->
-                    <div class="generic-card-square mdl-cell mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand" style="background: url('./Image_Assets/Responsive_Website_Background.gif') center/cover no-repeat #0d2332;">
-                        <h2 class="mdl-card__title-text">Help us!</h2>
-                      </div>
-                      <div class="mdl-card__supporting-text">
-                        Made a responsive and interactive website on firebase before?
-                        Consider contributing to this project by sending a pull request or helping out with some
-                        of the issues on GitHub!
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website">
-                          Fork me
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" href="https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues">
-                          View issues
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End card here -->
+                    <script>
+                      createCardTable('App_Website_Grid', 'CyberDiscovery/Cyber-Discovery-App-Website');
+                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Fire_Base_Hosting.png') top 70% left 92% no-repeat #0d2332;background-size: 140%;", "Production-grade web content hosting from Google. Quickly and easily deploy web apps and static content to a global CDN for free. Go ahead, host your own!", "Visit", "https://firebase.google.com/docs/hosting/");
+                      createCardSquare("App_Website_Grid", "", "background: url('./Image_Assets/Firebase_Tutorials_Begin.jpeg') center/cover no-repeat #0d2332;background-size: 150%;", "Not sure where to start with firebase? Need a helpful, beginner-friendly guide for Android, IOS, Web, C++ and Unity?", "Visit", "https://firebase.google.com/docs/guides/");
+                      createCardContrib('App_Website_Grid', "background: url('./Image_Assets/Responsive_Website_Background.gif') center/cover no-repeat #0d2332;", "Made a responsive and interactive website on firebase before? Consider contributing to this project by sending a pull request or helping out with some of the issues on GitHub!", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues");
+                    </script>
                   </div>
                 </div>
             </section>
