@@ -1,0 +1,7 @@
+:root {
+  --mdc-theme-primary: #0d2332;
+}
+.mdc-top-app-bar__title {
+  font-weight: 400;
+  letter-spacing: .02em;
+}
