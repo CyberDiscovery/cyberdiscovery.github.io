@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
   <link rel="stylesheet" href="./Site_Code/styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
+  <!-- Normalise can also be had from (but not minified!): https://unpkg.com/normalize.css@latest/normalize.css -->
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <title>Our Projects</title>
+  <title>Cyber Discovery</title>
   <link rel="icon" href="./Image_Assets/favicon.png">
   <style>
   </style>
@@ -18,16 +19,77 @@
   </script>
 </head>
 <body>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">Helpful Links</h3>
+      <h6 class="mdc-drawer__subtitle">Have you registered yet?</h6>
+    </div>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">memory</i>
+          <span class="mdc-list-item__text">Open Source</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.joincyberdiscovery.com/">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
+          <span class="mdc-list-item__text">Sign Up</span>
+        </a>
+        <a class="mdc-list-item" href="https://twitter.com/cyberdiscuk?lang=en">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">share</i>
+          <span class="mdc-list-item__text">View Twitter</span>
+        </a>
+        <a class="mdc-list-item" href="https://medium.com/@CyberDiscUK">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">speaker_notes</i>
+          <span class="mdc-list-item__text">Medium Blog</span>
+        </a>
+        <hr class="mdc-list-divider">
+        <h6 class="mdc-list-group__subheader">Join us!</h6>
+        <a class="mdc-list-item" href="http://discord.gg/Kf8n5rT">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">card_giftcard</i>
+          <span class="mdc-list-item__text">Discord Invite</span>
+        </a>
+        <a class="mdc-list-item" href="https://github.com/CyberDiscovery">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
+          <span class="mdc-list-item__text">GitHub Page</span>
+        </a>
+        <a class="mdc-list-item" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">get_app</i>
+          <span class="mdc-list-item__text">Download App</span>
+        </a>
+        <a class="mdc-list-item" href="https://cyber-discovery-app.firebaseapp.com/">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>
+          <span class="mdc-list-item__text">Companion Site</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.redbubble.com/people/TheCultOfLyne/shop">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">shop</i>
+          <span class="mdc-list-item__text">Merchandise</span>
+        </a>
+        <hr class="mdc-list-divider">
+        <h6 class="mdc-list-group__subheader">Info</h6>
+        <a class="mdc-list-item" href="./Site_Pages/LICENSE.txt">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
+          <span class="mdc-list-item__text">View License</span>
+        </a>
+        <a class="mdc-list-item" href="./Site_Pages/Disclaimer_Page.html">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chrome_reader_mode</i>
+          <span class="mdc-list-item__text">Disclaimer</span>
+        </a>
+        <a class="mdc-list-item" href="./Site_Pages/About_Page.html">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+          <span class="mdc-list-item__text">About Us</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+  <div class="mdc-drawer-scrim"></div>
   <header class="mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-        <span class="mdc-top-app-bar__title">Cyber Discovery Community</span>
+        <span class="mdc-top-app-bar__title">Community Projects</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Code" alt="Code">code</a>
-        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">print</a>
-        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" class="material-icons mdc-top-app-bar__action-item" aria-label="Code" alt="Code">code</a>
       </section>
     </div>
   </header>
@@ -37,7 +99,7 @@
         <div class="mdc-tab-scroller__scroll-content">
           <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">Tab</span>
+              <span class="mdc-tab__text-label">Home</span>
             </span>
             <span class="mdc-tab-indicator mdc-tab-indicator--active">
               <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -46,7 +108,34 @@
           </button>
           <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">Tab</span>
+              <span class="mdc-tab__text-label">Discord Bots</span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">Unoffical App</span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">Websites</span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">Resources</span>
             </span>
             <span class="mdc-tab-indicator">
               <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -55,6 +144,12 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+    <div class="mdc-snackbar__text"></div>
+    <div class="mdc-snackbar__action-wrapper">
+      <button type="button" class="mdc-snackbar__action-button"></button>
     </div>
   </div>
   <script src="./Site_Code/script.js"></script>
