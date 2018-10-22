@@ -50,7 +50,12 @@ var cGFnZVVybExpc3QK = [
   "aHR0cHM6Ly95b3V0dS5iZS96TVZJb0cxaVdBUQ==",
   "aHR0cHM6Ly95b3V0dS5iZS96SnJhZFlVQXZsTQ==",
   "aHR0cHM6Ly9iaXQubHkvMkVCRWRNUA==",
-  "aHR0cHM6Ly95b3V0dS5iZS9VYlFnWGVZX3ppNA=="
+  "aHR0cHM6Ly95b3V0dS5iZS9VYlFnWGVZX3ppNA==",
+  "aHR0cHM6Ly95b3V0dS5iZS9kRE04Y0dyX2pLTQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS9BNS1nZWdIY0ZFOA==",
+  "aHR0cHM6Ly95b3V0dS5iZS9udUNJQTMxTGZJVQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS9aLTlNM1hzU1JZTQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS8wOW0wQjhSUmlFRQ=="
 ];
 function selectRandItem(selectionArray) {
   var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
@@ -91,6 +96,21 @@ window.addEventListener('keydown', handler);
 var cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
 var cdSiteTabBar = oneElementInit(".mdc-tab-bar", mdc.tabBar.MDCTabBar);
 var cdSiteDrawer = oneElementInit(".mdc-drawer", mdc.drawer.MDCDrawer.attachTo);
+var cdSourceMenu = oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
+function openSourceMenu() {
+  cdSourceMenu.open = true;
+}
+function viewPageSourceStackOverFlow(){
+  var source = "<html>";
+  source += document.getElementsByTagName('html')[0].innerHTML;
+  source += "</html>";
+  source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  source = "<pre>"+source+"</pre>";
+  var sourceWindow = window.open('','Source of page','height=800,width=800,scrollbars=1,resizable=1');
+  sourceWindow.document.write(source);
+  sourceWindow.document.close();
+  if(window.focus) sourceWindow.focus();
+}
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
