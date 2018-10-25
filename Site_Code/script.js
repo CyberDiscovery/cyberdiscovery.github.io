@@ -97,6 +97,7 @@ var cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopApp
 var cdSiteTabBar = oneElementInit(".mdc-tab-bar", mdc.tabBar.MDCTabBar);
 var cdSiteDrawer = oneElementInit(".mdc-drawer", mdc.drawer.MDCDrawer.attachTo);
 var cdSourceMenu = oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
+var availableSiteTabs = document.getElementsByClassName("generic-tab-item");
 function openSourceMenu() {
   cdSourceMenu.open = true;
 }
@@ -117,4 +118,10 @@ if(cdSiteTopAppBar !== null) {
     cdSiteDrawer.open = !cdSiteDrawer.open;
   });
 }
+var previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
+cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
+  document.getElementById(availableSiteTabs[event.detail.index].id).classList.remove("layout-tab-item");
+  document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
+  previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
+});
 window.mdc.autoInit();

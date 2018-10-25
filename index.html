@@ -65,6 +65,24 @@
           <span class="mdc-list-item__text">Merchandise</span>
         </a>
         <hr class="mdc-list-divider">
+        <h6 class="mdc-list-group__subheader">Friends of CD</h6>
+        <a class="mdc-list-item" href="https://www.ncsc.gov.uk/information/cyberfirst-courses">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">vertical_split</i>
+          <span class="mdc-list-item__text">CyberFirst Courses</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.cybersecuritychallenge.org.uk/">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">assessment</i>
+          <span class="mdc-list-item__text">Cyber-Challenge UK</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.hackthebox.eu/">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">games</i>
+          <span class="mdc-list-item__text">Hack The Box</span>
+        </a>
+        <a class="mdc-list-item" href="https://ctftime.org/writeups">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
+          <span class="mdc-list-item__text">CTF Writeups</span>
+        </a>
+        <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Info</h6>
         <a class="mdc-list-item" href="./Site_Pages/LICENSE.txt">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
@@ -97,7 +115,7 @@
     <div class="mdc-tab-scroller">
       <div class="mdc-tab-scroller__scroll-area">
         <div class="mdc-tab-scroller__scroll-content">
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="Home-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__text-label">Home</span>
             </span>
@@ -106,7 +124,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Discord-Bot-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__text-label">Discord Bots</span>
             </span>
@@ -115,7 +133,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__text-label">Unoffical App</span>
             </span>
@@ -124,7 +142,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-Website-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__text-label">Websites</span>
             </span>
@@ -133,7 +151,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-Resources-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__text-label">Resources</span>
             </span>
@@ -142,6 +160,66 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="generic-tab-item" id="Tab-1">
+    <div class="layout-grid-desktop mdc-layout-grid" id="Home-Grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
+      </div>
+    </div>
+  </div>
+  <div class="generic-tab-item layout-tab-item" id="Tab-2">
+    <p>Gud</p>
+  </div>
+  <div class="generic-tab-item layout-tab-item" id="Tab-3">
+    <p>Boi</p>
+  </div>
+  <div class="generic-tab-item layout-tab-item" id="Tab-4">
+    <p>very</p>
+  </div>
+  <div class="generic-tab-item layout-tab-item" id="Tab-5">
+    <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card rounded-corner-card">
+            <div class="mdc-card__media mdc-card__media--square otw-card-background">
+            </div>
+            <div class="card-title-text">
+              <h2 class="card-title-headline mdc-typography--headline5">OverTheWire</h2>
+            </div>
+            <div class="card-body-text mdc-typography--body1">
+            Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://overthewire.org/wargames/')">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
         </div>
       </div>
     </div>
