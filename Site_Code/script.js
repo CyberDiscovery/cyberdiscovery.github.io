@@ -112,7 +112,21 @@ function viewPageSourceStackOverFlow(){
   sourceWindow.document.close();
   if(window.focus) sourceWindow.focus();
 }
+function createLinkCard(gridLocation, cardTitle, backgroundClass, cardButtonHref) {
+  currentTab = document.getElementById(gridLocation);
+  /* FINISH THIS!
+  currentTemplateCard = document.getElementById('basic_card_template');
+  currentTemplateCard.content.getElementById('card_title_text').innerHTML = cardTitle;
+  currentTemplateCard.content.getElementById('title_card_header').setAttribute('style', backgroundStyle);
+  currentTemplateCard.content.getElementById('card_desc').innerHTML = CardDesc;
+  currentTemplateCard.content.getElementById('card_action_id').innerHTML = cardButtonName;
+  currentTemplateCard.content.getElementById('card_action_id').href = cardButtonHref;
+  cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  */
+}
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
+initElement("mdc-card__primary-action",mdc.ripple.MDCRipple.attachTo);
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
     cdSiteDrawer.open = !cdSiteDrawer.open;

@@ -37,7 +37,7 @@
   margin: 0;
 }
 .rounded-corner-card {
-  border-radius: 24px 8px;
+  border-radius: 24px 24px;
 }
 .otw-card-background {
   background: url("https://cdn-images-1.medium.com/max/762/1*VLXFzVtGx16B1iH81bcTPw.png") center/cover no-repeat;
