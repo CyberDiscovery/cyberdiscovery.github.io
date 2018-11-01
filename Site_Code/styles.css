@@ -39,7 +39,34 @@
 .rounded-corner-card {
   border-radius: 24px 24px;
 }
+.fixed-size-background-img {
+  height: 250px;
+}
 .otw-card-background {
   background: url("https://cdn-images-1.medium.com/max/762/1*VLXFzVtGx16B1iH81bcTPw.png") center/cover no-repeat;
   height: 250px;
+}
+.replit-card-background {
+  background: url("https://cdn.freebiesupply.com/logos/thumbs/2x/replit-logo.png") #0d2332 center/cover no-repeat;
+}
+.smashthestack-card-background {
+  background: url("../Image_Assets/STS_Logo_Background.png") #0d2332 center/cover no-repeat;
+}
+.cybrary-card-background {
+  background: url("../Image_Assets/Cybrary_Logo_Background.png") #0d2332 center/cover no-repeat;
+}
+.udacity-card-background {
+  background: url("https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2017/10/udacity-logo.png") #0d2332 center/cover no-repeat;
+}
+.codewars-card-background {
+  background: url("../Image_Assets/Codewars_Logo_Background.png") #0d2332 center/cover no-repeat;
+}
+.codecademy-card-background {
+  background: url("https://www.codecademy.com/assets/logo-codecademy-social-abfd8450722d675bddedde689f8af624.png") #0d2332 center/cover no-repeat;
+}
+.reeeeeee-card-background {
+  background: url("../Image_Assets/Binary_Reversing_Background.gif") #0d2332 center/cover no-repeat;
+}
+.cyberchallenge-card-background {
+  background: url("http://www.itsecurityguru.org/wp-content/uploads/2018/05/CSC-logo-white-bg.jpg") #0d2332 center/cover no-repeat;
 }

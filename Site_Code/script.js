@@ -67,6 +67,12 @@ function loadNewPage(pageUrl){
 function setLocation(){
   loadNewPage(selectRandItem(cGFnZVVybExpc3QK));
 }
+function guidGenerator() {
+  var S4 = function() {
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  };
+  return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
+}
 var mdcSnackBar = oneElementInit(".mdc-snackbar", mdc.snackbar.MDCSnackbar.attachTo);
 function displayMDCSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
   var dataObj = {
@@ -112,19 +118,36 @@ function viewPageSourceStackOverFlow(){
   sourceWindow.document.close();
   if(window.focus) sourceWindow.focus();
 }
-function createLinkCard(gridLocation, cardTitle, backgroundClass, cardButtonHref) {
+function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClass, cardButtonHref) {
   currentTab = document.getElementById(gridLocation);
-  /* FINISH THIS!
-  currentTemplateCard = document.getElementById('basic_card_template');
-  currentTemplateCard.content.getElementById('card_title_text').innerHTML = cardTitle;
-  currentTemplateCard.content.getElementById('title_card_header').setAttribute('style', backgroundStyle);
-  currentTemplateCard.content.getElementById('card_desc').innerHTML = CardDesc;
-  currentTemplateCard.content.getElementById('card_action_id').innerHTML = cardButtonName;
-  currentTemplateCard.content.getElementById('card_action_id').href = cardButtonHref;
+  currentTemplateCard = document.getElementById('cd-card-square--single-link');
+  currentTemplateCard.content.getElementById('cd-card-title--headline').innerHTML = cardTitle;
+  currentTemplateCard.content.getElementById('cd-card-background--image').classList.add(backgroundClass);
+  currentTemplateCard.content.getElementById('cd-card-body--text').innerHTML = cardDescription;
+  var cdRippleLinkSection = currentTemplateCard.content.getElementById('cd-card-float-body--click');
+  var cdFabButtonSection = currentTemplateCard.content.getElementById('cd-card-action-button--click');
+  cdRippleLinkSection.id = guidGenerator();
+  cdFabButtonSection.id = guidGenerator();
+  cdRippleLinkSection.onclick = function() {window.open(cardButtonHref, '_blank');};
+  cdFabButtonSection.onclick = function() {window.open(cardButtonHref, '_blank');};
+  //currentTemplateCard.content.getElementById('cd-card-float-body--click').onclick = function() {window.open(cardButtonHref, '_blank');};
+  //currentTemplateCard.content.getElementById('cd-card-action-button--click').onclick = function() {window.open(cardButtonHref, '_blank');};
+
+  //FIX LINKS AND ONLICK FUNCTIONALITY BROKEN!
   cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
-  */
+  cdRippleLinkSection.id = "cd-card-float-body--click";
+  cdFabButtonSection.id = "cd-card-action-button--click";
 }
+createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
+createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/");
+createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
+createLinkCard("Grid-Tab-5", "Cybrary", "Online cyber-security training which you can learn anytime, anywhere with open-source, high quality training from top professionals and companies.", "cybrary-card-background", "https://www.cybrary.it/");
+createLinkCard("Grid-Tab-5", "Udacity", "A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to business tech.", "udacity-card-background", "https://eu.udacity.com/");
+createLinkCard("Grid-Tab-5", "Codewars", "Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.", "codewars-card-background", "https://www.codewars.com/");
+createLinkCard("Grid-Tab-5", "Codecademy", "An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.", "codecademy-card-background", "https://www.codewars.com/");
+createLinkCard("Grid-Tab-5", "Learn RE", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "reeeeeee-card-background", "https://www.begin.re/");
+createLinkCard("Grid-Tab-5", "Cyber-Challenge UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 initElement("mdc-card__primary-action",mdc.ripple.MDCRipple.attachTo);
 if(cdSiteTopAppBar !== null) {
