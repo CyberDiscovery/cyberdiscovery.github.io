@@ -153,6 +153,7 @@ createLinkCard("Grid-Tab-5", "Codecademy", "An online platform that offers free 
 createLinkCard("Grid-Tab-5", "Learn RE", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "reeeeeee-card-background", "https://www.begin.re/");
 createLinkCard("Grid-Tab-5", "Cyber-Challenge UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
 createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
+createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 if (screen.width > 839) {
   initElement("mdc-card__primary-action",mdc.ripple.MDCRipple.attachTo);

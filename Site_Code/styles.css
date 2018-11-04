@@ -43,7 +43,7 @@
   height: 250px;
 }
 .otw-card-background {
-  background: url("../Image_Assets/Resources_Tab/otw_card_image.png") center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") center/cover no-repeat;
   height: 250px;
 }
 .replit-card-background {
@@ -71,5 +71,12 @@
   background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.png") #0d2332 center/cover no-repeat;
 }
 .picoctf-card-background {
-  background: url("../Image_Assets/Resources_Tab/picoctf_card_image.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/picoctf_card_image.png") #0d2332 center/cover no-repeat;
+}
+.endorsement-card-background {
+  background: url("../Image_Assets/Resources_Tab/endorsement_card_image.png") #0d2332 center/cover no-repeat;
+}
+.hak5-card-background {
+  background: url("../Image_Assets/Resources_Tab/hak5_card_image.png") #9e9e9e center/cover no-repeat;
+  background-size: 100%;
 }
