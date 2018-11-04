@@ -22,9 +22,9 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
-.mdc-card:hover {
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)!important;
+  .mdc-card:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)!important;
+  }
 }
 .card-body-text {
   padding: 0 1rem 8px;
@@ -43,30 +43,33 @@
   height: 250px;
 }
 .otw-card-background {
-  background: url("https://cdn-images-1.medium.com/max/762/1*VLXFzVtGx16B1iH81bcTPw.png") center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/otw_card_image.png") center/cover no-repeat;
   height: 250px;
 }
 .replit-card-background {
-  background: url("https://cdn.freebiesupply.com/logos/thumbs/2x/replit-logo.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #0d2332 center/cover no-repeat;
 }
 .smashthestack-card-background {
-  background: url("../Image_Assets/STS_Logo_Background.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #0d2332 center/cover no-repeat;
 }
 .cybrary-card-background {
-  background: url("../Image_Assets/Cybrary_Logo_Background.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/Cybrary_card_image.png") #0d2332 center/cover no-repeat;
 }
 .udacity-card-background {
-  background: url("https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2017/10/udacity-logo.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/udacity_card_image.png") #0d2332 center/cover no-repeat;
 }
 .codewars-card-background {
-  background: url("../Image_Assets/Codewars_Logo_Background.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/codewars_card_image2.png") #0d2332 center/cover no-repeat;
 }
 .codecademy-card-background {
-  background: url("https://www.codecademy.com/assets/logo-codecademy-social-abfd8450722d675bddedde689f8af624.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/codecademy_card_image.png") #0d2332 center/cover no-repeat;
 }
 .reeeeeee-card-background {
-  background: url("../Image_Assets/Binary_Reversing_Background.gif") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/binary_card_image.gif") #0d2332 center/cover no-repeat;
 }
 .cyberchallenge-card-background {
-  background: url("http://www.itsecurityguru.org/wp-content/uploads/2018/05/CSC-logo-white-bg.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.png") #0d2332 center/cover no-repeat;
+}
+.picoctf-card-background {
+  background: url("../Image_Assets/Resources_Tab/picoctf_card_image.jpg") #0d2332 center/cover no-repeat;
 }
