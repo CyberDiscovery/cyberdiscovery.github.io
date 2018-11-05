@@ -50,7 +50,7 @@
   background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #0d2332 center/cover no-repeat;
 }
 .smashthestack-card-background {
-  background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #0d2332 center/cover no-repeat;
+  background: url("https://io.netgarage.org/intro/png/blasty2.png") #0d2332 center/cover no-repeat;
 }
 .cybrary-card-background {
   background: url("../Image_Assets/Resources_Tab/Cybrary_card_image.png") #0d2332 center/cover no-repeat;
@@ -65,7 +65,8 @@
   background: url("../Image_Assets/Resources_Tab/codecademy_card_image.png") #0d2332 center/cover no-repeat;
 }
 .reeeeeee-card-background {
-  background: url("../Image_Assets/Resources_Tab/binary_card_image.gif") #0d2332 center/cover no-repeat;
+  background: url("https://lkft.linaro.org/assets/images/x86.png") #b1361e center/cover no-repeat;
+  background-size: 104%;
 }
 .cyberchallenge-card-background {
   background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.png") #0d2332 center/cover no-repeat;
