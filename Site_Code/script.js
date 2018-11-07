@@ -143,6 +143,20 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   cdFabButtonSection.id = "cd-card-action-button--click";
   currentTemplateCard.content.getElementById('cd-card-background--image').classList.remove(backgroundClass);
 }
+function fixSiteCardVerticalHeight() {
+  var pageElementsArray = []
+  var pageTextItemsBody = document.getElementsByClassName("card-body-text");
+  for (var i = 0; i < pageTextItemsBody.length; i++){
+    pageElementsArray.push(pageTextItemsBody[i].offsetHeight);
+  }
+  var maxPageDescBodyText = Math.max.apply(null, pageElementsArray) - 8;
+  maxPageDescBodyText = maxPageDescBodyText.toString();
+  for (var i = 0; i < pageTextItemsBody.length; i++) {
+    if (pageTextItemsBody[i].offsetHeight <  maxPageDescBodyText) {
+      pageTextItemsBody[i].style.height = maxPageDescBodyText + "px";
+    }
+  }
+}
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
@@ -169,5 +183,6 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
   document.getElementById(availableSiteTabs[event.detail.index].id).classList.remove("layout-tab-item");
   document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
+  fixSiteCardVerticalHeight();
 });
 window.mdc.autoInit();
