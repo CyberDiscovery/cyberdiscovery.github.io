@@ -183,6 +183,8 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
   document.getElementById(availableSiteTabs[event.detail.index].id).classList.remove("layout-tab-item");
   document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
-  fixSiteCardVerticalHeight();
+  if (availableSiteTabs[event.detail.index].id == "Tab-5") {
+    fixSiteCardVerticalHeight();
+  }
 });
 window.mdc.autoInit();
