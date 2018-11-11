@@ -143,9 +143,9 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   cdFabButtonSection.id = "cd-card-action-button--click";
   currentTemplateCard.content.getElementById('cd-card-background--image').classList.remove(backgroundClass);
 }
-function fixSiteCardVerticalHeight() {
+function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = []
-  var pageTextItemsBody = document.getElementsByClassName("card-body-text");
+  var pageTextItemsBody = document.getElementsByClassName(classElementsName);
   for (var i = 0; i < pageTextItemsBody.length; i++){
     pageElementsArray.push(pageTextItemsBody[i].offsetHeight);
   }
@@ -157,6 +157,36 @@ function fixSiteCardVerticalHeight() {
     }
   }
 }
+function fixAllTabsCardsVerticalHeight(){
+  switch (previousActiveTab) {
+    case 0:
+      var introImageCard = document.getElementsByClassName("homepage_welcome_card")[0].offsetHeight;
+      if (introImageCard > 0){
+        document.getElementsByClassName("page-intro-text-card")[0].style.height = introImageCard.toString() + "px";
+        if (screen.width > 1000) {
+          document.getElementsByClassName("cdsurvivalguide-main-card--object")[0].style.height = introImageCard.toString() + "px";
+          document.getElementsByClassName("hmgprogramme-main-card--object")[0].style.height = introImageCard.toString() + "px";
+        } else {
+          document.getElementsByClassName("cdsurvivalguide-main-card--object")[0].style.height = "inherit";
+          document.getElementsByClassName("hmgprogramme-main-card--object")[0].style.height = "inherit";
+        }
+      }
+      break;
+    case 1:
+      break;
+    case 2:
+      break;
+    case 3:
+      break;
+    case 4:
+      fixGridCardVerticalHeightAlign("card-body-text");
+      break;
+    default:
+      console.log("Nope", previousActiveTab);
+      break;
+  }
+}
+//FINISH THIS!!
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
@@ -165,10 +195,13 @@ createLinkCard("Grid-Tab-5", "Udacity", "A vast, comprehensive list of free onli
 createLinkCard("Grid-Tab-5", "Codewars", "Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.", "codewars-card-background", "https://www.codewars.com/");
 createLinkCard("Grid-Tab-5", "Codecademy", "An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.", "codecademy-card-background", "https://www.codecademy.com/catalog/subject/all");
 createLinkCard("Grid-Tab-5", "Learn RE", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "reeeeeee-card-background", "https://www.begin.re/");
-createLinkCard("Grid-Tab-5", "Cyber-Challenge UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
+createLinkCard("Grid-Tab-5", "CSC UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
 createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
 createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
 createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber-security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
+window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
+window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
+window.onload = fixAllTabsCardsVerticalHeight;
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 if (screen.width > 839) {
   initElement("mdc-card__primary-action",mdc.ripple.MDCRipple.attachTo);
@@ -183,8 +216,9 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
   document.getElementById(availableSiteTabs[event.detail.index].id).classList.remove("layout-tab-item");
   document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
-  if (availableSiteTabs[event.detail.index].id == "Tab-5") {
-    fixSiteCardVerticalHeight();
-  }
+  fixAllTabsCardsVerticalHeight();
 });
 window.mdc.autoInit();
+if (screen.width > 840 && screen.width <= 1199) {
+  mdcSnackBar.show({message: "This site may not appear correctly, please consider rotating your device.", actionText: "OK", actionHandler: function() {}, timeout: 5000, multiline: true});
+}

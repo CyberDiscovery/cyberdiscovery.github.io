@@ -69,7 +69,7 @@
   background-size: 104%;
 }
 .cyberchallenge-card-background {
-  background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.jpg") #0d2332 center/cover no-repeat;
 }
 .picoctf-card-background {
   background: url("../Image_Assets/Resources_Tab/picoctf_card_image.png") #0d2332 center/cover no-repeat;
@@ -83,4 +83,46 @@
 }
 .futurelearn-card-background {
   background: url("../Image_Assets/Resources_Tab/futurelearn_card_image.png") #0d2332 center/cover no-repeat;
+}
+.homepage_welcome_card {
+  background: url('../Image_Assets/Home_Tab/home_card_image.png') center / cover no-repeat;
+  height: auto;
+  max-height: 400px;
+}
+.cdsurvivalguide_home_card {
+  background: url('../Image_Assets/Home_Tab/cdsurvivalguide_card_image.png') center / cover no-repeat;
+  max-height: 160px;
+}
+.hmg_programme_home_card {
+  background: url('../Image_Assets/CD_Home_Resources.png') center / cover no-repeat;
+  max-height: 160px;
+}
+.hmg_programme_body_text {
+  padding: 1rem 1rem 8px;
+  height: auto;
+  font-size: 18px !important;
+  color: rgba(0,0,0,.54);
+  overflow: auto;
+}
+.homepage_introduction_card {
+  height: auto;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 18px !important;
+  padding: 0 1rem 8px;
+}
+.cdsurvivalguide_body_text {
+  padding: 0 1rem 8px;
+  height: auto;
+  font-size: 18px !important;
+  color: rgba(0,0,0,.54);
+  overflow: auto;
+}
+.page-intro-text-card {
+  height: auto;
+  background-color: #0d2332;
+  color: rgba(255, 255, 255, 0.85) !important;
+  overflow: auto;
+}
+.mdc-card__primary-action {
+  height: inherit;
 }
