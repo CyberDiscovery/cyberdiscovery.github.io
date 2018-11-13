@@ -43,8 +43,7 @@
   height: 250px;
 }
 .otw-card-background {
-  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") center/cover no-repeat;
-  height: 250px;
+  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") #0d2332 center/cover no-repeat;
 }
 .replit-card-background {
   background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #0d2332 center/cover no-repeat;
@@ -85,17 +84,21 @@
   background: url("../Image_Assets/Resources_Tab/futurelearn_card_image.png") #0d2332 center/cover no-repeat;
 }
 .homepage_welcome_card {
-  background: url('../Image_Assets/Home_Tab/home_card_image.png') center / cover no-repeat;
+  background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
   height: auto;
   max-height: 400px;
 }
 .cdsurvivalguide_home_card {
-  background: url('../Image_Assets/Home_Tab/cdsurvivalguide_card_image.png') center / cover no-repeat;
+  background: url('../Image_Assets/Home_Tab/cdsurvivalguide_card_image.png') #0d2332 center / cover no-repeat;
   max-height: 160px;
 }
 .hmg_programme_home_card {
-  background: url('../Image_Assets/CD_Home_Resources.png') center / cover no-repeat;
+  background: url('../Image_Assets/CD_Home_Resources.png') #0d2332 center / cover no-repeat;
   max-height: 160px;
+}
+.home_discord_invite_card {
+  background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
+  background-size: 100%;
 }
 .hmg_programme_body_text {
   padding: 1rem 1rem 8px;
