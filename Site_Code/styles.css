@@ -100,6 +100,9 @@
   background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
   background-size: 100%;
 }
+.home_assess_card_reminder {
+  background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #d38e00 center/cover no-repeat;
+}
 .hmg_programme_body_text {
   padding: 1rem 1rem 8px;
   height: auto;
