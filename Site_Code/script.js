@@ -75,6 +75,10 @@ function guidGenerator() {
   return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
 }
 var mdcSnackBar = oneElementInit(".mdc-snackbar", mdc.snackbar.MDCSnackbar.attachTo);
+var mdcCardMenu = oneElementInit(".mdc-menu", mdc.menu.MDCMenu.attachTo);
+//Testing menu
+document.querySelector('.mdc-card__action--icon').addEventListener('click', () => mdcCardMenu.open = !mdcCardMenu.open);
+initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 function displayMDCSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
   var dataObj = {
     message: snackbarText,
