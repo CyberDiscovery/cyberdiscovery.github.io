@@ -146,3 +146,7 @@
 	max-height: none!important;
 	max-width: none!important;
 }
+.mdc-menu.mdc-menu-surface {
+  overflow: hidden;
+}
+/*.mdc-ripple-upgraded--background-focused {}*/
