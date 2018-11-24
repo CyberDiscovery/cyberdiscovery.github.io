@@ -75,18 +75,8 @@ function guidGenerator() {
   return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
 }
 var mdcSnackBar = oneElementInit(".mdc-snackbar", mdc.snackbar.MDCSnackbar.attachTo);
-var mdcCardMenu = oneElementInit(".mdc-menu", mdc.menu.MDCMenu.attachTo);
-//Testing menu
-document.querySelector('.mdc-card__action--icon').addEventListener('click', () => mdcCardMenu.open = !mdcCardMenu.open);
-initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 function displayMDCSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
-  var dataObj = {
-    message: snackbarText,
-    actionText: dismissText,
-    timeout: timeoutValue,
-    actionHandler: dismissFunction
-  };
-  mdcSnackBar.show(dataObj);
+  mdcSnackBar.show({message: snackbarText, actionText: dismissText, timeout: timeoutValue, actionHandler: dismissFunction});
 }
 function MTMzNyBLb25hbWkgQ29kZSAK(callback) {
   var kkeys = [];
@@ -147,6 +137,66 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   cdFabButtonSection.id = "cd-card-action-button--click";
   currentTemplateCard.content.getElementById('cd-card-background--image').classList.remove(backgroundClass);
 }
+function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionText, cardBackgroundClass, cardRepoHref, cardRepoForks, cardRepoIssues, cardMenuText, cardMenuHref) {
+  var someRandomGUID = guidGenerator();
+  currentTab = document.getElementById(cardGridLocation);
+  currentTemplateCard = document.getElementsByTagName("template")[1];
+  currentTemplateCard.content.getElementById('project-card-body--text').innerHTML = cardDescriptionText;
+  currentTemplateCard.content.getElementById('project-card-body--text').id = someRandomGUID + "-body--text";
+  currentTemplateCard.content.getElementById('project-card-title--headline').innerHTML = cardMainTitle;
+  currentTemplateCard.content.getElementById('project-card-title--headline').id = someRandomGUID + "-title--text";
+  currentTemplateCard.content.getElementById('project-card-background--image').classList.add(cardBackgroundClass);
+  currentTemplateCard.content.getElementById('project-card-background--image').id = someRandomGUID + "-bg--class";
+  currentTemplateCard.content.getElementById('project-card-action-item--name').innerHTML = cardMenuText;
+  currentTemplateCard.content.getElementById('project-card-action-item--name').id = someRandomGUID + "-menu--text";
+  var cardPrimaryButton = currentTemplateCard.content.getElementById('project-card-action-button--click');
+  var cardFloatClick = currentTemplateCard.content.getElementById('project-card-generic-body--click');
+  var cardForkButton = currentTemplateCard.content.getElementById('project-card-fork-item--href');
+  var cardissueButton = currentTemplateCard.content.getElementById('project-card-issues-item--href');
+  var cardLastItem = currentTemplateCard.content.getElementById('project-card-action-item--href');
+  var cardMenuActivation = currentTemplateCard.content.getElementById('project-card-more-option--menu');
+  var cardMenuButtonActivation = currentTemplateCard.content.getElementById('project-card-menu-activation--button');
+  cardPrimaryButton.id = someRandomGUID + "-button--href";
+  cardFloatClick.id = someRandomGUID + "-float--click";
+  cardForkButton.id = someRandomGUID + "-fork--href";
+  cardissueButton.id = someRandomGUID + "-issues--href";
+  cardLastItem.id = someRandomGUID + "-menuitem--href";
+  cardMenuActivation.id = someRandomGUID + "-menu--activation";
+  cardMenuButtonActivation.id = someRandomGUID + "-menubtn--activation";
+  cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  var currentCardMenu = mdc.menu.MDCMenu.attachTo(document.getElementById(cardMenuActivation.id));
+  document.getElementById(cardMenuButtonActivation.id).addEventListener('click', () => currentCardMenu.open = !currentCardMenu.open);
+  document.getElementById(cardPrimaryButton.id).addEventListener('click', function (evt) {
+    window.open(cardRepoHref, '_blank');
+  });
+  if (screen.width > 839) {
+    document.getElementById(cardFloatClick.id).addEventListener('click', function (evt) {
+      window.open(cardRepoHref, '_blank');
+    });
+  }
+  document.getElementById(cardForkButton.id).addEventListener('click', function (evt) {
+    window.open(cardRepoForks, '_blank');
+  });
+  document.getElementById(cardissueButton.id).addEventListener('click', function (evt) {
+    window.open(cardRepoIssues, '_blank');
+  });
+  document.getElementById(cardLastItem.id).addEventListener('click', function (evt) {
+    window.open(cardMenuHref, '_blank');
+  });
+  cardPrimaryButton.id = 'project-card-action-button--click';
+  cardFloatClick.id = 'project-card-generic-body--click';
+  cardForkButton.id = 'project-card-fork-item--href';
+  cardissueButton.id = 'project-card-issues-item--href';
+  cardLastItem.id = 'project-card-action-item--href';
+  cardMenuActivation.id = 'project-card-more-option--menu';
+  cardMenuButtonActivation.id = 'project-card-menu-activation--button';
+  currentTemplateCard.content.getElementById(someRandomGUID + "-body--text").id = 'project-card-body--text';
+  currentTemplateCard.content.getElementById(someRandomGUID + "-title--text").id = 'project-card-title--headline';
+  currentTemplateCard.content.getElementById(someRandomGUID + "-bg--class").id = 'project-card-background--image';
+  currentTemplateCard.content.getElementById(someRandomGUID + "-menu--text").id = 'project-card-action-item--name';
+  currentTemplateCard.content.getElementById('project-card-background--image').classList.remove(cardBackgroundClass);
+}
 function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = []
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
@@ -203,6 +253,11 @@ createLinkCard("Grid-Tab-5", "CSC UK", "A series of national competitions & prog
 createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
 createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
 createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber-security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
+createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT");
+/*
+createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx");
+*/
+initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
 window.onload = fixAllTabsCardsVerticalHeight;

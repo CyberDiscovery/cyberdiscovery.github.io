@@ -44,36 +44,36 @@
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
       <div class="mdc-card rounded-corner-card">
         <div class="mdc-card__primary-action" id="project-card-generic-body--click">
-          <div class="mdc-card__media mdc-card__media--square" id="project-card-background--image">
+          <div class="mdc-card__media mdc-card__media--square project_card_fixed_background" id="project-card-background--image">
           </div>
           <div class="card-title-text">
-            <h2 class="card-title-headline mdc-typography--headline5">Card Title</h2>
+            <h2 class="card-title-headline mdc-typography--headline5" id="project-card-title--headline">Card Title</h2>
           </div>
-          <div class="mdc-typography--body1 generic-card-text">
+          <div class="mdc-typography--body1 generic-card-text" id="project-card-body--text">
             Card Body Text
           </div>
         </div>
         <div class="mdc-card__actions">
           <div class="mdc-card__action-buttons">
-            <button class="mdc-button mdc-card__action mdc-card__action--button">GitHub</button>
+            <button class="mdc-button mdc-card__action mdc-card__action--button" id="project-card-action-button--click">GitHub</button>
           </div>
           <div class="mdc-card__action-icons">
             <div class="mdc-menu-surface--anchor">
-              <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+              <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options" id="project-card-menu-activation--button">more_vert</button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1" id="project-card-more-option--menu">
                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                  <li class="mdc-list-item" role="menuitem">
+                  <li class="mdc-list-item" role="menuitem" id="project-card-fork-item--href">
                     <span class="mdc-list-item__text">
                       Fork Project
                     </span>
                   </li>
-                  <li class="mdc-list-item" role="menuitem">
+                  <li class="mdc-list-item" role="menuitem" id="project-card-issues-item--href">
                     <span class="mdc-list-item__text">
                       View Issues
                     </span>
                   </li>
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__text">
+                  <li class="mdc-list-item" role="menuitem" id="project-card-action-item--href">
+                    <span class="mdc-list-item__text" id="project-card-action-item--name">
                       Action item
                     </span>
                   </li>
@@ -340,77 +340,20 @@
   <div class="generic-tab-item layout-tab-item" id="Tab-2">
     <div class="layout-grid-desktop mdc-layout-grid" id="Bots-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-2">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <div class="mdc-card rounded-corner-card">
-            <div class="mdc-card__primary-action">
-              <div class="mdc-card__media mdc-card__media--square" style="background: url('../Image_Assets/Discord_Bot_Contribute.gif') #2a2d32 center/cover no-repeat; background-size: 110%; height: 250px !important;">
-              </div>
-              <div class="card-title-text">
-                <h2 class="card-title-headline mdc-typography--headline5">Cyber Discovery Bot</h2>
-              </div>
-              <div class="mdc-typography--body1 generic-card-text">
-                The bot for the Cyber Discovery Community Discord Server.
-                It has a variety of important and fun features.
-                For example, it can get the briefing for a CyberStart Game Level,
-                or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">GitHub</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem">
-                        <span class="mdc-list-item__text">
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem">
-                        <span class="mdc-list-item__text">
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem">
-                        <span class="mdc-list-item__text">
-                          Server Invite
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <ul class="mdc-image-list my-image-list" style="height: 100%;">
-            <li class="mdc-image-list__item" style="width: 100%;">
-              <div class="mdc-image-list__image-aspect-container" style="height: 90%;">
-                <img class="mdc-image-list__image" src="../Image_Assets/Bot_Fun_Quotes.png">
-              </div>
-              <div class="mdc-image-list__supporting">
-                <span class="mdc-image-list__label">
-                  Quote showcase
-                  <i class="material-icons" style="margin-left: 5px;vertical-align: middle !important;"> message </i>
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet"></div>
       </div>
     </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-3">
-    <p>Boi</p>
+    <div class="layout-grid-desktop mdc-layout-grid" id="App-Grid">
+      <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
+      </div>
+    </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-4">
-    <p>very</p>
+    <div class="layout-grid-desktop mdc-layout-grid" id="Websites-Grid">
+      <div class="mdc-layout-grid__inner" id="Grid-Tab-4">
+      </div>
+    </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-5">
     <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
