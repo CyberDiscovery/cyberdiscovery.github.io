@@ -137,7 +137,7 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   cdFabButtonSection.id = "cd-card-action-button--click";
   currentTemplateCard.content.getElementById('cd-card-background--image').classList.remove(backgroundClass);
 }
-function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionText, cardBackgroundClass, cardRepoHref, cardRepoForks, cardRepoIssues, cardMenuText, cardMenuHref) {
+function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionText, cardBackgroundClass, cardRepoHref, cardRepoForks, cardRepoIssues, cardMenuText, cardMenuHref, cardMenuFinalIcon) {
   var someRandomGUID = guidGenerator();
   currentTab = document.getElementById(cardGridLocation);
   currentTemplateCard = document.getElementsByTagName("template")[1];
@@ -147,7 +147,7 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   currentTemplateCard.content.getElementById('project-card-title--headline').id = someRandomGUID + "-title--text";
   currentTemplateCard.content.getElementById('project-card-background--image').classList.add(cardBackgroundClass);
   currentTemplateCard.content.getElementById('project-card-background--image').id = someRandomGUID + "-bg--class";
-  currentTemplateCard.content.getElementById('project-card-action-item--name').innerHTML = cardMenuText;
+  currentTemplateCard.content.getElementById('project-card-action-item--name').innerHTML = '<i class="material-icons project_card_menu_icons">' + cardMenuFinalIcon + '</i>' + cardMenuText;
   currentTemplateCard.content.getElementById('project-card-action-item--name').id = someRandomGUID + "-menu--text";
   var cardPrimaryButton = currentTemplateCard.content.getElementById('project-card-action-button--click');
   var cardFloatClick = currentTemplateCard.content.getElementById('project-card-generic-body--click');
@@ -253,10 +253,9 @@ createLinkCard("Grid-Tab-5", "CSC UK", "A series of national competitions & prog
 createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
 createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
 createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber-security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
-createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT");
-/*
-createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx");
-*/
+createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT", "exit_to_app");
+createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
+
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);

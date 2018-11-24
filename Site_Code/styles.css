@@ -157,11 +157,24 @@
   background-size: 110%;
 }
 .cdmathsbot_card_image {
-  background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.png') #2a2d32 center/cover no-repeat;
-  background-size: 110%;
+  background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
+  background-size: 90%;
 }
 /*
 :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item.mdc-ripple-upgraded--background-focused::before {
   opacity: 0!important;
 }
 */
+.project_card_menu_icons {
+  vertical-align: bottom;
+  padding-right: 5px;
+}
+.discord_swatch_hover_liftoff {
+  position: relative;
+  top: 0;
+}
+.discord_swatch_hover_liftoff:hover {
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,.4);
+  transition: all .12s ease-out;
+  top: -4px;
+}
