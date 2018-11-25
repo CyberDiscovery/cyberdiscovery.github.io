@@ -178,3 +178,19 @@
   transition: all .12s ease-out;
   top: -4px;
 }
+.hibp_project_card_image {
+  background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
+}
+.hibp_search_card_image {
+  background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
+}
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #0d2332 !important;
+}
+.textfield_card_primary_btn {
+  color: #0d2332 !important;
+  margin-left: 5px;
+}
+.textfield_span_width_full {
+  width: 100%;
+}

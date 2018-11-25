@@ -114,8 +114,8 @@ function viewPageSourceStackOverFlow(){
   if(window.focus) sourceWindow.focus();
 }
 function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClass, cardButtonHref) {
-  currentTab = document.getElementById(gridLocation);
-  currentTemplateCard = document.getElementsByTagName("template")[0];
+  var currentTab = document.getElementById(gridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[0];
   currentTemplateCard.content.getElementById('cd-card-title--headline').innerHTML = cardTitle;
   currentTemplateCard.content.getElementById('cd-card-background--image').classList.add(backgroundClass);
   currentTemplateCard.content.getElementById('cd-card-body--text').innerHTML = cardDescription;
@@ -123,7 +123,7 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   var cdFabButtonSection = currentTemplateCard.content.getElementById('cd-card-action-button--click');
   cdRippleLinkSection.id = guidGenerator();
   cdFabButtonSection.id = guidGenerator();
-  cardToAppend = currentTemplateCard.content.cloneNode(true);
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
   if (screen.width > 839) {
     document.getElementById(cdRippleLinkSection.id).addEventListener('click', function (evt) {
@@ -139,8 +139,8 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
 }
 function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionText, cardBackgroundClass, cardRepoHref, cardRepoForks, cardRepoIssues, cardMenuText, cardMenuHref, cardMenuFinalIcon) {
   var someRandomGUID = guidGenerator();
-  currentTab = document.getElementById(cardGridLocation);
-  currentTemplateCard = document.getElementsByTagName("template")[1];
+  var currentTab = document.getElementById(cardGridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[1];
   currentTemplateCard.content.getElementById('project-card-body--text').innerHTML = cardDescriptionText;
   currentTemplateCard.content.getElementById('project-card-body--text').id = someRandomGUID + "-body--text";
   currentTemplateCard.content.getElementById('project-card-title--headline').innerHTML = cardMainTitle;
@@ -163,7 +163,7 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   cardLastItem.id = someRandomGUID + "-menuitem--href";
   cardMenuActivation.id = someRandomGUID + "-menu--activation";
   cardMenuButtonActivation.id = someRandomGUID + "-menubtn--activation";
-  cardToAppend = currentTemplateCard.content.cloneNode(true);
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
   var currentCardMenu = mdc.menu.MDCMenu.attachTo(document.getElementById(cardMenuActivation.id));
   document.getElementById(cardMenuButtonActivation.id).addEventListener('click', () => currentCardMenu.open = !currentCardMenu.open);
@@ -197,17 +197,70 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   currentTemplateCard.content.getElementById(someRandomGUID + "-menu--text").id = 'project-card-action-item--name';
   currentTemplateCard.content.getElementById('project-card-background--image').classList.remove(cardBackgroundClass);
 }
+//Testing
+function someThingToCall(lel){
+  console.log("Looks like it worked, huh!", lel);
+}
+function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyText, cardImageClass, entryValueName, functionToCall) {
+  var textFieldCardID = guidGenerator();
+  var currentTab = document.getElementById(cardGridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[2];
+  currentTemplateCard.content.getElementById('textfield-card-title--headline').innerHTML = cardMainTitle;
+  currentTemplateCard.content.getElementById('textfield-card-title--headline').id = textFieldCardID + "-title--text";
+  currentTemplateCard.content.getElementById('textfield-card-body--text').innerHTML = cardBodyText;
+  currentTemplateCard.content.getElementById('textfield-card-body--text').id = textFieldCardID + "-body--text";
+  currentTemplateCard.content.getElementById('textfield-card-background--image').classList.add(cardImageClass);
+  currentTemplateCard.content.getElementById('textfield-card-background--image').id = textFieldCardID + "-background--class";
+  currentTemplateCard.content.getElementById('textfield-card-for--attr').id = textFieldCardID + "-float-label--attr";
+  currentTemplateCard.content.getElementById('textfield-card-label-field--text').innerHTML = entryValueName;
+  currentTemplateCard.content.getElementById('textfield-card-label-field--text').setAttribute("for", textFieldCardID + "-float-label--attr");
+  currentTemplateCard.content.getElementById('textfield-card-label-field--text').id = textFieldCardID + "-entry-name--value";
+  currentTemplateCard.content.getElementById('textfield-card-input--text').classList.add("mainclass-" + textFieldCardID);
+  currentTemplateCard.content.getElementById('textfield-card-input--text').id = textFieldCardID + "-main-value--class";
+  var cardFloatClick = currentTemplateCard.content.getElementById('textfield-card-float--click');
+  var cardPrimaryIconButton = currentTemplateCard.content.getElementById('textfield-card-action--button');
+  cardFloatClick.id = textFieldCardID + "-float--click";
+  cardPrimaryIconButton.id = textFieldCardID + "-primary-btn--click";
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  var currentTextFieldInputBox = oneElementInit("." + "mainclass-" + textFieldCardID, mdc.textField.MDCTextField);
+  if (screen.width > 839) {
+    document.getElementById(cardFloatClick.id).addEventListener('click', function () {
+      functionToCall(currentTextFieldInputBox.value);
+    });
+  }
+  document.getElementById(cardPrimaryIconButton.id).addEventListener('click', function () {
+    functionToCall(currentTextFieldInputBox.value);
+  });
+  document.getElementById(textFieldCardID + "-float-label--attr").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById(textFieldCardID + "-primary-btn--click").click();
+    }
+  });
+  currentTemplateCard.content.getElementById(textFieldCardID + "-title--text").id = 'textfield-card-title--headline';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-body--text").id = 'textfield-card-body--text';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-background--class").id = 'textfield-card-background--image';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-float-label--attr").id = 'textfield-card-for--attr';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-entry-name--value").id = 'textfield-card-label-field--text';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-float--click").id = 'textfield-card-float--click';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-primary-btn--click").id = 'textfield-card-action--button';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-main-value--class").id = 'textfield-card-input--text';
+  currentTemplateCard.content.getElementById('textfield-card-background--image').classList.remove(cardImageClass);
+  currentTemplateCard.content.getElementById('textfield-card-input--text').classList.remove("mainclass-" + textFieldCardID);
+}
+//FIX TEXTFIELD WIDTH: 100% CAUSING OVERFLOW AND EXTRA WHITESPACE!
 function fixGridCardVerticalHeightAlign(classElementsName) {
-  var pageElementsArray = []
+  var pageElementsArray = [];
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
   for (var i = 0; i < pageTextItemsBody.length; i++){
     pageElementsArray.push(pageTextItemsBody[i].offsetHeight);
   }
   var maxPageDescBodyText = Math.max.apply(null, pageElementsArray) - 8;
   maxPageDescBodyText = maxPageDescBodyText.toString();
-  for (var i = 0; i < pageTextItemsBody.length; i++) {
-    if (pageTextItemsBody[i].offsetHeight <  maxPageDescBodyText) {
-      pageTextItemsBody[i].style.height = maxPageDescBodyText + "px";
+  for (var q = 0; q < pageTextItemsBody.length; q++) {
+    if (pageTextItemsBody[q].offsetHeight <  maxPageDescBodyText) {
+      pageTextItemsBody[q].style.height = maxPageDescBodyText + "px";
     }
   }
 }
@@ -255,8 +308,10 @@ createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec top
 createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber-security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
 createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT", "exit_to_app");
 createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
-
+//Testing
+createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can try it out here!", "hibp_search_card_image", "Email", someThingToCall);
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
+var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
 window.onload = fixAllTabsCardsVerticalHeight;
@@ -279,4 +334,6 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
 window.mdc.autoInit();
 if (screen.width > 840 && screen.width <= 1199) {
   mdcSnackBar.show({message: "This site may not appear correctly, please consider rotating your device.", actionText: "OK", actionHandler: function() {}, timeout: 5000, multiline: true});
+} else if (screen.width >= 2560 || screen.height >= 1440) {
+  mdcSnackBar.show({message: "This site may not appear correctly on large or high DPI displays. We're working on it, we promise!", actionText: "OK", actionHandler: function() {}, timeout: 5500, multiline: true});
 }
