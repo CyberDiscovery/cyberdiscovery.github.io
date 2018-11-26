@@ -223,8 +223,26 @@ function fetchXkcd(xkcdNumber){
     loadNewPage("https://xkcd.com/" + xkcdNumber);
   }
 }
-function someThingToCall(lel){
-  console.log("Looks like it worked, huh!", lel);
+function getTabMaxCardHeight(elementOffsetPadding){
+  var cardArray = [];
+  for (var i = 0; i < document.querySelectorAll('.mdc-card').length; i++) {
+      if (document.querySelectorAll('.mdc-card')[i].offsetParent !== null) {
+        cardArray.push(document.querySelectorAll('.mdc-card')[i].offsetHeight);
+      }
+    }
+  return (Math.max.apply(null, cardArray) - elementOffsetPadding);
+}
+/*
+<li class="mdc-list-item rounded_corner_list_item">
+  <span class="mdc-list-item__text">Single-line item</span>
+</li>
+*/
+function fixContribListShownOnDom() {
+  for (var i = 1; i < document.querySelectorAll('.mdc-list').length; i++) {
+    if (document.querySelectorAll('.mdc-list')[i].offsetParent !== null) {
+      return (document.querySelectorAll('.mdc-list')[i]);
+    }
+  }
 }
 function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyText, cardImageClass, entryValueName, functionToCall) {
   var textFieldCardID = guidGenerator();
@@ -285,6 +303,29 @@ function createImageCardMain(cardGridLocation, uniqueImageClass, cardTooltipLike
   currentTemplateCard.content.getElementById(imageCardID + "-image--main").id = 'generic-image-demo--class';
   currentTemplateCard.content.getElementById('generic-image-demo--class').classList.remove(uniqueImageClass);
 }
+function createGitHubContribCard(cardGridLocation, projectRepoName) {
+  var initialTableHeading = '<li class="mdc-list-item rounded_corner_list_item"><span class="mdc-list-item__text generic_class_center_item mdc-typography--headline5">Project Contributors</span></li>';
+  var contribCardID = guidGenerator();
+  var currentTab = document.getElementById(cardGridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[4];
+  currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML += initialTableHeading;
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var repoJSONContributors = (JSON.parse(xhr.responseText));
+      for (var contrib = 0; contrib < repoJSONContributors.length; contrib++) {
+        currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML += '<li class="mdc-list-item rounded_corner_list_item"><span class="mdc-list-item__text contrib_list_item_contributor">' + '<img class="mdc-list-item__graphic contrib_list_pfp_logo"' + 'onclick="loadNewPage(\'' + repoJSONContributors[contrib].html_url + '\')"' +  'title="View Profile" src="' + repoJSONContributors[contrib].avatar_url + '">' + repoJSONContributors[contrib].login + '</span>' + '<span class="mdc-list-item__meta material-icons contrib_list_secondary_logo" title="View Commits" aria-hidden="true" ' + 'onclick="loadNewPage(\'' + 'https://github.com/CyberDiscovery/' + projectRepoName + '/commits?author=' + repoJSONContributors[contrib].login + '\')"' + '>insert_chart_outlined</span>' + '</li>'
+      }
+      currentTemplateCard.content.getElementById('contrib-list-card-main--list').id = contribCardID + "-card--genlist";
+      var cardToAppend = currentTemplateCard.content.cloneNode(true);
+      currentTab.appendChild(cardToAppend);
+      currentTemplateCard.content.getElementById(contribCardID + "-card--genlist").id = 'contrib-list-card-main--list';
+      currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML = '';
+    }
+  }
+  xhr.open('GET', 'https://api.github.com/repos/CyberDiscovery/' + projectRepoName + '/contributors', true);
+  xhr.send(null);
+}
 function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = [];
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
@@ -315,6 +356,10 @@ function fixAllTabsCardsVerticalHeight(){
       }
       break;
     case 1:
+      var pageContribList = fixContribListShownOnDom();
+      pageContribList.style.display = "none";
+      pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
+      pageContribList.style.display = "";
       break;
     case 2:
       break;
@@ -346,6 +391,7 @@ createImageCardMain("Grid-Tab-2", "discord_bot_quote_card_image", "Get a random 
 createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can try it out here!", "hibp_search_card_image", "Email", checkPwnState);
 createProjectTextFieldCards("Grid-Tab-2", "Fetch XKCD", "Our bot can can fetch an XKCD by number or a random one. You can try out the same functionality here, leaving the number-field blank for a random one.", "xkcd_card_fetch_image", "Number", fetchXkcd);
 createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
+createGitHubContribCard("Grid-Tab-2", "cyberdisc-bot");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
