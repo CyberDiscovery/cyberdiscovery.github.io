@@ -197,7 +197,32 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   currentTemplateCard.content.getElementById(someRandomGUID + "-menu--text").id = 'project-card-action-item--name';
   currentTemplateCard.content.getElementById('project-card-background--image').classList.remove(cardBackgroundClass);
 }
-//Testing
+function checkPwnState(searchEmailAddr) {
+  if (searchEmailAddr == null || searchEmailAddr == "") {
+    displayMDCSnackbar("Email field is empty!", "OK", function(){}, 3000);
+  } else {
+    var checkHIBPRequest = new XMLHttpRequest();
+    checkHIBPRequest.onreadystatechange = function() {
+      if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 200) {
+        breachCount = JSON.parse(checkHIBPRequest.responseText).length;
+        mdcSnackBar.show({message: "Oh no — pwned on " + breachCount + " breached sites!", actionText: "More", actionHandler: function(){loadNewPage('https://haveibeenpwned.com/account/' + searchEmailAddr)}, timeout: 5000});
+      } else if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 404) {
+        displayMDCSnackbar("Good news — no pwnage found!", "Cool", function(){}, 3000);
+      } else if (checkHIBPRequest.readyState == 4) {
+        displayMDCSnackbar("Rate limit exceeded, please try again later.", "Oops!", function(){loadNewPage(window.atob("aHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvREx6eHJ6RkN5T3M/Y29udHJvbHM9MCZzaG93aW5mbz0wJnJlbD0wJmF1dG9wbGF5PTEmbG9vcD0xJnN0YXJ0PTA="))}, 3000);
+      }
+    };
+    checkHIBPRequest.open("GET", "https://haveibeenpwned.com/api/v2/breachedaccount/" + searchEmailAddr + "?truncateResponse=true&includeUnverified=true", true);
+    checkHIBPRequest.send(null);
+  }
+}
+function fetchXkcd(xkcdNumber){
+  if (xkcdNumber == null || xkcdNumber == "") {
+    loadNewPage("https://c.xkcd.com/random/comic/");
+  } else {
+    loadNewPage("https://xkcd.com/" + xkcdNumber);
+  }
+}
 function someThingToCall(lel){
   console.log("Looks like it worked, huh!", lel);
 }
@@ -211,6 +236,7 @@ function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyTe
   currentTemplateCard.content.getElementById('textfield-card-body--text').id = textFieldCardID + "-body--text";
   currentTemplateCard.content.getElementById('textfield-card-background--image').classList.add(cardImageClass);
   currentTemplateCard.content.getElementById('textfield-card-background--image').id = textFieldCardID + "-background--class";
+  currentTemplateCard.content.getElementById('textfield-card-form-submit--field').id = textFieldCardID + "-form-field--submit";
   currentTemplateCard.content.getElementById('textfield-card-for--attr').id = textFieldCardID + "-float-label--attr";
   currentTemplateCard.content.getElementById('textfield-card-label-field--text').innerHTML = entryValueName;
   currentTemplateCard.content.getElementById('textfield-card-label-field--text').setAttribute("for", textFieldCardID + "-float-label--attr");
@@ -232,15 +258,13 @@ function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyTe
   document.getElementById(cardPrimaryIconButton.id).addEventListener('click', function () {
     functionToCall(currentTextFieldInputBox.value);
   });
-  document.getElementById(textFieldCardID + "-float-label--attr").addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-      document.getElementById(textFieldCardID + "-primary-btn--click").click();
-    }
+  document.getElementById(textFieldCardID + "-form-field--submit").addEventListener("submit", function(evt) {
+    functionToCall(currentTextFieldInputBox.value);
   });
   currentTemplateCard.content.getElementById(textFieldCardID + "-title--text").id = 'textfield-card-title--headline';
   currentTemplateCard.content.getElementById(textFieldCardID + "-body--text").id = 'textfield-card-body--text';
   currentTemplateCard.content.getElementById(textFieldCardID + "-background--class").id = 'textfield-card-background--image';
+  currentTemplateCard.content.getElementById(textFieldCardID + "-form-field--submit").id = 'textfield-card-form-submit--field';
   currentTemplateCard.content.getElementById(textFieldCardID + "-float-label--attr").id = 'textfield-card-for--attr';
   currentTemplateCard.content.getElementById(textFieldCardID + "-entry-name--value").id = 'textfield-card-label-field--text';
   currentTemplateCard.content.getElementById(textFieldCardID + "-float--click").id = 'textfield-card-float--click';
@@ -249,7 +273,18 @@ function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyTe
   currentTemplateCard.content.getElementById('textfield-card-background--image').classList.remove(cardImageClass);
   currentTemplateCard.content.getElementById('textfield-card-input--text').classList.remove("mainclass-" + textFieldCardID);
 }
-//FIX TEXTFIELD WIDTH: 100% CAUSING OVERFLOW AND EXTRA WHITESPACE!
+function createImageCardMain(cardGridLocation, uniqueImageClass, cardTooltipLikeTitle) {
+  var imageCardID = guidGenerator();
+  var currentTab = document.getElementById(cardGridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[3];
+  currentTemplateCard.content.getElementById('generic-image-demo--class').classList.add(uniqueImageClass);
+  currentTemplateCard.content.getElementById('generic-image-demo--class').title = cardTooltipLikeTitle;
+  currentTemplateCard.content.getElementById('generic-image-demo--class').id = imageCardID + "-image--main";
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  currentTemplateCard.content.getElementById(imageCardID + "-image--main").id = 'generic-image-demo--class';
+  currentTemplateCard.content.getElementById('generic-image-demo--class').classList.remove(uniqueImageClass);
+}
 function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = [];
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
@@ -307,9 +342,10 @@ createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where part
 createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
 createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber-security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
 createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level, or fetch an XKCD. Relax, take a load off and join our discord. Invite link in menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT", "exit_to_app");
+createImageCardMain("Grid-Tab-2", "discord_bot_quote_card_image", "Get a random quote!");
+createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can try it out here!", "hibp_search_card_image", "Email", checkPwnState);
+createProjectTextFieldCards("Grid-Tab-2", "Fetch XKCD", "Our bot can can fetch an XKCD by number or a random one. You can try out the same functionality here, leaving the number-field blank for a random one.", "xkcd_card_fetch_image", "Number", fetchXkcd);
 createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
-//Testing
-createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can try it out here!", "hibp_search_card_image", "Email", someThingToCall);
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);

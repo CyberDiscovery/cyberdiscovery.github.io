@@ -184,6 +184,9 @@
 .hibp_search_card_image {
   background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
 }
+.xkcd_card_fetch_image {
+  background: url('../Image_Assets/Discord_Tab/Bot_XKCD_Fetcher.png') #c76a6a center / cover no-repeat;
+}
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: #0d2332 !important;
 }
@@ -193,4 +196,14 @@
 }
 .textfield_span_width_full {
   width: 100%;
+}
+.mdc-text-field::before, .mdc-text-field::after {
+  width: auto !important;
+}
+.generic_image_card_main {
+  height: 100%;
+}
+.discord_bot_quote_card_image {
+  background: url('../Image_Assets/Discord_Tab/Discord_Quote_Image_Card.png') #36393f center/cover no-repeat;
+  background-size: 100%;
 }
