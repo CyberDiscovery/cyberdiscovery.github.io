@@ -41,6 +41,7 @@
 }
 .rounded-corner-card {
   border-radius: 24px 24px;
+  height: 100%;
 }
 .fixed-size-background-img {
   height: 250px;
@@ -185,7 +186,8 @@
   background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
 }
 .xkcd_card_fetch_image {
-  background: url('../Image_Assets/Discord_Tab/Bot_XKCD_Fetcher.png') #c76a6a center / cover no-repeat;
+  background: url('../Image_Assets/Discord_Tab/Bot_XKCD_Fetcher.png') #36393f center / cover no-repeat;
+  background-size: 100%;
 }
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: #0d2332 !important;
