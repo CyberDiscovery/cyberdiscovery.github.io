@@ -102,7 +102,7 @@
 }
 .home_discord_invite_card {
   background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
-  background-size: 100%;
+  background-size: 95%;
 }
 .home_assess_card_reminder {
   background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #d38e00 center/cover no-repeat;
@@ -237,4 +237,26 @@
 }
 .contrib_list_secondary_logo:hover {
   cursor: pointer;
+}
+.form_padding_adjustments {
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
+.cdapp_main_card_image {
+  background: url('../Image_Assets/Alice_App_Background.png') #2a2d32 center/cover no-repeat;
+}
+.App_Screenshot_Card_One {
+  background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #0d2332 center/cover no-repeat;
+}
+.App_Screenshot_Card_Two {
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #0d2332 center/cover no-repeat;
+}
+.App_Screenshot_Card_Three {
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Three.jpg") #0d2332 center/cover no-repeat;
+}
+.App_Screenshot_Card_Four {
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #0d2332 center/cover no-repeat;
+}
+.App_Screenshot_Card_Five {
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #0d2332 center/cover no-repeat;
 }
