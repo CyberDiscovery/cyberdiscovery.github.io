@@ -243,7 +243,7 @@
   padding-left: 3px;
 }
 .cdapp_main_card_image {
-  background: url('../Image_Assets/Alice_App_Background.png') #2a2d32 center/cover no-repeat;
+  background: url('../Image_Assets/App_Tab/App_Main_CD_LOGO.png') #2a2d32 center/cover no-repeat;
 }
 .App_Screenshot_Card_One {
   background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #0d2332 center/cover no-repeat;
@@ -262,4 +262,12 @@
 }
 .App_Contrib_Flutter_Docs {
   background: url("../Image_Assets/App_Tab/Contribute_Programming.gif") #283247 center/cover no-repeat;
+}
+.cdsurvivalguide_site_card_image {
+  background: url("../Image_Assets/Websites_Tab/cdsurvivial_guide_card_image.png") #5d6c58 center/cover no-repeat;
+  background-size: auto 100%;
+}
+.challenge_master_site_card_image {
+  background: url("../Image_Assets/Js_Logo_Background.png") #0d2332 center/cover no-repeat;
+  background-size: auto 100%;
 }

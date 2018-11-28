@@ -365,6 +365,7 @@ function fixAllTabsCardsVerticalHeight(){
       alignContribTableSize();
       break;
     case 2:
+      alignContribTableSize();
       break;
     case 3:
       break;
@@ -403,6 +404,9 @@ createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Four", "Soundboard!");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Five", "Medium Blog");
 createLinkCard("Grid-Tab-3", "Flutter Docs", "Looking to get the Community Developer role? Programmed an Android App before? Want to help us create an awesome app for future students? Consider contributing to this project! Start with the Flutter Documentation!", "App_Contrib_Flutter_Docs", "https://flutter.io/docs");
 createGitHubContribCard("Grid-Tab-3", "Cyber-Discovery-App");
+//Troubleshooting
+createProjectMainCard("Grid-Tab-4", "Survival Guide", "We've written quite a few websites relating to the programme, one of these sites is a survival manual, where new students can read blog posts and tips on how to prepare for the challenges.", "cdsurvivalguide_site_card_image", "https://github.com/CyberDiscovery/cdsurvivalguide", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide", "https://github.com/CyberDiscovery/cdsurvivalguide/issues", "View Site", "https://cdsurvivalguide.netlify.com/", "arrow_right_alt");
+createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Visit Site", "https://challenge-master.firebaseapp.com/", "arrow_right_alt");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
