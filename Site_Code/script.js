@@ -304,14 +304,14 @@ function createImageCardMain(cardGridLocation, uniqueImageClass, cardTooltipLike
   currentTemplateCard.content.getElementById('generic-image-demo--class').classList.remove(uniqueImageClass);
 }
 function createGitHubContribCard(cardGridLocation, projectRepoName) {
-  var initialTableHeading = '<li class="mdc-list-item rounded_corner_list_item"><span class="mdc-list-item__text generic_class_center_item mdc-typography--headline5">Project Contributors</span></li>';
-  var contribCardID = guidGenerator();
-  var currentTab = document.getElementById(cardGridLocation);
-  var currentTemplateCard = document.getElementsByTagName("template")[4];
-  currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML += initialTableHeading;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
+      var initialTableHeading = '<li class="mdc-list-item rounded_corner_list_item"><span class="mdc-list-item__text generic_class_center_item mdc-typography--headline5">Project Contributors</span></li>';
+      var contribCardID = guidGenerator();
+      var currentTab = document.getElementById(cardGridLocation);
+      var currentTemplateCard = document.getElementsByTagName("template")[4];
+      currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML += initialTableHeading;
       var repoJSONContributors = (JSON.parse(xhr.responseText));
       for (var contrib = 0; contrib < repoJSONContributors.length; contrib++) {
         currentTemplateCard.content.getElementById('contrib-list-card-main--list').innerHTML += '<li class="mdc-list-item rounded_corner_list_item"><span class="mdc-list-item__text contrib_list_item_contributor">' + '<img class="mdc-list-item__graphic contrib_list_pfp_logo"' + 'onclick="loadNewPage(\'' + repoJSONContributors[contrib].html_url + '\')"' +  'title="View Profile" src="' + repoJSONContributors[contrib].avatar_url + '">' + repoJSONContributors[contrib].login + '</span>' + '<span class="mdc-list-item__meta material-icons contrib_list_secondary_logo" title="View Commits" aria-hidden="true" ' + 'onclick="loadNewPage(\'' + 'https://github.com/CyberDiscovery/' + projectRepoName + '/commits?author=' + repoJSONContributors[contrib].login + '\')"' + '>insert_chart_outlined</span>' + '</li>'
@@ -340,6 +340,12 @@ function fixGridCardVerticalHeightAlign(classElementsName) {
     }
   }
 }
+function alignContribTableSize() {
+  var pageContribList = fixContribListShownOnDom();
+  pageContribList.style.display = "none";
+  pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
+  pageContribList.style.display = "";
+}
 function fixAllTabsCardsVerticalHeight(){
   switch (previousActiveTab) {
     case 0:
@@ -356,17 +362,14 @@ function fixAllTabsCardsVerticalHeight(){
       }
       break;
     case 1:
-      var pageContribList = fixContribListShownOnDom();
-      pageContribList.style.display = "none";
-      pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
-      pageContribList.style.display = "";
+      alignContribTableSize();
       break;
     case 2:
       break;
     case 3:
       break;
     case 4:
-      fixGridCardVerticalHeightAlign("card-body-text");
+      //fixGridCardVerticalHeightAlign("card-body-text");
       break;
     default:
       console.log("Nope", previousActiveTab);
@@ -393,8 +396,13 @@ createProjectTextFieldCards("Grid-Tab-2", "Fetch XKCD", "Our bot can can fetch a
 createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
 createGitHubContribCard("Grid-Tab-2", "cyberdisc-bot");
 createProjectMainCard("Grid-Tab-3", "Android & IOS App", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "cdapp_main_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues", "Latest Release", "https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/", "cloud_download");
-createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_One", "Event Timetables");
+createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_One", "Event Reminders");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Two", "Menu");
+createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Three", "Timetables");
+createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Four", "Soundboard!");
+createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Five", "Medium Blog");
+createLinkCard("Grid-Tab-3", "Flutter Docs", "Looking to get the Community Developer role? Programmed an Android App before? Want to help us create an awesome app for future students? Consider contributing to this project! Start with the Flutter Documentation!", "App_Contrib_Flutter_Docs", "https://flutter.io/docs");
+createGitHubContribCard("Grid-Tab-3", "Cyber-Discovery-App");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
