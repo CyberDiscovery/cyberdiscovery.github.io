@@ -76,7 +76,7 @@ function guidGenerator() {
 }
 var mdcSnackBar = oneElementInit(".mdc-snackbar", mdc.snackbar.MDCSnackbar.attachTo);
 function displayMDCSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
-  mdcSnackBar.show({message: snackbarText, actionText: dismissText, timeout: timeoutValue, actionHandler: dismissFunction});
+  mdcSnackBar.show({message: snackbarText, actionText: dismissText, actionHandler: dismissFunction, timeout: timeoutValue});
 }
 function MTMzNyBLb25hbWkgQ29kZSAK(callback) {
   var kkeys = [];
@@ -91,7 +91,7 @@ function MTMzNyBLb25hbWkgQ29kZSAK(callback) {
 }
 var handler = MTMzNyBLb25hbWkgQ29kZSAK(() => {
   var SW5zZXJ0MTMzN01lc3NhZ2UK = window.atob("VHVybiB1cCB0aGUgamFtcyBhbmQgaGF2ZSBhIGdvb2QgdGltZT8=");
-  displayMDCSnackbar(SW5zZXJ0MTMzN01lc3NhZ2UK, "Sure", setLocation, 3000);
+  mdcSnackBar.show({message: SW5zZXJ0MTMzN01lc3NhZ2UK, actionText: "Sure", actionHandler: setLocation, timeout: 3000});
 });
 window.addEventListener('keydown', handler);
 var cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
@@ -232,11 +232,6 @@ function getTabMaxCardHeight(elementOffsetPadding){
     }
   return (Math.max.apply(null, cardArray) - elementOffsetPadding);
 }
-/*
-<li class="mdc-list-item rounded_corner_list_item">
-  <span class="mdc-list-item__text">Single-line item</span>
-</li>
-*/
 function fixContribListShownOnDom() {
   for (var i = 1; i < document.querySelectorAll('.mdc-list').length; i++) {
     if (document.querySelectorAll('.mdc-list')[i].offsetParent !== null) {
@@ -368,6 +363,7 @@ function fixAllTabsCardsVerticalHeight(){
       alignContribTableSize();
       break;
     case 3:
+      alignContribTableSize();
       break;
     case 4:
       //fixGridCardVerticalHeightAlign("card-body-text");
@@ -405,8 +401,10 @@ createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Five", "Medium Blog");
 createLinkCard("Grid-Tab-3", "Flutter Docs", "Looking to get the Community Developer role? Programmed an Android App before? Want to help us create an awesome app for future students? Consider contributing to this project! Start with the Flutter Documentation!", "App_Contrib_Flutter_Docs", "https://flutter.io/docs");
 createGitHubContribCard("Grid-Tab-3", "Cyber-Discovery-App");
 //Troubleshooting
-createProjectMainCard("Grid-Tab-4", "Survival Guide", "We've written quite a few websites relating to the programme, one of these sites is a survival manual, where new students can read blog posts and tips on how to prepare for the challenges.", "cdsurvivalguide_site_card_image", "https://github.com/CyberDiscovery/cdsurvivalguide", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide", "https://github.com/CyberDiscovery/cdsurvivalguide/issues", "View Site", "https://cdsurvivalguide.netlify.com/", "arrow_right_alt");
-createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Visit Site", "https://challenge-master.firebaseapp.com/", "arrow_right_alt");
+createProjectMainCard("Grid-Tab-4", "Survival Manual", "We've written quite a few websites relating to the programme, one of these sites is a survival manual, where new students can read blog posts and tips on how to prepare for the challenges.", "cdsurvivalguide_site_card_image", "https://github.com/CyberDiscovery/cdsurvivalguide", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide", "https://github.com/CyberDiscovery/cdsurvivalguide/issues", "Visit Guide", "https://cdsurvivalguide.netlify.com/", "chevron_right");
+createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Solve Questions", "https://challenge-master.firebaseapp.com/", "list_alt");
+createProjectMainCard("Grid-Tab-4", "App Website", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "app_website_site_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues", "Visit Site", "https://cyber-discovery-app.firebaseapp.com/", "web");
+createGitHubContribCard("Grid-Tab-4", "cdsurvivalguide");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);

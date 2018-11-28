@@ -144,7 +144,7 @@
   color: rgba(0,0,0,.54);
 }
 .mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
-	max-height: none!important;
+	/*max-height: none!important;*/
 	max-width: none!important;
 }
 .mdc-menu.mdc-menu-surface {
@@ -243,10 +243,11 @@
   padding-left: 3px;
 }
 .cdapp_main_card_image {
-  background: url('../Image_Assets/App_Tab/App_Main_CD_LOGO.png') #2a2d32 center/cover no-repeat;
+  background: url('../Image_Assets/App_Tab/app_logo_main.jpg') #2a2d32 center/cover no-repeat;
 }
 .App_Screenshot_Card_One {
   background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #0d2332 center/cover no-repeat;
+  background-position: top !important;
 }
 .App_Screenshot_Card_Two {
   background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #0d2332 center/cover no-repeat;
@@ -256,9 +257,11 @@
 }
 .App_Screenshot_Card_Four {
   background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #0d2332 center/cover no-repeat;
+  background-position: top !important;
 }
 .App_Screenshot_Card_Five {
   background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #0d2332 center/cover no-repeat;
+  background-position: top !important;
 }
 .App_Contrib_Flutter_Docs {
   background: url("../Image_Assets/App_Tab/Contribute_Programming.gif") #283247 center/cover no-repeat;
@@ -270,4 +273,8 @@
 .challenge_master_site_card_image {
   background: url("../Image_Assets/Js_Logo_Background.png") #0d2332 center/cover no-repeat;
   background-size: auto 100%;
+}
+.app_website_site_card_image {
+    background: url("../Image_Assets/Firebase_Logo_Background.png") #0d2332 center/cover no-repeat;
+    background-size: auto 100%;
 }
