@@ -344,6 +344,7 @@ function alignContribTableSize() {
 function fixAllTabsCardsVerticalHeight(){
   switch (previousActiveTab) {
     case 0:
+      /*
       var introImageCard = document.getElementsByClassName("homepage_welcome_card")[0].offsetHeight;
       if (introImageCard > 0){
         document.getElementsByClassName("page-intro-text-card")[0].style.height = introImageCard.toString() + "px";
@@ -355,6 +356,7 @@ function fixAllTabsCardsVerticalHeight(){
           document.getElementsByClassName("hmgprogramme-main-card--object")[0].style.height = "inherit";
         }
       }
+      */
       break;
     case 1:
       alignContribTableSize();

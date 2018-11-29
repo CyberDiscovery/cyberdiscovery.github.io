@@ -41,19 +41,22 @@
 }
 .rounded-corner-card {
   border-radius: 24px 24px;
-  height: 100%;
+  height: 100% !important;
 }
 .fixed-size-background-img {
   height: 250px;
 }
 .otw-card-background {
-  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") #000000 center/cover no-repeat;
+  background-size: 100% auto;
 }
 .replit-card-background {
-  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #000000 center/cover no-repeat;
+  background-size: 100% auto;
 }
 .smashthestack-card-background {
   background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #0d2332 center/cover no-repeat;
+  background-size: 140% auto;
 }
 .cybrary-card-background {
   background: url("../Image_Assets/Resources_Tab/Cybrary_card_image.png") #0d2332 center/cover no-repeat;
@@ -62,7 +65,8 @@
   background: url("../Image_Assets/Resources_Tab/udacity_card_image.png") #0d2332 center/cover no-repeat;
 }
 .codewars-card-background {
-  background: url("../Image_Assets/Resources_Tab/codewars_card_image2.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/codewars_resource_card_image.png") #282828 center/cover no-repeat;
+  background-size: 100% auto;
 }
 .codecademy-card-background {
   background: url("../Image_Assets/Resources_Tab/codecademy_card_image.png") #0d2332 center/cover no-repeat;
@@ -122,10 +126,9 @@
 }
 .cdsurvivalguide_body_text {
   padding: 0 1rem 8px;
-  height: auto;
+  height: 100% !important;
   font-size: 18px !important;
   color: rgba(0,0,0,.54);
-  overflow: auto;
 }
 .page-intro-text-card {
   height: auto;
@@ -144,8 +147,8 @@
   color: rgba(0,0,0,.54);
 }
 .mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
-	/*max-height: none!important;*/
-	max-width: none!important;
+	max-height: none !important;
+	max-width: none !important;
 }
 .mdc-menu.mdc-menu-surface {
   overflow: hidden;
@@ -268,13 +271,12 @@
 }
 .cdsurvivalguide_site_card_image {
   background: url("../Image_Assets/Websites_Tab/cdsurvivial_guide_card_image.png") #5d6c58 center/cover no-repeat;
-  background-size: auto 100%;
 }
 .challenge_master_site_card_image {
-  background: url("../Image_Assets/Js_Logo_Background.png") #0d2332 center/cover no-repeat;
-  background-size: auto 100%;
+  background: url("../Image_Assets/Js_Logo_Background.png") #ffab00 center/cover no-repeat;
+  background-size: 100% auto;
 }
 .app_website_site_card_image {
-    background: url("../Image_Assets/Firebase_Logo_Background.png") #0d2332 center/cover no-repeat;
-    background-size: auto 100%;
+    background: url("../Image_Assets/Firebase_Logo_Background.png") #039be5 center/cover no-repeat;
+    background-size: 130% auto;
 }
