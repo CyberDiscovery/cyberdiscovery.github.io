@@ -114,28 +114,35 @@ function viewPageSourceStackOverFlow(){
   if(window.focus) sourceWindow.focus();
 }
 function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClass, cardButtonHref) {
+  var currentCardID = guidGenerator();
   var currentTab = document.getElementById(gridLocation);
   var currentTemplateCard = document.getElementsByTagName("template")[0];
-  currentTemplateCard.content.getElementById('cd-card-title--headline').innerHTML = cardTitle;
-  currentTemplateCard.content.getElementById('cd-card-background--image').classList.add(backgroundClass);
-  currentTemplateCard.content.getElementById('cd-card-body--text').innerHTML = cardDescription;
   var cdRippleLinkSection = currentTemplateCard.content.getElementById('cd-card-float-body--click');
   var cdFabButtonSection = currentTemplateCard.content.getElementById('cd-card-action-button--click');
-  cdRippleLinkSection.id = guidGenerator();
-  cdFabButtonSection.id = guidGenerator();
+  currentTemplateCard.content.getElementById('cd-card-background--image').id = currentCardID + "-bg--image";
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.add(backgroundClass);
+  currentTemplateCard.content.getElementById('cd-card-title--headline').id = currentCardID + "-card--title";
+  currentTemplateCard.content.getElementById(currentCardID + "-card--title").innerHTML = cardTitle;
+  cdRippleLinkSection.id = currentCardID + "-float--main";
+  cdFabButtonSection.id = currentCardID + "-fab--button";
+  currentTemplateCard.content.getElementById('cd-card-body--text').id = currentCardID + "-body--text";
+  currentTemplateCard.content.getElementById(currentCardID + "-body--text").innerHTML = cardDescription;
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
   if (screen.width > 839) {
-    document.getElementById(cdRippleLinkSection.id).addEventListener('click', function (evt) {
+    document.getElementById(currentCardID + "-float--main").addEventListener('click', function (evt) {
       window.open(cardButtonHref, '_blank');
     });
   }
-  document.getElementById(cdFabButtonSection.id).addEventListener('click', function (evt) {
+  document.getElementById(currentCardID + "-fab--button").addEventListener('click', function (evt) {
     window.open(cardButtonHref, '_blank');
   });
   cdRippleLinkSection.id = "cd-card-float-body--click";
   cdFabButtonSection.id = "cd-card-action-button--click";
-  currentTemplateCard.content.getElementById('cd-card-background--image').classList.remove(backgroundClass);
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.remove(backgroundClass);
+  currentTemplateCard.content.getElementById(currentCardID + "-card--title").id = 'cd-card-title--headline';
+  currentTemplateCard.content.getElementById(currentCardID + "-body--text").id = 'cd-card-body--text';
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").id = 'cd-card-background--image';
 }
 function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionText, cardBackgroundClass, cardRepoHref, cardRepoForks, cardRepoIssues, cardMenuText, cardMenuHref, cardMenuFinalIcon) {
   var someRandomGUID = guidGenerator();
@@ -204,7 +211,7 @@ function checkPwnState(searchEmailAddr) {
     var checkHIBPRequest = new XMLHttpRequest();
     checkHIBPRequest.onreadystatechange = function() {
       if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 200) {
-        breachCount = JSON.parse(checkHIBPRequest.responseText).length;
+        var breachCount = JSON.parse(checkHIBPRequest.responseText).length;
         mdcSnackBar.show({message: "Oh no — pwned on " + breachCount + " breached sites!", actionText: "More", actionHandler: function(){loadNewPage('https://haveibeenpwned.com/account/' + searchEmailAddr)}, timeout: 5000});
       } else if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 404) {
         displayMDCSnackbar("Good news — no pwnage found!", "Cool", function(){}, 3000);
