@@ -56,7 +56,8 @@ var cGFnZVVybExpc3QK = [
   "aHR0cHM6Ly95b3V0dS5iZS9udUNJQTMxTGZJVQ==",
   "aHR0cHM6Ly95b3V0dS5iZS9aLTlNM1hzU1JZTQ==",
   "aHR0cHM6Ly95b3V0dS5iZS8wOW0wQjhSUmlFRQ==",
-  "aHR0cHM6Ly9zb3VuZGNsb3VkLmNvbS9oZWxsb2ltb2xpdmVyYS9nb2xkZW4tcGxhdGUjdD0wOjMw"
+  "aHR0cHM6Ly9zb3VuZGNsb3VkLmNvbS9oZWxsb2ltb2xpdmVyYS9nb2xkZW4tcGxhdGUjdD0wOjMw",
+  "aHR0cHM6Ly95b3V0dS5iZS95NXpRVG1rWTdHSQ=="
 ];
 function selectRandItem(selectionArray) {
   var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
@@ -400,8 +401,10 @@ createImageCardMain("Grid-Tab-2", "discord_bot_quote_card_image", "Get a random 
 createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned. You can try it out here!", "hibp_search_card_image", "Email", checkPwnState);
 createProjectTextFieldCards("Grid-Tab-2", "Fetch XKCD", "Our bot can can fetch an XKCD by number or a random one. You can try out the same functionality here, leaving the number-field blank for a random one.", "xkcd_card_fetch_image", "Number", fetchXkcd);
 createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in Python. designed to give problems from the Kings Maths School Seven Day Maths website. This includes the current weekly challenge, as well as a random problem from their archive.", "cdmathsbot_card_image", "https://github.com/CyberDiscovery/Discord-Maths-Bot", "https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot", "https://github.com/CyberDiscovery/Discord-Maths-Bot/issues", "Math Challenge", "https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx", "question_answer");
+createImageCardMain("Grid-Tab-2", "discord_dwouca_owo_gang_lmao", "Weekly maths challenge!");
+createImageCardMain("Grid-Tab-2", "discord_bot_assess_card_image", "Discuss assess challenges!");
 createGitHubContribCard("Grid-Tab-2", "cyberdisc-bot");
-createProjectMainCard("Grid-Tab-3", "Android & IOS App", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "cdapp_main_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues", "Latest Release", "https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/", "cloud_download");
+createProjectMainCard("Grid-Tab-3", "Android & IOS App", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "cdapp_main_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues", "Latest Release", "https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/", "new_releases");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_One", "Event Reminders");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Two", "Menu");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Three", "Timetables");
@@ -409,7 +412,6 @@ createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Four", "Soundboard!");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Five", "Medium Blog");
 createLinkCard("Grid-Tab-3", "Flutter Docs", "Looking to get the Community Developer role? Programmed an Android App before? Want to help us create an awesome app for future students? Consider contributing to this project! Start with the Flutter Documentation!", "App_Contrib_Flutter_Docs", "https://flutter.io/docs");
 createGitHubContribCard("Grid-Tab-3", "Cyber-Discovery-App");
-//Troubleshooting
 createProjectMainCard("Grid-Tab-4", "Survival Manual", "We've written quite a few websites relating to the programme, one of these sites is a survival manual, where new students can read blog posts and tips on how to prepare for the challenges.", "cdsurvivalguide_site_card_image", "https://github.com/CyberDiscovery/cdsurvivalguide", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide", "https://github.com/CyberDiscovery/cdsurvivalguide/issues", "Visit Guide", "https://cdsurvivalguide.netlify.com/", "chevron_right");
 createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Solve Questions", "https://challenge-master.firebaseapp.com/", "list_alt");
 createProjectMainCard("Grid-Tab-4", "App Website", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "app_website_site_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues", "Visit Site", "https://cyber-discovery-app.firebaseapp.com/", "web");
