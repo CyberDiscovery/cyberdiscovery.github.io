@@ -51,11 +51,11 @@
   background-size: 100% auto;
 }
 .replit-card-background {
-  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #000000 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #0d2332 center/cover no-repeat;
   background-size: 100% auto;
 }
 .smashthestack-card-background {
-  background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #000000 center/cover no-repeat;
   background-size: 140% auto;
 }
 .cybrary-card-background {
