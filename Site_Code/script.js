@@ -329,6 +329,17 @@ function createGitHubContribCard(cardGridLocation, projectRepoName) {
   xhr.open('GET', 'https://api.github.com/repos/CyberDiscovery/' + projectRepoName + '/contributors', true);
   xhr.send(null);
 }
+function createBannerImageWideCard(cardGridLocation, bannerImageClass) {
+  var imageCardID = guidGenerator();
+  var currentTab = document.getElementById(cardGridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[5];
+  currentTemplateCard.content.getElementById('banner-image-wide-card--class').classList.add(bannerImageClass);
+  currentTemplateCard.content.getElementById('banner-image-wide-card--class').id = imageCardID + "-banner--main";
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  currentTemplateCard.content.getElementById(imageCardID + "-banner--main").id = 'banner-image-wide-card--class';
+  currentTemplateCard.content.getElementById('banner-image-wide-card--class').classList.remove(bannerImageClass);
+}
 function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = [];
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
@@ -384,6 +395,7 @@ function fixAllTabsCardsVerticalHeight(){
   }
 }
 //FINISH THIS!!
+createBannerImageWideCard("Grid-Tab-1", "home_tab_welcome_banner_image");
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");

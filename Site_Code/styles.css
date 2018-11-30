@@ -111,7 +111,7 @@
 }
 .home_assess_card_reminder {
   background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #0d2332 center/cover no-repeat;
-  background-size: 100% auto;
+  background-size: auto 100%;
   background-position: bottom;
 }
 .hmg_programme_body_text {
@@ -120,6 +120,10 @@
   font-size: 18px !important;
   color: rgba(0,0,0,.54);
   overflow: auto;
+}
+.home_tab_welcome_banner_image {
+  background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
+  background-size: auto 100%;
 }
 .homepage_introduction_card {
   height: auto;
@@ -285,10 +289,15 @@
     background-size: 130% auto;
 }
 .discord_bot_assess_card_image {
-  background: url("../Image_Assets/Discord_Tab/bot_card_main_card_image.jpg") #36393f center/cover no-repeat;
+  background: url("../Image_Assets/Discord_Tab/bot_card_main_card_image.jpg") #363940 center/cover no-repeat;
   background-size: 100% auto;
 }
 .discord_dwouca_owo_gang_lmao {
-  background: url("../Image_Assets/Discord_Tab/owo_gang_dwouca.jpg") #36393f center/cover no-repeat;
+  background: url("../Image_Assets/Discord_Tab/owo_gang_dwouca.jpg") #363940 center/cover no-repeat;
   background-size: 100% auto;
+}
+@media (min-width: 1380px) {
+  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
+    background-size: auto 100% !important;
+  }
 }
