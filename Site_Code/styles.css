@@ -107,7 +107,7 @@
 }
 .home_discord_invite_card {
   background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
-  background-size: 95%;
+  background-size: 100% 100%;
 }
 .home_assess_card_reminder {
   background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #0d2332 center/cover no-repeat;
@@ -299,5 +299,16 @@
 @media (min-width: 1380px) {
   .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
     background-size: auto 100% !important;
+  }
+}
+@media (min-width: 480px) {
+  .home_tab_welcome_banner_image {
+    height: 400px !important;
+  }
+}
+@media (max-width: 839px) {
+  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
+    background-size: auto 100% !important;
+    height: 520px;
   }
 }
