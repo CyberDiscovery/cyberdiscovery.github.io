@@ -416,7 +416,7 @@ createProjectMainCard("Grid-Tab-2", "Maths Bot", "A Discord Maths Bot written in
 createImageCardMain("Grid-Tab-2", "discord_dwouca_owo_gang_lmao", "Weekly maths challenge!");
 createImageCardMain("Grid-Tab-2", "discord_bot_assess_card_image", "Discuss assess challenges!");
 createGitHubContribCard("Grid-Tab-2", "cyberdisc-bot");
-createProjectMainCard("Grid-Tab-3", "Android & IOS App", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "cdapp_main_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues", "Latest Release", "https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/", "new_releases");
+createProjectMainCard("Grid-Tab-3", "Android & IOS App", "Never miss a deadline again with the UNOFFICIAL Cyber Discovery App for Android and iOS. You can get it build from source, get from the play store or sideload a prebuilt release.", "cdapp_main_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App", "https://github.com/CyberDiscovery/Cyber-Discovery-App/issues", "Latest Release", "https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery", "arrow_downward");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_One", "Event Reminders");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Two", "Menu");
 createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Three", "Timetables");
