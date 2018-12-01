@@ -98,11 +98,11 @@
   background-size: auto 100%;
 }
 .cdsurvivalguide_home_card {
-  background: url('../Image_Assets/Home_Tab/cdsurvivalguide_card_image.png') #0d2332 center / cover no-repeat;
+  background: url('../Image_Assets/Home_Tab/cd_survival_guide_card_image.png') #0d2332 center / cover no-repeat;
   max-height: 250px;
 }
 .hmg_programme_home_card {
-  background: url('../Image_Assets/CD_Home_Resources.png') #0d2332 center / cover no-repeat;
+  background: url('../Image_Assets/Home_Tab/CD_Home_Resources.png') #0d2332 center / cover no-repeat;
   max-height: 250px;
 }
 .home_discord_invite_card {
@@ -113,6 +113,12 @@
   background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #0d2332 center/cover no-repeat;
   background-size: auto 100%;
   background-position: bottom;
+}
+.custom_padded_font_card_home {
+  padding: 0 1rem 8px;
+  height: 100% !important;
+  font-size: 18px !important;
+  color: rgba(0,0,0,.54);
 }
 .hmg_programme_body_text {
   padding: 1rem 1rem 8px;

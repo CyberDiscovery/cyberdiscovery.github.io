@@ -340,6 +340,63 @@ function createBannerImageWideCard(cardGridLocation, bannerImageClass) {
   currentTemplateCard.content.getElementById(imageCardID + "-banner--main").id = 'banner-image-wide-card--class';
   currentTemplateCard.content.getElementById('banner-image-wide-card--class').classList.remove(bannerImageClass);
 }
+function createHomeWideLinkCard(gridLocation, cardTitle, cardDescription, backgroundClass, cardButtonHref, cardButtonName) {
+  var currentCardID = guidGenerator();
+  var currentTab = document.getElementById(gridLocation);
+  var currentTemplateCard = document.getElementsByTagName("template")[6];
+  var cdRippleLinkSection = currentTemplateCard.content.getElementById('home-card-float-body--click');
+  var cdFabButtonSection = currentTemplateCard.content.getElementById('home-card-action-button--click');
+  currentTemplateCard.content.getElementById('home-card-background--image').id = currentCardID + "-bg--image";
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.add(backgroundClass);
+  currentTemplateCard.content.getElementById('home-card-title--headline').id = currentCardID + "-card--title";
+  currentTemplateCard.content.getElementById(currentCardID + "-card--title").innerHTML = cardTitle;
+  cdRippleLinkSection.id = currentCardID + "-float--main";
+  cdFabButtonSection.id = currentCardID + "-fab--button";
+  cdFabButtonSection.innerHTML = cardButtonName;
+  currentTemplateCard.content.getElementById('home-card-body--text').id = currentCardID + "-body--text";
+  currentTemplateCard.content.getElementById(currentCardID + "-body--text").innerHTML = cardDescription;
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  if (screen.width > 839) {
+    document.getElementById(currentCardID + "-float--main").addEventListener('click', function (evt) {
+      window.open(cardButtonHref, '_blank');
+    });
+  }
+  document.getElementById(currentCardID + "-fab--button").addEventListener('click', function (evt) {
+    window.open(cardButtonHref, '_blank');
+  });
+  cdRippleLinkSection.id = "home-card-float-body--click";
+  cdFabButtonSection.id = "home-card-action-button--click";
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.remove(backgroundClass);
+  currentTemplateCard.content.getElementById(currentCardID + "-card--title").id = 'home-card-title--headline';
+  currentTemplateCard.content.getElementById(currentCardID + "-body--text").id = 'home-card-body--text';
+  currentTemplateCard.content.getElementById(currentCardID + "-bg--image").id = 'home-card-background--image';
+}
+function createMainIntroTextCard() {
+  var currentTab = document.getElementById("Grid-Tab-1");
+  var currentTemplateCard = document.getElementsByTagName("template")[7];
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+}
+function createTitlelessInfoCard() {
+  var titleCardID = guidGenerator();
+  var currentTab = document.getElementById("Grid-Tab-1");
+  var currentTemplateCard = document.getElementsByTagName("template")[8];
+  var floatBodyClickBtn = currentTemplateCard.content.getElementById('small-card-main-page--float');
+  floatBodyClickBtn.id = titleCardID + "-floatbd--click";
+  var pageBtnPrimaryButton = currentTemplateCard.content.getElementById('small-card-main-page--btn');
+  pageBtnPrimaryButton.id = titleCardID + "-mainpg--btn";
+  var cardToAppend = currentTemplateCard.content.cloneNode(true);
+  currentTab.appendChild(cardToAppend);
+  document.getElementById(titleCardID + "-floatbd--click").addEventListener('click', function (evt) {
+    window.open("https://www.joincyberdiscovery.com/", '_blank');
+  });
+  document.getElementById(titleCardID + "-mainpg--btn").addEventListener('click', function (evt) {
+    window.open("https://www.joincyberdiscovery.com/", '_blank');
+  });
+  currentTemplateCard.content.getElementById(titleCardID + "-floatbd--click").id = 'small-card-main-page--float';
+  currentTemplateCard.content.getElementById(titleCardID + "-mainpg--btn").id = 'small-card-main-page--btn';
+}
 function fixGridCardVerticalHeightAlign(classElementsName) {
   var pageElementsArray = [];
   var pageTextItemsBody = document.getElementsByClassName(classElementsName);
@@ -396,6 +453,12 @@ function fixAllTabsCardsVerticalHeight(){
 }
 //FINISH THIS!!
 createBannerImageWideCard("Grid-Tab-1", "home_tab_welcome_banner_image");
+createMainIntroTextCard();
+createTitlelessInfoCard();
+//createLinkCard("Grid-Tab-1", "HMG CyberDiscovery", "What is the HMG Cyber Schools programme? What is Cyber Discovery? Can I take part? Find full details regarding the programme here.", "hmg_programme_home_card", "https://www.joincyberdiscovery.com/");
+createHomeWideLinkCard("Grid-Tab-1", "Survival Guide", "A website where we host tips and tricks for those who are attempting the Cyber Discovery programme. All these articles are written by past participants, most of whom reached the elite stage themselves.", "cdsurvivalguide_home_card", "https://cdsurvivalguide.netlify.com/", "View");
+createHomeWideLinkCard("Grid-Tab-1", "Discord Server", "Join the largest Cyber Discovery Discord server with nearly 700 like-minded individuals and some SANS Institute staff members who are running the programme!", "home_discord_invite_card", "http://discord.gg/Kf8n5rT", "Join");
+createHomeWideLinkCard("Grid-Tab-1", "CyberStart Assess", "The second year of the programme is open! Need to register or already registered in year 1? Jump back in to assess for another year of awesome challenges!", "home_assess_card_reminder", "https://assess.joincyberdiscovery.com/reg-login", "Go");
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
