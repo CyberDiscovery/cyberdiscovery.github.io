@@ -130,6 +130,11 @@
 .home_tab_welcome_banner_image {
   background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
   background-size: auto 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.override_card_bg_main_poster {
+  background-color: #0d2332;
 }
 .homepage_introduction_card {
   height: auto;
@@ -307,6 +312,14 @@
 .website_tab_help_us_card_image {
   background: url("../Image_Assets/Websites_Tab/responsive_design_card_image.gif") #9d9f9e center/cover no-repeat;
   background-size: 100% auto;
+}
+.cd_site_guide_card_image {
+  background: url("../Image_Assets/Websites_Tab/cd_survivalguide_card_image.jpg") #0f1722 center/cover no-repeat;
+  background-size: 90% auto;
+}
+.app_site_alt_card_image {
+  background: url("../Image_Assets/Websites_Tab/app_website_card_image.jpg") #091b27 center/cover no-repeat;
+  background-size: 85% auto;
 }
 @media (min-width: 1380px) {
   .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {

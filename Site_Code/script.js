@@ -388,9 +388,11 @@ function createTitlelessInfoCard() {
   pageBtnPrimaryButton.id = titleCardID + "-mainpg--btn";
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
-  document.getElementById(titleCardID + "-floatbd--click").addEventListener('click', function (evt) {
-    window.open("https://www.joincyberdiscovery.com/", '_blank');
-  });
+  if (screen.width > 839) {
+    document.getElementById(titleCardID + "-floatbd--click").addEventListener('click', function (evt) {
+      window.open("https://www.joincyberdiscovery.com/", '_blank');
+    });
+  }
   document.getElementById(titleCardID + "-mainpg--btn").addEventListener('click', function (evt) {
     window.open("https://www.joincyberdiscovery.com/", '_blank');
   });
@@ -488,8 +490,10 @@ createImageCardMain("Grid-Tab-3", "App_Screenshot_Card_Five", "Medium Blog");
 createLinkCard("Grid-Tab-3", "Flutter Docs", "Looking to get the Community Developer role? Programmed an Android App before? Want to help us create an awesome app for future students? Consider contributing to this project! Start with the Flutter Documentation!", "App_Contrib_Flutter_Docs", "https://flutter.io/docs");
 createGitHubContribCard("Grid-Tab-3", "Cyber-Discovery-App");
 createProjectMainCard("Grid-Tab-4", "Survival Manual", "We've written quite a few websites relating to the programme, one of these sites is a survival manual, where new students can read blog posts and tips on how to prepare for the challenges.", "cdsurvivalguide_site_card_image", "https://github.com/CyberDiscovery/cdsurvivalguide", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide", "https://github.com/CyberDiscovery/cdsurvivalguide/issues", "Visit Guide", "https://cdsurvivalguide.netlify.com/", "chevron_right");
-createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Solve Questions", "https://challenge-master.firebaseapp.com/", "list_alt");
+createImageCardMain("Grid-Tab-4", "cd_site_guide_card_image", "Hints and tips!");
+createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a website that hosts cyber security based challenges for the Unoffical Cyber Discovery Discord Server. You can create and solve challenges by our community, create wager matches, even gain points for finding security vulnerabilities!", "challenge_master_site_card_image", "https://github.com/CyberDiscovery/Challenge-Master", "https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master", "https://github.com/CyberDiscovery/Challenge-Master/issues", "Solve Challenges", "https://challenge-master.firebaseapp.com/", "list_alt");
 createProjectMainCard("Grid-Tab-4", "App Website", "Companion Website for the Unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "app_website_site_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues", "Visit Site", "https://cyber-discovery-app.firebaseapp.com/", "web");
+createImageCardMain("Grid-Tab-4", "app_site_alt_card_image", "Event Countdown!");
 createLinkCard("Grid-Tab-4", "Help us!", "Have you made a responsive and interactive website before? Want to get the Community Developer role or interested in writing a site? Consider helping us improve our sites! Start by viewing the MDC-web documentation today!", "website_tab_help_us_card_image", "https://github.com/material-components/material-components-web/blob/master/docs/getting-started.md");
 createGitHubContribCard("Grid-Tab-4", "cdsurvivalguide");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
