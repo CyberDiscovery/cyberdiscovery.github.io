@@ -159,10 +159,12 @@
   padding: 0 1rem 8px;
   color: rgba(0,0,0,.54);
 }
+/*
 .mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
 	max-height: none !important;
 	max-width: none !important;
 }
+*/
 .mdc-menu.mdc-menu-surface {
   overflow: hidden;
 }
@@ -300,6 +302,10 @@
 }
 .discord_dwouca_owo_gang_lmao {
   background: url("../Image_Assets/Discord_Tab/owo_gang_dwouca.jpg") #363940 center/cover no-repeat;
+  background-size: 100% auto;
+}
+.website_tab_help_us_card_image {
+  background: url("../Image_Assets/Websites_Tab/responsive_design_card_image.gif") #9d9f9e center/cover no-repeat;
   background-size: 100% auto;
 }
 @media (min-width: 1380px) {
