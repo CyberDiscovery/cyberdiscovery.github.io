@@ -164,12 +164,10 @@
   padding: 0 1rem 8px;
   color: rgba(0,0,0,.54);
 }
-/*
 .mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
 	max-height: none !important;
 	max-width: none !important;
 }
-*/
 .mdc-menu.mdc-menu-surface {
   overflow: hidden;
 }
@@ -231,6 +229,10 @@
 .discord_bot_quote_card_image {
   background: url('../Image_Assets/Discord_Tab/Discord_Quote_Image_Card.png') #36393f center/cover no-repeat;
   background-size: 100%;
+}
+.discord_api_docs_card_image {
+  background: url('../Image_Assets/Discord_Tab/discord_api_docs_card_image.png') #36393e center/cover no-repeat;
+  background-size: 100% auto;
 }
 .rounded_corner_list_item {
   border-radius: 15px !important;
@@ -321,6 +323,10 @@
   background: url("../Image_Assets/Websites_Tab/app_website_card_image.jpg") #091b27 center/cover no-repeat;
   background-size: 85% auto;
 }
+.alexa_skill_card_image {
+  background: url("../Image_Assets/Websites_Tab/cd_alexa_skill_card_image.png") #ffffff center/cover no-repeat;
+  background-size: 100% auto;
+}
 @media (min-width: 1380px) {
   .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
     background-size: auto 100% !important;
@@ -328,7 +334,7 @@
 }
 @media (min-width: 480px) {
   .home_tab_welcome_banner_image {
-    height: 400px !important;
+    height: 470px !important;
   }
 }
 @media (max-width: 839px) {
