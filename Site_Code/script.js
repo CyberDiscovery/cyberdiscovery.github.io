@@ -415,9 +415,11 @@ function fixGridCardVerticalHeightAlign(classElementsName) {
 }
 function alignContribTableSize() {
   var pageContribList = fixContribListShownOnDom();
-  pageContribList.style.display = "none";
-  pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
-  pageContribList.style.display = "";
+  if (pageContribList.classList.contains('generic_contrib_card_list') == true) {
+    pageContribList.style.display = "none";
+    pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
+    pageContribList.style.display = "";
+  }
 }
 function fixAllTabsCardsVerticalHeight(){
   switch (previousActiveTab) {
