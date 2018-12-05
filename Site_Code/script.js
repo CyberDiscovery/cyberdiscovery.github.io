@@ -118,27 +118,19 @@ function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClas
   var currentCardID = guidGenerator();
   var currentTab = document.getElementById(gridLocation);
   var currentTemplateCard = document.getElementsByTagName("template")[0];
-  var cdRippleLinkSection = currentTemplateCard.content.getElementById('cd-card-float-body--click');
   var cdFabButtonSection = currentTemplateCard.content.getElementById('cd-card-action-button--click');
   currentTemplateCard.content.getElementById('cd-card-background--image').id = currentCardID + "-bg--image";
   currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.add(backgroundClass);
   currentTemplateCard.content.getElementById('cd-card-title--headline').id = currentCardID + "-card--title";
   currentTemplateCard.content.getElementById(currentCardID + "-card--title").innerHTML = cardTitle;
-  cdRippleLinkSection.id = currentCardID + "-float--main";
   cdFabButtonSection.id = currentCardID + "-fab--button";
   currentTemplateCard.content.getElementById('cd-card-body--text').id = currentCardID + "-body--text";
   currentTemplateCard.content.getElementById(currentCardID + "-body--text").innerHTML = cardDescription;
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
-  if (screen.width > 839) {
-    document.getElementById(currentCardID + "-float--main").addEventListener('click', function (evt) {
-      window.open(cardButtonHref, '_blank');
-    });
-  }
   document.getElementById(currentCardID + "-fab--button").addEventListener('click', function (evt) {
     window.open(cardButtonHref, '_blank');
   });
-  cdRippleLinkSection.id = "cd-card-float-body--click";
   cdFabButtonSection.id = "cd-card-action-button--click";
   currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.remove(backgroundClass);
   currentTemplateCard.content.getElementById(currentCardID + "-card--title").id = 'cd-card-title--headline';
@@ -158,14 +150,12 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   currentTemplateCard.content.getElementById('project-card-action-item--name').innerHTML = '<i class="material-icons project_card_menu_icons">' + cardMenuFinalIcon + '</i>' + cardMenuText;
   currentTemplateCard.content.getElementById('project-card-action-item--name').id = someRandomGUID + "-menu--text";
   var cardPrimaryButton = currentTemplateCard.content.getElementById('project-card-action-button--click');
-  var cardFloatClick = currentTemplateCard.content.getElementById('project-card-generic-body--click');
   var cardForkButton = currentTemplateCard.content.getElementById('project-card-fork-item--href');
   var cardissueButton = currentTemplateCard.content.getElementById('project-card-issues-item--href');
   var cardLastItem = currentTemplateCard.content.getElementById('project-card-action-item--href');
   var cardMenuActivation = currentTemplateCard.content.getElementById('project-card-more-option--menu');
   var cardMenuButtonActivation = currentTemplateCard.content.getElementById('project-card-menu-activation--button');
   cardPrimaryButton.id = someRandomGUID + "-button--href";
-  cardFloatClick.id = someRandomGUID + "-float--click";
   cardForkButton.id = someRandomGUID + "-fork--href";
   cardissueButton.id = someRandomGUID + "-issues--href";
   cardLastItem.id = someRandomGUID + "-menuitem--href";
@@ -178,11 +168,6 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
   document.getElementById(cardPrimaryButton.id).addEventListener('click', function (evt) {
     window.open(cardRepoHref, '_blank');
   });
-  if (screen.width > 839) {
-    document.getElementById(cardFloatClick.id).addEventListener('click', function (evt) {
-      window.open(cardRepoHref, '_blank');
-    });
-  }
   document.getElementById(cardForkButton.id).addEventListener('click', function (evt) {
     window.open(cardRepoForks, '_blank');
   });
@@ -193,7 +178,6 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
     window.open(cardMenuHref, '_blank');
   });
   cardPrimaryButton.id = 'project-card-action-button--click';
-  cardFloatClick.id = 'project-card-generic-body--click';
   cardForkButton.id = 'project-card-fork-item--href';
   cardissueButton.id = 'project-card-issues-item--href';
   cardLastItem.id = 'project-card-action-item--href';
@@ -264,18 +248,11 @@ function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyTe
   currentTemplateCard.content.getElementById('textfield-card-label-field--text').id = textFieldCardID + "-entry-name--value";
   currentTemplateCard.content.getElementById('textfield-card-input--text').classList.add("mainclass-" + textFieldCardID);
   currentTemplateCard.content.getElementById('textfield-card-input--text').id = textFieldCardID + "-main-value--class";
-  var cardFloatClick = currentTemplateCard.content.getElementById('textfield-card-float--click');
   var cardPrimaryIconButton = currentTemplateCard.content.getElementById('textfield-card-action--button');
-  cardFloatClick.id = textFieldCardID + "-float--click";
   cardPrimaryIconButton.id = textFieldCardID + "-primary-btn--click";
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
   var currentTextFieldInputBox = oneElementInit("." + "mainclass-" + textFieldCardID, mdc.textField.MDCTextField);
-  if (screen.width > 839) {
-    document.getElementById(cardFloatClick.id).addEventListener('click', function () {
-      functionToCall(currentTextFieldInputBox.value);
-    });
-  }
   document.getElementById(cardPrimaryIconButton.id).addEventListener('click', function () {
     functionToCall(currentTextFieldInputBox.value);
   });
@@ -288,7 +265,6 @@ function createProjectTextFieldCards(cardGridLocation, cardMainTitle, cardBodyTe
   currentTemplateCard.content.getElementById(textFieldCardID + "-form-field--submit").id = 'textfield-card-form-submit--field';
   currentTemplateCard.content.getElementById(textFieldCardID + "-float-label--attr").id = 'textfield-card-for--attr';
   currentTemplateCard.content.getElementById(textFieldCardID + "-entry-name--value").id = 'textfield-card-label-field--text';
-  currentTemplateCard.content.getElementById(textFieldCardID + "-float--click").id = 'textfield-card-float--click';
   currentTemplateCard.content.getElementById(textFieldCardID + "-primary-btn--click").id = 'textfield-card-action--button';
   currentTemplateCard.content.getElementById(textFieldCardID + "-main-value--class").id = 'textfield-card-input--text';
   currentTemplateCard.content.getElementById('textfield-card-background--image').classList.remove(cardImageClass);
@@ -344,28 +320,20 @@ function createHomeWideLinkCard(gridLocation, cardTitle, cardDescription, backgr
   var currentCardID = guidGenerator();
   var currentTab = document.getElementById(gridLocation);
   var currentTemplateCard = document.getElementsByTagName("template")[6];
-  var cdRippleLinkSection = currentTemplateCard.content.getElementById('home-card-float-body--click');
   var cdFabButtonSection = currentTemplateCard.content.getElementById('home-card-action-button--click');
   currentTemplateCard.content.getElementById('home-card-background--image').id = currentCardID + "-bg--image";
   currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.add(backgroundClass);
   currentTemplateCard.content.getElementById('home-card-title--headline').id = currentCardID + "-card--title";
   currentTemplateCard.content.getElementById(currentCardID + "-card--title").innerHTML = cardTitle;
-  cdRippleLinkSection.id = currentCardID + "-float--main";
   cdFabButtonSection.id = currentCardID + "-fab--button";
   cdFabButtonSection.innerHTML = cardButtonName;
   currentTemplateCard.content.getElementById('home-card-body--text').id = currentCardID + "-body--text";
   currentTemplateCard.content.getElementById(currentCardID + "-body--text").innerHTML = cardDescription;
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
-  if (screen.width > 839) {
-    document.getElementById(currentCardID + "-float--main").addEventListener('click', function (evt) {
-      window.open(cardButtonHref, '_blank');
-    });
-  }
   document.getElementById(currentCardID + "-fab--button").addEventListener('click', function (evt) {
     window.open(cardButtonHref, '_blank');
   });
-  cdRippleLinkSection.id = "home-card-float-body--click";
   cdFabButtonSection.id = "home-card-action-button--click";
   currentTemplateCard.content.getElementById(currentCardID + "-bg--image").classList.remove(backgroundClass);
   currentTemplateCard.content.getElementById(currentCardID + "-card--title").id = 'home-card-title--headline';
@@ -382,21 +350,13 @@ function createTitlelessInfoCard() {
   var titleCardID = guidGenerator();
   var currentTab = document.getElementById("Grid-Tab-1");
   var currentTemplateCard = document.getElementsByTagName("template")[8];
-  var floatBodyClickBtn = currentTemplateCard.content.getElementById('small-card-main-page--float');
-  floatBodyClickBtn.id = titleCardID + "-floatbd--click";
   var pageBtnPrimaryButton = currentTemplateCard.content.getElementById('small-card-main-page--btn');
   pageBtnPrimaryButton.id = titleCardID + "-mainpg--btn";
   var cardToAppend = currentTemplateCard.content.cloneNode(true);
   currentTab.appendChild(cardToAppend);
-  if (screen.width > 839) {
-    document.getElementById(titleCardID + "-floatbd--click").addEventListener('click', function (evt) {
-      window.open("https://www.joincyberdiscovery.com/", '_blank');
-    });
-  }
   document.getElementById(titleCardID + "-mainpg--btn").addEventListener('click', function (evt) {
     window.open("https://www.joincyberdiscovery.com/", '_blank');
   });
-  currentTemplateCard.content.getElementById(titleCardID + "-floatbd--click").id = 'small-card-main-page--float';
   currentTemplateCard.content.getElementById(titleCardID + "-mainpg--btn").id = 'small-card-main-page--btn';
 }
 function fixGridCardVerticalHeightAlign(classElementsName) {
@@ -504,9 +464,6 @@ window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
 window.onload = fixAllTabsCardsVerticalHeight;
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
-if (screen.width > 839) {
-  initElement("mdc-card__primary-action",mdc.ripple.MDCRipple.attachTo);
-}
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
     cdSiteDrawer.open = !cdSiteDrawer.open;

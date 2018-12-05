@@ -157,6 +157,9 @@
 .mdc-card__primary-action {
   height: inherit;
 }
+.mdc-typography--body1 {
+  height: inherit !important;
+}
 .mdc-image-list__image {
   border-radius: 24px;
 }
