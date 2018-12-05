@@ -384,19 +384,6 @@ function alignContribTableSize() {
 function fixAllTabsCardsVerticalHeight(){
   switch (previousActiveTab) {
     case 0:
-      /*
-      var introImageCard = document.getElementsByClassName("homepage_welcome_card")[0].offsetHeight;
-      if (introImageCard > 0){
-        document.getElementsByClassName("page-intro-text-card")[0].style.height = introImageCard.toString() + "px";
-        if (screen.width > 1000) {
-          document.getElementsByClassName("cdsurvivalguide-main-card--object")[0].style.height = introImageCard.toString() + "px";
-          document.getElementsByClassName("hmgprogramme-main-card--object")[0].style.height = introImageCard.toString() + "px";
-        } else {
-          document.getElementsByClassName("cdsurvivalguide-main-card--object")[0].style.height = "inherit";
-          document.getElementsByClassName("hmgprogramme-main-card--object")[0].style.height = "inherit";
-        }
-      }
-      */
       break;
     case 1:
       alignContribTableSize();
@@ -408,7 +395,6 @@ function fixAllTabsCardsVerticalHeight(){
       alignContribTableSize();
       break;
     case 4:
-      //fixGridCardVerticalHeightAlign("card-body-text");
       break;
     default:
       console.log("Nope", previousActiveTab);
@@ -422,6 +408,7 @@ createTitlelessInfoCard();
 createHomeWideLinkCard("Grid-Tab-1", "Survival Guide", "A website where we host tips and tricks for those who are attempting the Cyber Discovery programme. All these articles are written by past participants, most of whom reached the elite stage themselves.", "cdsurvivalguide_home_card", "https://cdsurvivalguide.netlify.com/", "View");
 createHomeWideLinkCard("Grid-Tab-1", "Discord Server", "Join the largest Cyber Discovery Discord server with nearly 700 like-minded individuals and some SANS Institute staff members who are running the programme!", "home_discord_invite_card", "http://discord.gg/Kf8n5rT", "Join");
 createHomeWideLinkCard("Grid-Tab-1", "CyberStart Assess", "The second year of the programme is open! Need to register or already registered in year 1? Jump back in to assess for another year of awesome challenges!", "home_assess_card_reminder", "https://assess.joincyberdiscovery.com/reg-login", "Go");
+createHomeWideLinkCard("Grid-Tab-1", "Medium Blog", "View the official Cyber Discovery medium blog. This is where they post different announcements, challenges and more!", "medium_blog_main_card_image", "https://medium.com/@CyberDiscUK", "Read");
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");

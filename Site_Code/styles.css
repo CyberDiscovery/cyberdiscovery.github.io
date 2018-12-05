@@ -110,9 +110,13 @@
   background-size: 100% 100%;
 }
 .home_assess_card_reminder {
-  background: url("https://cdn-images-1.medium.com/max/2800/1*3x-kpdot39XOInrpZ7rwwg.png") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/Home_Tab/cd_assess_main_card_background.png") #0d2332 center/cover no-repeat;
   background-size: auto 100%;
   background-position: bottom;
+}
+.medium_blog_main_card_image {
+  background: url("../Image_Assets/Home_Tab/medium_blog_card_image.png") #9f5335 center/cover no-repeat;
+  max-height: 250px;
 }
 .custom_padded_font_card_home {
   padding: 0 1rem 8px;
@@ -129,7 +133,7 @@
 }
 .home_tab_welcome_banner_image {
   background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
-  background-size: auto 100%;
+  /*background-size: auto 100%;*/
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -352,5 +356,10 @@
 @media (min-width: 600px) {
   .mdc-snackbar {
     border-radius: 15px !important;
+  }
+}
+@media (min-width: 840px) {
+  .page-intro-text-card {
+    max-height: 470px !important;
   }
 }
