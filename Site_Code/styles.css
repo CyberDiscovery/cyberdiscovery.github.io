@@ -136,6 +136,9 @@
 .override_card_bg_main_poster {
   background-color: #0d2332;
 }
+.override_textfield_bottom_padding {
+  padding-bottom: 20px !important;
+}
 .homepage_introduction_card {
   height: auto;
   color: rgba(255, 255, 255, 0.85) !important;
@@ -344,5 +347,10 @@
   .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
     background-size: auto 100% !important;
     height: 520px;
+  }
+}
+@media (min-width: 600px) {
+  .mdc-snackbar {
+    border-radius: 15px !important;
   }
 }
