@@ -355,11 +355,6 @@
 }
 @media (min-width: 600px) {
   .mdc-snackbar {
-    border-radius: 15px !important;
-  }
-}
-@media (min-width: 840px) {
-  .page-intro-text-card {
-    max-height: 480px !important;
+    border-radius: 8px !important;
   }
 }
