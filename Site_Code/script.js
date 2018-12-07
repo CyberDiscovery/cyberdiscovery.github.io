@@ -375,16 +375,16 @@ function fixGridCardVerticalHeightAlign(classElementsName) {
 }
 function alignContribTableSize() {
   var pageContribList = fixContribListShownOnDom();
-  if (pageContribList.classList.contains('generic_contrib_card_list') == true) {
-    pageContribList.style.display = "none";
-    pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
-    pageContribList.style.display = "";
+  if (pageContribList != null){
+    if (pageContribList.classList.contains('generic_contrib_card_list') == true) {
+      pageContribList.style.display = "none";
+      pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
+      pageContribList.style.display = "";
+    }
   }
 }
 function fixAllTabsCardsVerticalHeight(){
   switch (previousActiveTab) {
-    case 0:
-      break;
     case 1:
       alignContribTableSize();
       break;
@@ -393,11 +393,6 @@ function fixAllTabsCardsVerticalHeight(){
       break;
     case 3:
       alignContribTableSize();
-      break;
-    case 4:
-      break;
-    default:
-      console.log("Nope", previousActiveTab);
       break;
   }
 }
@@ -466,6 +461,6 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
 window.mdc.autoInit();
 if (screen.width > 839 && screen.width <= 1199) {
   mdcSnackBar.show({message: "This site may not appear correctly, please consider rotating your device.", actionText: "OK", actionHandler: function() {}, timeout: 5000, multiline: true});
-} else if (screen.width >= 2560 || screen.height >= 1440) {
+} else if (screen.width > 1920) {
   mdcSnackBar.show({message: "This site may not appear correctly on large or high DPI displays. We're working on it, we promise!", actionText: "OK", actionHandler: function() {}, timeout: 5500, multiline: true});
 }
