@@ -59,8 +59,34 @@
       background-color: #f5f5f5;
       border-radius: 8px !important;
     }
+    .mdc-list {
+      width: auto;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px !important;
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      background-color: #f5f5f5;
+    }
+    .mdc-list:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    .mdc-list-item__graphic {
+      margin-left: 0;
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .mdc-list-item__meta {
+      color: #0d2332;
+      cursor: pointer;
+    }
   </style>
   <script>
+    function loadNewPage(pageUrl){
+      window.open(pageUrl, '_blank');
+    }
   </script>
 </head>
 <body>
@@ -89,26 +115,76 @@
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
+          <ul class="mdc-list mdc-list--two-line">
+            <li class="mdc-list-item" tabindex="0">
+              <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/8283298?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">eohomegrownapps</span>
+                <span class="mdc-list-item__secondary-text">An extraordinary person who contributed code and helped fix a major issue.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/eohomegrownapps')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/17798041?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">lightspeedana</span>
+                <span class="mdc-list-item__secondary-text">An incredibly skilled individual who contributed code, design and layout ideas.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/lightspeedana/')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">dwouca</span>
+                <span class="mdc-list-item__secondary-text">A valuable contributor without whose encouragement, this site would not exist!</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/dwouca/')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/25161069?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">AnonGuy</span>
+                <span class="mdc-list-item__secondary-text">An Arch Linux enthusiast, important project stakeholder and contributor.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/AnonGuy')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/40318243?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">AlphexGaming</span>
+                <span class="mdc-list-item__secondary-text">Another priceless contributor who helped with the assets and images!</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/AlphexGaming')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/29120255?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">ZomBMage</span>
+                <span class="mdc-list-item__secondary-text">An enthusiastic contributor who directly contributed code and ideas on layout.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/ZomBMage')">star</span>
+            </li>
+            <li class="mdc-list-item">
+              <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">thebeanogamer</span>
+                <span class="mdc-list-item__secondary-text">The BDFL and agent handler in charge of running this organisation.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/thebeanogamer')">star</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
   <script>
-    function initElement(elementClassName, elementInitFunction) {
-      var x = document.getElementsByClassName(elementClassName);
-      if (x[0] !== null){
-        var y;
-        for(y = 0; y < x.length; y++){
-          elementInitFunction(x[y]);
-        }
-      }
-    }
     function oneElementInit(queryElementName, instantiationFunction) {
       if (document.querySelector(queryElementName) !== null){
         return new instantiationFunction(document.querySelector(queryElementName));
       }
     }
     const cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
+    const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
     window.mdc.autoInit();
   </script>
 </body>
