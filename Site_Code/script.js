@@ -396,7 +396,6 @@ function fixAllTabsCardsVerticalHeight(){
       break;
   }
 }
-//FINISH THIS!!
 createBannerImageWideCard("Grid-Tab-1", "home_tab_welcome_banner_image");
 createMainIntroTextCard();
 createTitlelessInfoCard();
