@@ -111,8 +111,8 @@
   background-size: 100% 100%;
 }
 .home_assess_card_reminder {
-  background: url("../Image_Assets/Home_Tab/cd_assess_main_card_background.png") #0d2332 center/cover no-repeat;
-  background-size: auto 100%;
+  background: url("../Image_Assets/Home_Tab/cd_game_main_card_background.png") #0d2332 center/cover no-repeat;
+  background-size: auto 105%;
   background-position: bottom;
 }
 .medium_blog_main_card_image {
@@ -315,7 +315,7 @@
     background-size: 130% auto;
 }
 .discord_bot_assess_card_image {
-  background: url("../Image_Assets/Discord_Tab/bot_card_main_card_image.jpg") #363940 center/cover no-repeat;
+  background: url("../Image_Assets/Discord_Tab/bot_get_game_level_no_hint_owo.jpg") #363940 center/cover no-repeat;
   background-size: 100% auto;
 }
 .discord_dwouca_owo_gang_lmao {
