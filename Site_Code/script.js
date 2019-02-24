@@ -57,7 +57,12 @@ var cGFnZVVybExpc3QK = [
   "aHR0cHM6Ly95b3V0dS5iZS9aLTlNM1hzU1JZTQ==",
   "aHR0cHM6Ly95b3V0dS5iZS8wOW0wQjhSUmlFRQ==",
   "aHR0cHM6Ly9zb3VuZGNsb3VkLmNvbS9oZWxsb2ltb2xpdmVyYS9nb2xkZW4tcGxhdGUjdD0wOjMw",
-  "aHR0cHM6Ly95b3V0dS5iZS95NXpRVG1rWTdHSQ=="
+  "aHR0cHM6Ly95b3V0dS5iZS95NXpRVG1rWTdHSQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS9CSVVKc2p2UFBoWQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS9HTWIwMnRBcURSTQ==",
+  "aHR0cHM6Ly95b3V0dS5iZS9uT2d3OW1fbi1vNA==",
+  "aHR0cHM6Ly95b3V0dS5iZS9tSXlMT0lxR1pDcw==",
+  "aHR0cHM6Ly95b3V0dS5iZS9SYlk2d1RmQzhnTQ=="
 ];
 function selectRandItem(selectionArray) {
   var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
@@ -77,7 +82,11 @@ function guidGenerator() {
 }
 var mdcSnackBar = oneElementInit(".mdc-snackbar", mdc.snackbar.MDCSnackbar.attachTo);
 function displayMDCSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
-  mdcSnackBar.show({message: snackbarText, actionText: dismissText, actionHandler: dismissFunction, timeout: timeoutValue});
+  mdcSnackBar.timeoutMs = timeoutValue;
+  mdcSnackBar.labelText = snackbarText;
+  mdcSnackBar.actionButtonText = dismissText;
+  document.getElementById('snackbarActionBtnRipple').onclick = dismissFunction;
+  mdcSnackBar.open();
 }
 function MTMzNyBLb25hbWkgQ29kZSAK(callback) {
   var kkeys = [];
@@ -92,28 +101,14 @@ function MTMzNyBLb25hbWkgQ29kZSAK(callback) {
 }
 var handler = MTMzNyBLb25hbWkgQ29kZSAK(() => {
   var SW5zZXJ0MTMzN01lc3NhZ2UK = window.atob("VHVybiB1cCB0aGUgamFtcyBhbmQgaGF2ZSBhIGdvb2QgdGltZT8=");
-  mdcSnackBar.show({message: SW5zZXJ0MTMzN01lc3NhZ2UK, actionText: "Sure", actionHandler: setLocation, timeout: 3000});
+  displayMDCSnackbar(SW5zZXJ0MTMzN01lc3NhZ2UK, "Sure", setLocation, 5000);
 });
 window.addEventListener('keydown', handler);
 var cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
 var cdSiteTabBar = oneElementInit(".mdc-tab-bar", mdc.tabBar.MDCTabBar);
 var cdSiteDrawer = oneElementInit(".mdc-drawer", mdc.drawer.MDCDrawer.attachTo);
-var cdSourceMenu = oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
+oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
 var availableSiteTabs = document.getElementsByClassName("generic-tab-item");
-function openSourceMenu() {
-  cdSourceMenu.open = true;
-}
-function viewPageSourceStackOverFlow(){
-  var source = "<html>";
-  source += document.getElementsByTagName('html')[0].innerHTML;
-  source += "</html>";
-  source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  source = "<pre>"+source+"</pre>";
-  var sourceWindow = window.open('','Source of page','height=800,width=800,scrollbars=1,resizable=1');
-  sourceWindow.document.write(source);
-  sourceWindow.document.close();
-  if(window.focus) sourceWindow.focus();
-}
 function createLinkCard(gridLocation, cardTitle, cardDescription, backgroundClass, cardButtonHref) {
   var currentCardID = guidGenerator();
   var currentTab = document.getElementById(gridLocation);
@@ -191,17 +186,17 @@ function createProjectMainCard(cardGridLocation, cardMainTitle, cardDescriptionT
 }
 function checkPwnState(searchEmailAddr) {
   if (searchEmailAddr == null || searchEmailAddr == "") {
-    displayMDCSnackbar("Email field is empty!", "OK", function(){}, 3000);
+    displayMDCSnackbar("Please type a valid email address.", "OK", function(){}, 5000);
   } else {
     var checkHIBPRequest = new XMLHttpRequest();
     checkHIBPRequest.onreadystatechange = function() {
       if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 200) {
         var breachCount = JSON.parse(checkHIBPRequest.responseText).length;
-        mdcSnackBar.show({message: "Oh no — pwned on " + breachCount + " breached sites!", actionText: "More", actionHandler: function(){loadNewPage('https://haveibeenpwned.com/account/' + searchEmailAddr);}, timeout: 5000});
+        displayMDCSnackbar("Oh no — pwned on " + breachCount + " breached sites!", "More", function(){loadNewPage('https://haveibeenpwned.com/account/' + searchEmailAddr);}, 5000);
       } else if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 404) {
-        displayMDCSnackbar("Good news — no pwnage found!", "Cool", function(){}, 3000);
+        displayMDCSnackbar("Good news — no pwnage found!", "Cool", function(){}, 5000);
       } else if (checkHIBPRequest.readyState == 4) {
-        displayMDCSnackbar("Rate limit exceeded, please try again later.", "Oops!", function(){loadNewPage(window.atob("aHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvREx6eHJ6RkN5T3M/Y29udHJvbHM9MCZzaG93aW5mbz0wJnJlbD0wJmF1dG9wbGF5PTEmbG9vcD0xJnN0YXJ0PTA="));}, 3000);
+        displayMDCSnackbar("Rate limit exceeded, please try again later.", "Oops!", function(){loadNewPage(window.atob("aHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvREx6eHJ6RkN5T3M/Y29udHJvbHM9MCZzaG93aW5mbz0wJnJlbD0wJmF1dG9wbGF5PTEmbG9vcD0xJnN0YXJ0PTA="));}, 5000);
       }
     };
     checkHIBPRequest.open("GET", "https://haveibeenpwned.com/api/v2/breachedaccount/" + searchEmailAddr + "?truncateResponse=true&includeUnverified=true", true);
@@ -359,20 +354,6 @@ function createTitlelessInfoCard() {
   });
   currentTemplateCard.content.getElementById(titleCardID + "-mainpg--btn").id = 'small-card-main-page--btn';
 }
-function fixGridCardVerticalHeightAlign(classElementsName) {
-  var pageElementsArray = [];
-  var pageTextItemsBody = document.getElementsByClassName(classElementsName);
-  for (var i = 0; i < pageTextItemsBody.length; i++){
-    pageElementsArray.push(pageTextItemsBody[i].offsetHeight);
-  }
-  var maxPageDescBodyText = Math.max.apply(null, pageElementsArray) - 8;
-  maxPageDescBodyText = maxPageDescBodyText.toString();
-  for (var q = 0; q < pageTextItemsBody.length; q++) {
-    if (pageTextItemsBody[q].offsetHeight <  maxPageDescBodyText) {
-      pageTextItemsBody[q].style.height = maxPageDescBodyText + "px";
-    }
-  }
-}
 function alignContribTableSize() {
   var pageContribList = fixContribListShownOnDom();
   if (pageContribList != null){
@@ -400,9 +381,9 @@ createBannerImageWideCard("Grid-Tab-1", "home_tab_welcome_banner_image");
 createMainIntroTextCard();
 createTitlelessInfoCard();
 createHomeWideLinkCard("Grid-Tab-1", "Survival Guide", "A website where we host tips, tricks, and guidance for those who are attempting the Cyber Discovery programme. All these articles have been written by past participants, most of whom have progressed to the Elite stage themselves.", "cdsurvivalguide_home_card", "https://cdsurvivalguide.netlify.com/", "View");
-createHomeWideLinkCard("Grid-Tab-1", "Discord Server", "Join the largest Cyber Discovery Discord server with nearly 1000+ like-minded people and students who are going through the programme as well as a few SANS Institute staff members who are involved in running the programme!", "home_discord_invite_card", "https://discord.gg/Kf8n5rT", "Join");
+createHomeWideLinkCard("Grid-Tab-1", "Discord Server", "Join the largest Cyber Discovery Discord server with over a 1000 like-minded people and students who are going through the programme as well as a few SANS Institute staff members who are involved in running the programme!", "home_discord_invite_card", "https://discord.gg/Kf8n5rT", "Join");
 createHomeWideLinkCard("Grid-Tab-1", "CyberStart Game", "The second stage of year 2 is now open! Jump back into Game! If you have an existing account you can simply just sign back in here using your details from last year. CyberStart Game will remain open till the 18 of March 2019.", "home_assess_card_reminder", "https://game.joincyberdiscovery.com/login", "Go");
-createHomeWideLinkCard("Grid-Tab-1", "Medium Blog", "View the official Cyber Discovery Medium blog. This is where they post different announcements, challenges, student spotlights, answers, writeups, and much more. You can also download our app which has the Medium blog embedded within it!", "medium_blog_main_card_image", "https://medium.com/@CyberDiscUK", "Read");
+createHomeWideLinkCard("Grid-Tab-1", "Medium Blog", "View the official Cyber Discovery Medium blog. This is where they post different announcements, challenges, student spotlights, answers, writeups, and much more. You can also download our app which has the Medium blog embedded within it!", "medium_blog_main_card_image", "https://medium.com/cyber-discovery", "Read");
 createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
 createLinkCard("Grid-Tab-5", "Replit", "A free, powerful, and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
 createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
@@ -437,10 +418,10 @@ createProjectMainCard("Grid-Tab-4", "Challenge Master", "Challenge Master is a w
 createProjectMainCard("Grid-Tab-4", "App Website", "Companion Website for the unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required. Cross-platform too (Link in menu as well). Quite cool if you ask me.", "app_website_site_card_image", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website", "https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website", "https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues", "Visit Site", "https://cyber-discovery-app.firebaseapp.com/", "web");
 createImageCardMain("Grid-Tab-4", "app_site_alt_card_image", "Event Countdown!");
 createLinkCard("Grid-Tab-4", "Alexa Skill", "Do you have an Alexa supported device? We made an Alexa skill which you can try out on your device today! The unofficial Cyber Discovery Buddy helps by giving you start and end dates for stages and by giving you tips for challenges!", "alexa_skill_card_image", "https://amzn.to/2FZ9wSc");
-createLinkCard("Grid-Tab-4", "Help us!", "Have you made a responsive and interactive website before? Want to get the Community Developer role or interested in writing a site? Consider helping us improve our sites! Start by viewing the MDL documentation today!", "website_tab_help_us_card_image", "https://getmdl.io/started/index.html");
+createLinkCard("Grid-Tab-4", "Help us!", "Have you made a responsive and interactive website before? Want to get the Community Developer role or interested in writing a site? Consider helping us improve our sites! Start by viewing the MDC Web documentation today!", "website_tab_help_us_card_image", "https://material.io/develop/web/");
 createGitHubContribCard("Grid-Tab-4", "cdsurvivalguide");
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
-var searchHIBPTextField = oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
+oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
 window.onload = fixAllTabsCardsVerticalHeight;
@@ -459,7 +440,7 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
 });
 window.mdc.autoInit();
 if (screen.width > 839 && screen.width <= 1199) {
-  mdcSnackBar.show({message: "This site may not appear correctly, please consider rotating your device.", actionText: "OK", actionHandler: function() {}, timeout: 5000, multiline: true});
+  displayMDCSnackbar("This site may not appear correctly, please consider rotating your device.", "OK", function() {}, 5000);
 } else if (screen.width > 1920) {
-  mdcSnackBar.show({message: "This site may not appear correctly on large or high DPI displays. We're working on it, we promise!", actionText: "OK", actionHandler: function() {}, timeout: 5500, multiline: true});
+  displayMDCSnackbar("This site may not appear correctly on large/high DPI displays. We're working on it, we promise!", "OK", function() {}, 6000);
 }
