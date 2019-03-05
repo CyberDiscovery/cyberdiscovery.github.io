@@ -23,10 +23,10 @@
     margin-right: auto;
   }
   .mdc-card:hover {
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12) !important;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2) !important;
   }
   .mdc-image-list__image:hover {
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12) !important;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2) !important;
   }
 }
 .card-body-text {
@@ -99,7 +99,7 @@
   background-size: auto 100%;
 }
 .cdsurvivalguide_home_card {
-  background: url('../Image_Assets/Home_Tab/cd_survival_guide_card_image.png') #0d2332 center / cover no-repeat;
+  background: url('../Image_Assets/Home_Tab/alice_asset_survival_guide.png') #4a3c5f center / cover no-repeat !important;
   max-height: 250px;
 }
 .hmg_programme_home_card {
@@ -111,8 +111,8 @@
   background-size: 100% 100%;
 }
 .home_assess_card_reminder {
-  background: url("../Image_Assets/Home_Tab/cd_game_main_card_background.png") #0d2332 center/cover no-repeat;
-  background-size: auto 105%;
+  background: url("../Image_Assets/Home_Tab/cs_essentials_card_image.jpg") #0d2331 center/cover no-repeat;
+  background-size: auto 95%;
   background-position: bottom;
 }
 .medium_blog_main_card_image {
@@ -286,21 +286,21 @@
   background-size: auto 110%;
 }
 .App_Screenshot_Card_One {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #009688 center/cover no-repeat;
   background-position: top !important;
 }
 .App_Screenshot_Card_Two {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #009688 center/cover no-repeat;
 }
 .App_Screenshot_Card_Three {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Three.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Three.jpg") #009688 center/cover no-repeat;
 }
 .App_Screenshot_Card_Four {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #009688 center/cover no-repeat;
   background-position: top !important;
 }
 .App_Screenshot_Card_Five {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #0d2332 center/cover no-repeat;
+  background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #009688 center/cover no-repeat;
   background-position: top !important;
 }
 .App_Contrib_Flutter_Docs {
