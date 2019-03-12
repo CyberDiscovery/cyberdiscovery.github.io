@@ -112,8 +112,7 @@
 }
 .home_assess_card_reminder {
   background: url("../Image_Assets/Home_Tab/cs_essentials_card_image.jpg") #0d2331 center/cover no-repeat;
-  background-size: auto 95%;
-  background-position: bottom;
+  background-size: auto 90%;
 }
 .medium_blog_main_card_image {
   background: url("../Image_Assets/Home_Tab/medium_blog_card_image.png") #9f5335 center/cover no-repeat;
@@ -186,7 +185,7 @@
   height: 250px !important;
 }
 .cdbotmain_card_image {
-  background: url('../Image_Assets/Discord_Bot_Contribute.gif') #2a2d32 center/cover no-repeat;
+  background: url('../Image_Assets/Discord_Tab/optimised_discord_card_image.gif') #e8e4e7 center/cover no-repeat;
   background-size: 110%;
 }
 .cdmathsbot_card_image {
