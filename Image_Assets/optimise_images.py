@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 #   optimise_images.py - Call convert on PNGs and JPEGs using Google's settings
 #   Requires: Python >= 3.6
-#   Requires: Dank memes in production.
 
 from subprocess import CalledProcessError, check_output  # noqa: S404
 from sys import argv, exit
@@ -29,9 +28,9 @@ if _LEN == 1:
 
 def output(cmd):
     try:
-        _ = check_output(f"{cmd} 2>/dev/null", shell=True)  # noqa: S602
-        return _.decode("utf-8").rstrip()
-    except(CalledProcessError) as CMD_ERROR:
+        cmd_out = check_output(f"{cmd} 2>/dev/null", shell=True)  # noqa: S602
+        return cmd_out.decode("utf-8").rstrip()
+    except CalledProcessError as CMD_ERROR:
         print(f"Error encountered when running: {cmd}")
         print(CMD_ERROR)
         exit()
@@ -56,20 +55,20 @@ if not REPLACE:
     for i in FILES:
         if i[-4:] in OPTIMISATION_MAP.keys():
             output(f"cp {DIR_PREPEND}{i} {TEMPDIR}")
-            _ = f"convert {TEMPDIR}/{i} {OPTIMISATION_MAP[i[-4:]]} ./{BACKUP_DIR}/{i}"  # noqa: E501
-            print(_)
-            output(_)
+            CONVERT_CMD = f"convert {TEMPDIR}/{i} {OPTIMISATION_MAP[i[-4:]]} ./{BACKUP_DIR}/{i}"  # noqa: E501
+            print(CONVERT_CMD)
+            output(CONVERT_CMD)
         else:
             print(f"Exclude {i}")
 
     CURR_SIZE = int(output(f"du ./{BACKUP_DIR} -c | grep total | cut -f1"))
     SAVED = int(100 - (CURR_SIZE/INIT_SIZE)*100)
-    _VE = "lost" if (SAVED < 0) else "saved"
+    LOST_OR_SAVED = "lost" if (SAVED < 0) else "saved"
     SAVED = abs(SAVED)
     FINAL_SIZE = f"du ./{BACKUP_DIR} -sh | cut -f1"
 
     print(f"\nImages size now: {output(FINAL_SIZE)}")
-    print(f"\nIf you run with --replace, {SAVED}% space would be {_VE}.")
+    print(f"\nIf you run with --replace, {SAVED}% space would be {LOST_OR_SAVED}.")  # noqa: E501
     output(f"rm {BACKUP_DIR} -rf")
     output(f"rm {TEMPDIR} -rf")
 
@@ -77,7 +76,7 @@ elif REPLACE:
     for i in FILES:
         if i[-4:] in OPTIMISATION_MAP.keys():
             output(f"mv {DIR_PREPEND}{i} ./{BACKUP_DIR}/{i}")
-            _ = f"convert ./{BACKUP_DIR}/{i} {OPTIMISATION_MAP[i[-4:]]} {DIR_PREPEND}{i}"  # noqa: E501
-            print(_)
-            output(_)
+            CONVERT_CMD = f"convert ./{BACKUP_DIR}/{i} {OPTIMISATION_MAP[i[-4:]]} {DIR_PREPEND}{i}"  # noqa: E501
+            print(CONVERT_CMD)
+            output(CONVERT_CMD)
     print(f"\nPrevious images have been backed up to {BACKUP_DIR}")
