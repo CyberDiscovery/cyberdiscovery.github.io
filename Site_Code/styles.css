@@ -348,11 +348,8 @@
   .mdc-layout-grid {
     max-width: 1750px !important;
   }
-  /*
-    The body background color change is debatable.
-  */
   body {
-    background-color: #eeeeee;
+    background-color: #fcfcfc;
   }
 }
 @media (min-width: 480px) {
