@@ -13,11 +13,12 @@
   <meta name="keywords" content="CyberDiscovery,GitHub,Community,Projects">
   <meta name="author" content="Sh3llcod3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0d2332" />
+  <meta name="theme-color" content="#3f51b5" />
+  <meta name="referrer" content="origin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
-  <link rel="stylesheet" href="./Site_Code/styles.min.css" type="text/css">
+  <link rel="stylesheet" href="./Site_Code/styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
   <!-- Normalise can also be had from (but not minified!): https://unpkg.com/normalize.css@latest/normalize.css -->
   <!-- Lastest CSS from unpkg: https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css -->
@@ -31,176 +32,6 @@
   </script>
 </head>
 <body>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square fixed-size-background-img" id="cd-card-background--image">
-        </div>
-        <div class="card-title-text">
-          <h2 class="card-title-headline mdc-typography--headline5" id="cd-card-title--headline">CardTitle</h2>
-        </div>
-        <div class="card-body-text mdc-typography--body1" id="cd-card-body--text">
-          Card body description text here.
-        </div>
-        <div class="mdc-card__actions">
-          <div class="mdc-card__action-buttons">
-            <button class="mdc-button mdc-card__action mdc-card__action--button" id="cd-card-action-button--click">Visit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square project_card_fixed_background" id="project-card-background--image">
-        </div>
-        <div class="card-title-text">
-          <h2 class="card-title-headline mdc-typography--headline5" id="project-card-title--headline">Card Title</h2>
-        </div>
-        <div class="mdc-typography--body1 generic-card-text" id="project-card-body--text">
-          Card Body Text
-        </div>
-        <div class="mdc-card__actions">
-          <div class="mdc-card__action-buttons">
-            <button class="mdc-button mdc-card__action mdc-card__action--button" id="project-card-action-button--click">GitHub</button>
-          </div>
-          <div class="mdc-card__action-icons">
-            <div class="mdc-menu-surface--anchor">
-              <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options" id="project-card-menu-activation--button">more_vert</button>
-              <div class="mdc-menu mdc-menu-surface" tabindex="-1" id="project-card-more-option--menu">
-                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                  <li class="mdc-list-item" role="menuitem" id="project-card-fork-item--href">
-                    <span class="mdc-list-item__text">
-                      <i class="material-icons project_card_menu_icons">call_split</i>
-                      Fork Project
-                    </span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem" id="project-card-issues-item--href">
-                    <span class="mdc-list-item__text">
-                      <i class="material-icons project_card_menu_icons">view_list</i>
-                      View Issues
-                    </span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem" id="project-card-action-item--href">
-                    <span class="mdc-list-item__text" id="project-card-action-item--name">
-                      Action item
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square project_card_fixed_background" id="textfield-card-background--image">
-        </div>
-        <div class="card-title-text">
-          <h2 class="card-title-headline mdc-typography--headline5" id="textfield-card-title--headline">Card Title</h2>
-        </div>
-        <div class="generic-card-text mdc-typography--body1" id="textfield-card-body--text">
-          Card Body Text
-        </div>
-        <div class="mdc-card__actions override_textfield_bottom_padding">
-          <form class="textfield_span_width_full form_padding_adjustments" action="javascript:void(0);" id="textfield-card-form-submit--field">
-            <div class="mdc-text-field mdc-text-field--outlined textfield_span_width_full" id="textfield-card-input--text">
-              <input type="text" id="textfield-card-for--attr" class="mdc-text-field__input">
-              <div class="mdc-notched-outline">
-                <div class="mdc-notched-outline__leading textfield_leading_notch_radius"></div>
-                <div class="mdc-notched-outline__notch">
-                  <label for="textfield-card-for--attr" class="mdc-floating-label" id="textfield-card-label-field--text">Entry Value</label>
-                </div>
-                <div class="mdc-notched-outline__trailing"></div>
-              </div>
-            </div>
-          </form>
-          <div class="mdc-card__action-icons">
-            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon textfield_card_primary_btn" title="Check" id="textfield-card-action--button">arrow_forward</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square generic_image_card_main" id="generic-image-demo--class">
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <ul class="mdc-list generic_contrib_card_list" aria-orientation="vertical" id="contrib-list-card-main--list">
-        </ul>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-      <div class="mdc-card rounded-corner-card override_card_bg_main_poster">
-        <div class="mdc-card__media mdc-card__media--square generic_image_card_main" id="banner-image-wide-card--class">
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square fixed-size-background-img" id="home-card-background--image">
-        </div>
-        <div class="card-title-text">
-          <h2 class="card-title-headline mdc-typography--headline5" id="home-card-title--headline">CardTitle</h2>
-        </div>
-        <div class="card-body-text mdc-typography--body1 custom_padded_font_card_home" id="home-card-body--text">
-          Card body description text here.
-        </div>
-        <div class="mdc-card__actions">
-          <div class="mdc-card__action-buttons">
-            <button class="mdc-button mdc-card__action mdc-card__action--button" id="home-card-action-button--click">Visit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card page-intro-text-card">
-        <div class="card-title-text">
-          <h2 class="card-title-headline mdc-typography--headline3">Welcome!</h2>
-        </div>
-        <div class="mdc-typography--body1 homepage_introduction_card">
-          The Cyber Discovery Community is a passionate, growing community of people who are interested in cyber security and technology.
-          This GitHub pages site aims to showcase some of the projects that our members have created and continue to maintain.
-          While you're here, feel free to check out some of our awesome open-source projects and consider lending us some of your amazing
-          developer skills by contributing to these projects!
-        </div>
-      </div>
-    </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card rounded-corner-card">
-        <div class="mdc-card__media mdc-card__media--square hmg_programme_home_card">
-        </div>
-        <div class="mdc-typography--body1 hmg_programme_body_text">
-          What is the HM Government's Cyber Schools programme? What is Cyber Discovery?
-          Am I eligible to take part? Do I need to know anything in advance? Find all the details here.
-        </div>
-        <div class="mdc-card__actions">
-          <div class="mdc-card__action-buttons">
-            <button class="mdc-button mdc-card__action mdc-card__action--button" id="small-card-main-page--btn">Visit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
       <h3 class="mdc-drawer__title">Helpful Links</h3>
@@ -293,7 +124,7 @@
         <span class="mdc-top-app-bar__title">Community Projects</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" target="_blank" class="material-icons mdc-top-app-bar__action-item" aria-label="Code" title="View Source" alt="Code">code</a>
+        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" target="_blank" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Dark Theme" alt="Theme">tonality</a>
       </section>
     </div>
   </header>
@@ -303,6 +134,7 @@
         <div class="mdc-tab-scroller__scroll-content">
           <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="Home-Tab">
             <span class="mdc-tab__content">
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
               <span class="mdc-tab__text-label">Home</span>
             </span>
             <span class="mdc-tab-indicator mdc-tab-indicator--active">
@@ -312,7 +144,8 @@
           </button>
           <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Discord-Bot-Tab">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">Discord Bots</span>
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">code</span>
+              <span class="mdc-tab__text-label">Projects</span>
             </span>
             <span class="mdc-tab-indicator">
               <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -321,24 +154,7 @@
           </button>
           <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">Unofficial App</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-Website-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">Websites</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-Resources-Tab">
-            <span class="mdc-tab__content">
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">collections_bookmark</span>
               <span class="mdc-tab__text-label">Resources</span>
             </span>
             <span class="mdc-tab-indicator">
@@ -393,6 +209,6 @@
       </div>
     </div>
   </div>
-  <script src="./Site_Code/script.min.js"></script>
+  <script src="./Site_Code/script.js"></script>
 </body>
 </html>
