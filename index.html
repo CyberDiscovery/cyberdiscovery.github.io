@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
+  <script src="./Site_Code/theme_preload.js"></script>
   <link rel="stylesheet" href="./Site_Code/styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
   <!-- Normalise can also be had from (but not minified!): https://unpkg.com/normalize.css@latest/normalize.css -->
@@ -33,11 +34,8 @@
 </head>
 <body>
   <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title">Helpful Links</h3>
-      <h6 class="mdc-drawer__subtitle">Have you registered yet?</h6>
-    </div>
     <div class="mdc-drawer__content">
+      <h6 class="mdc-list-group__subheader">Community Links</h6>
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
@@ -110,7 +108,7 @@
           <span class="mdc-list-item__text">Hack The Box</span>
         </a>
         <a class="mdc-list-item" href="https://ctftime.org/writeups">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections_bookmark</i>
           <span class="mdc-list-item__text">CTF Writeups</span>
         </a>
       </nav>
@@ -124,7 +122,7 @@
         <span class="mdc-top-app-bar__title">Community Projects</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" target="_blank" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Dark Theme" alt="Theme">tonality</a>
+        <a href="javascript:switchTheme();" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Dark Theme" alt="Theme">tonality</a>
       </section>
     </div>
   </header>
@@ -154,7 +152,7 @@
           </button>
           <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">collections_bookmark</span>
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">library_books</span>
               <span class="mdc-tab__text-label">Resources</span>
             </span>
             <span class="mdc-tab-indicator">
@@ -173,26 +171,14 @@
     </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-2">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Bots-Grid">
+    <div class="layout-grid-desktop mdc-layout-grid" id="Projects-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-2">
       </div>
     </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-3">
-    <div class="layout-grid-desktop mdc-layout-grid" id="App-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-4">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Websites-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-4">
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-5">
     <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-5">
+      <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
       </div>
     </div>
   </div>
