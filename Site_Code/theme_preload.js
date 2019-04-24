@@ -19,48 +19,50 @@ function getCookie(cname) {
   }
   return "";
 }
-function loadDarkTheme() {
-  console.log("Loading dark theme.");
-  var cssId = 'DarkCSS';
-  if (!document.getElementById(cssId))
-  {
-      var head  = document.getElementsByTagName('head')[0];
-      var link  = document.createElement('link');
-      link.id   = cssId;
-      link.rel  = 'stylesheet';
-      link.type = 'text/css';
-      link.href = './Site_Code/dark_theme.css';
-      link.media = 'all';
-      head.appendChild(link);
-      document.getElementsByName("theme-color")[0].content = "#000000";
-      setCookie("ThemePreference", "dark", 30);
+function loadTheme(themeLocation, metaColor, cookieValue){
+  var themeName = "SetTheme";
+  var cssElement = document.getElementById(themeName);
+  if (cssElement){
+    cssElement.parentNode.removeChild(cssElement);
+  }
+  var head  = document.getElementsByTagName('head')[0];
+  var link  = document.createElement('link');
+  link.id   = themeName;
+  link.rel  = 'stylesheet';
+  link.type = 'text/css';
+  link.href = themeLocation;
+  link.media = 'all';
+  head.appendChild(link);
+  document.getElementsByName("theme-color")[0].content = metaColor;
+  if (cookieValue != null && cookieValue != ""){
+    setCookie("ThemePreference", cookieValue, 30);
   }
 }
 function switchTheme(){
-  var currentTheme = getCookie("ThemePreference");
-  if (currentTheme == "dark"){
-    var cssElement = document.getElementById("DarkCSS");
-    cssElement.parentNode.removeChild(cssElement);
-    document.getElementsByName("theme-color")[0].content = "#3f51b5";
-    setCookie("ThemePreference", "light", 30);
-  } else if (currentTheme == "light"){
-    loadDarkTheme();
+  switch (getCookie("ThemePreference")) {
+    case "light":
+      loadTheme("./Site_Code/dark_theme.css", "#000000", "dark");
+      break;
+
+    case "dark":
+      loadTheme("./Site_Code/light_theme.css", "#3f51b5", "light");
+      break;
   }
 }
 
 function checkCookie() {
-  var theme=getCookie("ThemePreference");
-  if (theme == "") {
-    displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 4000);
-    setCookie("ThemePreference", "light", 30);
-  } else if (theme == "dark"){
-    loadDarkTheme();
+  switch (getCookie("ThemePreference")) {
+    case "dark":
+      loadTheme("./Site_Code/dark_theme.css", "#000000");
+      break;
+
+    case "light":
+      loadTheme("./Site_Code/light_theme.css", "#3f51b5");
+      break;
+
+    default:
+      displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 4000);
+      loadTheme("./Site_Code/light_theme.css", "#3f51b5", "light");
+      break;
   }
-  /* else {
-     theme = prompt("Please enter your name:","");
-     if (theme != "" && theme != null) {
-       setCookie("ThemePreference", theme, 30);
-     }
-  }
-  */
 }

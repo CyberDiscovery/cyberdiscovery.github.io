@@ -1,377 +1,49 @@
 :root {
   --mdc-theme-primary: #212121 !important;
+  --mdc-theme-on-surface: #9e9e9e !important;
+}
+body {
+  background-color: #212121;
 }
 .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
-	color: #212121 !important;
+	color: #ffffff !important;
 }
 .mdc-drawer .mdc-list-item--activated {
-	color: #212121 !important;
+	color: #ffffff !important;
 }
-:focus {
-  outline: none !important;
+.mdc-drawer .mdc-list-item__graphic {
+	color: #9e9e9e;
 }
-.mdc-top-app-bar__title {
-  font-weight: 400;
-  letter-spacing: .02em;
+.mdc-drawer .mdc-list-item {
+	color: #9e9e9e;
 }
-.centered-page-item {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item--activated::after {
+	background-color: #9e9e9e;
 }
-.layout-tab-item {
-  display: none;
+.mdc-list-divider {
+	border-bottom-color: #494949;
 }
-.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
-	color: #0d2332;
+.mdc-drawer--modal + .mdc-drawer-scrim {
+	background-color: rgba(66,66,66,.32);
 }
-.mdc-drawer .mdc-list-item--activated {
-	color: #0d2332;
+.mdc-drawer .mdc-list-group__subheader {
+	color: #9e9e9e;
 }
-@media (min-width: 840px) {
-  .layout-grid-desktop .mdc-layout-grid__inner {
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .mdc-card:hover {
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2) !important;
-  }
-  .mdc-image-list__image:hover {
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2) !important;
-  }
+.mdc-drawer {
+	background-color: #212121;
 }
-.card-body-text {
-  padding: 0 1rem 8px;
-  color: rgba(0,0,0,.54);
+.mdc-tab-indicator > .mdc-tab-indicator__content--underline {
+	background-color: #ffffff;
 }
-.card-title-text {
-  padding: 1rem;
+.mdc-tab-scroller__scroll-content {
+	background-color: #424242;
 }
-.card-title-headline {
-  margin: 0;
+.mdc-tab--active .mdc-tab__icon {
+	color: #ffffff;
 }
-.rounded-corner-card {
-  border-radius: 24px 24px;
-  height: 100% !important;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+.mdc-tab--active .mdc-tab__text-label {
+	color: #ffffff;
 }
-.fixed-size-background-img {
-  height: 250px;
-}
-.otw-card-background {
-  background: url("../Image_Assets/Resources_Tab/otw_card_image2.jpg") #000000 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.replit-card-background {
-  background: url("../Image_Assets/Resources_Tab/replit_card_image.png") #3f51b5 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.smashthestack-card-background {
-  background: url("../Image_Assets/Resources_Tab/STS_card_image.png") #000000 center/cover no-repeat;
-  background-size: 140% auto;
-}
-.cybrary-card-background {
-  background: url("../Image_Assets/Resources_Tab/Cybrary_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.udacity-card-background {
-  background: url("../Image_Assets/Resources_Tab/udacity_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.codewars-card-background {
-  background: url("../Image_Assets/Resources_Tab/codewars_resource_card_image.png") #282828 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.codecademy-card-background {
-  background: url("../Image_Assets/Resources_Tab/codecademy_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.reeeeeee-card-background {
-  background: url("../Image_Assets/Resources_Tab/reeeeee_card_image.png") #b1361e center/cover no-repeat;
-  background-size: 104%;
-}
-.cyberchallenge-card-background {
-  background: url("../Image_Assets/Resources_Tab/cyberchallenge_card_image.jpg") #3f51b5 center/cover no-repeat;
-}
-.picoctf-card-background {
-  background: url("../Image_Assets/Resources_Tab/picoctf_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.endorsement-card-background {
-  background: url("../Image_Assets/Resources_Tab/endorsement_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.hak5-card-background {
-  background: url("../Image_Assets/Resources_Tab/hak5_card_image.png") #9e9e9e center/cover no-repeat;
-  background-size: 100%;
-}
-.futurelearn-card-background {
-  background: url("../Image_Assets/Resources_Tab/futurelearn_card_image.png") #3f51b5 center/cover no-repeat;
-}
-.homepage_welcome_card {
-  background: url('../Image_Assets/Home_Tab/home_card_image.png') #3f51b5 center / cover no-repeat;
-  height: 100%;
-  max-height: 400px;
-  background-size: auto 100%;
-}
-.cdsurvivalguide_home_card {
-  background: url('../Image_Assets/Home_Tab/alice_asset_survival_guide.png') #4a3c5f center / cover no-repeat !important;
-  max-height: 250px;
-}
-.hmg_programme_home_card {
-  background: url('../Image_Assets/Home_Tab/CD_Home_Resources.png') #3f51b5 center / cover no-repeat;
-  max-height: 250px;
-}
-.home_discord_invite_card {
-  background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
-  background-size: 100% 100%;
-}
-.home_assess_card_reminder {
-  background: url("../Image_Assets/Home_Tab/cs_essentials_card_image.jpg") #0d2331 center/cover no-repeat;
-  background-size: auto 90%;
-}
-.medium_blog_main_card_image {
-  background: url("../Image_Assets/Home_Tab/medium_blog_card_image.png") #9f5335 center/cover no-repeat;
-  max-height: 250px;
-}
-.custom_padded_font_card_home {
-  padding: 0 1rem 8px;
-  height: 100% !important;
-  font-size: 18px !important;
-  color: rgba(0,0,0,.54);
-}
-.hmg_programme_body_text {
-  padding: 1rem 1rem 8px;
-  height: auto;
-  font-size: 18px !important;
-  color: rgba(0,0,0,.54);
-  overflow: auto;
-}
-.home_tab_welcome_banner_image {
-  background: url('../Image_Assets/Home_Tab/home_card_image.png') #3f51b5 center / cover no-repeat;
-  /*background-size: auto 100%;*/
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.override_card_bg_main_poster {
-  background-color: #3f51b5;
-}
-.override_textfield_bottom_padding {
-  padding-bottom: 20px !important;
-}
-.homepage_introduction_card {
-  height: auto;
-  color: rgba(255, 255, 255, 0.85) !important;
-  font-size: 18px !important;
-  padding: 0 1rem 8px;
-}
-.cdsurvivalguide_body_text {
-  padding: 0 1rem 8px;
-  height: 100% !important;
-  font-size: 18px !important;
-  color: rgba(0,0,0,.54);
-}
-.page-intro-text-card {
-  height: auto;
-  background-color: #3f51b5;
-  color: rgba(255, 255, 255, 0.85) !important;
-  overflow: auto;
-}
-.mdc-card__primary-action {
-  height: inherit;
-}
-.mdc-typography--body1 {
-  height: inherit !important;
-}
-.mdc-image-list__image {
-  border-radius: 24px;
-}
-.generic-card-text {
-  padding: 0 1rem 8px;
-  color: rgba(0,0,0,.54);
-}
-.mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
-	max-height: none !important;
-	max-width: none !important;
-}
-.mdc-menu.mdc-menu-surface {
-  overflow: hidden;
-}
-.project_card_fixed_background {
-  height: 250px !important;
-}
-.cdbotmain_card_image {
-  background: url('../Image_Assets/Discord_Tab/optimised_discord_card_image.gif') #e8e4e7 center/cover no-repeat;
-  background-size: 110%;
-}
-.cdmathsbot_card_image {
-  background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
-  background-size: 90%;
-}
-/*
-:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item.mdc-ripple-upgraded--background-focused::before {
-  opacity: 0!important;
-}
-*/
-.project_card_menu_icons {
-  vertical-align: bottom;
-  padding-right: 5px;
-}
-.discord_swatch_hover_liftoff {
-  position: relative;
-  top: 0;
-}
-.discord_swatch_hover_liftoff:hover {
-  box-shadow: 0 4px 14px 0 rgba(0,0,0,.4);
-  transition: all .12s ease-out;
-  top: -4px;
-}
-.hibp_project_card_image {
-  background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
-}
-.hibp_search_card_image {
-  background: url('../Image_Assets/HIBP_Logo_Background.png') #c76a6a center / cover no-repeat;
-}
-.xkcd_card_fetch_image {
-  background: url('../Image_Assets/Discord_Tab/Bot_XKCD_Fetcher.png') #36393f center / cover no-repeat;
-  background-size: 100%;
-}
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: #3f51b5 !important;
-}
-.textfield_card_primary_btn {
-  color: #3f51b5 !important;
-  margin-left: 5px;
-}
-.textfield_leading_notch_radius {
-  border-radius: 28px 0 0 28px !important;
-}
-.textfield_span_width_full {
-  width: 100%;
-}
-.mdc-text-field::before, .mdc-text-field::after {
-  width: auto !important;
-}
-.generic_image_card_main {
-  height: 100%;
-}
-.discord_bot_quote_card_image {
-  background: url('../Image_Assets/Discord_Tab/Discord_Quote_Image_Card.png') #36393f center/cover no-repeat;
-  background-size: 100%;
-}
-.discord_api_docs_card_image {
-  background: url('../Image_Assets/Discord_Tab/discord_api_docs_card_image.png') #36393e center/cover no-repeat;
-  background-size: 100% auto;
-}
-.rounded_corner_list_item {
-  border-radius: 15px !important;
-}
-.generic_class_center_item {
-  margin-left: auto;
-  margin-right: auto;
-}
-.generic_contrib_card_list {
-  overflow: hidden;
-}
-.generic_contrib_card_list:hover {
-  overflow: auto;
-}
-.contrib_list_item_contributor {
-  color: rgba(0, 0, 0, 0.54);
-}
-.contrib_list_pfp_logo {
-  vertical-align: bottom;
-  border-radius: 30%;
-}
-.contrib_list_pfp_logo:hover {
-  cursor: pointer;
-}
-.contrib_list_secondary_logo {
-  color: #3f51b5;
-}
-.contrib_list_secondary_logo:hover {
-  cursor: pointer;
-}
-.form_padding_adjustments {
-  padding-bottom: 5px;
-  padding-left: 3px;
-}
-.cdapp_main_card_image {
-  background: url('../Image_Assets/App_Tab/app_main_candidate_card_image.gif') #ef1580 center/cover no-repeat;
-  background-size: auto 110%;
-}
-.App_Screenshot_Card_One {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
-.App_Screenshot_Card_Two {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #009688 center/cover no-repeat;
-}
-.App_Screenshot_Card_Three {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Three.jpg") #009688 center/cover no-repeat;
-}
-.App_Screenshot_Card_Four {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
-.App_Screenshot_Card_Five {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
-.App_Contrib_Flutter_Docs {
-  background: url("../Image_Assets/App_Tab/Contribute_Programming.gif") #283247 center/cover no-repeat;
-}
-.cdsurvivalguide_site_card_image {
-  background: url("../Image_Assets/Websites_Tab/cdsurvivial_guide_card_image.png") #106668 center/cover no-repeat;
-}
-.challenge_master_site_card_image {
-  background: url("../Image_Assets/Js_Logo_Background.png") #ffab00 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.app_website_site_card_image {
-    background: url("../Image_Assets/Firebase_Logo_Background.png") #039be5 center/cover no-repeat;
-    background-size: 130% auto;
-}
-.discord_bot_assess_card_image {
-  background: url("../Image_Assets/Discord_Tab/bot_get_game_level_no_hint_owo.jpg") #363940 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.discord_dwouca_owo_gang_lmao {
-  background: url("../Image_Assets/Discord_Tab/owo_gang_dwouca.jpg") #363940 center/cover no-repeat;
-  background-size: 100% auto;
-}
-.website_tab_help_us_card_image {
-  background: url("../Image_Assets/Websites_Tab/responsive_design_card_image.gif") #9d9f9e center/cover no-repeat;
-  background-size: 100% auto;
-}
-.cd_site_guide_card_image {
-  background: url("../Image_Assets/Websites_Tab/cd_survivalguide_card_image.jpg") #0f1722 center/cover no-repeat;
-  background-size: 90% auto;
-}
-.app_site_alt_card_image {
-  background: url("../Image_Assets/Websites_Tab/app_website_card_image.jpg") #091b27 center/cover no-repeat;
-  background-size: 85% auto;
-}
-.alexa_skill_card_image {
-  background: url("../Image_Assets/Websites_Tab/cd_alexa_skill_card_image.png") #ffffff center/cover no-repeat;
-  background-size: 100% auto;
-}
-@media (min-width: 1380px) {
-  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
-    background-size: auto 100% !important;
-    background-color: transparent !important;
-  }
-  .mdc-layout-grid {
-    max-width: 1750px !important;
-  }
-  body {
-    background-color: #fcfcfc;
-  }
-}
-@media (min-width: 480px) {
-  .home_tab_welcome_banner_image {
-    height: 470px !important;
-  }
-}
-@media (max-width: 839px) {
-  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
-    background-size: auto 100% !important;
-    height: 520px;
-  }
+.mdc-tab__ripple::before, .mdc-tab__ripple::after {
+	background-color: #ffffff;
 }
