@@ -36,7 +36,7 @@ body {
 	background-color: #ffffff;
 }
 .mdc-tab-scroller__scroll-content {
-	background-color: #424242;
+	background-color: #303030;
 }
 .mdc-tab--active .mdc-tab__icon {
 	color: #ffffff;
@@ -46,4 +46,13 @@ body {
 }
 .mdc-tab__ripple::before, .mdc-tab__ripple::after {
 	background-color: #ffffff;
+}
+.mdc-snackbar__action::before, .mdc-snackbar__action::after {
+	background-color: rgba(255,255,255,.87);
+}
+.mdc-button::before, .mdc-button::after {
+	background-color: rgba(255,255,255,.87);
+}
+.mdc-snackbar__action:not(:disabled) {
+	color: rgba(255,255,255,.87) !important;
 }

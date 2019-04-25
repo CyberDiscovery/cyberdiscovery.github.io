@@ -41,7 +41,7 @@ function loadTheme(themeLocation, metaColor, cookieValue){
 function switchTheme(){
   switch (getCookie("ThemePreference")) {
     case "light":
-      loadTheme("./Site_Code/dark_theme.css", "#000000", "dark");
+      loadTheme("./Site_Code/dark_theme.css", "#212121", "dark");
       break;
 
     case "dark":
@@ -53,7 +53,7 @@ function switchTheme(){
 function checkCookie() {
   switch (getCookie("ThemePreference")) {
     case "dark":
-      loadTheme("./Site_Code/dark_theme.css", "#000000");
+      loadTheme("./Site_Code/dark_theme.css", "#212121");
       break;
 
     case "light":
