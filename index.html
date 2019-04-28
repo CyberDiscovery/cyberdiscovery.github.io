@@ -121,7 +121,7 @@
         <span class="mdc-top-app-bar__title">Community Projects</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="javascript:switchTheme();" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Dark Theme" alt="Theme">tonality</a>
+        <a href="javascript:switchTheme();" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Switch Theme" alt="Theme">tonality</a>
       </section>
     </div>
   </header>
@@ -178,22 +178,198 @@
   <div class="generic-tab-item layout-tab-item" id="Tab-3">
     <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
-        <!-- Begin section -->
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card resources-tab-card">
             <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Our Changing Planet</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">by Kurt Wagner</h3>
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">OverTheWire</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://overthewire.org/</h3>
             </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">Visit ten places on our planet that are undergoing the biggest changes today.</div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.
+            </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+                <button onclick="loadNewPage('https://overthewire.org/wargames/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
-        <!-- End section -->
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Replit</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://repl.it/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A free, powerful, and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://repl.it/languages');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">SmashTheStack</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">http://smashthestack.org/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('http://smashthestack.org/wargames.html');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Cybrary</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybrary.it/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Online cyber security training which you can learn anytime, anywhere with open-source, high quality training from top professionals and companies.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.cybrary.it/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Udacity</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://eu.udacity.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to business tech.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://eu.udacity.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codewars</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codewars.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.codewars.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codecademy</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codecademy.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.codecademy.com/catalog/subject/all');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Learn RE</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.begin.re/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.begin.re/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">CSC UK</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybersecuritychallenge.org.uk/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A series of national competitions & programmes, designed to enable more people to become cyber security professionals.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.cybersecuritychallenge.org.uk/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">PicoCTF</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://picoctf.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://picoctf.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hak5</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">FutureLearn</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.futurelearn.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Online courses from top universities and specialist organisations on cyber security and many other topics at no cost.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- End Test section -->
       </div>
     </div>

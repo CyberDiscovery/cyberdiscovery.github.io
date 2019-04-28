@@ -347,7 +347,7 @@ body {
   background-size: 100% auto;
 }
 .resources-tab-card {
-  height: 186px !important;
+  height: 100% !important;
   border-radius: 24px 8px;
 }
 .padded-resource-card {
@@ -363,6 +363,7 @@ body {
 .resource-card-secondary {
   padding: 0 1rem 8px;
   color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
+  height: inherit;
 }
 @media (min-width: 1020px) {
   .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
@@ -375,6 +376,7 @@ body {
     margin-right: auto;
     --mdc-layout-grid-margin-desktop: 0;
     margin-top: 24px;
+    margin-bottom: 24px;
   }
 }
 @media (min-width: 480px) {

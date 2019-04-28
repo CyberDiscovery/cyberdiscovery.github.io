@@ -56,3 +56,19 @@ body {
 .mdc-snackbar__action:not(:disabled) {
 	color: rgba(255,255,255,.87) !important;
 }
+.resource-card-subtitle {
+	color: rgba(255,255,255,.54);
+}
+.resource-card-secondary {
+	color: rgba(255,255,255,.54);
+}
+.resources-tab-card {
+  background-color: #303030;
+  transition: all .3s cubic-bezier(.25,.8,.25,1);
+}
+.resource-card-title {
+	color: rgba(255,255,255,0.7);
+}
+.mdc-button:not(:disabled) {
+  color: rgba(255,255,255,.54);
+}

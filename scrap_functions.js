@@ -204,7 +204,7 @@ function createTitlelessInfoCard() {
 }
 
 
-/*
+
 createBannerImageWideCard("Grid-Tab-1", "home_tab_welcome_banner_image");
 createMainIntroTextCard();
 createTitlelessInfoCard();
@@ -212,18 +212,20 @@ createHomeWideLinkCard("Grid-Tab-1", "Survival Guide", "A website where we host 
 createHomeWideLinkCard("Grid-Tab-1", "Discord Server", "Join the largest Cyber Discovery Discord server with over 1200+ like-minded people and students who are going through the programme as well as a few SANS Institute staff members who are involved in running the programme!", "home_discord_invite_card", "https://discord.gg/Kf8n5rT", "Join");
 createHomeWideLinkCard("Grid-Tab-1", "CyberStart Essentials", "The third stage of year 2 is now open! Jump back into Essentials and its vast theory modules! Alongside Essentials, CyberStart Game will stay open till the 18 of March 2019 and Essentials will be open until the 29th of April 2019.", "home_assess_card_reminder", "https://essentials.joincyberdiscovery.com/", "Go");
 createHomeWideLinkCard("Grid-Tab-1", "Medium Blog", "View the official Cyber Discovery Medium blog. This is where they post different announcements, challenges, student spotlights, answers, writeups, and much more. You can also download our app which has the Medium blog embedded within it!", "medium_blog_main_card_image", "https://medium.com/cyber-discovery", "Read");
-createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
-createLinkCard("Grid-Tab-5", "Replit", "A free, powerful, and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
-createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
-createLinkCard("Grid-Tab-5", "Cybrary", "Online cyber security training which you can learn anytime, anywhere with open-source, high quality training from top professionals and companies.", "cybrary-card-background", "https://www.cybrary.it/");
-createLinkCard("Grid-Tab-5", "Udacity", "A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to business tech.", "udacity-card-background", "https://eu.udacity.com/");
-createLinkCard("Grid-Tab-5", "Codewars", "Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.", "codewars-card-background", "https://www.codewars.com/");
-createLinkCard("Grid-Tab-5", "Codecademy", "An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.", "codecademy-card-background", "https://www.codecademy.com/catalog/subject/all");
-createLinkCard("Grid-Tab-5", "Learn RE", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "reeeeeee-card-background", "https://www.begin.re/");
-createLinkCard("Grid-Tab-5", "CSC UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
-createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
-createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
-createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
+
+//createLinkCard("Grid-Tab-5", "OverTheWire", "Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.", "otw-card-background", "https://overthewire.org/wargames/");
+//createLinkCard("Grid-Tab-5", "Replit", "A free, powerful, and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.", "replit-card-background", "https://repl.it/languages");
+//createLinkCard("Grid-Tab-5", "SmashTheStack", "An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.", "smashthestack-card-background", "http://smashthestack.org/wargames.html");
+//createLinkCard("Grid-Tab-5", "Cybrary", "Online cyber security training which you can learn anytime, anywhere with open-source, high quality training from top professionals and companies.", "cybrary-card-background", "https://www.cybrary.it/");
+//createLinkCard("Grid-Tab-5", "Udacity", "A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to business tech.", "udacity-card-background", "https://eu.udacity.com/");
+//createLinkCard("Grid-Tab-5", "Codewars", "Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.", "codewars-card-background", "https://www.codewars.com/");
+//createLinkCard("Grid-Tab-5", "Codecademy", "An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.", "codecademy-card-background", "https://www.codecademy.com/catalog/subject/all");
+//createLinkCard("Grid-Tab-5", "Learn RE", "Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.", "reeeeeee-card-background", "https://www.begin.re/");
+//createLinkCard("Grid-Tab-5", "CSC UK", "A series of national competitions & programmes, designed to enable more people to become cyber security professionals.", "cyberchallenge-card-background", "https://www.cybersecuritychallenge.org.uk/");
+//createLinkCard("Grid-Tab-5", "PicoCTF", "PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.", "picoctf-card-background", "https://picoctf.com/");
+//createLinkCard("Grid-Tab-5", "Hak5", "Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.", "hak5-card-background", "https://www.youtube.com/user/Hak5Darren/videos");
+//createLinkCard("Grid-Tab-5", "FutureLearn", "Online courses from top universities and specialist organisations on cyber security and many other topics at no cost.", "futurelearn-card-background", "https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security");
+
 createProjectMainCard("Grid-Tab-2", "Cyber Discovery Bot", "The bot for the Cyber Discovery Community Discord Server. It has a variety of important and fun features. For example, it can get the briefing for a CyberStart Game Level or fetch an XKCD. Relax, take a load off and join our Discord. Invite link in card menu.", "cdbotmain_card_image", "https://github.com/CyberDiscovery/cyberdisc-bot", "https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot", "https://github.com/CyberDiscovery/cyberdisc-bot/issues", "Server Invite", "http://discord.gg/Kf8n5rT", "exit_to_app");
 createImageCardMain("Grid-Tab-2", "discord_bot_assess_card_image", "Discuss Game challenges!");
 createProjectTextFieldCards("Grid-Tab-2", "Search HIBP", "Our bot can check if you have an account that has been compromised in a data breach, courtesy of Microsoft MVP Troy Hunt's HaveIBeenPwned service. You can try it out here!", "hibp_search_card_image", "Email", checkPwnState);
@@ -248,4 +250,3 @@ createImageCardMain("Grid-Tab-4", "app_site_alt_card_image", "Event Countdown!")
 createLinkCard("Grid-Tab-4", "Alexa Skill", "Do you have an Alexa supported device? We made an Alexa skill which you can try out on your device today! The unofficial Cyber Discovery Buddy helps by giving you start and end dates for stages and by giving you tips for challenges!", "alexa_skill_card_image", "https://amzn.to/2FZ9wSc");
 createLinkCard("Grid-Tab-4", "Help us!", "Have you made a responsive and interactive website before? Want to get the Community Developer role or interested in writing a site? Consider helping us improve our sites! Start by viewing the MDC Web documentation today!", "website_tab_help_us_card_image", "https://material.io/develop/web/");
 createGitHubContribCard("Grid-Tab-4", "cdsurvivalguide");
-*/
