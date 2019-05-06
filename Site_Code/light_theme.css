@@ -4,3 +4,17 @@
 .resources-tab-card {
   transition: all .3s cubic-bezier(.25,.8,.25,1);
 }
+.resource-card-subtitle {
+  overflow: hidden;
+}
+.mdc-snackbar__action::before, .mdc-snackbar__action::after {
+	background-color: rgba(63, 81, 181, 0.87);
+}
+.mdc-snackbar__action:not(:disabled) {
+	color: rgba(63, 81, 181, 0.87) !important;
+}
+@media (max-width: 479px) {
+  .mdc-tab--stacked {
+  	width: calc(100% / 3);
+  }
+}
