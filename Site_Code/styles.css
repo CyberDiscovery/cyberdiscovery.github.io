@@ -16,12 +16,6 @@ body {
 .layout-tab-item {
   display: none;
 }
-.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
-	color: #0d2332;
-}
-.mdc-drawer .mdc-list-item--activated {
-	color: #0d2332;
-}
 @media (min-width: 840px) {
   .layout-grid-desktop .mdc-layout-grid__inner {
     justify-content: center;
@@ -389,4 +383,15 @@ body {
     background-size: auto 100% !important;
     height: 520px;
   }
+}
+@media (max-width: 479px) {
+  .mdc-tab--stacked {
+  	width: calc(100% / 3);
+  }
+}
+.first-action-chip {
+	margin-left: 0px !important;
+}
+.normal-card-chip {
+  margin-left: 5px;
 }

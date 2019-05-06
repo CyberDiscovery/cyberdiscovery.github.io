@@ -4,6 +4,7 @@
 }
 body {
   background-color: #212121;
+  scroll-behavior: smooth;
 }
 .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
 	color: #ffffff !important;
@@ -34,15 +35,26 @@ body {
 }
 .mdc-tab-indicator > .mdc-tab-indicator__content--underline {
 	background-color: #ffffff;
+  border-color: #ffffff;
 }
 .mdc-tab-scroller__scroll-content {
 	background-color: #212121;
 }
 .mdc-tab--active .mdc-tab__icon {
-	color: #ffffff;
+	color: #ffffff !important;
+  opacity: 1 !important;
+}
+.mdc-tab .mdc-tab__icon {
+	color: var(--mdc-theme-on-surface, #9e9e9e);
+  opacity: .6;
+}
+.mdc-tab .mdc-tab__text-label {
+	color: var(--mdc-theme-on-surface, #9e9e9e);
+  opacity: .6;
 }
 .mdc-tab--active .mdc-tab__text-label {
-	color: #ffffff;
+	color: #ffffff !important;
+  opacity: 1 !important;
 }
 .mdc-tab__ripple::before, .mdc-tab__ripple::after {
 	background-color: #ffffff;
@@ -82,15 +94,4 @@ body {
 }
 .mdc-chip__icon.mdc-chip__icon--leading:not(.mdc-chip__icon--leading-hidden) {
 	color: rgba(255,255,255,.54);
-}
-@media (max-width: 479px) {
-  .mdc-tab--stacked {
-  	width: calc(100% / 3);
-  }
-}
-.first-action-chip {
-	margin-left: 0px !important;
-}
-.normal-card-chip {
-  margin-left: 5px;
 }
