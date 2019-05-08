@@ -371,6 +371,7 @@ body {
     --mdc-layout-grid-margin-desktop: 0;
     margin-top: 24px;
     margin-bottom: 24px;
+    scroll-behavior: smooth;
   }
 }
 @media (min-width: 480px) {
@@ -391,7 +392,9 @@ body {
 }
 .first-action-chip {
 	margin-left: 0px !important;
+  height: 36px;
 }
 .normal-card-chip {
   margin-left: 5px;
+  height: 36px;
 }
