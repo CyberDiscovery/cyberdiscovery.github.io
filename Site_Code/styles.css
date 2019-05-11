@@ -1,6 +1,9 @@
 :focus {
   outline: none !important;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #f5f5f5;
 }
@@ -371,7 +374,6 @@ body {
     --mdc-layout-grid-margin-desktop: 0;
     margin-top: 24px;
     margin-bottom: 24px;
-    scroll-behavior: smooth;
   }
 }
 @media (min-width: 480px) {
@@ -397,4 +399,22 @@ body {
 .normal-card-chip {
   margin-left: 5px;
   height: 36px;
+}
+#scrollPageTop {
+  position: fixed;
+  display: block;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 900;
+}
+@media (min-width: 1024px) {
+   #scrollPageTop {
+     bottom: 1.5rem;
+     right: 1.5rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+   #scrollPageTop {
+     display: none;
+  }
 }

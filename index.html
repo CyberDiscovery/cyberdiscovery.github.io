@@ -160,6 +160,34 @@
       </div>
     </div>
   </div>
+  <!-- dialog -->
+  <div class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+        <h2 class="mdc-dialog__title" id="my-dialog-title"><!--
+       -->Dialog Title<!--
+     --></h2>
+        <section id="mdc-dialog-with-list-description" class="mdc-dialog__content">
+          Dialog body text
+        </section>
+        <footer class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+            <span class="mdc-button__label">No</span>
+          </button>
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+            <span class="mdc-button__label">Yes</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <!-- end of dialog -->
   <div class="generic-tab-item" id="Tab-1">
     <div class="layout-grid-desktop mdc-layout-grid" id="Home-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-1">
@@ -483,6 +511,9 @@
       </div>
     </div>
   </div>
+  <button class="mdc-fab mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
+    <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
+  </button>
   <div class="mdc-snackbar mdc-snackbar--leading">
     <div class="mdc-snackbar__surface">
       <div class="mdc-snackbar__label"

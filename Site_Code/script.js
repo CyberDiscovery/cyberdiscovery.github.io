@@ -175,6 +175,17 @@ function fixAllTabsCardsVerticalHeight(){
   }
   */
 }
+function detectPageBottom() {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    document.getElementById("scrollPageTop").classList.remove("mdc-fab--exited");
+  } else {
+    document.getElementById("scrollPageTop").classList.add("mdc-fab--exited");
+  }
+}
+function goToPageTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
@@ -184,6 +195,7 @@ window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, fals
 window.onload = fixAllTabsCardsVerticalHeight;
 */
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
+oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
     cdSiteDrawer.open = !cdSiteDrawer.open;
@@ -196,6 +208,7 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
   //fixAllTabsCardsVerticalHeight();
 });
+window.addEventListener("scroll", detectPageBottom);
 window.mdc.autoInit();
 if (screen.width > 839 && screen.width <= 1199) {
   displayMDCSnackbar("This site may not appear correctly, please consider rotating your device.", "OK", function() {}, 5000);

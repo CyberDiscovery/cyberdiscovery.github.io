@@ -95,3 +95,6 @@ body {
 .mdc-chip__icon.mdc-chip__icon--leading:not(.mdc-chip__icon--leading-hidden) {
 	color: rgba(255,255,255,.54);
 }
+.mdc-fab {
+	background-color: #ff5252;
+}
