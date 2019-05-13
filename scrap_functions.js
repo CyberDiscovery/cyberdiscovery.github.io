@@ -329,3 +329,5 @@ var handler = MTMzNyBLb25hbWkgQ29kZSAK(() => {
 });
 
 window.addEventListener('keydown', handler);
+
+// <label for="theme-switch">light/dark</label>

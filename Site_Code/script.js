@@ -88,17 +88,21 @@ function checkCookie() {
   switch (getCookie("ThemePreference")) {
     case "dark":
       loadTheme("./Site_Code/dark_theme.css", "#212121");
+      themeSwitcher.checked = true;
       break;
 
     case "light":
       loadTheme("./Site_Code/light_theme.css", "#3f51b5");
+      themeSwitcher.checked = false;
       break;
 
     default:
-      displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 4000);
+      displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 8000);
       loadTheme("./Site_Code/light_theme.css", "#3f51b5", "light");
+      themeSwitcher.checked = false;
       break;
   }
+  resetCookieCheckbox.checked = false;
 }
 var cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
 var cdSiteTabBar = oneElementInit(".mdc-tab-bar", mdc.tabBar.MDCTabBar);
@@ -160,7 +164,7 @@ function alignContribTableSize() {
   }
 }
 function fixAllTabsCardsVerticalHeight(){
-  console.log("fixAllCardsVerticalHeight called.")
+  console.log("fixAllCardsVerticalHeight called.");
   /*
   switch (previousActiveTab) {
     case 1:
@@ -196,6 +200,26 @@ window.onload = fixAllTabsCardsVerticalHeight;
 */
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
+var themeSwitcher = oneElementInit("#theme-switcher-switch", mdc.switchControl.MDCSwitch.attachTo);
+var resetCookieCheckbox = oneElementInit("#cookie-checkbox", mdc.checkbox.MDCCheckbox.attachTo);
+var cookieFormfield = oneElementInit("#cookie-form-field", mdc.formField.MDCFormField.attachTo);
+var siteSettingsMenu = oneElementInit("#site-settings-dialog", mdc.dialog.MDCDialog.attachTo);
+var genericScrollableDialog = oneElementInit("#scrollable-text-dialog", mdc.dialog.MDCDialog.attachTo);
+cookieFormfield.input = resetCookieCheckbox;
+function parseSiteSettings() {
+  siteSettingsMenu.open();
+  siteSettingsMenu.listen('MDCDialog:closing', function () {
+    if (getCookie("ThemePreference") == "light" && themeSwitcher.checked) {
+      switchTheme();
+    } else if (getCookie("ThemePreference") == "dark" && !themeSwitcher.checked) {
+      switchTheme();
+    }
+    if (resetCookieCheckbox.checked) {
+      setCookie("ThemePreference", "", 0);
+      displayMDCSnackbar("Cleared cookies.", "OK", function() {}, 4000);
+    }
+  });
+}
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
     cdSiteDrawer.open = !cdSiteDrawer.open;

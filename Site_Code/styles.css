@@ -387,11 +387,13 @@ body {
     height: 520px;
   }
 }
+/*
 @media (max-width: 479px) {
   .mdc-tab--stacked {
   	width: calc(100% / 3);
   }
 }
+*/
 .first-action-chip {
 	margin-left: 0px !important;
   height: 36px;
@@ -417,4 +419,11 @@ body {
    #scrollPageTop {
      display: none;
   }
+}
+.theme-switch {
+  margin-left: auto;
+  margin-right: 5px;
+}
+.shifted-form-field {
+  margin-left: auto;
 }

@@ -96,5 +96,30 @@ body {
 	color: rgba(255,255,255,.54);
 }
 .mdc-fab {
-	background-color: #ff5252;
+	background-color: var(--mdc-theme-primary, #212121);
+}
+.mdc-dialog .mdc-dialog__title {
+	color: rgba(255,255,255,0.7);
+}
+.mdc-dialog .mdc-dialog__surface {
+	background-color: #212121;
+}
+.mdc-list {
+	color: rgba(255,255,255,.54);
+}
+.mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background {
+	border-color: rgba(255,255,255,.54);
+}
+.mdc-switch:not(.mdc-switch--checked) .mdc-switch__track {
+	background-color: rgba(255,255,255,.54);
+	border-color: rgba(255,255,255,.54);
+}
+.mdc-dialog .mdc-dialog__scrim {
+	background-color: rgba(66,66,66,.32);
+}
+.mdc-snackbar__surface {
+	background-color: #212121;
+}
+.mdc-button--outlined:not(:disabled) {
+	border-color: rgba(255,255,255,.54);
 }
