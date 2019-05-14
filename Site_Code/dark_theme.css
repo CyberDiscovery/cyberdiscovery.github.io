@@ -96,7 +96,7 @@ body {
 	color: rgba(255,255,255,.54);
 }
 .mdc-fab {
-	background-color: var(--mdc-theme-primary, #212121);
+	background-color: #ff5252;
 }
 .mdc-dialog .mdc-dialog__title {
 	color: rgba(255,255,255,0.7);
@@ -111,8 +111,8 @@ body {
 	border-color: rgba(255,255,255,.54);
 }
 .mdc-switch:not(.mdc-switch--checked) .mdc-switch__track {
-	background-color: rgba(255,255,255,.54);
-	border-color: rgba(255,255,255,.54);
+	background-color: #ffffff;
+	border-color: #ffffff;
 }
 .mdc-dialog .mdc-dialog__scrim {
 	background-color: rgba(66,66,66,.32);

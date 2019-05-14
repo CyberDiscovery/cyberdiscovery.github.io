@@ -126,7 +126,7 @@
     <div class="mdc-tab-scroller">
       <div class="mdc-tab-scroller__scroll-area">
         <div class="mdc-tab-scroller__scroll-content">
-          <button class="mdc-tab mdc-tab--stacked mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="Home-Tab">
+          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="Home-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
               <span class="mdc-tab__text-label">Home</span>
@@ -136,7 +136,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab mdc-tab--stacked" role="tab" aria-selected="false" tabindex="-1" id="Discord-Bot-Tab">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Discord-Bot-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="true">memory</span>
               <span class="mdc-tab__text-label">Projects</span>
@@ -146,7 +146,7 @@
             </span>
             <span class="mdc-tab__ripple"></span>
           </button>
-          <button class="mdc-tab mdc-tab--stacked" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="true">library_books</span>
               <span class="mdc-tab__text-label">Resources</span>
@@ -386,6 +386,50 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card resources-tab-card">
             <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hack The Box</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.hackthebox.eu/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A rapidly growing, popular online platform of 130k+ users with access to a large number of pen-testing labs and machines.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.hackthebox.eu/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">CTF</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">Practice</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Techquickie</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Learn the fundamental concepts of computer science explained in a simplified format as quickly as possible in a few minutes.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/user/Techquickie/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">CS</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">Tech</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Cybrary</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybrary.it/</h3>
             </div>
@@ -422,6 +466,72 @@
                 </div>
                 <div class="mdc-chip normal-card-chip">
                   <div class="mdc-chip__text">Learn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">IppSec</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A collection of detailed HackTheBox video walkthroughs, showing the methodology of attempting the challenge from start to finish.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">HTB</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">Guides</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">MAFH</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Get started with malware analysis and reverse engineering by watching a malware analyst unpack and explain real-world malware.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">Malware</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">RE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">13Cubed</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+               Information security-related videos on Digital Forensics & Incident Response, Penetration Testing, overviews of various apps, scripts and more.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/user/davisrichardg/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">DFIR</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">Useful</div>
                 </div>
               </div>
             </div>
@@ -556,10 +666,32 @@
             </div>
           </div>
         </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Null Byte</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A series of videos demonstrating how to utilise various tools, techniques and operating systems for aspiring ethical hackers.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
+                <div class="mdc-chip first-action-chip">
+                  <div class="mdc-chip__text">Tools</div>
+                </div>
+                <div class="mdc-chip normal-card-chip">
+                  <div class="mdc-chip__text">Guides</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <button class="mdc-fab mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
+  <button class="mdc-fab mdc-fab--mini mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
     <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
   </button>
   <div class="mdc-snackbar">
