@@ -12,6 +12,9 @@
   <title>About us</title>
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAsUlEQVR4Ae3ZMQ6CQBBA0S8NZ5Djack5RT0AoSLhEFivLRUOMTuh+H9asnndJAxmZvarlp6ZUmlmelqId2WiVJ6JjmAXHpSEeXIh1I2SNHdCvdJAb0J90kArocpm/i/+viBBgsru7H8TeUdQDZAgQaEE1QHFE7TNXSYonKBg7jJBggS5ywQJ8v9QPkiQINb808L5jy/nPk81DCmcgYZgHWN1zkh39Ai8VMMsB4/AZmb2BelnnnVrky1sAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     :root {
       --mdc-theme-primary: #0d2332;
     }
@@ -81,6 +84,11 @@
     .mdc-list-item__meta {
       color: #0d2332;
       cursor: pointer;
+    }
+    .mdc-layout-grid__inner {
+    	max-width: 1000px;
+    	margin-left: auto;
+    	margin-right: auto;
     }
   </style>
   <script>

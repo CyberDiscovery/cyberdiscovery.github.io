@@ -179,8 +179,22 @@ function fixAllTabsCardsVerticalHeight(){
   }
   */
 }
+let rippleLock = 0;
+function removeRippleFocus(evt){
+  if (rippleLock) return;
+  let { target } = evt;
+  do {
+      if (target.classList && target.classList.contains('mdc-ripple-upgraded--background-focused')) {
+          rippleLock++;
+          target.classList.remove('mdc-ripple-upgraded--background-focused');
+          rippleLock--;
+          return;
+      }
+  } while ((target=target.parentNode));
+}
+window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
     document.getElementById("scrollPageTop").classList.remove("mdc-fab--exited");
   } else {
     document.getElementById("scrollPageTop").classList.add("mdc-fab--exited");
@@ -216,7 +230,7 @@ function parseSiteSettings() {
     }
     if (resetCookieCheckbox.checked) {
       setCookie("ThemePreference", "", 0);
-      displayMDCSnackbar("Cleared cookies.", "OK", function() {}, 4000);
+      displayMDCSnackbar("Cleared cookies.", "Reload", function() {window.location.reload();}, 4000);
     }
   });
 }
@@ -234,9 +248,4 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
 });
 window.addEventListener("scroll", detectPageBottom);
 window.mdc.autoInit();
-if (screen.width > 839 && screen.width <= 1199) {
-  displayMDCSnackbar("This site may not appear correctly, please consider rotating your device.", "OK", function() {}, 5000);
-} else if (screen.width > 1920) {
-  displayMDCSnackbar("This site may not appear correctly on large/high DPI displays. We're working on it!", "OK", function() {}, 6000);
-}
 checkCookie();

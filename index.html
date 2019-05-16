@@ -16,11 +16,11 @@
   <meta name="theme-color" content="#3f51b5" />
   <meta name="referrer" content="origin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@2.1.1/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@2.2.0/dist/material-components-web.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
   <link rel="stylesheet" href="./Site_Code/styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
-  <script src="https://unpkg.com/material-components-web@2.1.1/dist/material-components-web.min.js"></script>
+  <script src="https://unpkg.com/material-components-web@2.2.0/dist/material-components-web.min.js"></script>
   <title>Cyber Discovery</title>
   <link rel="icon" href="./Image_Assets/favicon.png">
   <style>
@@ -30,8 +30,11 @@
 </head>
 <body>
   <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">Helpful Links</h3>
+      <h6 class="mdc-drawer__subtitle">Have you joined the Discord?</h6>
+    </div>
     <div class="mdc-drawer__content">
-      <h6 class="mdc-list-group__subheader">Community Links</h6>
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
@@ -115,7 +118,7 @@
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <a class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-        <span class="mdc-top-app-bar__title">Community Projects</span>
+        <span class="mdc-top-app-bar__title">CD Community</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
         <a href="javascript:parseSiteSettings();" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Switch Theme" alt="Theme">tonality</a>
@@ -163,8 +166,6 @@
   <div class="mdc-dialog"
      role="alertdialog"
      aria-modal="true"
-     aria-labelledby="my-dialog-title"
-     aria-describedby="my-dialog-content"
      id="scrollable-text-dialog">
     <div class="mdc-dialog__container">
       <div class="mdc-dialog__surface">
@@ -187,8 +188,6 @@
   <div class="mdc-dialog"
      role="alertdialog"
      aria-modal="true"
-     aria-labelledby="my-dialog-title"
-     aria-describedby="my-dialog-content"
      id="site-settings-dialog">
     <div class="mdc-dialog__container">
       <div class="mdc-dialog__surface">
@@ -196,18 +195,18 @@
         <div class="mdc-dialog__content">
           <ul class="mdc-list">
             <li class="mdc-list-item">
-              <label for="native-theme-toggle">Light/Dark Theme:</label>
+              <label for="native-theme-toggle">Dark Theme</label>
               <div class="mdc-switch theme-switch" id="theme-switcher-switch">
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                      <input type="checkbox" id="native-theme-toggle" class="mdc-switch__native-control" role="switch">
+                      <input type="checkbox" id="native-theme-toggle" class="mdc-switch__native-control" role="switch" aria-checked="true">
                   </div>
                 </div>
               </div>
             </li>
             <li class="mdc-list-item">
-              <label for="checkbox-1">Clear Cookies:</label>
+              <label for="checkbox-1">Clear Cookies</label>
               <div class="mdc-form-field shifted-form-field" id="cookie-form-field">
                 <div class="mdc-checkbox" id="cookie-checkbox">
                   <input type="checkbox"
@@ -239,6 +238,14 @@
   <div class="generic-tab-item" id="Tab-1">
     <div class="layout-grid-desktop mdc-layout-grid" id="Home-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-1">
+        <!-- Start -->
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet desktop-only-card">
+          <div class="mdc-card mdc-elevation-transition rounded-corner-card">
+          <div class="mdc-card__media mdc-card__media--square home_tab_welcome_banner_image">
+          </div>
+          </div>
+        </div>
+        <!-- End -->
       </div>
     </div>
   </div>
@@ -252,7 +259,7 @@
     <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">LiveOverflow</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
@@ -262,19 +269,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CTFs</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">RE</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Seytonic</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
@@ -284,19 +285,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Projects</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">RPI</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hak5</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -306,19 +301,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">News</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Tech</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">OverTheWire</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://overthewire.org/</h3>
@@ -328,19 +317,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://overthewire.org/wargames/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CTFs</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Linux</div>
-                </div>
+                <button onclick="loadNewPage('https://overthewire.org/wargames/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Replit</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://repl.it/</h3>
@@ -350,19 +333,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://repl.it/languages');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Cloud</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">IDE</div>
-                </div>
+                <button onclick="loadNewPage('https://repl.it/languages');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">SmashTheStack</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">http://smashthestack.org/</h3>
@@ -372,19 +349,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('http://smashthestack.org/wargames.html');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CTFs</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Exploit</div>
-                </div>
+                <button onclick="loadNewPage('http://smashthestack.org/wargames.html');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hack The Box</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.hackthebox.eu/</h3>
@@ -394,19 +365,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.hackthebox.eu/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CTF</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Practice</div>
-                </div>
+                <button onclick="loadNewPage('https://www.hackthebox.eu/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Techquickie</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -416,19 +381,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/Techquickie/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CS</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Tech</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/user/Techquickie/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Cybrary</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybrary.it/</h3>
@@ -438,19 +397,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.cybrary.it/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Practice</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Test</div>
-                </div>
+                <button onclick="loadNewPage('https://www.cybrary.it/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Udacity</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://eu.udacity.com/</h3>
@@ -460,19 +413,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://eu.udacity.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Exams</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Learn</div>
-                </div>
+                <button onclick="loadNewPage('https://eu.udacity.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">IppSec</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -482,19 +429,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">HTB</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Guides</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">MAFH</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -504,19 +445,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Malware</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">RE</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">13Cubed</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -526,19 +461,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/davisrichardg/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">DFIR</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Useful</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/user/davisrichardg/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codewars</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codewars.com/</h3>
@@ -548,19 +477,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.codewars.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Coding</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Skills</div>
-                </div>
+                <button onclick="loadNewPage('https://www.codewars.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codecademy</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codecademy.com/</h3>
@@ -570,19 +493,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.codecademy.com/catalog/subject/all');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Python</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">JS</div>
-                </div>
+                <button onclick="loadNewPage('https://www.codecademy.com/catalog/subject/all');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Learn RE</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.begin.re/</h3>
@@ -592,19 +509,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.begin.re/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">x86</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Asm</div>
-                </div>
+                <button onclick="loadNewPage('https://www.begin.re/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">CSC UK</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybersecuritychallenge.org.uk/</h3>
@@ -614,16 +525,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.cybersecuritychallenge.org.uk/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">UK Competitions</div>
-                </div>
+                <button onclick="loadNewPage('https://www.cybersecuritychallenge.org.uk/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">PicoCTF</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://picoctf.com/</h3>
@@ -633,19 +541,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://picoctf.com/');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">CTF</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Practice</div>
-                </div>
+                <button onclick="loadNewPage('https://picoctf.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">FutureLearn</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.futurelearn.com/</h3>
@@ -655,19 +557,13 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Free</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Courses</div>
-                </div>
+                <button onclick="loadNewPage('https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card resources-tab-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Null Byte</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
@@ -677,13 +573,39 @@
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g/videos');" class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">Visit</button>
-                <div class="mdc-chip first-action-chip">
-                  <div class="mdc-chip__text">Tools</div>
-                </div>
-                <div class="mdc-chip normal-card-chip">
-                  <div class="mdc-chip__text">Guides</div>
-                </div>
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">TechLinked</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              They say cyber security and tech news go hand in hand. Learn about the latest developments in technology in 10 minutes or less.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">JackkTutorials</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Video tutorials explaining a range of topics, CTF walkthroughs and demonstrations of various tools in an easy-to-understand format.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/user/JackkTutorials/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
@@ -691,7 +613,7 @@
       </div>
     </div>
   </div>
-  <button class="mdc-fab mdc-fab--mini mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
+  <button class="mdc-fab mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
     <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
   </button>
   <div class="mdc-snackbar">
