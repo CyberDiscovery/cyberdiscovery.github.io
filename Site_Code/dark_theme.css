@@ -69,20 +69,23 @@ body {
 	color: rgba(255,255,255,.87) !important;
 }
 .resource-card-subtitle {
-	color: rgba(255,255,255,.54);
+	color: rgba(255,255,255,.38);
   overflow: hidden;
 }
 .resource-card-secondary {
-	color: rgba(255,255,255,.54);
+	color: rgba(255,255,255,.6);
+}
+.elevated-soundboard-surface {
+  color: rgba(255,255,255,.6);
 }
 .resources-tab-card {
   background-color: #37373d;
 }
 .resource-card-title {
-	color: rgba(255,255,255,0.7);
+	color: rgba(255,255,255,0.87);
 }
 .mdc-button:not(:disabled) {
-  color: rgba(255,255,255,.54);
+  color: rgba(255,255,255,.6);
 }
 .mdc-chip {
 	background-color: #1b1b21;
@@ -121,4 +124,13 @@ body {
 }
 .mdc-button--outlined:not(:disabled) {
 	border-color: rgba(255,255,255,.54);
+}
+.mdc-drawer .mdc-drawer__title {
+	color: rgba(255,255,255,.87);
+}
+.mdc-drawer .mdc-drawer__subtitle {
+	color: rgba(255,255,255,.6);
+}
+.spaced-out-subheader {
+  color: rgba(255,255,255,.87);
 }

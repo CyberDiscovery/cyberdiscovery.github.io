@@ -76,29 +76,29 @@ function loadTheme(themeLocation, metaColor, cookieValue){
 function switchTheme(){
   switch (getCookie("ThemePreference")) {
     case "light":
-      loadTheme("./Site_Code/dark_theme.css", "#212121", "dark");
+      loadTheme("./Site_Code/dark_theme.css", "#1b1b21", "dark");
       break;
 
     case "dark":
-      loadTheme("./Site_Code/light_theme.css", "#3f51b5", "light");
+      loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
       break;
   }
 }
 function checkCookie() {
   switch (getCookie("ThemePreference")) {
     case "dark":
-      loadTheme("./Site_Code/dark_theme.css", "#212121");
+      loadTheme("./Site_Code/dark_theme.css", "#1b1b21");
       themeSwitcher.checked = true;
       break;
 
     case "light":
-      loadTheme("./Site_Code/light_theme.css", "#3f51b5");
+      loadTheme("./Site_Code/light_theme.css", "#0d2332");
       themeSwitcher.checked = false;
       break;
 
     default:
       displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 8000);
-      loadTheme("./Site_Code/light_theme.css", "#3f51b5", "light");
+      loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
       themeSwitcher.checked = false;
       break;
   }
@@ -180,7 +180,7 @@ function fixAllTabsCardsVerticalHeight(){
   */
 }
 let rippleLock = 0;
-function removeRippleFocus(evt){
+function removeRippleFocus(evt) {
   if (rippleLock) return;
   let { target } = evt;
   do {
@@ -192,6 +192,60 @@ function removeRippleFocus(evt){
       }
   } while ((target=target.parentNode));
 }
+var currentAudioSource = null;
+function handleAudioPlayback(trackName, audioSource) {
+  if (currentAudioSource != null) {
+    currentAudioSource.pause();
+  }
+  currentAudioSource = new Audio(audioSource);
+  mdcSnackBar.listen("MDCSnackbar:closing", function()
+  {
+    if (!currentAudioSource.paused) {
+      mdcSnackBar.open();
+    }
+  });
+  currentAudioSource.play();
+  displayMDCSnackbar("Playing: " + trackName, "Stop", function() {currentAudioSource.pause();}, 4000);
+}
+var soundLinks = {};
+
+function loadSoundboardSources() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var currentTab = document.getElementById("Grid-Tab-3");
+      var sectionHeading = document.getElementsByTagName("template")[0];
+      var sectionCard = sectionHeading.content.getElementById('soundboard-track-category');
+      var soundboardCard = document.getElementsByTagName("template")[1];
+      var soundCard = soundboardCard.content.getElementById('soundboard-track-name');
+      var soundData = (JSON.parse(xhr.responseText));
+      for (var sectionName in soundData) {
+        var soundCardID = guidGenerator();
+        sectionCard.innerHTML = sectionName;
+        sectionCard.id = "sb-" + soundCardID + "-heading";
+        var cardToAppend = sectionHeading.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+        var currentTrackSection = soundData[sectionName];
+        for (var soundObj = 0; soundObj < currentTrackSection.count; soundObj++) {
+          var currentTrackRefName = currentTrackSection[soundObj].name;
+          soundCard.innerHTML = currentTrackRefName;
+          soundCard.id = "sc-" + soundCardID + "-track-" + soundObj;
+          soundLinks[soundCard.id] = currentTrackSection[soundObj].link;
+          var cardSoundCardToAppend = soundboardCard.content.cloneNode(true);
+          currentTab.appendChild(cardSoundCardToAppend);
+          oneElementInit("#" + soundCard.id, mdc.ripple.MDCRipple.attachTo);
+          document.getElementById(soundCard.id).addEventListener('click', function (evt) {
+            handleAudioPlayback(evt.target.innerHTML, soundLinks[evt.target.id]);
+          });
+        }
+      }
+    }
+  };
+  xhr.open('GET', 'https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json', true);
+  xhr.send(null);
+}
+loadSoundboardSources();
+
 window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
@@ -206,6 +260,7 @@ function goToPageTop() {
 }
 
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
+initElement('mdc-card__primary-action', mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
 /*
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);

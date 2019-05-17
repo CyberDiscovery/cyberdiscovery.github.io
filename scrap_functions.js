@@ -330,4 +330,36 @@ var handler = MTMzNyBLb25hbWkgQ29kZSAK(() => {
 
 window.addEventListener('keydown', handler);
 
-// <label for="theme-switch">light/dark</label>
+
+function loadSoundboardSources() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var currentTab = document.getElementById("Grid-Tab-3");
+      var sectionHeading = document.getElementsByTagName("template")[0];
+      var sectionCard = sectionHeading.content.getElementById('soundboard-track-category');
+      var soundboardCard = document.getElementsByTagName("template")[1];
+      var soundCard = soundboardCard.content.getElementById('soundboard-track-name');
+      var soundData = (JSON.parse(xhr.responseText));
+      for (sectionName in soundData) {
+        var soundCardID = guidGenerator();
+        sectionCard.innerHTML = sectionName;
+        sectionCard.id = soundCardID + "-heading";
+        var cardToAppend = sectionHeading.content.cloneNode(true);
+        currentTab.appendChild(cardToAppend);
+        var currentTrackSection = soundData[sectionName];
+        for (var soundObj = 0; soundObj < currentTrackSection.count; soundObj++) {
+          soundCard.innerHTML = currentTrackSection[soundObj].name;
+          soundCard.id = soundCardID + "-track-" + soundObj;
+          var cardSoundCardToAppend = soundboardCard.content.cloneNode(true);
+          currentTab.appendChild(cardSoundCardToAppend);
+          document.getElementById(soundCardID + "-track-" + soundObj).addEventListener('click', function () {
+            handleAudioPlayback();
+          });
+        }
+      }
+    }
+  };
+  xhr.open('GET', 'https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json', true);
+  xhr.send(null);
+}

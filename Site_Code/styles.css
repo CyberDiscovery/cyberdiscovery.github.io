@@ -44,7 +44,6 @@ body {
   margin: 0;
 }
 .rounded-corner-card {
-  border-radius: 15px;
   height: 100% !important;
 }
 .fixed-size-background-img {
@@ -164,6 +163,7 @@ body {
 }
 .mdc-card__primary-action {
   height: inherit;
+  border-radius: 15px;
 }
 .mdc-typography--body1 {
   height: inherit !important;
@@ -193,11 +193,6 @@ body {
   background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
   background-size: 90%;
 }
-/*
-:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item.mdc-ripple-upgraded--background-focused::before {
-  opacity: 0!important;
-}
-*/
 .project_card_menu_icons {
   vertical-align: bottom;
   padding-right: 5px;
@@ -340,6 +335,8 @@ body {
 }
 .resources-tab-card {
   height: 100% !important;
+}
+.mdc-card {
   border-radius: 15px;
 }
 .padded-resource-card {
@@ -388,8 +385,13 @@ body {
   }
 }
 @media (max-width: 479px) {
-  .mdc-tab--stacked {
-  	width: calc(100% / 3);
+  .spaced-card-mobile {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #scrollPageTop {
+    z-index: 7 !important;
   }
 }
 #scrollPageTop {
@@ -422,4 +424,30 @@ body {
 }
 .shifted-form-field {
   margin-left: auto;
+}
+.elevated-soundboard-surface {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	min-height: 100px;
+  height: inherit;
+  width: 100%;
+	-ms-flex-align: center;
+	align-items: center;
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0,0,0,.54));
+}
+.spaced-out-subheader {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.unselectable-text {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

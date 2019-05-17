@@ -29,6 +29,18 @@
   </script>
 </head>
 <body>
+  <template>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
+      <h3 class="mdc-list-group__subheader spaced-out-subheader" id="soundboard-track-category">Track Category</h3>
+    </div>
+  </template>
+  <template>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+      <div class="mdc-card mdc-elevation-transition resources-tab-card spaced-card-mobile">
+        <div class="mdc-typography mdc-card__primary-action mdc-typography--subtitle1 elevated-soundboard-surface unselectable-text" tabindex="0" id="soundboard-track-name">Track Name</div>
+      </div>
+    </div>
+  </template>
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
       <h3 class="mdc-drawer__title">Helpful Links</h3>
@@ -49,7 +61,7 @@
           <span class="mdc-list-item__text">Disclaimer</span>
         </a>
         <a class="mdc-list-item" href="https://github.com/CyberDiscovery/cyberdiscovery.github.io">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">folder_open</i>
           <span class="mdc-list-item__text">Site Source</span>
         </a>
         <hr class="mdc-list-divider">
@@ -143,6 +155,16 @@
             <span class="mdc-tab__content">
               <span class="mdc-tab__icon material-icons" aria-hidden="true">memory</span>
               <span class="mdc-tab__text-label">Projects</span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Soundboard-Tab">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">queue_music</span>
+              <span class="mdc-tab__text-label">Soundboard</span>
             </span>
             <span class="mdc-tab-indicator">
               <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
@@ -256,56 +278,14 @@
     </div>
   </div>
   <div class="generic-tab-item layout-tab-item" id="Tab-3">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
+    <div class="layout-grid-desktop mdc-layout-grid" id="Soundboard-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">LiveOverflow</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Take a deep dive into topics such as reverse-engineering, XSS, pen-testing, malware analysis, exploring weird machines and more.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Seytonic</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A variety of ethical-hacking related tutorials, diy projects, raspberry pi mods, arduino hacks and cyber security news.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hak5</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+  <div class="generic-tab-item layout-tab-item" id="Tab-4">
+    <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
+      <div class="mdc-layout-grid__inner" id="Grid-Tab-4">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
@@ -334,6 +314,54 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button onclick="loadNewPage('https://repl.it/languages');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hak5</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Seytonic</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              A variety of ethical-hacking related tutorials, diy projects, raspberry pi mods, arduino hacks and cyber security news.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">LiveOverflow</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Take a deep dive into topics such as reverse-engineering, XSS, pen-testing, malware analysis, exploring weird machines, etc.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>
@@ -616,7 +644,7 @@
   <button class="mdc-fab mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
     <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
   </button>
-  <div class="mdc-snackbar">
+  <div class="mdc-snackbar mdc-snackbar--leading">
     <div class="mdc-snackbar__surface">
       <div class="mdc-snackbar__label"
            role="status"
