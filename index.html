@@ -133,7 +133,7 @@
         <span class="mdc-top-app-bar__title">CD Community</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="javascript:parseSiteSettings();" class="material-icons mdc-top-app-bar__action-item" aria-label="Theme" title="Switch Theme" alt="Theme">tonality</a>
+        <a href="javascript:parseSiteSettings();" class="material-icons mdc-top-app-bar__action-item unselectable-text" aria-label="Theme" title="Switch Theme" alt="Theme">tonality</a>
       </section>
     </div>
   </header>
@@ -207,7 +207,7 @@
     </div>
     <div class="mdc-dialog__scrim"></div>
   </div>
-  <div class="mdc-dialog"
+  <div class="mdc-dialog unselectable-text"
      role="alertdialog"
      aria-modal="true"
      id="site-settings-dialog">
@@ -286,6 +286,22 @@
   <div class="generic-tab-item layout-tab-item" id="Tab-4">
     <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-4">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet" id="resources-intro-msg">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hey There!</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">by Our Community</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Here are a group of resources you can use to enhance your cyber security knowledge and skill, regardless of your participation in Cyber Discovery.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="dismissResourcesCard(true);" class="mdc-button mdc-card__action mdc-card__action--button">Got It</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
@@ -465,22 +481,6 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition resources-tab-card">
             <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">MAFH</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Get started with malware analysis and reverse engineering by watching a malware analyst unpack and explain real-world malware.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
                 <h2 class="resource-card-title mdc-typography mdc-typography--headline6">13Cubed</h2>
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
             </div>
@@ -613,7 +613,7 @@
                 <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
             </div>
             <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              They say cyber security and tech news go hand in hand. Learn about the latest developments in technology in 10 minutes or less.
+              They say cyber security and tech news go hand in hand. Learn about the latest developments in technology in 10 minutes or so.
             </div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
@@ -634,6 +634,22 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button onclick="loadNewPage('https://www.youtube.com/user/JackkTutorials/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet" id="resources-last-card">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">MAFH</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Get started with malware analysis and reverse engineering by watching a malware analyst unpack and explain real-world malware.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
               </div>
             </div>
           </div>

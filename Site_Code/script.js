@@ -97,7 +97,7 @@ function checkCookie() {
       break;
 
     default:
-      displayMDCSnackbar("This site uses cookies to store your theme preferences.", "ok", function() {}, 8000);
+      displayMDCSnackbar("This site uses cookies for basic functionality.", "ok", function() {}, 8000);
       loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
       themeSwitcher.checked = false;
       break;
@@ -134,6 +134,29 @@ function fetchXkcd(xkcdNumber){
     loadNewPage("https://c.xkcd.com/random/comic/");
   } else {
     loadNewPage("https://xkcd.com/" + xkcdNumber);
+  }
+}
+function dismissResourcesCard(invokedDirectly) {
+  var cardToAddress = document.getElementById("resources-intro-msg");
+  var lastCard = document.getElementById("resources-last-card");
+  var cardDismissed = getCookie("DismissedCard");
+  if (invokedDirectly && cardDismissed == "no") {
+    cardToAddress.style.display = "none";
+    lastCard.style.display = "";
+    setCookie("DismissedCard", "yes", 30);
+    displayMDCSnackbar("Dismissed message", "Undo", function() {dismissResourcesCard(true);}, 4000);
+  } else if (invokedDirectly && cardDismissed == "yes") {
+    cardToAddress.style.display = "";
+    lastCard.style.display = "none";
+    setCookie("DismissedCard", "no", 30);
+  } else if (!invokedDirectly && cardDismissed == "yes") {
+    cardToAddress.style.display = "none";
+    lastCard.style.display = "";
+  } else if (!invokedDirectly && cardDismissed == "") {
+    setCookie("DismissedCard", "no", 30);
+    lastCard.style.display = "none";
+  } else if (!invokedDirectly && cardDismissed == "no") {
+    lastCard.style.display = "none";
   }
 }
 function getTabMaxCardHeight(elementOffsetPadding){
@@ -245,7 +268,6 @@ function loadSoundboardSources() {
   xhr.send(null);
 }
 loadSoundboardSources();
-
 window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
@@ -262,6 +284,7 @@ function goToPageTop() {
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 initElement('mdc-card__primary-action', mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
+dismissResourcesCard(false);
 /*
 window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
 window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
@@ -285,6 +308,7 @@ function parseSiteSettings() {
     }
     if (resetCookieCheckbox.checked) {
       setCookie("ThemePreference", "", 0);
+      setCookie("DismissedCard", "", 0);
       displayMDCSnackbar("Cleared cookies.", "Reload", function() {window.location.reload();}, 4000);
     }
   });
