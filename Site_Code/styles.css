@@ -384,7 +384,7 @@ body {
     display: none;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 839px) {
   .spaced-card-mobile {
     max-width: 80%;
     margin-left: auto;

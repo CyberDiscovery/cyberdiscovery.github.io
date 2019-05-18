@@ -109,6 +109,7 @@ var cdSiteTabBar = oneElementInit(".mdc-tab-bar", mdc.tabBar.MDCTabBar);
 var cdSiteDrawer = oneElementInit(".mdc-drawer", mdc.drawer.MDCDrawer.attachTo);
 oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
 var availableSiteTabs = document.getElementsByClassName("generic-tab-item");
+var currentAudioSource = null;
 
 function checkPwnState(searchEmailAddr) {
   if (searchEmailAddr == null || searchEmailAddr == "") {
@@ -139,24 +140,37 @@ function fetchXkcd(xkcdNumber){
 function dismissResourcesCard(invokedDirectly) {
   var cardToAddress = document.getElementById("resources-intro-msg");
   var lastCard = document.getElementById("resources-last-card");
-  var cardDismissed = getCookie("DismissedCard");
-  if (invokedDirectly && cardDismissed == "no") {
-    cardToAddress.style.display = "none";
-    lastCard.style.display = "";
-    setCookie("DismissedCard", "yes", 30);
-    displayMDCSnackbar("Dismissed message", "Undo", function() {dismissResourcesCard(true);}, 4000);
-  } else if (invokedDirectly && cardDismissed == "yes") {
-    cardToAddress.style.display = "";
-    lastCard.style.display = "none";
-    setCookie("DismissedCard", "no", 30);
-  } else if (!invokedDirectly && cardDismissed == "yes") {
-    cardToAddress.style.display = "none";
-    lastCard.style.display = "";
-  } else if (!invokedDirectly && cardDismissed == "") {
-    setCookie("DismissedCard", "no", 30);
-    lastCard.style.display = "none";
-  } else if (!invokedDirectly && cardDismissed == "no") {
-    lastCard.style.display = "none";
+
+  switch (getCookie("DismissedCard")) {
+    case "yes":
+      if (invokedDirectly) {
+        cardToAddress.style.display = "";
+        lastCard.style.display = "none";
+        setCookie("DismissedCard", "no", 30);
+      } else {
+        cardToAddress.style.display = "none";
+        lastCard.style.display = "";
+      }
+      break;
+
+    case "no":
+      if (invokedDirectly) {
+        cardToAddress.style.display = "none";
+        lastCard.style.display = "";
+        setCookie("DismissedCard", "yes", 30);
+        if (currentAudioSource != null) {
+          currentAudioSource.pause();
+        }
+        displayMDCSnackbar("Dismissed message", "Undo", function() {dismissResourcesCard(true);}, 4000);
+      } else {
+        lastCard.style.display = "none";
+      }
+      break;
+
+    default:
+      setCookie("DismissedCard", "no", 30);
+      lastCard.style.display = "none";
+      break;
   }
 }
 function getTabMaxCardHeight(elementOffsetPadding){
@@ -215,7 +229,6 @@ function removeRippleFocus(evt) {
       }
   } while ((target=target.parentNode));
 }
-var currentAudioSource = null;
 function handleAudioPlayback(trackName, audioSource) {
   if (currentAudioSource != null) {
     currentAudioSource.pause();
