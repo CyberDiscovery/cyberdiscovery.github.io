@@ -304,6 +304,7 @@ window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, fals
 window.onload = fixAllTabsCardsVerticalHeight;
 */
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
+initElement("mdc-icon-button", mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
 var themeSwitcher = oneElementInit("#theme-switcher-switch", mdc.switchControl.MDCSwitch.attachTo);
 var resetCookieCheckbox = oneElementInit("#cookie-checkbox", mdc.checkbox.MDCCheckbox.attachTo);

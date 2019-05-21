@@ -1,9 +1,6 @@
 :root {
   --mdc-theme-primary: #0d2332;
 }
-.resource-card-subtitle {
-  overflow: hidden;
-}
 .mdc-snackbar__action::before, .mdc-snackbar__action::after {
 	background-color: rgba(255, 255, 255, 0.87);
 }

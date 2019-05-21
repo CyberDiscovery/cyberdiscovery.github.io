@@ -70,7 +70,6 @@ body {
 }
 .resource-card-subtitle {
 	color: rgba(255,255,255,.38);
-  overflow: hidden;
 }
 .resource-card-secondary {
 	color: rgba(255,255,255,.6);
@@ -133,4 +132,22 @@ body {
 }
 .spaced-out-subheader {
   color: rgba(255,255,255,.87);
+}
+.mdc-icon-button.material-icons.mdc-card__action.mdc-card__action--icon--unbounded {
+	color: rgba(255,255,255,.6);
+}
+.projects-card-subtitle {
+	color: rgba(255,255,255,.38);
+}
+.projects-card-secondary {
+	color: rgba(255,255,255,.6);
+}
+.projects-tab-card {
+  background-color: #37373d;
+}
+.projects-card-title {
+	color: rgba(255,255,255,0.87);
+}
+.mdc-dialog .mdc-dialog__content {
+	color: rgba(255,255,255,.54);
 }
