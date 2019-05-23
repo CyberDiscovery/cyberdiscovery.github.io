@@ -244,6 +244,7 @@ function handleAudioPlayback(trackName, audioSource) {
   displayMDCSnackbar("Playing: " + trackName, "Stop", function() {currentAudioSource.pause();}, 4000);
 }
 var soundLinks = {};
+var showdownLoaded = false;
 
 function loadSoundboardSources() {
   var xhr = new XMLHttpRequest();
@@ -292,6 +293,33 @@ function detectPageBottom() {
 function goToPageTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function loadProjectDetails() {
+  var projectBody = document.getElementById("project-dialog-body");
+  projectBody.innerHTML = `
+  <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+    <div class="mdc-linear-progress__buffering-dots"></div>
+    <div class="mdc-linear-progress__buffer"></div>
+    <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+      <span class="mdc-linear-progress__bar-inner"></span>
+    </div>
+    <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+      <span class="mdc-linear-progress__bar-inner"></span>
+    </div>
+  </div>
+  `;
+  genericScrollableDialog.open();
+  var projectTitle = document.getElementById("project-dialog-title");
+  var dialogBtn = document.getElementById("project-dialog-btn");
+  dialogBtn.onclick = function() {
+    genericScrollableDialog.close();
+    if (!genericScrollableDialog.isOpen) {
+      projectBody.innerHTML = "Dialog body text";
+    }
+  };
+  //var projectRepo = "https://github.com/CyberDiscovery/" + projectRepoName;
+  // TODO: FIX LISTENERS CAUSING DUPLICATES EACH TIME THEY ARE CALLED!
 }
 
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);

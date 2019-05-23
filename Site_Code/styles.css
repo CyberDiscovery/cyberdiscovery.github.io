@@ -187,7 +187,6 @@ body {
 }
 .cdbotmain_card_image {
   background: url('../Image_Assets/Discord_Tab/optimised_discord_card_image.gif') #e8e4e7 center/cover no-repeat;
-  background-size: 110%;
 }
 .cdmathsbot_card_image {
   background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
