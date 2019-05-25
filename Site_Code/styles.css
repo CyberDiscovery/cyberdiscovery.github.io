@@ -189,8 +189,8 @@ body {
   background: url('../Image_Assets/Discord_Tab/optimised_discord_card_image.gif') #e8e4e7 center/cover no-repeat;
 }
 .cdmathsbot_card_image {
-  background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
-  background-size: 90%;
+  background: url('../Image_Assets/discord_bot_generic_image.png') #37373d center/cover no-repeat;
+  background-size: auto 110%;
 }
 .project_card_menu_icons {
   vertical-align: bottom;
@@ -471,4 +471,8 @@ body {
   padding: 0 1rem 8px;
   color: var(--mdc-theme-text-secondary-on-background, rgba(0,0,0,.54));
   height: inherit;
+}
+.placeholder-image {
+  background: url('https://cdn.glitch.com/3f2aa87c-0707-4d16-b533-62cb0b69db35%2FDiscord%20Bot%20List%20Icon%20-%20Large%202.png?1543200818856') #37373d center/cover no-repeat;
+  background-size: auto 100%;
 }

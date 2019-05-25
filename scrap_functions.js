@@ -363,3 +363,10 @@ function loadSoundboardSources() {
   xhr.open('GET', 'https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json', true);
   xhr.send(null);
 }
+
+dialogBtn.onclick = function() {
+  genericScrollableDialog.close();
+  if (!genericScrollableDialog.isOpen) {
+    projectBody.innerHTML = "Dialog body text";
+  }
+};

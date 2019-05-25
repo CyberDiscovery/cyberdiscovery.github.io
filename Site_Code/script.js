@@ -110,6 +110,18 @@ var cdSiteDrawer = oneElementInit(".mdc-drawer", mdc.drawer.MDCDrawer.attachTo);
 oneElementInit(".mdc-menu", mdc.menu.MDCMenu);
 var availableSiteTabs = document.getElementsByClassName("generic-tab-item");
 var currentAudioSource = null;
+var linearProgressBar = `
+<div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+  <div class="mdc-linear-progress__buffering-dots"></div>
+  <div class="mdc-linear-progress__buffer"></div>
+  <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+    <span class="mdc-linear-progress__bar-inner"></span>
+  </div>
+  <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+    <span class="mdc-linear-progress__bar-inner"></span>
+  </div>
+</div>
+`;
 
 function checkPwnState(searchEmailAddr) {
   if (searchEmailAddr == null || searchEmailAddr == "") {
@@ -234,19 +246,15 @@ function handleAudioPlayback(trackName, audioSource) {
     currentAudioSource.pause();
   }
   currentAudioSource = new Audio(audioSource);
-  mdcSnackBar.listen("MDCSnackbar:closing", function()
-  {
-    if (!currentAudioSource.paused) {
-      mdcSnackBar.open();
-    }
-  });
   currentAudioSource.play();
   displayMDCSnackbar("Playing: " + trackName, "Stop", function() {currentAudioSource.pause();}, 4000);
 }
 var soundLinks = {};
 var showdownLoaded = false;
+function doLiterallyNothing() {}
 
 function loadSoundboardSources() {
+  loadSoundboardSources = doLiterallyNothing;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -281,7 +289,7 @@ function loadSoundboardSources() {
   xhr.open('GET', 'https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json', true);
   xhr.send(null);
 }
-loadSoundboardSources();
+//loadSoundboardSources();
 window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
@@ -297,27 +305,10 @@ function goToPageTop() {
 
 function loadProjectDetails() {
   var projectBody = document.getElementById("project-dialog-body");
-  projectBody.innerHTML = `
-  <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
-    <div class="mdc-linear-progress__buffering-dots"></div>
-    <div class="mdc-linear-progress__buffer"></div>
-    <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-      <span class="mdc-linear-progress__bar-inner"></span>
-    </div>
-    <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-      <span class="mdc-linear-progress__bar-inner"></span>
-    </div>
-  </div>
-  `;
+  projectBody.innerHTML = linearProgressBar;
   genericScrollableDialog.open();
   var projectTitle = document.getElementById("project-dialog-title");
   var dialogBtn = document.getElementById("project-dialog-btn");
-  dialogBtn.onclick = function() {
-    genericScrollableDialog.close();
-    if (!genericScrollableDialog.isOpen) {
-      projectBody.innerHTML = "Dialog body text";
-    }
-  };
   //var projectRepo = "https://github.com/CyberDiscovery/" + projectRepoName;
   // TODO: FIX LISTENERS CAUSING DUPLICATES EACH TIME THEY ARE CALLED!
 }
@@ -332,7 +323,7 @@ window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, fals
 window.onload = fixAllTabsCardsVerticalHeight;
 */
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
-initElement("mdc-icon-button", mdc.ripple.MDCRipple.attachTo);
+initElement("project-menu-btn", mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
 var themeSwitcher = oneElementInit("#theme-switcher-switch", mdc.switchControl.MDCSwitch.attachTo);
 var resetCookieCheckbox = oneElementInit("#cookie-checkbox", mdc.checkbox.MDCCheckbox.attachTo);
@@ -342,27 +333,36 @@ var genericScrollableDialog = oneElementInit("#scrollable-text-dialog", mdc.dial
 cookieFormfield.input = resetCookieCheckbox;
 function parseSiteSettings() {
   siteSettingsMenu.open();
-  siteSettingsMenu.listen('MDCDialog:closing', function () {
-    if (getCookie("ThemePreference") == "light" && themeSwitcher.checked) {
-      switchTheme();
-    } else if (getCookie("ThemePreference") == "dark" && !themeSwitcher.checked) {
-      switchTheme();
-    }
-    if (resetCookieCheckbox.checked) {
-      setCookie("ThemePreference", "", 0);
-      setCookie("DismissedCard", "", 0);
-      displayMDCSnackbar("Cleared cookies.", "Reload", function() {window.location.reload();}, 4000);
-    }
-  });
 }
 if(cdSiteTopAppBar !== null) {
   cdSiteTopAppBar.listen('MDCTopAppBar:nav', () => {
     cdSiteDrawer.open = !cdSiteDrawer.open;
   });
 }
+siteSettingsMenu.listen('MDCDialog:closing', function () {
+  if (getCookie("ThemePreference") == "light" && themeSwitcher.checked) {
+    switchTheme();
+  } else if (getCookie("ThemePreference") == "dark" && !themeSwitcher.checked) {
+    switchTheme();
+  }
+  if (resetCookieCheckbox.checked) {
+    setCookie("ThemePreference", "", 0);
+    setCookie("DismissedCard", "", 0);
+    displayMDCSnackbar("Cleared cookies.", "Reload", function() {window.location.reload();}, 4000);
+  }
+});
+mdcSnackBar.listen("MDCSnackbar:closing", function() {
+  if (!(currentAudioSource == null) && !currentAudioSource.paused) {
+    mdcSnackBar.open();
+  }
+});
 var previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
 cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
-  document.getElementById(availableSiteTabs[event.detail.index].id).classList.remove("layout-tab-item");
+  var nowActivatedTab = availableSiteTabs[event.detail.index].id;
+  if (nowActivatedTab == "Tab-3") {
+    loadSoundboardSources();
+  }
+  document.getElementById(nowActivatedTab).classList.remove("layout-tab-item");
   document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
   //fixAllTabsCardsVerticalHeight();
