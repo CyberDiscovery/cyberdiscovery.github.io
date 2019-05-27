@@ -186,7 +186,7 @@ body {
   height: 250px !important;
 }
 .cdbotmain_card_image {
-  background: url('../Image_Assets/Discord_Tab/optimised_discord_card_image.gif') #e8e4e7 center/cover no-repeat;
+  background: url('../Image_Assets/Discord_Tab/discord_card_main.png') #e8e4e7 center/cover no-repeat;
 }
 .cdmathsbot_card_image {
   background: url('../Image_Assets/discord_bot_generic_image.png') #37373d center/cover no-repeat;
@@ -273,7 +273,7 @@ body {
   padding-left: 3px;
 }
 .cdapp_main_card_image {
-  background: url('../Image_Assets/App_Tab/app_main_candidate_card_image.gif') #ef1580 center/cover no-repeat;
+  background: url('../Image_Assets/App_Tab/app_card_main_img.png') #ef1580 center/cover no-repeat;
   background-size: auto 110%;
 }
 .App_Screenshot_Card_One {
@@ -384,6 +384,9 @@ body {
   .desktop-only-card {
     display: none;
   }
+  .mdc-card__actions {
+    height: auto;
+  }
 }
 @media (max-width: 839px) {
   .spaced-card-mobile {
@@ -475,4 +478,19 @@ body {
 .placeholder-image {
   background: url('https://cdn.glitch.com/3f2aa87c-0707-4d16-b533-62cb0b69db35%2FDiscord%20Bot%20List%20Icon%20-%20Large%202.png?1543200818856') #37373d center/cover no-repeat;
   background-size: auto 100%;
+}
+.events-body-padded {
+  padding-bottom: 12px;
+}
+.events-elite-card {
+  background: url('../Image_Assets/cd_elite_bg.png') #0d2332 center/cover no-repeat;
+  background-size: auto 112%;
+}
+.events-cft-card {
+  background: url('../Image_Assets/Home_Tab/Cyber_FastTrack.png') #0d2332 center/cover no-repeat;
+  background-size: auto 110%;
+}
+.events-ggcs-card {
+  background: url('../Image_Assets/Home_Tab/ggcs.png') #0d2332 center/cover no-repeat;
+  background-size: auto 110%;
 }
