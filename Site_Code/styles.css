@@ -494,3 +494,18 @@ body {
   background: url('../Image_Assets/Home_Tab/ggcs.png') #0d2332 center/cover no-repeat;
   background-size: auto 110%;
 }
+.events-prereg-card {
+  background: url('../Image_Assets/daniel-josef-540635-unsplash.jpg') #780036 center/cover no-repeat;
+}
+.events-assess-card {
+  background: url('../Image_Assets/assess_events_card.png') #0d2332 center/cover no-repeat;
+  background-size: auto 100%;
+}
+.events-game-card {
+  background: url('../Image_Assets/cs_game_event.png') #0d2332 center/cover no-repeat;
+  background-size: auto 100%;
+}
+.events-essentials-card {
+  background: url('../Image_Assets/essentials_event_card.jpg') #0d2332 center/cover no-repeat;
+  background-size: auto 100%;
+}
