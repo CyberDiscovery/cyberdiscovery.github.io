@@ -7,9 +7,6 @@ html {
 body {
   background-color: #f5f5f5;
 }
-html, body {
-	height: 100%;
-}
 .mdc-top-app-bar__title {
   font-weight: 400;
   letter-spacing: .02em;
@@ -489,18 +486,73 @@ html, body {
 }
 .padded-dialog-content {
   padding-top: 24px !important;
-  scroll-behavior: smooth !important;
 }
-pre {
-  border-radius: 3px;
-  font-size: 85%;
-  line-height: 1.45;
-  overflow: auto;
-  padding: 16px;
-}
-code {
+.mdc-dialog__content code {
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
   padding: .2em .4em;
+}
+.mdc-dialog__content h1, .mdc-dialog__content h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+.mdc-dialog__content h1 {
+  font-size: 2em;
+}
+.mdc-dialog__content h1, .mdc-dialog__content h2, .mdc-dialog__content h3, .mdc-dialog__content h4, .mdc-dialog__content h5, .mdc-dialog__content h6 {
+	font-weight: 600;
+	line-height: 1.25;
+	margin-bottom: 16px;
+	margin-top: 24px;
+}
+.mdc-dialog__content {
+	word-wrap: break-word;
+}
+.mdc-dialog__content {
+	font-family: Roboto,sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	word-wrap: break-word;
+}
+.mdc-dialog__content blockquote, .mdc-dialog__content details, .mdc-dialog__content dl, .mdc-dialog__content ol, .mdc-dialog__content p, .mdc-dialog__content pre, .mdc-dialog__content table, .mdc-dialog__content ul {
+	margin-bottom: 16px;
+	margin-top: 0;
+}
+.mdc-dialog__content ol, .mdc-dialog__content ul {
+	padding-left: 2em;
+}
+.mdc-dialog__content h4 {
+	font-size: 1em;
+}
+.mdc-dialog__content pre {
+	border-radius: 3px;
+	font-size: 85%;
+	line-height: 1.45;
+	overflow: auto;
+	padding: 16px;
+}
+.mdc-dialog__content pre code, .mdc-dialog__content pre tt {
+	background-color: transparent;
+	border: 0;
+	display: inline;
+	line-height: inherit;
+	margin: 0;
+	max-width: auto;
+	overflow: visible;
+	padding: 0;
+	word-wrap: normal;
+}
+.mdc-dialog__content pre > code {
+	background: transparent;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	white-space: pre;
+	word-break: normal;
+}
+.mdc-dialog__content img {
+	box-sizing: content-box;
+	max-width: 100%;
 }

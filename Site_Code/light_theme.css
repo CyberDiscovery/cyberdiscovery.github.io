@@ -22,7 +22,7 @@
 .mdc-fab {
 	background-color: var(--mdc-theme-primary, #0d2332);
 }
-pre {
+.mdc-dialog__content pre {
   background-color: #f6f8fa;
 }
 :not(pre) > code {

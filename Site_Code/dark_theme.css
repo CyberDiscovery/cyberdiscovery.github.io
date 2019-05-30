@@ -178,9 +178,12 @@ body {
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
   border-color: rgba(255,255,255,.6) !important;
 }
-pre {
+.mdc-dialog__content pre {
   background-color: rgba(255,255,255,.05);
 }
 :not(pre) > code {
   background-color: rgba(255,255,255,.05);
+}
+.mdc-dialog__content h1, .mdc-dialog__content h2 {
+  border-bottom: 1px solid rgba(234, 236, 238, 0.1) !important;
 }
