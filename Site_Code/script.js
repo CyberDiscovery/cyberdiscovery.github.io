@@ -264,6 +264,7 @@ function loadProjectDetails(projectRepoName) {
         showdownLoaded = true;
         showdownJSConverter = new showdown.Converter();
         showdownJSConverter.setFlavor('github');
+        showdownJSConverter.setOption('openLinksInNewWindow', 'true');
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
