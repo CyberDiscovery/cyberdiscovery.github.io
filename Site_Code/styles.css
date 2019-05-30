@@ -216,7 +216,7 @@ body {
   background-size: 100%;
 }
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: #0d2332 !important;
+  color: #0d2332;
 }
 .textfield_card_primary_btn {
   color: #0d2332 !important;
@@ -410,6 +410,9 @@ body {
      bottom: 1.5rem;
      right: 1.5rem;
   }
+  .resized-dialog-window {
+    max-width: 1004px !important;
+  }
 }
 @media (max-width: 899px) {
    #scrollPageTop {
@@ -508,4 +511,30 @@ body {
 .events-essentials-card {
   background: url('../Image_Assets/essentials_event_card.jpg') #0d2332 center/cover no-repeat;
   background-size: auto 100%;
+}
+.leading-notch-textfield {
+  border-radius: 8px 0 0 8px !important;
+}
+.trailling-notch-textfield {
+  border-radius: 0 8px 8px 0 !important;
+}
+.adjusted-card-actions {
+  min-height: initial !important;
+}
+.padded-dialog-content {
+  padding-top: 24px !important;
+  scroll-behavior: smooth !important;
+}
+pre {
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+code {
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
 }

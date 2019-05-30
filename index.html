@@ -200,9 +200,8 @@
      aria-modal="true"
      id="scrollable-text-dialog">
     <div class="mdc-dialog__container">
-      <div class="mdc-dialog__surface">
-        <h2 class="mdc-dialog__title" id="project-dialog-title">Dialog Title</h2>
-        <section class="mdc-dialog__content" id="project-dialog-body">
+      <div class="mdc-dialog__surface resized-dialog-window">
+        <section class="mdc-dialog__content padded-dialog-content" id="project-dialog-body">
           Dialog body text
         </section>
         <footer class="mdc-dialog__actions">
@@ -288,7 +287,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -306,7 +305,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Cyber-Discovery-App');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -324,7 +323,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Discord-Maths-Bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -342,7 +341,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -360,7 +359,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -378,7 +377,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -396,7 +395,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -414,7 +413,7 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">More</button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
                 <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
@@ -900,6 +899,46 @@
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button onclick="loadNewPage('https://www.youtube.com/user/JackkTutorials/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Malwarebytes</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://blog.malwarebytes.com/</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Read about the latest cyber security news around the world, with weekly summaries of the current threatscape, from Malwarebytes.
+            </div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button onclick="loadNewPage('https://blog.malwarebytes.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition resources-tab-card">
+            <div class="padded-resource-card">
+                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Search HIBP</h2>
+                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://haveibeenpwned.com</h3>
+            </div>
+            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
+              Check if you have an account compromised in a data breach, using Microsoft MVP Troy Hunt's Have I Been Pwned service.
+            </div>
+            <div class="mdc-card__actions adjusted-card-actions">
+              <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon textfield_span_width_full" id="HIBP_Textfield">
+                <i class="material-icons mdc-text-field__icon unselectable-text" tabindex="0" role="button">arrow_forward</i>
+                <input class="mdc-text-field__input" type="text" autocomplete="off">
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading leading-notch-textfield"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label class="mdc-floating-label">Email</label>
+                  </div>
+                  <div class="mdc-notched-outline__trailing trailling-notch-textfield"></div>
+                </div>
               </div>
             </div>
           </div>

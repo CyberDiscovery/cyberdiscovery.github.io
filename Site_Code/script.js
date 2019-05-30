@@ -12,10 +12,6 @@ function oneElementInit(queryElementName, instantiationFunction) {
     return new instantiationFunction(document.querySelector(queryElementName));
   }
 }
-function selectRandItem(selectionArray) {
-  var chosenIndex = Math.floor(Math.random() * (selectionArray.length));
-  return window.atob(selectionArray[chosenIndex]);
-}
 function loadNewPage(pageUrl){
   window.open(pageUrl, '_blank');
 }
@@ -124,6 +120,9 @@ var linearProgressBar = `
 `;
 
 function checkPwnState(searchEmailAddr) {
+  if (currentAudioSource != null) {
+    currentAudioSource.pause();
+  }
   if (searchEmailAddr == null || searchEmailAddr == "") {
     displayMDCSnackbar("Please type a valid email address.", "OK", function(){}, 5000);
   } else {
@@ -140,13 +139,6 @@ function checkPwnState(searchEmailAddr) {
     };
     checkHIBPRequest.open("GET", "https://haveibeenpwned.com/api/v2/breachedaccount/" + searchEmailAddr + "?truncateResponse=true&includeUnverified=true", true);
     checkHIBPRequest.send(null);
-  }
-}
-function fetchXkcd(xkcdNumber){
-  if (xkcdNumber == null || xkcdNumber == "") {
-    loadNewPage("https://c.xkcd.com/random/comic/");
-  } else {
-    loadNewPage("https://xkcd.com/" + xkcdNumber);
   }
 }
 function dismissResourcesCard(invokedDirectly) {
@@ -184,49 +176,6 @@ function dismissResourcesCard(invokedDirectly) {
       lastCard.style.display = "none";
       break;
   }
-}
-function getTabMaxCardHeight(elementOffsetPadding){
-  var cardArray = [];
-  for (var i = 0; i < document.querySelectorAll('.mdc-card').length; i++) {
-      if (document.querySelectorAll('.mdc-card')[i].offsetParent !== null) {
-        cardArray.push(document.querySelectorAll('.mdc-card')[i].offsetHeight);
-      }
-    }
-  return (Math.max.apply(null, cardArray) - elementOffsetPadding);
-}
-function fixContribListShownOnDom() {
-  for (var i = 1; i < document.querySelectorAll('.mdc-list').length; i++) {
-    if (document.querySelectorAll('.mdc-list')[i].offsetParent !== null) {
-      return (document.querySelectorAll('.mdc-list')[i]);
-    }
-  }
-}
-
-function alignContribTableSize() {
-  var pageContribList = fixContribListShownOnDom();
-  if (pageContribList != null){
-    if (pageContribList.classList.contains('generic_contrib_card_list') == true) {
-      pageContribList.style.display = "none";
-      pageContribList.style.height = getTabMaxCardHeight(16).toString() + "px";
-      pageContribList.style.display = "";
-    }
-  }
-}
-function fixAllTabsCardsVerticalHeight(){
-  console.log("fixAllCardsVerticalHeight called.");
-  /*
-  switch (previousActiveTab) {
-    case 1:
-      alignContribTableSize();
-      break;
-    case 2:
-      alignContribTableSize();
-      break;
-    case 3:
-      alignContribTableSize();
-      break;
-  }
-  */
 }
 let rippleLock = 0;
 function removeRippleFocus(evt) {
@@ -284,12 +233,13 @@ function loadSoundboardSources() {
           });
         }
       }
+      sectionCard.id = 'soundboard-track-category';
+      soundCard.id = 'soundboard-track-name';
     }
   };
   xhr.open('GET', 'https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json', true);
   xhr.send(null);
 }
-//loadSoundboardSources();
 window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
@@ -302,26 +252,44 @@ function goToPageTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-function loadProjectDetails() {
+var showdownJSConverter = null;
+function loadProjectDetails(projectRepoName) {
+  var projectRepo = "https://raw.githubusercontent.com/CyberDiscovery/" + projectRepoName + "/master/README.md";
   var projectBody = document.getElementById("project-dialog-body");
   projectBody.innerHTML = linearProgressBar;
   genericScrollableDialog.open();
-  var projectTitle = document.getElementById("project-dialog-title");
-  var dialogBtn = document.getElementById("project-dialog-btn");
-  //var projectRepo = "https://github.com/CyberDiscovery/" + projectRepoName;
-  // TODO: FIX LISTENERS CAUSING DUPLICATES EACH TIME THEY ARE CALLED!
+  if (!showdownLoaded) {
+    var showdownJS = document.createElement('script');
+    showdownJS.onload = function () {
+        showdownLoaded = true;
+        showdownJSConverter = new showdown.Converter();
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            projectBody.innerHTML = showdownJSConverter.makeHtml(xhr.responseText);
+          }
+        };
+        xhr.open('GET', projectRepo, true);
+        xhr.send(null);
+    };
+    showdownJS.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js";
+    document.head.appendChild(showdownJS);
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        projectBody.innerHTML = showdownJSConverter.makeHtml(xhr.responseText);
+      }
+    };
+    xhr.open('GET', projectRepo, true);
+    xhr.send(null);
+  }
 }
-
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 initElement('mdc-card__primary-action', mdc.ripple.MDCRipple.attachTo);
-oneElementInit('.hibp_text_field_main', mdc.textField.MDCTextField);
+var searchHIBPTextField = oneElementInit('#HIBP_Textfield', mdc.textField.MDCTextField.attachTo);
+var btnHIBPTextField = oneElementInit('.mdc-text-field__icon', mdc.textField.MDCTextFieldIcon.attachTo);
 dismissResourcesCard(false);
-/*
-window.addEventListener("resize", fixAllTabsCardsVerticalHeight, false);
-window.addEventListener("orientationchange", fixAllTabsCardsVerticalHeight, false);
-window.onload = fixAllTabsCardsVerticalHeight;
-*/
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 initElement("project-menu-btn", mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
@@ -352,9 +320,20 @@ siteSettingsMenu.listen('MDCDialog:closing', function () {
   }
 });
 mdcSnackBar.listen("MDCSnackbar:closing", function() {
-  if (!(currentAudioSource == null) && !currentAudioSource.paused) {
+  if (currentAudioSource != null && !currentAudioSource.paused) {
     mdcSnackBar.open();
   }
+});
+searchHIBPTextField.listen("keyup", function(evt) {
+  if (evt.keyCode == 13) {
+    checkPwnState(evt.target.value);
+  }
+});
+btnHIBPTextField.listen("click", function() {
+    checkPwnState(searchHIBPTextField.value);
+});
+genericScrollableDialog.listen("MDCDialog:closed", function() {
+  document.getElementById("project-dialog-body").innerHTML = "Dialog Body Text";
 });
 var previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
 cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
@@ -365,7 +344,6 @@ cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
   document.getElementById(nowActivatedTab).classList.remove("layout-tab-item");
   document.getElementById(availableSiteTabs[previousActiveTab].id).classList.add("layout-tab-item");
   previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
-  //fixAllTabsCardsVerticalHeight();
 });
 window.addEventListener("scroll", detectPageBottom);
 window.mdc.autoInit();

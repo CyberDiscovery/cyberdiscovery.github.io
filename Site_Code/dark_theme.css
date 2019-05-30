@@ -151,3 +151,36 @@ body {
 .mdc-dialog .mdc-dialog__content {
 	color: rgba(255,255,255,.54);
 }
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+	color: rgba(255,255,255,.6);
+}
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(255,255,255,.6);
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+	color: rgba(255,255,255,.6);
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {
+	color: rgba(255,255,255,.6);
+}
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+	border-color: rgba(255,255,255,.24);
+}
+.mdc-text-field .mdc-text-field__input {
+	caret-color: rgba(255,255,255,.6) !important;
+}
+.mdc-text-field__input::placeholder {
+	color: rgba(255,255,255,.6) !important;
+}
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__input:hover ~ .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__input:hover ~ .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__input:hover ~ .mdc-notched-outline .mdc-notched-outline__trailing, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__icon:hover ~ .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__icon:hover ~ .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-text-field__icon:hover ~ .mdc-notched-outline .mdc-notched-outline__trailing {
+	border-color: rgba(255, 255, 255, 0.6);
+}
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: rgba(255,255,255,.6) !important;
+}
+pre {
+  background-color: rgba(255,255,255,.05);
+}
+:not(pre) > code {
+  background-color: rgba(255,255,255,.05);
+}
