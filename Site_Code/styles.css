@@ -279,24 +279,6 @@ html, body {
   background: url('../Image_Assets/App_Tab/app_card_main_img.png') #ef1580 center/cover no-repeat;
   background-size: auto 110%;
 }
-.App_Screenshot_Card_One {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_One.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
-.App_Screenshot_Card_Two {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Two.jpg") #009688 center/cover no-repeat;
-}
-.App_Screenshot_Card_Three {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Three.jpg") #009688 center/cover no-repeat;
-}
-.App_Screenshot_Card_Four {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Four.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
-.App_Screenshot_Card_Five {
-  background: url("../Image_Assets/App_Tab/App_Screenshot_Five.jpg") #009688 center/cover no-repeat;
-  background-position: top !important;
-}
 .App_Contrib_Flutter_Docs {
   background: url("../Image_Assets/App_Tab/Contribute_Programming.gif") #283247 center/cover no-repeat;
 }
@@ -358,40 +340,18 @@ html, body {
   color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
   height: inherit;
 }
-/*
-@media (min-width: 1020px) {
-  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
-    background-size: auto 100% !important;
-    background-color: transparent !important;
-  }
-  .mdc-layout-grid__inner, .mdc-layout-grid, .generic-tab-item {
-    max-width: 1160px !important;
-    margin-left: auto;
-    margin-right: auto;
-    --mdc-layout-grid-margin-desktop: 0;
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-}
-*/
 @media (min-width: 480px) {
   .home_tab_welcome_banner_image {
     height: 380px !important;
   }
 }
 @media (max-width: 839px) {
-  .App_Screenshot_Card_One, .App_Screenshot_Card_Two, .App_Screenshot_Card_Three, .App_Screenshot_Card_Four, .App_Screenshot_Card_Five {
-    background-size: auto 100% !important;
-    height: 520px;
-  }
   .desktop-only-card {
     display: none;
   }
   .mdc-card__actions {
     height: auto;
   }
-}
-@media (max-width: 839px) {
   .spaced-card-mobile {
     max-width: 80%;
     margin-left: auto;
@@ -399,6 +359,9 @@ html, body {
   }
   #scrollPageTop {
     z-index: 7 !important;
+  }
+  .mdc-dialog .mdc-dialog__surface {
+    max-height: calc(100vh - 72px) !important;
   }
 }
 #scrollPageTop {

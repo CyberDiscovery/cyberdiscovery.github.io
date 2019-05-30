@@ -242,7 +242,7 @@ function loadSoundboardSources() {
 }
 window.addEventListener('mouseup', removeRippleFocus, { passive: true });
 function detectPageBottom() {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 64) {
+  if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 64) {
     document.getElementById("scrollPageTop").classList.remove("mdc-fab--exited");
   } else {
     document.getElementById("scrollPageTop").classList.add("mdc-fab--exited");
