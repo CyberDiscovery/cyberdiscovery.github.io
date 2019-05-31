@@ -205,7 +205,7 @@
           Dialog body text
         </section>
         <footer class="mdc-dialog__actions">
-          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes" id="project-dialog-btn">
+          <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="yes">
             <span class="mdc-button__label">Close</span>
           </button>
         </footer>
@@ -290,7 +290,31 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-1">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-1">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -308,7 +332,31 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Cyber-Discovery-App');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-2">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-2">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -326,14 +374,38 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Discord-Maths-Bot');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-3">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-3">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
+            <div class="mdc-card__media mdc-card__media--16-9 cdsurvivalguide_site_card_image"></div>
             <div class="padded-projects-card">
               <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Survival Manual</h2>
             </div>
@@ -344,14 +416,38 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cdsurvivalguide');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-4">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-4">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
+            <div class="mdc-card__media mdc-card__media--16-9 challenge_master_site_card_image"></div>
             <div class="padded-projects-card">
               <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Challenge Master</h2>
             </div>
@@ -362,14 +458,38 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Challenge-Master');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-5">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-5">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
+            <div class="mdc-card__media mdc-card__media--16-9 app_website_site_card_image"></div>
             <div class="padded-projects-card">
               <h2 class="projects-card-title mdc-typography mdc-typography--headline6">App Website</h2>
             </div>
@@ -380,14 +500,38 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Cyber-Discovery-App-Website');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-6">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-6">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
+            <div class="mdc-card__media mdc-card__media--16-9 cd_richpresence_card"></div>
             <div class="padded-projects-card">
               <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Rich Presence</h2>
             </div>
@@ -398,14 +542,38 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cd-rich-presence');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-7">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-7">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
+            <div class="mdc-card__media mdc-card__media--16-9 alexa_skill_card_project"></div>
             <div class="padded-projects-card">
               <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Alexa Skill</h2>
             </div>
@@ -416,7 +584,31 @@
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('CD-Alexa-Skill');">More</button>
               </div>
               <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                <div class="mdc-menu-surface--anchor">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-8">more_vert</button>
+                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-8">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">call_split</i>
+                          Fork Project
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          View Issues
+                        </span>
+                      </li>
+                      <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">
+                          <i class="material-icons project_card_menu_icons">view_list</i>
+                          Action item
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

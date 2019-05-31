@@ -189,8 +189,8 @@ body {
   background: url('../Image_Assets/Discord_Tab/discord_card_main.png') #e8e4e7 center/cover no-repeat;
 }
 .cdmathsbot_card_image {
-  background: url('../Image_Assets/discord_bot_generic_image.png') #37373d center/cover no-repeat;
-  background-size: auto 110%;
+  background: url('../Image_Assets/Discord_Tab/mathsbot_card_image.svg') #7289da center/cover no-repeat;
+  background-size: 90%
 }
 .project_card_menu_icons {
   vertical-align: bottom;
@@ -474,6 +474,14 @@ body {
 .events-essentials-card {
   background: url('../Image_Assets/essentials_event_card.jpg') #0d2332 center/cover no-repeat;
   background-size: auto 100%;
+}
+.cd_richpresence_card {
+  background: url('../Image_Assets/discord_rich_presence.png') #778ff1 center/cover no-repeat;
+  background-size: auto 100%;
+}
+.alexa_skill_card_project {
+  background: url('../Image_Assets/alexa_skill_card.png') #232F3E center/cover no-repeat;
+  background-size: auto 130%;
 }
 .leading-notch-textfield {
   border-radius: 8px 0 0 8px !important;

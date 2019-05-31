@@ -187,3 +187,12 @@ body {
 .mdc-dialog__content h1, .mdc-dialog__content h2 {
   border-bottom: 1px solid rgba(234, 236, 238, 0.1) !important;
 }
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::after {
+	background-color: rgba(255,255,255,.38);
+}
+.mdc-menu .mdc-list {
+	color: rgba(255,255,255,.6);
+}
+.mdc-menu-surface {
+  background-color: var(--mdc-theme-primary, #1b1b21);
+}

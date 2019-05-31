@@ -313,3 +313,30 @@ View Issues
 </video>
 
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing { border-color: #fff !important }
+
+
+<div class="mdc-menu-surface--anchor">
+  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options" id="project-card-menu-activation--button">more_vert</button>
+  <div class="mdc-menu mdc-menu-surface" tabindex="-1" id="project-card-more-option--menu">
+    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+      <li class="mdc-list-item" role="menuitem" id="project-card-fork-item--href">
+        <span class="mdc-list-item__text">
+          <i class="material-icons project_card_menu_icons">call_split</i>
+          Fork Project
+        </span>
+      </li>
+      <li class="mdc-list-item" role="menuitem" id="project-card-issues-item--href">
+        <span class="mdc-list-item__text">
+          <i class="material-icons project_card_menu_icons">view_list</i>
+          View Issues
+        </span>
+      </li>
+      <li class="mdc-list-item" role="menuitem" id="project-card-action-item--href">
+        <span class="mdc-list-item__text" id="project-card-action-item--name">
+          <i class="material-icons project_card_menu_icons">view_list</i>
+          Action item
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

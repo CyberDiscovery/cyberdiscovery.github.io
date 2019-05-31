@@ -287,6 +287,10 @@ function loadProjectDetails(projectRepoName) {
     xhr.send(null);
   }
 }
+function instantiateMenu(btnID, menuID) {
+  var mdcMenu = oneElementInit("#" + menuID, mdc.menu.MDCMenu.attachTo);
+  document.getElementById(btnID).addEventListener('click', () => mdcMenu.open = !mdcMenu.open);
+}
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 initElement('mdc-card__primary-action', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('#HIBP_Textfield', mdc.textField.MDCTextField.attachTo);
@@ -295,6 +299,9 @@ dismissResourcesCard(false);
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 initElement("project-menu-btn", mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
+for (var i = 1; i < 9; i++) {
+  instantiateMenu("btn-proj-" + String(i), "menu-proj-" + String(i));
+}
 var themeSwitcher = oneElementInit("#theme-switcher-switch", mdc.switchControl.MDCSwitch.attachTo);
 var resetCookieCheckbox = oneElementInit("#cookie-checkbox", mdc.checkbox.MDCCheckbox.attachTo);
 var cookieFormfield = oneElementInit("#cookie-form-field", mdc.formField.MDCFormField.attachTo);
