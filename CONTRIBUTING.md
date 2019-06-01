@@ -67,7 +67,8 @@ is used by the site.
 
 * To generate the minfied files ready
 for deployment, we are using Google's trustworthy [Closure Compiler](https://closure-compiler.appspot.com/home)
-on the default "Simple" optimisation setting.
+on the default "Simple" optimisation setting for all JavaScript files and [CSSO](https://css.github.io/csso/csso.html)
+with settings left as is for all style-sheets.
 
 For the rest of the pages, we use the `Site_Pages/`
 directory. As these pages are quite simple, not containing
