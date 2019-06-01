@@ -573,3 +573,7 @@ body {
 .padded-top-card {
   padding-top: 1rem;
 }
+.welcome-text-card {
+  max-height: 306px;
+  overflow: auto;
+}
