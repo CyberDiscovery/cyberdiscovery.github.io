@@ -43,8 +43,9 @@
   </template>
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title">Helpful Links</h3>
-      <h6 class="mdc-drawer__subtitle">Have you joined our Discord?</h6>
+      <a href="https://discord.gg/Kf8n5rT">
+        <img src="https://discordapp.com/api/guilds/409851296116375565/embed.png?style=banner2" class="nav-img-main">
+      </a>
     </div>
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
@@ -84,7 +85,7 @@
         </a>
         <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Join us!</h6>
-        <a class="mdc-list-item" href="http://discord.gg/Kf8n5rT">
+        <a class="mdc-list-item" href="https://discord.gg/Kf8n5rT">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">card_giftcard</i>
           <span class="mdc-list-item__text">Discord Invite</span>
         </a>
@@ -267,6 +268,86 @@
     <div class="layout-grid-desktop mdc-layout-grid" id="Home-Grid">
       <div class="mdc-layout-grid__inner" id="Grid-Tab-1">
         <!-- Start -->
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet desktop-only-card">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 home_tab_welcome_banner_image"></div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card colored-card-bg">
+            <div class="padded-projects-card">
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline3 light-dark-text">Welcome!</h2>
+            </div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body1 light-dark-text">We're the Cyber Discovery Community, a passionate growing community of students who are interested in cyber security and technology. This GitHub pages site aims to showcase some of the projects that our members have created and continue to maintain. While you're here, feel free to check out some of our awesome open-source projects and consider lending us some of your amazing developer skills by contributing to these projects!</div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 main-page-card-home"></div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2 padded-top-card">What is the HM Government's Cyber Schools programme? What is Cyber Discovery? Am I eligible to take part? Do I need to know anything in advance? Find all the details here.</div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://www.joincyberdiscovery.com/');">Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 home_discord_invite_card"></div>
+            <div class="padded-projects-card">
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Discord Server</h2>
+            </div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2">Join the largest Cyber Discovery Discord server with over 1300+ like-minded people and students who are going through the programme as well as a few SANS Institute staff members who are involved in running the programme!</div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://discord.gg/Kf8n5rT');">Join</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 cdsurvivalguide_home_card"></div>
+            <div class="padded-projects-card">
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Survival Guide</h2>
+            </div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A website where we host tips, tricks, and guidance for those who are attempting the Cyber Discovery programme. All these articles have been written by past participants, most of whom have progressed to the Elite stage themselves.</div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://cdsurvivalguide.netlify.com/');">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 home_assess_card_reminder"></div>
+            <div class="padded-projects-card">
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Cyberstart Elite</h2>
+            </div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2">The final stage of year 2 is now confirmed! Elite invites are expected to go out soon! If you've missed taking part in this year, registration for next year will open in November 2019 and remain open until January 2020. Join our server for further discussion!</div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('http://discord.gg/Kf8n5rT');">Go</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
+          <div class="mdc-card mdc-elevation-transition projects-tab-card">
+            <div class="mdc-card__media mdc-card__media--16-9 medium_blog_main_card_image"></div>
+            <div class="padded-projects-card">
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Medium Blog</h2>
+            </div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2">View the official Cyber Discovery Medium blog. This is where they post different announcements, challenges, student spotlights, answers, writeups, and much more. You can also download our app which has the Medium blog embedded inside!</div>
+            <div class="mdc-card__actions">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://medium.com/@CyberStart');">Read</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- End -->
       </div>
     </div>
@@ -533,9 +614,9 @@
           <div class="mdc-card mdc-elevation-transition projects-tab-card">
             <div class="mdc-card__media mdc-card__media--16-9 cd_richpresence_card"></div>
             <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Rich Presence</h2>
+              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">CD Rich Presence</h2>
             </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A program to give Discord rich presence for Cyber Discovery. It pulls the chrome URL and examines the stage and challenge you are on, and feeds it to discord rich presence.</div>
+            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A program to give Discord rich presence for Cyber Discovery. It gets the URL and examines the stage and challenge you are on, and feeds it to discord.</div>
             <div class="mdc-card__actions">
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/cd-rich-presence');">Repo</button>
@@ -560,7 +641,7 @@
                       </li>
                       <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/cd-rich-presence/releases');">
                         <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">new_releases</i>
+                          <i class="material-icons project_card_menu_icons">cloud_download</i>
                           Releases
                         </span>
                       </li>

@@ -102,7 +102,6 @@ body {
 }
 .cdsurvivalguide_home_card {
   background: url('../Image_Assets/Home_Tab/alice_asset_survival_guide.png') #4a3c5f center / cover no-repeat !important;
-  max-height: 250px;
 }
 .hmg_programme_home_card {
   background: url('../Image_Assets/Home_Tab/CD_Home_Resources.png') #0d2332 center / cover no-repeat;
@@ -110,15 +109,13 @@ body {
 }
 .home_discord_invite_card {
   background: url("../Image_Assets/Home_Tab/discord_logo_home_card_image.svg") #2C2F33 center/cover no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 .home_assess_card_reminder {
-  background: url("../Image_Assets/Home_Tab/cs_essentials_card_image.jpg") #0d2331 center/cover no-repeat;
-  background-size: auto 90%;
+  background: url("../Image_Assets/elite_alt_card.png") #0d2332 center/cover no-repeat;
 }
 .medium_blog_main_card_image {
   background: url("../Image_Assets/Home_Tab/medium_blog_card_image.png") #9f5335 center/cover no-repeat;
-  max-height: 250px;
 }
 .custom_padded_font_card_home {
   padding: 0 1rem 8px;
@@ -135,7 +132,6 @@ body {
 }
 .home_tab_welcome_banner_image {
   background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
-  /*background-size: auto 100%;*/
   margin-top: auto;
   margin-bottom: auto;
   height: 100%
@@ -483,6 +479,9 @@ body {
   background: url('../Image_Assets/alexa_skill_card.png') #232F3E center/cover no-repeat;
   background-size: auto 130%;
 }
+.main-page-card-home {
+  background: url('../Image_Assets/cd_main_card.png') #0d2332 center/cover no-repeat;
+}
 .leading-notch-textfield {
   border-radius: 8px 0 0 8px !important;
 }
@@ -563,4 +562,14 @@ body {
 .mdc-dialog__content img {
 	box-sizing: content-box;
 	max-width: 100%;
+}
+.nav-img-main {
+	max-width: 100% !important;
+}
+.mdc-drawer__header {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+.padded-top-card {
+  padding-top: 1rem;
 }
