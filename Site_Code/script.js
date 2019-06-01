@@ -72,29 +72,29 @@ function loadTheme(themeLocation, metaColor, cookieValue){
 function switchTheme(){
   switch (getCookie("ThemePreference")) {
     case "light":
-      loadTheme("./Site_Code/dark_theme.css", "#1b1b21", "dark");
+      loadTheme("./Site_Code/dark_theme.min.css", "#1b1b21", "dark");
       break;
 
     case "dark":
-      loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
+      loadTheme("./Site_Code/light_theme.min.css", "#0d2332", "light");
       break;
   }
 }
 function checkCookie() {
   switch (getCookie("ThemePreference")) {
     case "dark":
-      loadTheme("./Site_Code/dark_theme.css", "#1b1b21");
+      loadTheme("./Site_Code/dark_theme.min.css", "#1b1b21");
       themeSwitcher.checked = true;
       break;
 
     case "light":
-      loadTheme("./Site_Code/light_theme.css", "#0d2332");
+      loadTheme("./Site_Code/light_theme.min.css", "#0d2332");
       themeSwitcher.checked = false;
       break;
 
     default:
       displayMDCSnackbar("This site uses cookies for basic functionality.", "ok", function() {}, 8000);
-      loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
+      loadTheme("./Site_Code/light_theme.min.css", "#0d2332", "light");
       themeSwitcher.checked = false;
       break;
   }
