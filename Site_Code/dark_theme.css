@@ -179,10 +179,10 @@ body {
   border-color: rgba(255,255,255,.6) !important;
 }
 .mdc-dialog__content pre {
-  background-color: rgba(255,255,255,.05);
+  background-color: rgba(255,255,255,.1);
 }
 :not(pre) > code {
-  background-color: rgba(255,255,255,.05);
+  background-color: rgba(255,255,255,.1);
 }
 .mdc-dialog__content h1, .mdc-dialog__content h2 {
   border-bottom: 1px solid rgba(234, 236, 238, 0.1) !important;
@@ -195,4 +195,13 @@ body {
 }
 .mdc-menu-surface {
   background-color: var(--mdc-theme-primary, #1b1b21);
+}
+.high-attention-text {
+  color: rgba(255,255,255,0.87);
+}
+.medium-attention-text {
+  color: rgba(255,255,255,0.6);
+}
+.low-attention-text {
+  color: rgba(255,255,255,0.38);
 }

@@ -7,6 +7,9 @@ html {
 body {
   background-color: #f5f5f5;
 }
+html, body {
+  height: 100%;
+}
 .mdc-top-app-bar__title {
   font-weight: 400;
   letter-spacing: .02em;
@@ -576,4 +579,11 @@ body {
 .welcome-text-card {
   max-height: 306px;
   overflow: auto;
+}
+.events-section-text {
+	padding: 0;
+	margin: 5px;
+}
+.red-events-text {
+  color: #c04b4e !important;
 }

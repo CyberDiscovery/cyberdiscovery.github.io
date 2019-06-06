@@ -205,9 +205,11 @@ function doLiterallyNothing() {}
 function loadSoundboardSources() {
   loadSoundboardSources = doLiterallyNothing;
   var xhr = new XMLHttpRequest();
+  var currentTab = document.getElementById("Grid-Tab-3");
+  currentTab.innerHTML = `<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">` + linearProgressBar + `</div>`;
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      var currentTab = document.getElementById("Grid-Tab-3");
+      currentTab.innerHTML = "";
       var sectionHeading = document.getElementsByTagName("template")[0];
       var sectionCard = sectionHeading.content.getElementById('soundboard-track-category');
       var soundboardCard = document.getElementsByTagName("template")[1];
@@ -343,6 +345,9 @@ btnHIBPTextField.listen("click", function() {
 });
 genericScrollableDialog.listen("MDCDialog:closed", function() {
   document.getElementById("project-dialog-body").innerHTML = "Dialog Body Text";
+});
+cdSiteDrawer.listen('click', (event) => {
+  cdSiteDrawer.open = false;
 });
 var previousActiveTab = cdSiteTabBar.foundation_.adapter_.getPreviousActiveTabIndex();
 cdSiteTabBar.listen('MDCTabBar:activated', function (event) {
