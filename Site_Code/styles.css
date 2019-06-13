@@ -582,8 +582,15 @@ html, body {
 }
 .events-section-text {
 	padding: 0;
-	margin: 5px;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 .red-events-text {
   color: #c04b4e !important;
+}
+.centered-item {
+	display: block;
+	margin: auto;
+	text-align: center;
 }
