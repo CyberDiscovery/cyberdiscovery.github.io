@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d2332" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@3.0.0/dist/material-components-web.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
+  <script src="https://unpkg.com/material-components-web@3.0.0/dist/material-components-web.min.js"></script>
   <title>About us</title>
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAsUlEQVR4Ae3ZMQ6CQBBA0S8NZ5Djack5RT0AoSLhEFivLRUOMTuh+H9asnndJAxmZvarlp6ZUmlmelqId2WiVJ6JjmAXHpSEeXIh1I2SNHdCvdJAb0J90kArocpm/i/+viBBgsru7H8TeUdQDZAgQaEE1QHFE7TNXSYonKBg7jJBggS5ywQJ8v9QPkiQINb808L5jy/nPk81DCmcgYZgHWN1zkh39Ai8VMMsB4/AZmb2BelnnnVrky1sAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
   <style>
@@ -106,14 +106,14 @@
   </script>
 </head>
 <body>
-  <header class="mdc-top-app-bar mdc-top-app-bar--short">
+  <header class="mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <a href="#" onclick="window.history.back();" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
+        <button onclick="window.history.back();" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">arrow_back</button>
         <span class="mdc-top-app-bar__title">Developers</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" class="material-icons mdc-top-app-bar__action-item" aria-label="View Source" alt="View Source">code</a>
+        <button onclick="window.location.href = 'https://github.com/CyberDiscovery/cyberdiscovery.github.io';" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="View Source">code</button>
       </section>
     </div>
   </header>

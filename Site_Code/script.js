@@ -72,29 +72,29 @@ function loadTheme(themeLocation, metaColor, cookieValue){
 function switchTheme(){
   switch (getCookie("ThemePreference")) {
     case "light":
-      loadTheme("./Site_Code/dark_theme.min.css", "#1b1b21", "dark");
+      loadTheme("./Site_Code/dark_theme.css", "#1b1b21", "dark");
       break;
 
     case "dark":
-      loadTheme("./Site_Code/light_theme.min.css", "#0d2332", "light");
+      loadTheme("./Site_Code/light_theme.css", "#0d2332", "light");
       break;
   }
 }
 function checkCookie() {
   switch (getCookie("ThemePreference")) {
     case "dark":
-      loadTheme("./Site_Code/dark_theme.min.css", "#1b1b21");
-      themeSwitcher.checked = true;
+      loadTheme("./Site_Code/dark_theme.css", "#1b1b21");
+      themeSwitcher.checked = false;
       break;
 
     case "light":
-      loadTheme("./Site_Code/light_theme.min.css", "#0d2332");
-      themeSwitcher.checked = false;
+      loadTheme("./Site_Code/light_theme.css", "#0d2332");
+      themeSwitcher.checked = true;
       break;
 
     default:
       displayMDCSnackbar("This site uses cookies for basic functionality.", "ok", function() {}, 8000);
-      loadTheme("./Site_Code/light_theme.min.css", "#0d2332", "light");
+      loadTheme("./Site_Code/dark_theme.css", "#1b1b21", "dark");
       themeSwitcher.checked = false;
       break;
   }
@@ -293,14 +293,21 @@ function instantiateMenu(btnID, menuID) {
   var mdcMenu = oneElementInit("#" + menuID, mdc.menu.MDCMenu.attachTo);
   document.getElementById(btnID).addEventListener('click', () => mdcMenu.open = !mdcMenu.open);
 }
+
+function toggleCampEvent(campID, campToHide) {
+  document.getElementById("events-camp-selector").style.display = "none";
+  document.getElementById(campToHide).style.display = "none";
+  document.getElementById(campID).style.display = "initial";
+}
+
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
 initElement('mdc-card__primary-action', mdc.ripple.MDCRipple.attachTo);
 var searchHIBPTextField = oneElementInit('#HIBP_Textfield', mdc.textField.MDCTextField.attachTo);
-var btnHIBPTextField = oneElementInit('.mdc-text-field__icon', mdc.textField.MDCTextFieldIcon.attachTo);
 dismissResourcesCard(false);
 initElement("mdc-button",mdc.ripple.MDCRipple.attachTo);
 initElement("project-menu-btn", mdc.ripple.MDCRipple.attachTo);
 oneElementInit('.mdc-fab', mdc.ripple.MDCRipple.attachTo);
+oneElementInit("#check-hibp-status-btn", mdc.ripple.MDCRipple.attachTo);
 for (var i = 1; i < 9; i++) {
   instantiateMenu("btn-proj-" + String(i), "menu-proj-" + String(i));
 }
@@ -319,9 +326,9 @@ if(cdSiteTopAppBar !== null) {
   });
 }
 siteSettingsMenu.listen('MDCDialog:closing', function () {
-  if (getCookie("ThemePreference") == "light" && themeSwitcher.checked) {
+  if (getCookie("ThemePreference") == "light" && !themeSwitcher.checked) {
     switchTheme();
-  } else if (getCookie("ThemePreference") == "dark" && !themeSwitcher.checked) {
+  } else if (getCookie("ThemePreference") == "dark" && themeSwitcher.checked) {
     switchTheme();
   }
   if (resetCookieCheckbox.checked) {
@@ -340,7 +347,7 @@ searchHIBPTextField.listen("keyup", function(evt) {
     checkPwnState(evt.target.value);
   }
 });
-btnHIBPTextField.listen("click", function() {
+document.getElementById("check-hibp-status-btn").addEventListener("click", function() {
     checkPwnState(searchHIBPTextField.value);
 });
 genericScrollableDialog.listen("MDCDialog:closed", function() {

@@ -226,6 +226,7 @@ html, body {
 }
 .textfield_span_width_full {
   width: 100%;
+  margin-right: 5px;
 }
 .mdc-text-field::before, .mdc-text-field::after {
   width: auto !important;
@@ -577,7 +578,6 @@ html, body {
   padding-top: 1rem;
 }
 .welcome-text-card {
-  max-height: 306px;
   overflow: auto;
 }
 .events-section-text {
@@ -588,9 +588,19 @@ html, body {
 }
 .red-events-text {
   color: #c04b4e !important;
+  margin: 15px !important;
 }
 .centered-item {
 	display: block;
 	margin: auto;
 	text-align: center;
+}
+.centered-list-item {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.styled_list {
+  list-style-position: inside;
+  padding: initial !important;
 }

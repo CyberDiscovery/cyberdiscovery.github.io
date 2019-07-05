@@ -160,8 +160,8 @@ body {
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
 	color: rgba(255,255,255,.6);
 }
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__icon {
-	color: rgba(255,255,255,.6);
+#check-hibp-status-btn {
+	color: rgba(255,255,255,.6) !important;
 }
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
 	border-color: rgba(255,255,255,.24);
