@@ -133,12 +133,6 @@ html, body {
   color: rgba(0,0,0,.54);
   overflow: auto;
 }
-.home_tab_welcome_banner_image {
-  background: url('../Image_Assets/Home_Tab/home_card_image.png') #0d2332 center / cover no-repeat;
-  margin-top: auto;
-  margin-bottom: auto;
-  height: 100%
-}
 .override_textfield_bottom_padding {
   padding-bottom: 20px !important;
 }
@@ -336,11 +330,6 @@ html, body {
   padding: 0 1rem 8px;
   color: var(--mdc-theme-text-secondary-on-background,rgba(0,0,0,.54));
   height: inherit;
-}
-@media (min-width: 480px) {
-  .home_tab_welcome_banner_image {
-    height: 380px !important;
-  }
 }
 @media (max-width: 839px) {
   .desktop-only-card {
@@ -603,4 +592,16 @@ html, body {
 .styled_list {
   list-style-position: inside;
   padding: initial !important;
+}
+.vimeo-player-div {
+  padding: 56.25% 0 0 0;
+  position: relative;
+}
+.vimeo-player-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px !important;
 }
