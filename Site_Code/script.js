@@ -215,6 +215,7 @@ function loadSoundboardSources() {
       var soundboardCard = document.getElementsByTagName("template")[1];
       var soundCard = soundboardCard.content.getElementById('soundboard-track-name');
       var soundData = (JSON.parse(xhr.responseText));
+      delete soundData["Shenanigans from VC"];
       for (var sectionName in soundData) {
         var soundCardID = guidGenerator();
         sectionCard.innerHTML = sectionName;
