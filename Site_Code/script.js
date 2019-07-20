@@ -134,7 +134,7 @@ function checkPwnState(searchEmailAddr) {
       } else if (checkHIBPRequest.readyState == 4 && checkHIBPRequest.status == 404) {
         displayMDCSnackbar("Good news — no pwnage found!", "Cool", function(){}, 5000);
       } else if (checkHIBPRequest.readyState == 4) {
-        displayMDCSnackbar("Rate limit exceeded, please try again later.", "Oops!", function(){loadNewPage(window.atob("aHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvREx6eHJ6RkN5T3M/Y29udHJvbHM9MCZzaG93aW5mbz0wJnJlbD0wJmF1dG9wbGF5PTEmbG9vcD0xJnN0YXJ0PTA="));}, 5000);
+        displayMDCSnackbar("There was a problem, please search directly.", "Search", function(){loadNewPage('https://haveibeenpwned.com/account/' + searchEmailAddr);}, 8000);
       }
     };
     checkHIBPRequest.open("GET", "https://haveibeenpwned.com/api/v2/breachedaccount/" + searchEmailAddr + "?truncateResponse=true&includeUnverified=true", true);
@@ -143,37 +143,31 @@ function checkPwnState(searchEmailAddr) {
 }
 function dismissResourcesCard(invokedDirectly) {
   var cardToAddress = document.getElementById("resources-intro-msg");
-  var lastCard = document.getElementById("resources-last-card");
 
   switch (getCookie("DismissedCard")) {
     case "yes":
       if (invokedDirectly) {
         cardToAddress.style.display = "";
-        lastCard.style.display = "none";
         setCookie("DismissedCard", "no", 30);
       } else {
         cardToAddress.style.display = "none";
-        lastCard.style.display = "";
       }
       break;
 
     case "no":
       if (invokedDirectly) {
         cardToAddress.style.display = "none";
-        lastCard.style.display = "";
         setCookie("DismissedCard", "yes", 30);
         if (currentAudioSource != null) {
           currentAudioSource.pause();
         }
         displayMDCSnackbar("Dismissed message", "Undo", function() {dismissResourcesCard(true);}, 4000);
       } else {
-        lastCard.style.display = "none";
       }
       break;
 
     default:
       setCookie("DismissedCard", "no", 30);
-      lastCard.style.display = "none";
       break;
   }
 }
@@ -297,8 +291,14 @@ function instantiateMenu(btnID, menuID) {
 
 function toggleCampEvent(campID, campToHide) {
   document.getElementById("events-camp-selector").style.display = "none";
-  document.getElementById(campToHide).style.display = "none";
-  document.getElementById(campID).style.display = "initial";
+
+  [].forEach.call(document.querySelectorAll(campToHide), function (el) {
+    el.style.display = "none";
+  });
+
+  [].forEach.call(document.querySelectorAll(campID), function (el) {
+    el.style.display = "initial";
+  });
 }
 
 initElement('mdc-list-item', mdc.ripple.MDCRipple.attachTo);
