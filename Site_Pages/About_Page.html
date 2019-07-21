@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d2332" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@3.0.0/dist/material-components-web.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
+  <script src="https://unpkg.com/material-components-web@3.0.0/dist/material-components-web.min.js"></script>
   <title>About us</title>
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAAsUlEQVR4Ae3ZMQ6CQBBA0S8NZ5Djack5RT0AoSLhEFivLRUOMTuh+H9asnndJAxmZvarlp6ZUmlmelqId2WiVJ6JjmAXHpSEeXIh1I2SNHdCvdJAb0J90kArocpm/i/+viBBgsru7H8TeUdQDZAgQaEE1QHFE7TNXSYonKBg7jJBggS5ywQJ8v9QPkiQINb808L5jy/nPk81DCmcgYZgHWN1zkh39Ai8VMMsB4/AZmb2BelnnnVrky1sAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     :root {
       --mdc-theme-primary: #0d2332;
     }
@@ -51,9 +54,6 @@
       font-size: 18px !important;
       color: rgba(0,0,0,.54);
     }
-    .fixed-size-background-img {
-      background: url("../Image_Assets/Linus_Stealing_Ryzen_Desktop.jpg") #0d2332 center/cover no-repeat;
-    }
     .mdc-typography--body1 {
       height: inherit !important;
       background-color: #f5f5f5;
@@ -82,6 +82,22 @@
       color: #0d2332;
       cursor: pointer;
     }
+    .mdc-layout-grid__inner {
+    	max-width: 900px;
+    	margin-left: auto;
+    	margin-right: auto;
+    }
+    .unselectable-text {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .mdc-layout-grid {
+    	max-width: 950px;
+    }
   </style>
   <script>
     function loadNewPage(pageUrl){
@@ -90,14 +106,14 @@
   </script>
 </head>
 <body>
-  <header class="mdc-top-app-bar mdc-top-app-bar--short">
+  <header class="mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <a href="#" onclick="window.history.back();" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
-        <span class="mdc-top-app-bar__title">About</span>
+        <button onclick="window.history.back();" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">arrow_back</button>
+        <span class="mdc-top-app-bar__title">Developers</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <a href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" class="material-icons mdc-top-app-bar__action-item" aria-label="View Source" alt="View Source">code</a>
+        <button onclick="window.location.href = 'https://github.com/CyberDiscovery/cyberdiscovery.github.io';" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="View Source">code</button>
       </section>
     </div>
   </header>
@@ -106,94 +122,118 @@
     <div class="mdc-layout-grid">
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <div class="mdc-card">
-            <div class="mdc-card__media mdc-card__media--square fixed-size-background-img">
-            </div>
-            <div class="card-body-text mdc-typography--body1">
-              Hey there! Thanks for visiting! I'm Sh3llcod3 (Linus) and I wrote most of this site. I couldn't have written this without the help from the amazing community developers on our Discord server! Here are some of the awesome people, thanks to whose time and contribution that this site is able to exist!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <ul class="mdc-list mdc-list--two-line">
-            <li class="mdc-list-item" tabindex="0">
+          <ul class="mdc-list mdc-list--two-line unselectable-text">
+            <li class="mdc-list-item" tabindex="0" onclick="loadNewPage('https://github.com/eohomegrownapps')">
               <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/8283298?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">eohomegrownapps</span>
                 <span class="mdc-list-item__secondary-text">An extraordinary person who contributed code and helped fix a major issue.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/eohomegrownapps')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/lightspeedana/')">
               <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/17798041?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">lightspeedana</span>
                 <span class="mdc-list-item__secondary-text">An incredibly skilled individual who contributed code, design and layout ideas.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/lightspeedana/')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/picapi')">
+              <img class="mdc-list-item__graphic" src="https://avatars2.githubusercontent.com/u/7061144?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">picapi</span>
+                <span class="mdc-list-item__secondary-text">Valuable contributor and student interested in Computer Science and Cyber Security</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
+            </li>
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/bottersnike')">
+              <img class="mdc-list-item__graphic" src="https://avatars0.githubusercontent.com/u/7524553?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">Bottersnike</span>
+                <span class="mdc-list-item__secondary-text">Someone who actually knows web design unlike me and has helped spot the mistakes.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
+            </li>
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/sh3llcod3')">
+              <img class="mdc-list-item__graphic" src="https://avatars0.githubusercontent.com/u/28938427?s=400&v=4" aria-hidden="true">
+              <span class="mdc-list-item__text">
+                <span class="mdc-list-item__primary-text">Linus Sebastian</span>
+                <span class="mdc-list-item__secondary-text">I'm just trying to exist in this vast world surrounded by intelligent individuals.</span>
+              </span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
+            </li>
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/dwouca/')">
               <img class="mdc-list-item__graphic" src="https://avatars2.githubusercontent.com/u/33789556?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">dwouca</span>
                 <span class="mdc-list-item__secondary-text">A valuable contributor without whose encouragement, this site would not exist!</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/dwouca/')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/AnonGuy')">
               <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/25161069?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">AnonGuy</span>
                 <span class="mdc-list-item__secondary-text">An Arch Linux enthusiast, important project stakeholder and contributor.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/AnonGuy')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/fractalpenguin')">
               <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/30086950?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">Fractal Penguin</span>
                 <span class="mdc-list-item__secondary-text">The terminator of typos, contributor extraordinaire, and a great guy in general.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/fractalpenguin')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/AlphexGaming')">
               <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/40318243?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">AlphexGaming</span>
                 <span class="mdc-list-item__secondary-text">Another priceless contributor who helped with the assets and images!</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/AlphexGaming')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/ZomBMage')">
               <img class="mdc-list-item__graphic" src="https://avatars1.githubusercontent.com/u/29120255?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">ZomBMage</span>
                 <span class="mdc-list-item__secondary-text">An enthusiastic contributor who directly contributed code and ideas on layout.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/ZomBMage')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
-            <li class="mdc-list-item">
+            <li class="mdc-list-item" onclick="loadNewPage('https://github.com/thebeanogamer')">
               <img class="mdc-list-item__graphic" src="https://avatars3.githubusercontent.com/u/3729048?s=400&v=4" aria-hidden="true">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">thebeanogamer</span>
-                <span class="mdc-list-item__secondary-text">The BDFL and agent handler in charge of running this organisation.</span>
+                <span class="mdc-list-item__secondary-text">The BDFL, manager, saviour and handler in charge of running this organisation.</span>
               </span>
-              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile" onclick="loadNewPage('https://github.com/thebeanogamer')">star</span>
+              <span class="mdc-list-item__meta material-icons" aria-hidden="true" title="View GitHub Profile">star</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
+    <div class="mdc-snackbar">
+      <div class="mdc-snackbar__surface">
+        <div class="mdc-snackbar__label"
+             role="status"
+             aria-live="polite">
+          Snackbar Text.
+        </div>
+        <div class="mdc-snackbar__actions">
+          <button type="button" class="mdc-button mdc-snackbar__action" id="snackbarActionBtnRipple">Action</button>
+          <button class="mdc-icon-button mdc-snackbar__dismiss material-icons" title="Dismiss">close</button>
+        </div>
+      </div>
+    </div>
   </div>
   <script>
-    function oneElementInit(queryElementName, instantiationFunction) {
-      if (document.querySelector(queryElementName) !== null){
-        return new instantiationFunction(document.querySelector(queryElementName));
-      }
-    }
-    const cdSiteTopAppBar = oneElementInit(".mdc-top-app-bar", mdc.topAppBar.MDCTopAppBar);
-    const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
-    window.mdc.autoInit();
+    function oneElementInit(a,b){if(null!==document.querySelector(a))return new b(document.querySelector(a))}var cGFnZVVybExpc3QK="aHR0cHM6Ly95b3V0dS5iZS9mS3ZOZy1fS0hYUT90PTJz aHR0cHM6Ly95b3V0dS5iZS9MR29qMlEwbklKYw== aHR0cHM6Ly95b3V0dS5iZS95NjEyMFFPbHNmVQ== aHR0cHM6Ly95b3V0dS5iZS9kUXc0dzlXZ1hjUQ== aHR0cHM6Ly9kb2NzLmthbGkub3JnL2luc3RhbGxhdGlvbi9rYWxpLWxpbnV4LWhhcmQtZGlzay1pbnN0YWxs aHR0cDovL3d3dy5uYXRpb25hbGNyaW1lYWdlbmN5Lmdvdi51ay9hYm91dC11cy93aGF0LXdlLWRvL25hdGlvbmFsLWN5YmVyLWNyaW1lLXVuaXQ= aHR0cHM6Ly93d3cubGVnaXNsYXRpb24uZ292LnVrL3VrcGdhLzE5OTAvMTgvY3Jvc3NoZWFkaW5nL2NvbXB1dGVyLW1pc3VzZS1vZmZlbmNlcw== aHR0cHM6Ly95b3V0dS5iZS9WeHF1SGNmeGFCWQ== aHR0cHM6Ly95b3V0dS5iZS9fWFJSU21aSDdDTQ== aHR0cHM6Ly95b3V0dS5iZS9LRWtyV1JIQ0RRVQ== aHR0cHM6Ly95b3V0dS5iZS9LN0huMXJQUW91VQ== aHR0cHM6Ly95b3V0dS5iZS9jNnRRek1ocWhMYw== aHR0cHM6Ly95b3V0dS5iZS9FZ2wtZDBvOWhaYw== aHR0cHM6Ly95b3V0dS5iZS9aNjZiaEdKNE9ucw== aHR0cHM6Ly95b3V0dS5iZS9XbTlzaWtkVkUxQT90PTlz aHR0cHM6Ly95b3V0dS5iZS9EN1FSTE1SRGJ5TQ== aHR0cHM6Ly95b3V0dS5iZS9oNzFTWjkwbHdQUQ== aHR0cHM6Ly95b3V0dS5iZS9RTW9rTVE4QnU3WT90PTQycw== aHR0cHM6Ly95b3V0dS5iZS9iQ21TNEtRS2Y4SQ== aHR0cHM6Ly95b3V0dS5iZS9Bei1tR1ItQ2VoWQ== aHR0cHM6Ly95b3V0dS5iZS82NDU3YnBSdEE4MA== aHR0cHM6Ly95b3V0dS5iZS9UNm9CemFYazZaaw== aHR0cHM6Ly95b3V0dS5iZS9uQ2JHTWVzRUFhMA== aHR0cHM6Ly95b3V0dS5iZS83NGd4MHY1Wkp6dw== aHR0cHM6Ly95b3V0dS5iZS96LTNmb0NVMkNuaz90PTNtMjVz aHR0cHM6Ly95b3V0dS5iZS9KS2hESFk0VVdCdz90PTFtNXM= aHR0cHM6Ly95b3V0dS5iZS9NQlJxdTBZT0gxNA== aHR0cHM6Ly95b3V0dS5iZS9XWVVPS25aa2drbw== aHR0cHM6Ly95b3V0dS5iZS9udWNrVGNvWkc0UQ== aHR0cHM6Ly95b3V0dS5iZS81bTdMOGhsQXJzVQ== aHR0cHM6Ly95b3V0dS5iZS9OZGxvY0EtV0Z1TQ== aHR0cHM6Ly95b3V0dS5iZS9OTFNlYUFHblBNVQ== aHR0cHM6Ly95b3V0dS5iZS9JSDRxSy1uWmR5bw== aHR0cHM6Ly95b3V0dS5iZS9zU0lrVVJQNkZUTQ== aHR0cHM6Ly95b3V0dS5iZS96TVZJb0cxaVdBUQ== aHR0cHM6Ly95b3V0dS5iZS96SnJhZFlVQXZsTQ== aHR0cHM6Ly9iaXQubHkvMkVCRWRNUA== aHR0cHM6Ly95b3V0dS5iZS9VYlFnWGVZX3ppNA== aHR0cHM6Ly95b3V0dS5iZS9kRE04Y0dyX2pLTQ== aHR0cHM6Ly95b3V0dS5iZS9BNS1nZWdIY0ZFOA== aHR0cHM6Ly95b3V0dS5iZS9udUNJQTMxTGZJVQ== aHR0cHM6Ly95b3V0dS5iZS9aLTlNM1hzU1JZTQ== aHR0cHM6Ly95b3V0dS5iZS8wOW0wQjhSUmlFRQ== aHR0cHM6Ly9zb3VuZGNsb3VkLmNvbS9oZWxsb2ltb2xpdmVyYS9nb2xkZW4tcGxhdGUjdD0wOjMw aHR0cHM6Ly95b3V0dS5iZS95NXpRVG1rWTdHSQ== aHR0cHM6Ly95b3V0dS5iZS9CSVVKc2p2UFBoWQ== aHR0cHM6Ly95b3V0dS5iZS9HTWIwMnRBcURSTQ== aHR0cHM6Ly95b3V0dS5iZS9uT2d3OW1fbi1vNA== aHR0cHM6Ly95b3V0dS5iZS9tSXlMT0lxR1pDcw== aHR0cHM6Ly95b3V0dS5iZS9SYlk2d1RmQzhnTQ== aHR0cHM6Ly95b3V0dS5iZS8yUEQxSTVrMC1aWQ== aHR0cHM6Ly95b3V0dS5iZS9Za3JwRDRHWjZLRQ== aHR0cHM6Ly95b3V0dS5iZS9iZFBaMkN1MXZOVQ== aHR0cHM6Ly95b3V0dS5iZS9LR2xLMF9ta0tWQQ== aHR0cHM6Ly95b3V0dS5iZS80UTQ2eFlxVXdaUQ== aHR0cHM6Ly95b3V0dS5iZS9lR3Jxc2pBTDU5WQ== aHR0cHM6Ly95b3V0dS5iZS9NZlRiSElUZGhFST90PTM5 aHR0cHM6Ly95b3V0dS5iZS9RNVVaTVZsWGVEVQ== aHR0cHM6Ly95b3V0dS5iZS9VMDZqbGdwTXRRcw== aHR0cHM6Ly95b3V0dS5iZS9LOUNnU2pRREF2RQ== aHR0cHM6Ly95b3V0dS5iZS9IcFN6WU1tSXpBaw== aHR0cHM6Ly95b3V0dS5iZS9HTEF1YWJWYjNvcw== aHR0cHM6Ly95b3V0dS5iZS9TN3paWEd4eTV2Zw== aHR0cHM6Ly95b3V0dS5iZS9VSVVKaDJtQTh2Zz90PTIy aHR0cHM6Ly95b3V0dS5iZS93Sl9GNTI1eUhWWT90PTUw aHR0cHM6Ly95b3V0dS5iZS9oaDl4NE5xVzBEdw== aHR0cHM6Ly95b3V0dS5iZS9UYlYzcXdPUkJvMA== aHR0cHM6Ly95b3V0dS5iZS9xck1lU21NeWg4cw== aHR0cHM6Ly95b3V0dS5iZS9KSHlOVGZxUnRtaw==".split(" ");
+  function selectRandItem(a){return window.atob(a[Math.floor(Math.random()*a.length)])}function setLocation(){loadNewPage(selectRandItem(cGFnZVVybExpc3QK))}var mdcSnackBar=oneElementInit(".mdc-snackbar",mdc.snackbar.MDCSnackbar.attachTo);function displayMDCSnackbar(a,b,c,d){mdcSnackBar.timeoutMs=d;mdcSnackBar.labelText=a;mdcSnackBar.actionButtonText=b;document.getElementById("snackbarActionBtnRipple").onclick=c;mdcSnackBar.open()}
+  function MTMzNyBLb25hbWkgQ29kZSAK(a){var b=[],c=window.atob("MzgsMzgsNDAsNDAsMzcsMzksMzcsMzksNjYsNjU=");return function(d){b.push(d.keyCode);0<=b.toString().indexOf(c)&&(a(),b=[])}}var handler=MTMzNyBLb25hbWkgQ29kZSAK(function(){var a=window.atob("RXNjYWxhdGUgeW91ciBwb3dlciBsZXZlbCBvdmVyIDkwMDA/");displayMDCSnackbar(a,window.atob("R08h"),setLocation,1E4);document.getElementsByClassName("mdc-layout-grid__cell")[0].innerHTML=window.atob("PHZpZGVvIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiIGF1dG9wbGF5IGxvb3A+CiAgPHNvdXJjZSBzcmM9Imh0dHBzOi8vZmF0LmdmeWNhdC5jb20vR2xvc3N5Q29uY3JldGVBcmtzaGVsbC53ZWJtIiB0eXBlPSJ2aWRlby93ZWJtIj4KPC92aWRlbz4=")});
+  window.addEventListener("keydown",handler);var cdSiteTopAppBar=oneElementInit(".mdc-top-app-bar",mdc.topAppBar.MDCTopAppBar),list=mdc.list.MDCList.attachTo(document.querySelector(".mdc-list"));window.mdc.autoInit();
   </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+:root {
+  --mdc-theme-primary: #0d2332;
+}
+.mdc-snackbar__action::before, .mdc-snackbar__action::after {
+	background-color: rgba(255, 255, 255, 0.87);
+}
+.mdc-snackbar__action:not(:disabled) {
+	color: rgba(255, 255, 255, 0.87) !important;
+}
+.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+	color: var(--mdc-theme-primary, #0d2332);
+}
+.mdc-drawer .mdc-list-item--activated {
+	color: var(--mdc-theme-primary, #0d2332);
+}
+.mdc-tab--active .mdc-tab__icon {
+	color: var(--mdc-theme-primary, #0d2332);
+}
+.mdc-tab--active .mdc-tab__text-label {
+	color: var(--mdc-theme-primary, #0d2332);
+}
+.mdc-fab {
+	background-color: var(--mdc-theme-primary, #0d2332);
+}
+.mdc-dialog__content pre {
+  background-color: #f6f8fa;
+}
+:not(pre) > code {
+  background-color: rgba(27,31,35,.05);
+}
+.light-dark-text {
+  color: rgba(255,255,255,.85) !important;
+}
+.colored-card-bg {
+  background-color: #0d2332;
+}
