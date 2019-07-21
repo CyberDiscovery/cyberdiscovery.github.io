@@ -577,7 +577,6 @@ html, body {
 }
 .red-events-text {
   color: #c04b4e !important;
-  margin: 15px !important;
 }
 .centered-item {
 	display: block;
@@ -604,4 +603,13 @@ html, body {
   width: 100%;
   height: 100%;
   border-radius: 15px !important;
+}
+.events-younger-section {
+  display: none;
+}
+.events-older-section {
+  display: none;
+}
+.padded_event_cd {
+  padding-bottom: 1rem !important;
 }
