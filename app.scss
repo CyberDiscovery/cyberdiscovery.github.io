@@ -1,0 +1,109 @@
+@use "@material/theme" with (
+  $primary: #202020,
+  $surface: #212121
+);
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/drawer/mdc-drawer";
+@use "@material/list/mdc-list";
+@use "@material/card";
+@use "@material/button";
+@use "@material/fab/mdc-fab";
+@use "@material/snackbar/mdc-snackbar";
+
+@include button.core-styles;
+@include card.core-styles;
+@include icon-button.core-styles;
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mdc-typography";
+
+:focus {
+  outline: none !important;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  height: 100%;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  background-color: #181818;
+  display: flex;
+  height: 100vh;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+.mdc-top-app-bar {
+  z-index: 7;
+}
+
+#scrollPageTop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+@media screen and (max-width: 370px) {
+  #copy-site-link, #join-server-btn {
+    display: none;
+  }
+}
+
+.mdc-drawer {
+	border-right-style: none;
+}
+
+.mdc-drawer .mdc-list-item--activated, .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+	color: #fff !important;
+}
+
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::after, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
+	background-color: rgba(255,255,255,.38);
+}
+
+.mdc-drawer__header {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-img-main {
+	max-width: 100% !important;
+}
+
+.mdc-list-divider {
+	border-bottom-color: #494949;
+}
+
+.mdc-list {
+	padding-top: 4px;
+}
+
+.mdc-snackbar__surface {
+  background-color: #323232;
+}
+
+.mdc-top-app-bar__navigation-icon {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .mdc-top-app-bar__navigation-icon {
+    display: block !important;
+  }
+}

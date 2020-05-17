@@ -3,1359 +3,185 @@
 <head>
   <meta charset="utf-8" />
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Community Projects" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/CyberDiscovery/cyberdiscovery.github.io/master/Image_Assets/CD_LOGO_SQUARE.png" />
-  <meta property="og:site_name" content="Cyber Discovery" />
+  <meta property="og:title" content="Cyber Discovery" />
+  <meta property="og:image" content="static/logo.jpg" />
+  <meta property="og:site_name" content="Discord Community" />
   <meta property="og:type" content="object" />
-  <meta property="og:url" content="https://cyberdiscovery.github.io" />
-  <meta property="og:description" content="A website showcasing the work of the Cyber Discovery community." />
-  <meta name="description" content="A website showcasing the work of the Cyber Discovery community.">
-  <meta name="keywords" content="CyberDiscovery,GitHub,Community,Projects">
+  <meta property="og:url" content="https://cyberdiscoverycommunity.uk" />
+  <meta property="og:description" content="A friendly, growing community of students aged 13-18 taking part in SANS' CyberStart family of programmes." />
+  <meta name="description" content="A friendly, growing community of students aged 13-18 taking part in SANS' CyberStart family of programmes.">
+  <meta name="keywords" content="Cyber Discovery,Discord,Community,GitHub,Projects">
   <meta name="author" content="Sh3llcod3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#3f51b5" />
+  <meta name="theme-color" content="#1b1b21" />
   <meta name="referrer" content="origin">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
-  <link rel="stylesheet" href="./Site_Code/styles.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
-  <script src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
-  <script src="https://player.vimeo.com/api/player.js"></script>
-  <title>Cyber Discovery Community</title>
-  <link rel="icon" href="./Image_Assets/favicon.png">
-  <style>
-  </style>
-  <script>
-  </script>
+  <link rel="stylesheet" href="bundle.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/normalize.min.css" type="text/css">
+  <script src="bundle.js" async></script>
+  <title>CD Discord Community | Home</title>
+  <link rel="icon" href="static/favicon.png">
 </head>
 <body class="mdc-typography">
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-      <h3 class="mdc-list-group__subheader spaced-out-subheader" id="soundboard-track-category">Track Category</h3>
+  <header class="mdc-top-app-bar app-bar" id="app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+        <span class="mdc-top-app-bar__title">CD Community</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="copy-site-link" aria-label="Share Site">share</button>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="join-server-btn" aria-label="Join Server">exit_to_app</button>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+      </section>
     </div>
-  </template>
-  <template>
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-      <div class="mdc-card mdc-elevation-transition resources-tab-card spaced-card-mobile">
-        <div class="mdc-typography mdc-card__primary-action mdc-typography--subtitle1 elevated-soundboard-surface unselectable-text" tabindex="0" id="soundboard-track-name">Track Name</div>
-      </div>
-    </div>
-  </template>
-  <aside class="mdc-drawer mdc-drawer--modal">
+  </header>
+  <aside class="mdc-drawer mdc-top-app-bar--fixed-adjust">
     <div class="mdc-drawer__header">
       <a href="https://discord.cyberdiscoverycommunity.uk">
-        <img src="https://discordapp.com/api/guilds/409851296116375565/embed.png?style=banner2" class="nav-img-main" alt="Infographic">
+        <img src="https://discordapp.com/api/guilds/409851296116375565/embed.png?style=banner3" class="nav-img-main" alt="Infographic">
       </a>
     </div>
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
-        <a class="mdc-list-item mdc-list-item--activated" href="#">
+        <h6 class="mdc-list-group__subheader">Server Stuff</h6>
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" aria-selected="true" tabindex="0">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
           <span class="mdc-list-item__text">Home</span>
         </a>
-        <a class="mdc-list-item" href="./Site_Pages/About_Page.html">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
-          <span class="mdc-list-item__text">About Us</span>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chat</i>
+          <span class="mdc-list-item__text">Join Server</span>
         </a>
-        <a class="mdc-list-item" href="./Site_Pages/Disclaimer_Page.html">
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+          <span class="mdc-list-item__text">Who Are We?</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">queue_music</i>
+          <span class="mdc-list-item__text">Agent J Soundboard</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">event_note</i>
+          <span class="mdc-list-item__text">Notable Events/Dates</span>
+        </a>
+        <a class="mdc-list-item" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chrome_reader_mode</i>
+          <span class="mdc-list-item__text">Code Of Conduct</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
+          <span class="mdc-list-item__text">Resources</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">memory</i>
+          <span class="mdc-list-item__text">GitHub Page</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">track_changes</i>
+          <span class="mdc-list-item__text">Suggestions</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+          <span class="mdc-list-item__text">Contributing</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">cloud_download</i>
+          <span class="mdc-list-item__text">Download Our App</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_mall</i>
+          <span class="mdc-list-item__text">Merchandise</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">sports_esports</i>
+          <span class="mdc-list-item__text">Activity Nights</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">label</i>
+          <span class="mdc-list-item__text">Server Roles</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">help</i>
+          <span class="mdc-list-item__text">Frequently Asked</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
           <span class="mdc-list-item__text">Disclaimer</span>
         </a>
-        <a class="mdc-list-item" href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" target="_blank">
+        <a class="mdc-list-item" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">folder_open</i>
           <span class="mdc-list-item__text">Site Source</span>
         </a>
+
         <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Official Links</h6>
-        <a class="mdc-list-item" href="https://www.joincyberdiscovery.com/" target="_blank">
+        <a class="mdc-list-item" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
-          <span class="mdc-list-item__text">Registration</span>
+          <span class="mdc-list-item__text">Sign Up</span>
         </a>
-        <a class="mdc-list-item" href="https://twitter.com/cyberdiscuk" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">share</i>
-          <span class="mdc-list-item__text">Twitter Feed</span>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">insert_comment</i>
+          <span class="mdc-list-item__text">Twitter Page</span>
         </a>
-        <a class="mdc-list-item" href="https://medium.com/cyber-discovery" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">speaker_notes</i>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">rss_feed</i>
           <span class="mdc-list-item__text">Medium Blog</span>
         </a>
-        <a class="mdc-list-item" href="https://vimeo.com/cyberstart" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">video_library</i>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">ondemand_video</i>
           <span class="mdc-list-item__text">Vimeo</span>
         </a>
-        <hr class="mdc-list-divider">
-        <h6 class="mdc-list-group__subheader">Join us!</h6>
-        <a class="mdc-list-item" href="https://discord.cyberdiscoverycommunity.uk" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">card_giftcard</i>
-          <span class="mdc-list-item__text">Discord Invite</span>
-        </a>
-        <a class="mdc-list-item" href="https://github.com/CyberDiscovery" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
-          <span class="mdc-list-item__text">GitHub Page</span>
-        </a>
-        <a class="mdc-list-item" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">get_app</i>
-          <span class="mdc-list-item__text">Download App</span>
-        </a>
-        <a class="mdc-list-item" href="https://app.cyberdiscoverycommunity.uk/" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>
-          <span class="mdc-list-item__text">Companion Site</span>
-        </a>
-        <a class="mdc-list-item" href="https://www.redbubble.com/people/TheCultOfLyne/shop" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">shop</i>
-          <span class="mdc-list-item__text">Merchandise</span>
-        </a>
+
         <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Related Programmes</h6>
-        <a class="mdc-list-item" href="https://www.ncsc.gov.uk/information/cyberfirst-courses" target="_blank">
+        <a class="mdc-list-item" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">vertical_split</i>
           <span class="mdc-list-item__text">CyberFirst Courses</span>
         </a>
-        <a class="mdc-list-item" href="https://www.cybersecuritychallenge.org.uk/" target="_blank">
+        <a class="mdc-list-item" href="#">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">assessment</i>
           <span class="mdc-list-item__text">Cyber-Challenge UK</span>
         </a>
-        <a class="mdc-list-item" href="https://www.hackthebox.eu/" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">games</i>
-          <span class="mdc-list-item__text">Hack The Box</span>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">computer</i>
+          <span class="mdc-list-item__text">HackTheBox</span>
         </a>
-        <a class="mdc-list-item" href="https://ctftime.org/writeups" target="_blank">
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections_bookmark</i>
-          <span class="mdc-list-item__text">CTF Writeups</span>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">flight</i>
+          <span class="mdc-list-item__text">ECSC</span>
         </a>
       </nav>
-    </div>
+  </div>
   </aside>
   <div class="mdc-drawer-scrim"></div>
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
-        <span class="mdc-top-app-bar__title">Cyber Discovery Community</span>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button onclick="parseSiteSettings();" class="material-icons mdc-top-app-bar__action-item mdc-icon-button unselectable-text" aria-label="Theme" title="Switch Theme">tonality</button>
-      </section>
-    </div>
-  </header>
-  <div class="mdc-tab-bar mdc-top-app-bar--fixed-adjust" role="tablist">
-    <div class="mdc-tab-scroller">
-      <div class="mdc-tab-scroller__scroll-area">
-        <div class="mdc-tab-scroller__scroll-content">
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="Home-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
-              <span class="mdc-tab__text-label">Home</span>
-            </span>
-            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Discord-Bot-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">memory</span>
-              <span class="mdc-tab__text-label">Projects</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Soundboard-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">queue_music</span>
-              <span class="mdc-tab__text-label">Soundboard</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="Events-Dates-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">event_note</span>
-              <span class="mdc-tab__text-label">Events</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-          <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="CD-App-Tab">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">library_books</span>
-              <span class="mdc-tab__text-label">Resources</span>
-            </span>
-            <span class="mdc-tab-indicator">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
+  <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+    <main class="main-content" id="main-content">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          </div>
         </div>
       </div>
-    </div>
+      <div class="mdc-snackbar">
+        <div class="mdc-snackbar__surface">
+          <div class="mdc-snackbar__label"
+               role="status"
+               aria-live="polite">
+            Hey there!
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
-  <div class="mdc-dialog"
-     role="alertdialog"
-     aria-modal="true"
-     id="scrollable-text-dialog">
-    <div class="mdc-dialog__container">
-      <div class="mdc-dialog__surface resized-dialog-window">
-        <section class="mdc-dialog__content padded-dialog-content" id="project-dialog-body">
-          Dialog body text
-        </section>
-        <footer class="mdc-dialog__actions">
-          <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="yes">
-            <span class="mdc-button__label">Close</span>
-          </button>
-        </footer>
-      </div>
-    </div>
-    <div class="mdc-dialog__scrim"></div>
-  </div>
-  <div class="mdc-dialog unselectable-text"
-     role="alertdialog"
-     aria-modal="true"
-     id="site-settings-dialog">
-    <div class="mdc-dialog__container">
-      <div class="mdc-dialog__surface">
-        <h2 class="mdc-dialog__title">Site Settings</h2>
-        <div class="mdc-dialog__content">
-          <ul class="mdc-list">
-            <li class="mdc-list-item">
-              <label for="native-theme-toggle">Light Theme</label>
-              <div class="mdc-switch theme-switch" id="theme-switcher-switch">
-                <div class="mdc-switch__track"></div>
-                <div class="mdc-switch__thumb-underlay">
-                  <div class="mdc-switch__thumb">
-                      <input type="checkbox" id="native-theme-toggle" class="mdc-switch__native-control" role="switch" aria-checked="true">
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="mdc-list-item">
-              <label for="checkbox-1">Clear Cookies</label>
-              <div class="mdc-form-field shifted-form-field" id="cookie-form-field">
-                <div class="mdc-checkbox" id="cookie-checkbox">
-                  <input type="checkbox"
-                         class="mdc-checkbox__native-control"
-                         id="checkbox-1"/>
-                  <div class="mdc-checkbox__background">
-                    <svg class="mdc-checkbox__checkmark"
-                         viewBox="0 0 24 24">
-                      <path class="mdc-checkbox__checkmark-path"
-                            fill="none"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                    </svg>
-                    <div class="mdc-checkbox__mixedmark"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <footer class="mdc-dialog__actions">
-          <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="close">
-            <span class="mdc-button__label">Save</span>
-          </button>
-        </footer>
-      </div>
-    </div>
-    <div class="mdc-dialog__scrim"></div>
-  </div>
-  <div class="generic-tab-item" id="Tab-1">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Home-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-1">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="vimeo-player-div">
-              <iframe src="https://player.vimeo.com/video/297914018?color=20cace&byline=0&portrait=0" class="vimeo-player-frame" style="border:0;" allow="autoplay; fullscreen" allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card colored-card-bg">
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline3 light-dark-text">Welcome!</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body1 light-dark-text welcome-text-card">We are a passionate growing Discord community of students who are taking part in the UK's Cyber Discovery programme, part of HM Government's Cyber Schools initiative and the SANS CyberStart family of programmes. Find like-minded people, seek pointers and guidance on challenges, take part in Capture the flag events and more! If you're taking part in a related programme in the US, we welcome you as well! Make sure you join our server! While you're here, feel free to check out some of our cool open-source projects and consider lending us some of your amazing skills by contributing!</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://www.joincyberdiscovery.com/');">Info</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 home_discord_invite_card"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Discord Server</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">Join the largest Cyber Discovery Discord server with over 2300+ like-minded people and students who are going through the programme as well as a few SANS Institute staff members who are involved in running the programme!</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://discord.cyberdiscoverycommunity.uk');">Join</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdsurvivalguide_home_card"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Survival Guide</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A website where we host tips, tricks, and guidance for those who are attempting the Cyber Discovery programme. All these articles have been written by past participants, most of whom have progressed to the Elite stage themselves.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://cdsurvivalguide.netlify.com/');">View</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 medium_blog_main_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Medium Blog</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">View the official Cyber Discovery Medium blog. This is where they post different announcements, challenges, student spotlights, answers, writeups, and much more. You can also download our app which has the Medium blog embedded inside!</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://medium.com/@CyberStart');">Read</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-2">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Projects-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-2">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <h3 class="mdc-list-group__subheader spaced-out-subheader">Open Source</h3>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdbotmain_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Discord Bot</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">This main bot for our Discord server. Get dates and briefings of various Cyber Discovery stages, fetch hillarious quotes and more. Join our Discord and hang out with us today!</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cyberdisc-bot');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-1">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-1">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2Fcyberdisc-bot');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/cyberdisc-bot/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://discord.cyberdiscoverycommunity.uk');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">exit_to_app</i>
-                          Server Invite
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdapp_main_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Android & IOS App</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">Never miss a deadline again with the unofficial Cyber Discovery App for Android and iOS. You can build it from source, get from the Play Store or sideload a prebuilt release.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Cyber-Discovery-App');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-2">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-2">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">arrow_downward</i>
-                          Get App
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdmathsbot_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Maths Bot</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A Discord Maths bot, which posts the current weekly challenge from the Kings College London Maths School. It is pinned in the maths channel for you to attempt.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Discord-Maths-Bot');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-3">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-3">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2FDiscord-Maths-Bot');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/Discord-Maths-Bot/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://www.kcl.ac.uk/mathsschool/weekly-maths-challenge/weekly-maths-challenge.aspx');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">question_answer</i>
-                          Math Challenge
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cdsurvivalguide_site_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Survival Manual</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">One of the sites we've built is a survival manual, where new students entering the programme can read blog posts and tips on how to prepare before a new stage opens.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/cdsurvivalguide');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cdsurvivalguide');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-4">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-4">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2Fcdsurvivalguide');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/cdsurvivalguide/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://cdsurvivalguide.netlify.com/');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">chevron_right</i>
-                          Visit Guide
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 challenge_master_site_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Challenge Master</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">Challenge Master is a website that hosts cyber security-based challenges for the Unofficial Cyber Discovery Discord Server. You can create and solve challenges by our community.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Challenge-Master');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-5">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-5">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2FChallenge-Master');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/Challenge-Master/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://challenge-master.firebaseapp.com/');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">list_alt</i>
-                          Challenges
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 app_website_site_card_image"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">App Website</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">Companion Website for the unofficial Cyber Discovery App. Essentially all the features of the App (Link in menu), but in a web-based form. No downloading required.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('Cyber-Discovery-App-Website');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-6">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-6">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2FCyber-Discovery-App-Website');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/Cyber-Discovery-App-Website/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://app.cyberdiscoverycommunity.uk/');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">web</i>
-                          Visit Site
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 cd_richpresence_card"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">CD Rich Presence</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A program to give Discord rich presence for Cyber Discovery. It gets the URL and examines the stage and challenge you are on, and feeds it to discord.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/cd-rich-presence');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('cd-rich-presence');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-7">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-7">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2Fcd-rich-presence');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/cd-rich-presence/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/cd-rich-presence/releases');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">cloud_download</i>
-                          Releases
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition projects-tab-card">
-            <div class="mdc-card__media mdc-card__media--16-9 alexa_skill_card_project"></div>
-            <div class="padded-projects-card">
-              <h2 class="projects-card-title mdc-typography mdc-typography--headline6">Alexa Skill</h2>
-            </div>
-            <div class="projects-card-secondary mdc-typography mdc-typography--body2">A skill for all alexa enabled devices, where you can ask questions regarding the opening and closing dates of the various stages as well as hints and tips.</div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadNewPage('https://github.com/CyberDiscovery/CD-Alexa-Skill');">Repo</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="loadProjectDetails('CD-Alexa-Skill');">More</button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <div class="mdc-menu-surface--anchor">
-                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded project-menu-btn" title="More options" data-mdc-ripple-is-unbounded="true" id="btn-proj-8">more_vert</button>
-                  <div class="mdc-menu mdc-menu-surface" id="menu-proj-8">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/login?return_to=%2FCyberDiscovery%2FCD-Alexa-Skill');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">call_split</i>
-                          Fork Project
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://github.com/CyberDiscovery/CD-Alexa-Skill/issues');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">view_list</i>
-                          View Issues
-                        </span>
-                      </li>
-                      <li class="mdc-list-item" role="menuitem" onclick="loadNewPage('https://amzn.to/2FZ9wSc');">
-                        <span class="mdc-list-item__text">
-                          <i class="material-icons project_card_menu_icons">settings_voice</i>
-                          Get Skill
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-3">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Soundboard-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-3">
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-4">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Events-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-4">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <h4 class="mdc-typography--headline4 high-attention-text events-section-text">Elite Camps 2019</h4>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet centered-item">
-          <button onclick="toggleCampEvent('.events-younger-section', '.events-older-section');" class="mdc-button mdc-button--unelevated">14-15</button>
-          <span class="mdc-typography--body1 medium-attention-text">/</span>
-          <button onclick="toggleCampEvent('.events-older-section', '.events-younger-section');" class="mdc-button mdc-button--unelevated">16-18</button>
-        </div>
-        <div id="events-camp-selector" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet">
-          <h5 class="mdc-typography--headline5 medium-attention-text centered-item">Please select the relevant age group above, so we can provide relevant information!</h5>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">When and where are the Elite camps?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Elite camps will be taking place in three locations this year:
-              <ul class="medium-attention-text styled_list">
-                <li tabindex="0">
-                  <span>Birmingham: 23nd - 25th [Finished]</span>
-                </li>
-                <li>
-                  <span>Lancaster: 30th July - 1st August [Finished]</span>
-                </li>
-                <li>
-                  <span>London: 6th - 8th August [Finished]</span>
-                </li>
-              </ul>
-              Elite camps are over for this year, they will happen again in summer 2020.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Do I need to travel back and forth each day?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Nope! We'll be provided with university accommodation for the two nights, with food and other necessities provided. You will need to pack your own clothes and any required
-              items, such as medications for the 3 days, however.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">How do I know if I'm invited?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              All invites to CyberStart Elite 2019 have now been sent. If you didn't make it in this year, don't fret. Cyber Discovery will reopen for year 3
-              in September 2019, granting access to students aged 13-18 for the first time, so be sure to register your interest!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">What will we be doing at the Elite camps?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Before the camp begins, you will be emailed a comprehensive welcome pack, detailing everything you'll be doing during the camp. As you are attending one of the younger camps, your experience will be focused more on penetration testing, with the final day dedicated to a simulated penetration test!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Do I need a parent?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              You do need a parent, or other authorized guardian, to sign you in and out at the start and end of the camp; but they don't need to stick around for the entire 3 days.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-younger-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Any other questions?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              If the questions relate to personal circumstances, contact Cyber Discovery at <b>elite@joincyberdiscovery.com</b>, and they should be able to help! If it's more general, you can ask on our <a href="https://discord.cyberdiscoverycommunity.uk">community Discord server!</a>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">When and where are the Elite camps?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Elite camps will be taking place in three locations this year:
-              <ul class="medium-attention-text styled_list">
-                <li tabindex="0">
-                  <span>Birmingham: 22nd - 27th [Finished]</span>
-                </li>
-                <li>
-                  <span>Lancaster: 29th July - 3rd August [Finished]</span>
-                </li>
-                <li>
-                  <span>London: 5th - 10th August [Finished]</span>
-                </li>
-              </ul>
-              Elite camps are over for this year, they will happen again in summer 2020.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Do I need to travel back and forth each day?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Nope! We'll be provided with university accommodation for the five nights, with food and other necessities provided. You will need to pack your own clothes and any required
-              items, such as medications for the 6 days, however.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">How do I know if I'm invited?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              All invites to CyberStart Elite 2019 have now been sent. If you didn't make it in this year, don't fret. Cyber Discovery will reopen for year 3
-              in September 2019, granting access to students aged 13-18 for the first time, so be sure to register your interest!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">What will we be doing at the Elite camps?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              It somewhat depends on which camp you choose to go to. The main focus at each camp is around a SANS course; which varies from camp to camp. At the Birmingham and Lancaster camps, you'd be taking <a href="https://www.sans.org/course/hacker-techniques-exploits-incident-handling" target="_blank">SEC504</a>; whereas at the London camp, you'd be taking <a href="https://www.sans.org/course/windows-forensic-analysis" target="_blank">FOR500</a>. It's likely that other secondary events will also take place during the camp alongside these courses!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Will I have a chance to get a certification?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Yep! Alongside the SANS training at the event, you'll also have a chance to take a GIAC certification for that course after the event, which shows you know your stuff!
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Do I need a parent?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              Unless you selected otherwise on the invite forms, you will need a parent, or other authorized guardian, to sign you in and out at the start and end of the camp; but they don't need to stick around for the entire 6 days.
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop events-older-section mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6 red-events-text medium-attention-text">Any other questions?</h2>
-            </div>
-            <div class="resource-card-secondary padded_event_cd mdc-typography mdc-typography--body2 medium-attention-text">
-              If the questions relate to personal circumstances, contact Cyber Discovery at <b>elite@joincyberdiscovery.com</b>, and they should be able to help! If it's more general, you can ask on our <a href="https://discord.cyberdiscoverycommunity.uk">community Discord server!</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="generic-tab-item layout-tab-item" id="Tab-5">
-    <div class="layout-grid-desktop mdc-layout-grid" id="Resources-Grid">
-      <div class="mdc-layout-grid__inner" id="Grid-Tab-5">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet" id="resources-intro-msg">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hey There!</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">by Our Community</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Here are a group of resources you can use to enhance your cyber security knowledge and skill, regardless of your participation in Cyber Discovery.
-              These resources have aided us immensely, enabling us to achieve the score and completion required to reach the Elite Camp. We hope that you find
-              them as useful as we did!
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="dismissResourcesCard(true);" class="mdc-button mdc-card__action mdc-card__action--button">Got It</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">OverTheWire</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://overthewire.org/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Wargames offered by the OverTheWire community, which can help you to learn and practice security concepts in the form of fun-filled games.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://overthewire.org/wargames/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Replit</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://repl.it/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A free, powerful, and simple online compiler, IDE, interpreter, and REPL. Allows you to Code, compile, and run code in 30+ programming languages.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://repl.it/languages');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hak5</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Thousands of videos on various infosec topics and news, hosted by the famous members of Hak5: Darren, Shannon and Mubix.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/Hak5Darren/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Seytonic</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A variety of ethical-hacking related tutorials, diy projects, raspberry pi mods, arduino hacks and cyber security news.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">LiveOverflow</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Take a deep dive into topics such as reverse-engineering, XSS, pen-testing, malware analysis, exploring weird machines and much more.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">SmashTheStack</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">http://smashthestack.org/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              An ethical hacking environment that supports the simulation of real world software vulnerabilities and allows the use of exploitation techniques.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('http://smashthestack.org/wargames.html');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Hack The Box</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.hackthebox.eu/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A rapidly growing, popular online platform of 130k+ users with access to a large number of pen-testing labs and machines.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.hackthebox.eu/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Techquickie</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Learn the fundamental concepts of computer science explained in a simplified format as quickly as possible in a few minutes.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/Techquickie/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Cybrary</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybrary.it/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Online cyber security training which you can learn anytime, anywhere with open-source, high quality training from top professionals and companies.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.cybrary.it/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Udacity</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://eu.udacity.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A vast, comprehensive list of free online courses and Nanodegree programmes which range from mastering web design to business tech.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://eu.udacity.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">IppSec</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A collection of detailed HackTheBox video walkthroughs, showing the methodology of attempting the challenge from start to finish.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">13Cubed</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-               Information security-related videos on Digital Forensics & Incident Response, Penetration Testing, overviews of various apps, scripts and more.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/davisrichardg/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codewars</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codewars.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Where programmers achieve code mastery through solving different challenges in different programming languages, with an active community.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.codewars.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Codecademy</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.codecademy.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              An online platform that offers free interactive programming lessons in various different programming languages. Great place for Python.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.codecademy.com/catalog/subject/all');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Learn RE</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.begin.re/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Learn the basics of x86 and get hands-on experience with reverse engineering from scratch. Extremely useful for binary reversing CTFs.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.begin.re/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">CSC UK</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.cybersecuritychallenge.org.uk/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A series of national competitions & programmes, designed to enable more people to become cyber security professionals.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.cybersecuritychallenge.org.uk/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">PicoCTF</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://picoctf.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              PicoCTF is a high-school CTF where participants must reverse engineer, break, hack and decrypt different challenges.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://picoctf.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">FutureLearn</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.futurelearn.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Online courses from top universities and specialist organisations on cyber security and many other topics at no cost.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.futurelearn.com/courses/categories/tech-and-coding-courses/cyber-security');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Null Byte</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A series of videos demonstrating how to utilise various tools, techniques and operating systems for aspiring ethical hackers.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">TechLinked</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              They say cyber security and tech news go hand in hand. Learn about the latest developments in technology in 10 minutes or so.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">JackkTutorials</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Video tutorials explaining a range of topics, CTF walkthroughs and demonstrations of various tools in an easy-to-understand format.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/user/JackkTutorials/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Malwarebytes</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://blog.malwarebytes.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Read about the latest cyber security news around the world, with weekly summaries of the current threatscape, from Malwarebytes.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://blog.malwarebytes.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">DVWA</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://github.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Damn Vulnerable Web Application is a web application that allows you to test common web vulnerabilities in a safe and legal environment.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://github.com/ethicalhack3r/DVWA.git');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">TryHackMe</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://tryhackme.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              TryHackMe is a freemium training platform for learning and teaching pre-built courses using virtual machines to practice various techniques.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://tryhackme.com/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">OWASP Cheatsheets</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://cheatsheetseries.owasp.org/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              OWASP Cheat Sheet Series provide a concise collection of high value information on specific web/application security topics.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://cheatsheetseries.owasp.org/');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Reply Challenges</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://challenges.reply.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              A series of CTF challenges and competitions, where participants compete in teams, with frequent events and prizes.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://challenges.reply.com/tamtamy/home.action');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">Search HIBP</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://haveibeenpwned.com</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Check if you have an account compromised in a data breach, using Microsoft MVP Troy Hunt's Have I Been Pwned service.
-            </div>
-            <div class="mdc-card__actions adjusted-card-actions">
-              <div class="mdc-text-field mdc-text-field--outlined textfield_span_width_full" id="HIBP_Textfield">
-                <input class="mdc-text-field__input" type="text" autocomplete="off">
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading leading-notch-textfield"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <label class="mdc-floating-label">Email</label>
-                  </div>
-                  <div class="mdc-notched-outline__trailing trailling-notch-textfield"></div>
-                </div>
-              </div>
-              <button id="check-hibp-status-btn" class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon mdc-card__action--icon--unbounded unselectable-text" title="Check HIBP" data-mdc-ripple-is-unbounded="true">arrow_forward</button>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet">
-          <div class="mdc-card mdc-elevation-transition resources-tab-card">
-            <div class="padded-resource-card">
-                <h2 class="resource-card-title mdc-typography mdc-typography--headline6">MAFH</h2>
-                <h3 class="resource-card-subtitle mdc-typography mdc-typography--subtitle2">https://www.youtube.com/</h3>
-            </div>
-            <div class="resource-card-secondary mdc-typography mdc-typography--body2">
-              Get started with malware analysis and reverse engineering by watching a malware analyst unpack and explain real-world malware.
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button onclick="loadNewPage('https://www.youtube.com/channel/UCVFXrUwuWxNlm6UNZtBLJ-A/videos');" class="mdc-button mdc-card__action mdc-card__action--button">Visit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="mdc-fab mdc-fab--exited" onclick="goToPageTop()" aria-label="Up_Arrow" id="scrollPageTop">
-    <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
-  </button>
-  <div class="mdc-snackbar mdc-snackbar--leading">
-    <div class="mdc-snackbar__surface">
-      <div class="mdc-snackbar__label"
-           role="status"
-           aria-live="polite">
-        Snackbar Text.
-      </div>
-      <div class="mdc-snackbar__actions">
-        <button type="button" class="mdc-button mdc-snackbar__action" id="snackbarActionBtnRipple">Action</button>
-        <button class="mdc-icon-button mdc-snackbar__dismiss material-icons" title="Dismiss">close</button>
-      </div>
-    </div>
-  </div>
-  <script src="./Site_Code/script.min.js"></script>
 </body>
 </html>
