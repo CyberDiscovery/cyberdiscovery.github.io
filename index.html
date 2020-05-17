@@ -33,7 +33,29 @@
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="copy-site-link" aria-label="Share Site">share</button>
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="join-server-btn" aria-label="Join Server">exit_to_app</button>
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+        <div id="additional-menu-anchor" class="mdc-menu-surface--anchor">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="additional-menu-btn" aria-label="Options">more_vert</button>
+          <div class="mdc-menu mdc-menu-surface mdc-menu-surface--fixed" id="additional-menu">
+            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+              <li class="mdc-list-item" role="menuitem">
+                <span class="mdc-list-item__graphic material-icons additional-menu-item" aria-hidden="true">emoji_people</span>
+                <span class="mdc-list-item__text">About Us</span>
+              </li>
+              <li class="mdc-list-item" role="menuitem" id="switchThemeMenu">
+                <span class="mdc-list-item__graphic material-icons additional-menu-item" aria-hidden="true">brightness_medium</span>
+                <span class="mdc-list-item__text">Switch Theme</span>
+              </li>
+              <li class="mdc-list-item phone-icon-links" role="menuitem" id="copySiteLnkMenu">
+                <span class="mdc-list-item__graphic material-icons additional-menu-item" aria-hidden="true">share</span>
+                <span class="mdc-list-item__text">Copy Site Link</span>
+              </li>
+              <li class="mdc-list-item phone-icon-links" role="menuitem" id="discordInvMenu">
+                <span class="mdc-list-item__graphic material-icons additional-menu-item" aria-hidden="true">exit_to_app</span>
+                <span class="mdc-list-item__text">Discord Invite</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   </header>
@@ -50,7 +72,7 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
           <span class="mdc-list-item__text">Home</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://discord.cyberdiscoverycommunity.uk/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chat</i>
           <span class="mdc-list-item__text">Join Server</span>
         </a>
@@ -74,11 +96,11 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
           <span class="mdc-list-item__text">Resources</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://github.com/CyberDiscovery" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">memory</i>
           <span class="mdc-list-item__text">GitHub Page</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://github.com/CyberDiscovery/meta" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">track_changes</i>
           <span class="mdc-list-item__text">Suggestions</span>
         </a>
@@ -86,11 +108,11 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
           <span class="mdc-list-item__text">Contributing</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">cloud_download</i>
           <span class="mdc-list-item__text">Download Our App</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://www.redbubble.com/people/TheCultOfLyne/shop" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_mall</i>
           <span class="mdc-list-item__text">Merchandise</span>
         </a>
@@ -110,45 +132,65 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
           <span class="mdc-list-item__text">Disclaimer</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://github.com/CyberDiscovery/cyberdiscovery.github.io" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">folder_open</i>
           <span class="mdc-list-item__text">Site Source</span>
         </a>
 
         <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Official Links</h6>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://www.joincyberdiscovery.com/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person_add</i>
           <span class="mdc-list-item__text">Sign Up</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://cyber-school.joincyberdiscovery.com/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">school</i>
+          <span class="mdc-list-item__text">Virtual Cyber School</span>
+        </a>
+        <a class="mdc-list-item" href="https://girlsgocyberstart.org/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">face</i>
+          <span class="mdc-list-item__text">Girls Go CyberStart</span>
+        </a>
+        <a class="mdc-list-item" href="https://cyber-fasttrack.org/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dvr</i>
+          <span class="mdc-list-item__text">Cyber FastTrack</span>
+        </a>
+        <a class="mdc-list-item" href="https://twitter.com/cyberdiscuk" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">insert_comment</i>
           <span class="mdc-list-item__text">Twitter Page</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://medium.com/cyber-discovery" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">rss_feed</i>
           <span class="mdc-list-item__text">Medium Blog</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://vimeo.com/cyberstart" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">ondemand_video</i>
           <span class="mdc-list-item__text">Vimeo</span>
         </a>
 
         <hr class="mdc-list-divider">
         <h6 class="mdc-list-group__subheader">Related Programmes</h6>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://www.ncsc.gov.uk/section/education-skills/11-19-year-olds" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">vertical_split</i>
           <span class="mdc-list-item__text">CyberFirst Courses</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://www.cybersecuritychallenge.org.uk/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">assessment</i>
           <span class="mdc-list-item__text">Cyber-Challenge UK</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://ractf.co.uk/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">flag</i>
+          <span class="mdc-list-item__text">RACTF</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.hackthebox.eu/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">computer</i>
           <span class="mdc-list-item__text">HackTheBox</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">security</i>
+          <span class="mdc-list-item__text">TryHackMe</span>
+        </a>
+        <a class="mdc-list-item" href="https://europeancybersecuritychallenge.eu/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">flight</i>
           <span class="mdc-list-item__text">ECSC</span>
         </a>

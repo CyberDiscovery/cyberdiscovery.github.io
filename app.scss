@@ -10,10 +10,14 @@
 @use "@material/button";
 @use "@material/fab/mdc-fab";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/list";
 
 @include button.core-styles;
 @include card.core-styles;
 @include icon-button.core-styles;
+@include list.core-styles;
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/typography/mdc-typography";
 
@@ -58,14 +62,17 @@ body {
     right: 1rem;
 }
 
+.phone-icon-links {
+  display: none;
+}
+
 @media screen and (max-width: 370px) {
   #copy-site-link, #join-server-btn {
     display: none;
   }
-}
-
-.mdc-drawer {
-	border-right-style: none;
+  .phone-icon-links {
+    display: flex !important;
+  }
 }
 
 .mdc-drawer .mdc-list-item--activated, .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
@@ -95,7 +102,13 @@ body {
 }
 
 .mdc-snackbar__surface {
-  background-color: #323232;
+	background-color: #323232;
+	color: #f1f1f1;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.mdc-snackbar__label {
+	color: rgba(255,255,255,.87) !important;
 }
 
 .mdc-top-app-bar__navigation-icon {
@@ -106,4 +119,17 @@ body {
   .mdc-top-app-bar__navigation-icon {
     display: block !important;
   }
+}
+
+.mdc-drawer__content {
+	scrollbar-width: none;
+}
+
+#additional-menu {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: #202020;
+}
+
+.additional-menu-item {
+	margin-right: 16px;
 }

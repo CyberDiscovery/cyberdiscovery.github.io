@@ -3,23 +3,22 @@ import {MDCDrawer} from "@material/drawer";
 import {MDCList} from "@material/list";
 import {MDCSnackbar} from '@material/snackbar';
 import {MDCRipple} from '@material/ripple';
+import {MDCMenu} from '@material/menu';
+import {MDCMenuSurface} from '@material/menu-surface';
 
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+const topAppBarMenu = new MDCMenu(document.querySelector('#additional-menu'));
 const discordURL = "https://discord.cyberdiscoverycommunity.uk";
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const selector = '.mdc-button, .mdc-icon-button, .mdc-list-item';
 const copyLinkBtn = document.querySelector('#copy-site-link');
 const discordInvBtn = document.querySelector('#join-server-btn');
-
-// Select the elements
-
+const additionalMenuBtn = document.querySelector('#additional-menu-btn');
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const listEl = document.querySelector('.mdc-drawer .mdc-list');
 const drawerElement = document.querySelector('.mdc-drawer');
 const mainContentEl = document.querySelector('.main-content');
-
-// Initialize either modal or permanent drawer
-
+const additionalMenuSurface = new MDCMenuSurface(document.querySelector('#additional-menu'));
 const initModalDrawer = () => {
   drawerElement.classList.add("mdc-drawer--modal");
   const drawer = MDCDrawer.attachTo(drawerElement);
@@ -48,8 +47,6 @@ const initPermanentDrawer = () => {
 let drawer = window.matchMedia("(max-width: 900px)").matches ?
     initModalDrawer() : initPermanentDrawer();
 
-// Toggle between permanent drawer and modal drawer at breakpoint 900px
-
 const resizeHandler = () => {
   if (window.matchMedia("(max-width: 900px)").matches && drawer instanceof MDCList) {
     drawer.destroy();
@@ -60,14 +57,7 @@ const resizeHandler = () => {
   }
 }
 window.addEventListener('resize', resizeHandler);
-
-//
-
-//list.wrapFocus = true;
 topAppBar.setScrollTarget(document.getElementById('main-content'));
-const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
-  return new MDCRipple(el);
-});
 
 function goToPageTop() {
     document.body.scrollTop = 0;
@@ -101,11 +91,38 @@ function copyTextToClipboard(text) {
   }, function(err) {});
 }
 
-copyLinkBtn.addEventListener('click', function(event) {
+function copySiteLinkToClipboard(){
   copyTextToClipboard(window.location.href);
   snackbar.timeoutMs = 4000;
-  snackbar.labelText = "Site Link Copied For Sharing!";
+  snackbar.labelText = "Site link copied for sharing!";
   snackbar.open();
+}
+
+function openLinkHandler(siteLink){
+  const newWindow = window.open(siteLink, '_blank');
+  newWindow.opener = null;
+  newWindow.location = siteLink;
+  newWindow.focus();
+}
+
+copyLinkBtn.addEventListener('click', function(event) {
+  copySiteLinkToClipboard();
 });
 
-discordInvBtn.addEventListener('click', function(event) {window.open(discordURL, '_blank');});
+function displayNotYetImplemented(){
+  snackbar.timeoutMs = 4000;
+  snackbar.labelText = "Feature hasn't been implmented yet!";
+  snackbar.open();
+}
+
+const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
+  return new MDCRipple(el);
+});
+
+discordInvBtn.addEventListener('click', function(event) {
+  openLinkHandler(discordURL);
+});
+additionalMenuBtn.addEventListener('click', function(event) {topAppBarMenu.open = !topAppBarMenu.open;});
+document.querySelector("#switchThemeMenu").addEventListener('click', function(event) {displayNotYetImplemented();});
+document.querySelector("#copySiteLnkMenu").addEventListener('click', function(event) {copySiteLinkToClipboard();});
+document.querySelector("#discordInvMenu").addEventListener('click', function(event) {openLinkHandler(discordURL);});
