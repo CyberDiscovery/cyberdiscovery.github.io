@@ -115,7 +115,7 @@ body {
   display: none !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .mdc-top-app-bar__navigation-icon {
     display: block !important;
   }
@@ -138,5 +138,40 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1360px !important;
+  max-width: 920px !important;
+}
+
+.site-tab-hidden {
+  display: none;
+}
+
+.mdc-layout-grid__cell, site-main-tab {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-card-body {
+  padding: 0 1rem 8px;
+  color: rgba(255,255,255,.6);
+  height: inherit !important;
+}
+
+.main-card-title {
+  color: rgba(255,255,255,.87);
+  font-weight: 500;
+  letter-spacing: .0125em;
+  font-family: Roboto,sans-serif;
+  text-decoration: inherit;
+  text-transform: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.site-card__primary {
+  padding: 1rem;
+}
+
+.mdc-card {
+	background-color: #202020;
+  min-width: 300px;
 }

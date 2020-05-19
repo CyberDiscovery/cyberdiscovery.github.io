@@ -44,14 +44,14 @@ const initPermanentDrawer = () => {
   return list;
 }
 
-let drawer = window.matchMedia("(max-width: 900px)").matches ?
+let drawer = window.matchMedia("(max-width: 1200px)").matches ?
     initModalDrawer() : initPermanentDrawer();
 
 const resizeHandler = () => {
-  if (window.matchMedia("(max-width: 900px)").matches && drawer instanceof MDCList) {
+  if (window.matchMedia("(max-width: 1200px)").matches && drawer instanceof MDCList) {
     drawer.destroy();
     drawer = initModalDrawer();
-  } else if (window.matchMedia("(min-width: 900px)").matches && drawer instanceof MDCDrawer) {
+  } else if (window.matchMedia("(min-width: 1200px)").matches && drawer instanceof MDCDrawer) {
     drawer.destroy();
     drawer = initPermanentDrawer();
   }
