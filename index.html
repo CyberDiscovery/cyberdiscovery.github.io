@@ -37,7 +37,7 @@
           <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="additional-menu-btn" aria-label="Options">more_vert</button>
           <div class="mdc-menu mdc-menu-surface mdc-menu-surface--fixed" id="additional-menu">
             <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-              <li class="mdc-list-item" role="menuitem">
+              <li class="mdc-list-item" role="menuitem" id="aboutPageMenu">
                 <span class="mdc-list-item__graphic material-icons additional-menu-item" aria-hidden="true">emoji_people</span>
                 <span class="mdc-list-item__text">About Us</span>
               </li>
@@ -68,7 +68,7 @@
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
         <h6 class="mdc-list-group__subheader">Server Stuff</h6>
-        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" aria-selected="true" tabindex="0">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" aria-selected="true" tabindex="0" id="opt0">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
           <span class="mdc-list-item__text">Home</span>
         </a>
@@ -76,19 +76,19 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chat</i>
           <span class="mdc-list-item__text">Join Server</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt1">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">queue_music</i>
           <span class="mdc-list-item__text">Agent J Soundboard</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt2">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">event_note</i>
           <span class="mdc-list-item__text">Notable Events/Dates</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt3">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">chrome_reader_mode</i>
           <span class="mdc-list-item__text">Code Of Conduct</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt4">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
           <span class="mdc-list-item__text">Resources</span>
         </a>
@@ -100,7 +100,7 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">track_changes</i>
           <span class="mdc-list-item__text">Suggestions</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt5">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
           <span class="mdc-list-item__text">Contributing</span>
         </a>
@@ -112,19 +112,19 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">local_mall</i>
           <span class="mdc-list-item__text">Merchandise</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt6">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">sports_esports</i>
           <span class="mdc-list-item__text">Activity Nights</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt7">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">label</i>
           <span class="mdc-list-item__text">Server Roles</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt8">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">help</i>
           <span class="mdc-list-item__text">Frequently Asked</span>
         </a>
-        <a class="mdc-list-item" href="#">
+        <a class="mdc-list-item" href="#" id="opt9">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
           <span class="mdc-list-item__text">Disclaimer</span>
         </a>
@@ -375,12 +375,6 @@
           </div>
         </div>
       </div>
-      <div class="site-main-tab site-tab-hidden" id="site-about-tab">
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-          </div>
-        </div>
-      </div>
       <div class="site-main-tab site-tab-hidden" id="site-soundboard-tab">
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
@@ -438,10 +432,73 @@
       <div class="site-main-tab site-tab-hidden" id="site-whois-tab">
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+              <ul class="mdc-list mdc-list--two-line" id="site-contrib-list">
+                <li class="mdc-list-item" tabindex="0" id="eo-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">eohomegrownapps</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">A gifted person who contributed code and helped fix a major issue.</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="ana-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Lightspeedana</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">An incredibly talented individual who contributed code, design and layout ideas.</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="pica-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Picapi</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">Valuable contributor and skilled fellow student studying Computer Science</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="butters-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Bottersnike</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">Web-dev extraordinaire and carries an immense amount of knowledge for everything!</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="beano-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">thebeanogamer</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">The guy in charge of everything and quite the gamer. Kept you waiting huh?</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="segway-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Segway</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">The terminator of typos and a great guy in general. Not to mention, likes Pokemon</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="bac-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Bax</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">Cat lover and contributor who helped with layout and code</span>
+                  </span>
+                </li>
+                <li class="mdc-list-item" id="linucks-gh-page">
+                  <span class="mdc-list-item__graphic material-icons contrib-table-icon" aria-hidden="true">person</span>
+                  <span class="mdc-list-item__text">
+                    <span class="mdc-list-item__primary-text">Linucks</span>
+                    <span class="mdc-list-item__secondary-text list-text-description">Hey that's me! I'm just trying to comprehend this complex world, one step at a time.</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-
+      <button class="mdc-fab mdc-fab--mini mdc-fab--exited" aria-label="Scroll To Top" id="scrollPgTop">
+        <div class="mdc-fab__ripple"></div>
+        <span class="mdc-fab__icon material-icons">arrow_upward</span>
+      </button>
       <div class="mdc-snackbar">
         <div class="mdc-snackbar__surface">
           <div class="mdc-snackbar__label"

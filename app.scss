@@ -13,6 +13,7 @@
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
 @use "@material/list";
+@use "@material/data-table";
 
 @include button.core-styles;
 @include card.core-styles;
@@ -20,6 +21,7 @@
 @include list.core-styles;
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/typography/mdc-typography";
+@include data-table.core-styles;
 
 :focus {
   outline: none !important;
@@ -191,4 +193,32 @@ body {
 
 .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
 	background-color: rgba(255,255,255,.87);
+}
+
+#scrollPgTop {
+  position: fixed;
+  display: block;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 900;
+}
+
+#site-contrib-list {
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list-text-description {
+	color: rgba(255, 255, 255, 0.54);
+}
+
+.contrib-table-icon {
+  color: rgba(255, 255, 255, 0.38);
+  margin-right: 16px !important;
+  border-radius: 50%;
+  margin-left: 0;
+	width: 40px;
+	height: 40px;
+  background-color: rgba(255,255,255,.2);
 }
