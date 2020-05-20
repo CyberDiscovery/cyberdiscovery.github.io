@@ -173,5 +173,22 @@ body {
 
 .mdc-card {
 	background-color: #202020;
-  min-width: 300px;
+  min-width: 250px;
+  height: 100% !important;
+}
+
+.mdc-button:not(:disabled) {
+	color: rgba(255,255,255,.6);
+}
+
+.mdc-button::after, .mdc-button::before {
+	background-color: rgba(255,255,255,.87);
+}
+
+.mdc-card__action-buttons, .mdc-card__action-icons, .mdc-button--outlined {
+	height: 100% !important;
+}
+
+.mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
+	background-color: rgba(255,255,255,.87);
 }
