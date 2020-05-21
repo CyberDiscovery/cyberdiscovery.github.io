@@ -189,6 +189,7 @@ body {
 
 .mdc-card__action-buttons, .mdc-card__action-icons, .mdc-button--outlined {
 	height: 100% !important;
+  min-height: 36px;
 }
 
 .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
@@ -201,6 +202,7 @@ body {
   right: 1rem;
   bottom: 1rem;
   z-index: 900;
+  background-color: #212121;
 }
 
 #site-contrib-list {

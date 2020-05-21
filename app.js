@@ -23,6 +23,8 @@ const additionalMenuSurface = new MDCMenuSurface(document.querySelector('#additi
 const pgTopBtn = document.querySelector("#scrollPgTop");
 const siteMainTitle = "CD Discord Community | ";
 const hideTab = "site-tab-hidden";
+const soundboardUrl = "https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json";
+const mainSiteContainer = document.querySelector(".main-content");
 //const dataTable = new MDCDataTable(document.querySelector('#site-contrib-table'));
 const siteContribList = new MDCList(document.querySelector('#site-contrib-list'));
 const initModalDrawer = () => {
@@ -64,11 +66,6 @@ const resizeHandler = () => {
 }
 window.addEventListener('resize', resizeHandler);
 topAppBar.setScrollTarget(document.getElementById('main-content'));
-
-function goToPageTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
 
 function fallbackCopyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
@@ -121,6 +118,12 @@ function displayNotYetImplemented(){
   snackbar.open();
 }
 
+function doLiterallyNothing(){}
+
+function loadSoundboard(){
+  loadSoundboard = doLiterallyNothing;
+}
+
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
@@ -131,8 +134,8 @@ const btnRipple = [].map.call(document.querySelectorAll(".mdc-icon-button"), fun
   return ripple;
 });
 
-function detectPageBottom() {
-  if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 64) {
+function detectPageBottom(){
+  if (mainSiteContainer.scrollTop === (mainSiteContainer.scrollHeight - mainSiteContainer.offsetHeight)) {
     pgTopBtn.classList.remove("mdc-fab--exited");
   } else {
     pgTopBtn.classList.add("mdc-fab--exited");
@@ -142,7 +145,6 @@ function detectPageBottom() {
 let previousTab = document.querySelector("#site-home-tab");
 
 function changeTab(tabID) {
-  //
   switch (tabID) {
     case "opt0":
       document.title = siteMainTitle + "Home";
@@ -156,6 +158,7 @@ function changeTab(tabID) {
       previousTab.classList.add(hideTab);
       previousTab = document.querySelector("#site-soundboard-tab");
       previousTab.classList.remove(hideTab);
+      loadSoundboard();
       break;
 
     case "opt2":
@@ -224,7 +227,6 @@ function changeTab(tabID) {
     default:
       break;
   }
-  //
 }
 
 discordInvBtn.addEventListener('click', function(event) {
@@ -275,7 +277,7 @@ document.querySelector("#segway-gh-page").addEventListener('click', function(eve
 document.querySelector("#bac-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/ZomBMage");});
 document.querySelector("#linucks-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/sh3llcod3");});
 
-pgTopBtn.addEventListener('click', function(event) {goToPageTop();});
-// window.addEventListener("scroll", detectPageBottom);
+pgTopBtn.addEventListener('click', function(event) {mainSiteContainer.scrollTo({top: 0, behavior: 'smooth'});});
+mainSiteContainer.addEventListener("scroll", detectPageBottom);
 
 drawer.listen('click', function(event) {changeTab(event.target.id)}, false);
