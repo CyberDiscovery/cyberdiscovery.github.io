@@ -14,6 +14,7 @@
 @use "@material/menu/mdc-menu";
 @use "@material/list";
 @use "@material/data-table";
+@use "@material/linear-progress/mdc-linear-progress";
 
 @include button.core-styles;
 @include card.core-styles;
@@ -223,4 +224,55 @@ body {
 	width: 40px;
 	height: 40px;
   background-color: rgba(255,255,255,.2);
+}
+
+#site-snackbar-btn {
+  color: rgba(255, 255, 255, 0.87);
+  min-height: 36px;
+}
+
+#progressbar-section {
+  width: 100%;
+}
+
+.first-para-top {
+  margin-top: 0px;
+}
+
+.unselectable-text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.soundboard-card-surface {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	min-height: 100px;
+	height: inherit;
+	width: 100%;
+	-ms-flex-align: center;
+	align-items: center;
+	color: rgba(255, 255, 255, 0.87);
+}
+
+.soundboard-card-cell {
+  width: 100%;
+}
+
+.smol-mdc-card {
+  min-width: 100px !important;
+}
+
+.spaced-out-subheader {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+  color: rgba(255,255,255,.87);
 }

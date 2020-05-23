@@ -6,6 +6,7 @@ import {MDCRipple} from '@material/ripple';
 import {MDCMenu} from '@material/menu';
 import {MDCMenuSurface} from '@material/menu-surface';
 import {MDCDataTable} from '@material/data-table';
+import {MDCLinearProgress} from '@material/linear-progress';
 
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
 const topAppBarMenu = new MDCMenu(document.querySelector('#additional-menu'));
@@ -25,8 +26,23 @@ const siteMainTitle = "CD Discord Community | ";
 const hideTab = "site-tab-hidden";
 const soundboardUrl = "https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json";
 const mainSiteContainer = document.querySelector(".main-content");
+var currentAudioSource = null;
 //const dataTable = new MDCDataTable(document.querySelector('#site-contrib-table'));
 const siteContribList = new MDCList(document.querySelector('#site-contrib-list'));
+const siteProgressBar = `<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone" id="progressbar-section">
+  <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate" aria-label="Soundboard Load Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+    <div class="mdc-linear-progress__buffer">
+      <div class="mdc-linear-progress__buffer-bar"></div>
+      <div class="mdc-linear-progress__buffer-dots"></div>
+    </div>
+    <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+      <span class="mdc-linear-progress__bar-inner"></span>
+    </div>
+    <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+      <span class="mdc-linear-progress__bar-inner"></span>
+    </div>
+  </div>
+</div>`;
 const initModalDrawer = () => {
   drawerElement.classList.add("mdc-drawer--modal");
   const drawer = MDCDrawer.attachTo(drawerElement);
@@ -118,10 +134,73 @@ function displayNotYetImplemented(){
   snackbar.open();
 }
 
+function guidGenerator() {
+  var S4 = function() {
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  };
+  return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
+}
+
+function audioHandler(audioUrl){
+  if (currentAudioSource != null) {
+    currentAudioSource.pause();
+  }
+  currentAudioSource = new Audio(audioUrl);
+  currentAudioSource.play();
+}
+
 function doLiterallyNothing(){}
+
+function snowSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
+  snackbar.timeoutMs = timeoutValue;
+  snackbar.labelText = snackbarText;
+  snackbar.actionButtonText = dismissText;
+  var btn = document.getElementById("site-snackbar-btn");
+  btn.onclick = dismissFunction;
+  snackbar.open();
+}
 
 function loadSoundboard(){
   loadSoundboard = doLiterallyNothing;
+  let placementGrid = document.querySelector("#soundboard-cell-inner");
+  placementGrid.innerHTML = siteProgressBar;
+  const progressbar = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+  fetch(soundboardUrl)
+ .then((resp) => resp.json())
+ .then(function(data) {
+   placementGrid.innerHTML = "";
+   delete data["Shenanigans from VC"];
+   for (var categoryName in data) {
+     let trackCount = data[categoryName].count;
+     for (var i=0; i < trackCount; i++){
+       var currentObj = data[categoryName][i];
+       var cardID = "track" + guidGenerator();
+       var gridCard = `
+       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone soundboard-card-cell">
+         <div class="mdc-card smol-mdc-card mdc-card--outlined">
+           <div class="mdc-card__primary-action mdc-typography--subtitle1 unselectable-text soundboard-card-surface" id="${cardID}">
+             ${currentObj.name}
+           </div>
+         </div>
+       </div>`;
+       placementGrid.innerHTML += gridCard;
+       (function(){
+         var id = cardID;
+         var lnk = currentObj.link;
+         setTimeout(function(){
+            document.querySelector("#" + id).addEventListener('click', function(evt) {
+              //snowSnackbar("Playing: " + evt.target.innerHTML, "Stop", function() {currentAudioSource.pause();}, -1);
+              audioHandler(lnk);
+            });
+        },10);
+       })();
+     }
+   }
+   const primarySelector = '.mdc-card__primary-action';
+   const primaryRipples = [].map.call(document.querySelectorAll(primarySelector), function(el) {
+     return new MDCRipple(el);
+   });
+ });
 }
 
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {

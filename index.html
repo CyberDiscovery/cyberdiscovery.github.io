@@ -205,14 +205,15 @@
                   <h2 class="main-card-title mdc-typography mdc-typography--headline4">Welcome!</h2>
                 </div>
                 <div class="main-card-body mdc-typography mdc-typography--body1">
-                  <p>We're a friendly, growing community of students taking part in Cyber Discovery and SANS' CyberStart family of programmes.
-                  Our community is mainly centered around a discord server consisting of over 3300 members from a multi-talented range of backgrounds.
-                </p>
-                <p>
-                  Although the focus of our server is cyber security and learning based, our members have a wide range of interests including STEM fields,
-                  media, gaming and computer hardware. Whether you're looking for pointers, hints or guidance on particular challenges, student run capture the
-                  flag events or more. It's a great place to hang out casually!
-                </p>
+                  <p class="first-para-top">
+                    We're a friendly, growing community of students taking part in Cyber Discovery and SANS' CyberStart family of programmes.
+                    Our community is mainly centered around a discord server consisting of over 3300 members from a multi-talented range of backgrounds.
+                  </p>
+                  <p>
+                    Although the focus of our server is cyber security and learning based, our members have a wide range of interests including STEM fields,
+                    media, gaming and computer hardware. Whether you're looking for pointers, hints or guidance on particular challenges, student run capture the
+                    flag events or more. It's a great place to hang out casually!
+                  </p>
                 </div>
               </div>
             </div>
@@ -222,7 +223,7 @@
                   <h2 class="main-card-title mdc-typography mdc-typography--headline4">Who Are We?</h2>
                 </div>
                 <div class="main-card-body mdc-typography mdc-typography--body1">
-                  <p>
+                  <p class="first-para-top">
                   The majority of the members on our server are students who fall within the 13-18 age range and are participants of one of the mentioned cyber security programmes.
                   However, we are also home to alumni (those who have participated previously and have moved on to university and jobs), club leaders, teachers, parents
                   and last but not least, official SANS institute staff who are associated with the programmes to varying degrees.
@@ -263,7 +264,7 @@
                   <h2 class="main-card-title mdc-typography mdc-typography--headline5">Main Site</h2>
                 </div>
                 <div class="main-card-body mdc-typography mdc-typography--body2">
-                  cyberdiscoverycommunity.uk - Our site which utilises the MDC web framework.
+                  cyberdiscoverycommunity.uk - Our site which is built upon Google's MDC web framework.
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
@@ -377,7 +378,7 @@
       </div>
       <div class="site-main-tab site-tab-hidden" id="site-soundboard-tab">
         <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner" id="soundboard-tab-inner">
+          <div class="mdc-layout-grid__inner" id="soundboard-cell-inner">
           </div>
         </div>
       </div>
@@ -505,6 +506,12 @@
                role="status"
                aria-live="polite">
             Hey there!
+          </div>
+          <div class="mdc-snackbar__actions">
+            <button type="button" class="mdc-button mdc-snackbar__action" id="site-snackbar-btn">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Ok</span>
+            </button>
           </div>
         </div>
       </div>
