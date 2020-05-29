@@ -27,7 +27,8 @@ const hideTab = "site-tab-hidden";
 const soundboardUrl = "https://cyber-discovery.firebaseio.com/Soundboard/Sounds.json";
 const mainSiteContainer = document.querySelector(".main-content");
 var currentAudioSource = null;
-const dataTable = new MDCDataTable(document.querySelector('#event-dates-table'));
+const dataTableUK = new MDCDataTable(document.querySelector('#event-dates-table-uk'));
+const dataTableUS = new MDCDataTable(document.querySelector('#event-dates-table-us'));
 const siteContribList = new MDCList(document.querySelector('#site-contrib-list'));
 const siteProgressBar = `<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone" id="progressbar-section">
   <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate" aria-label="Soundboard Load Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
@@ -172,8 +173,8 @@ function loadSoundboard(){
    delete data["Shenanigans from VC"];
    for (var categoryName in data) {
      placementGrid.innerHTML += `
-     <div class="mdc-layout-grid__cell sound-tab-subheader mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <h3 class="mdc-list-group__subheader sound-category-subheader">${categoryName}</h3>
+     <div class="mdc-layout-grid__cell site-top-section-subheader mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+      <h3 class="mdc-list-group__subheader site-category-subheader">${categoryName}</h3>
      </div>`;
      let trackCount = data[categoryName].count;
      for (var i=0; i < trackCount; i++){
