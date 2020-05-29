@@ -124,10 +124,6 @@ body {
   }
 }
 
-.mdc-drawer__content {
-	scrollbar-width: none;
-}
-
 #additional-menu {
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	background-color: #202020;
@@ -275,4 +271,32 @@ body {
 	padding-bottom: 0;
 	padding-top: 0;
   color: rgba(255,255,255,.87);
+}
+
+@media (max-width: 599px) {
+  .soundboard-card-cell {
+    max-width: 210px;
+  	padding-bottom: 20px;
+  }
+}
+
+.contrib-table-span {
+	width: -moz-available !important;
+  max-width: 640px !important;
+}
+
+.sound-tab-subheader {
+  width: 100%;
+}
+
+.sound-category-subheader {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+  color: rgba(255,255,255,.87);
+}
+
+.inline-href-link {
+  color: rgba(255,255,255,0.90);
 }
