@@ -276,12 +276,12 @@ body {
 @media (max-width: 599px) {
   .soundboard-card-cell {
     max-width: 210px;
-  	padding-bottom: 20px;
+  	padding-bottom: 32px;
   }
 }
 
 .contrib-table-span {
-	width: -moz-available !important;
+  width: 100% !important;
   max-width: 640px !important;
 }
 
@@ -299,4 +299,17 @@ body {
 
 .inline-href-link {
   color: rgba(255,255,255,0.90);
+}
+
+.full-width-element {
+	width: 100% !important;
+}
+
+.mdc-data-table__header-cell{
+  font-weight: bold;
+  color: rgba(255,255,255,1);
+}
+
+.site-card-small {
+  min-width: 150px !important;
 }

@@ -29,6 +29,7 @@ const mainSiteContainer = document.querySelector(".main-content");
 var currentAudioSource = null;
 const dataTableUK = new MDCDataTable(document.querySelector('#event-dates-table-uk'));
 const dataTableUS = new MDCDataTable(document.querySelector('#event-dates-table-us'));
+const siteCOCRoles = new MDCDataTable(document.querySelector('#site-coc-roles'));
 const siteContribList = new MDCList(document.querySelector('#site-contrib-list'));
 const siteProgressBar = `<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone" id="progressbar-section">
   <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate" aria-label="Soundboard Load Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
@@ -204,6 +205,11 @@ function loadSoundboard(){
    const primaryRipples = [].map.call(document.querySelectorAll(primarySelector), function(el) {
      return new MDCRipple(el);
    });
+   //
+   let siteExtension = document.createElement('script');
+   siteExtension.src = "static/extensions.js";
+   document.head.appendChild(siteExtension);
+   //
  });
 }
 
@@ -218,7 +224,7 @@ const btnRipple = [].map.call(document.querySelectorAll(".mdc-icon-button"), fun
 });
 
 function detectPageBottom(){
-  if (mainSiteContainer.scrollTop === (mainSiteContainer.scrollHeight - mainSiteContainer.offsetHeight)) {
+  if (mainSiteContainer.scrollHeight - mainSiteContainer.scrollTop - mainSiteContainer.clientHeight < 1) {
     pgTopBtn.classList.remove("mdc-fab--exited");
   } else {
     pgTopBtn.classList.add("mdc-fab--exited");
@@ -252,7 +258,7 @@ function changeTab(tabID) {
       break;
 
     case "opt3":
-      document.title = siteMainTitle + "Code Of Conduct";
+      document.title = siteMainTitle + "Readme";
       previousTab.classList.add(hideTab);
       previousTab = document.querySelector("#site-coc-tab");
       previousTab.classList.remove(hideTab);
