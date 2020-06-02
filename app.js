@@ -258,7 +258,7 @@ function changeTab(tabID) {
       break;
 
     case "opt3":
-      document.title = siteMainTitle + "Readme";
+      document.title = siteMainTitle + "Code Of Conduct";
       previousTab.classList.add(hideTab);
       previousTab = document.querySelector("#site-coc-tab");
       previousTab.classList.remove(hideTab);
@@ -316,6 +316,7 @@ function changeTab(tabID) {
     default:
       break;
   }
+  pgTopBtn.classList.add("mdc-fab--exited");
 }
 
 discordInvBtn.addEventListener('click', function(event) {
@@ -365,6 +366,8 @@ document.querySelector("#beano-gh-page").addEventListener('click', function(even
 document.querySelector("#segway-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/fractalpenguin");});
 document.querySelector("#bac-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/ZomBMage");});
 document.querySelector("#linucks-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/sh3llcod3");});
+document.querySelector("#Alic3C-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/Alic3C");});
+document.querySelector("#alphex-gh-page").addEventListener('click', function(event) {openLinkHandler("https://www.youtube.com/embed/mKSSzDsNsBk?autoplay=1");});
 
 pgTopBtn.addEventListener('click', function(event) {mainSiteContainer.scrollTo({top: 0, behavior: 'smooth'});});
 mainSiteContainer.addEventListener("scroll", detectPageBottom);

@@ -313,3 +313,12 @@ body {
 .site-card-small {
   min-width: 150px !important;
 }
+
+.mdc-card__action--button {
+  height: 100%;
+}
+
+.resource-card-subtitle {
+  margin: 0;
+  color: rgba(255,255,255,.38);
+}
