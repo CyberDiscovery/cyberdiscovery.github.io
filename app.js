@@ -205,11 +205,9 @@ function loadSoundboard(){
    const primaryRipples = [].map.call(document.querySelectorAll(primarySelector), function(el) {
      return new MDCRipple(el);
    });
-   //
    let siteExtension = document.createElement('script');
    siteExtension.src = "static/extensions.js";
    document.head.appendChild(siteExtension);
-   //
  });
 }
 
