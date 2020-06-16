@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  mode: 'development',
   entry: ['./app.scss', './app.js'],
   devServer: {
     host: '0.0.0.0'
