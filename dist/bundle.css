@@ -5441,8 +5441,7 @@ body {
 
 @media (max-width: 599px) {
   .soundboard-card-cell {
-    max-width: 210px;
-    padding-bottom: 32px;
+    max-width: 80%;
   }
 }
 .contrib-table-span {
@@ -5486,4 +5485,8 @@ body {
 .resource-card-subtitle {
   margin: 0;
   color: rgba(255, 255, 255, 0.38);
+}
+
+.mdc-card, .mdc-data-table, #site-contrib-list {
+  border-radius: 8px !important;
 }

@@ -182,7 +182,7 @@ function loadSoundboard(){
        var currentObj = data[categoryName][i];
        var cardID = "track" + guidGenerator();
        var gridCard = `
-       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone soundboard-card-cell">
+       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-4-phone soundboard-card-cell">
          <div class="mdc-card smol-mdc-card mdc-card--outlined">
            <div class="mdc-card__primary-action mdc-typography--subtitle1 unselectable-text soundboard-card-surface" id="${cardID}">
              ${currentObj.name}
@@ -360,3 +360,5 @@ pgTopBtn.addEventListener('click', function(event) {mainSiteContainer.scrollTo({
 mainSiteContainer.addEventListener("scroll", detectPageBottom);
 
 drawer.listen('click', function(event) {changeTab(event.target.id)}, false);
+
+// REMEMBER TO ADD IN WIDGET: https://discord.com/widget?id=409851296116375565
