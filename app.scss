@@ -1,0 +1,326 @@
+@use "@material/theme" with (
+  $primary: #202020,
+  $surface: #212121
+);
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/drawer/mdc-drawer";
+@use "@material/list/mdc-list";
+@use "@material/card";
+@use "@material/button";
+@use "@material/fab/mdc-fab";
+@use "@material/snackbar/mdc-snackbar";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/list";
+@use "@material/data-table";
+@use "@material/linear-progress/mdc-linear-progress";
+
+@include button.core-styles;
+@include card.core-styles;
+@include icon-button.core-styles;
+@include list.core-styles;
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mdc-typography";
+@include data-table.core-styles;
+
+:focus {
+  outline: none !important;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  height: 100%;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  background-color: #181818;
+  display: flex;
+  height: 100vh;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+.mdc-top-app-bar {
+  z-index: 7;
+}
+
+#scrollPageTop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.phone-icon-links {
+  display: none;
+}
+
+@media screen and (max-width: 370px) {
+  #copy-site-link, #join-server-btn {
+    display: none;
+  }
+  .phone-icon-links {
+    display: flex !important;
+  }
+}
+
+.mdc-drawer .mdc-list-item--activated, .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+	color: #fff !important;
+}
+
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::after, :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
+	background-color: rgba(255,255,255,.38);
+}
+
+.mdc-drawer__header {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-img-main {
+	max-width: 100% !important;
+}
+
+.mdc-list-divider {
+	border-bottom-color: #494949;
+}
+
+.mdc-list {
+	padding-top: 4px;
+}
+
+.mdc-snackbar__surface {
+	background-color: #323232;
+	color: #f1f1f1;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.mdc-snackbar__label {
+	color: rgba(255,255,255,.87) !important;
+}
+
+.mdc-top-app-bar__navigation-icon {
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  .mdc-top-app-bar__navigation-icon {
+    display: block !important;
+  }
+}
+
+#additional-menu {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: #202020;
+}
+
+.additional-menu-item {
+	margin-right: 16px;
+}
+
+.mdc-layout-grid__inner {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 920px !important;
+}
+
+.site-tab-hidden {
+  display: none;
+}
+
+.mdc-layout-grid__cell, site-main-tab {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-card-body {
+  padding: 0 1rem 8px;
+  color: rgba(255,255,255,.6);
+  height: inherit !important;
+}
+
+.main-card-title {
+  color: rgba(255,255,255,.87);
+  font-weight: 500;
+  letter-spacing: .0125em;
+  font-family: Roboto,sans-serif;
+  text-decoration: inherit;
+  text-transform: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.site-card__primary {
+  padding: 1rem;
+}
+
+.mdc-card {
+	background-color: #202020;
+  min-width: 250px;
+  height: 100% !important;
+}
+
+.mdc-button:not(:disabled) {
+	color: rgba(255,255,255,.6);
+}
+
+.mdc-button::after, .mdc-button::before {
+	background-color: rgba(255,255,255,.87);
+}
+
+.mdc-card__action-buttons, .mdc-card__action-icons, .mdc-button--outlined {
+	height: 36px !important;
+}
+
+.mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
+	background-color: rgba(255,255,255,.87);
+}
+
+#scrollPgTop {
+  position: fixed;
+  display: block;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 900;
+  background-color: #212121;
+}
+
+#site-contrib-list {
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list-text-description {
+	color: rgba(255, 255, 255, 0.54);
+}
+
+.contrib-table-icon {
+  color: rgba(255, 255, 255, 0.38);
+  margin-right: 16px !important;
+  border-radius: 50%;
+  margin-left: 0;
+	width: 40px;
+	height: 40px;
+  background-color: rgba(255,255,255,.2);
+}
+
+#site-snackbar-btn {
+  color: rgba(255, 255, 255, 0.87);
+  min-height: 36px;
+}
+
+#progressbar-section {
+  width: 100%;
+}
+
+.first-para-top {
+  margin-top: 0px;
+}
+
+.unselectable-text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.soundboard-card-surface {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	min-height: 100px;
+	height: inherit;
+	width: 100%;
+	-ms-flex-align: center;
+	align-items: center;
+	color: rgba(255, 255, 255, 0.87);
+}
+
+.soundboard-card-cell {
+  width: 100%;
+}
+
+.smol-mdc-card {
+  min-width: 100px !important;
+}
+
+.spaced-out-subheader {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+  color: rgba(255,255,255,.87);
+}
+
+@media (max-width: 599px) {
+  .soundboard-card-cell {
+    max-width: 80%;
+  }
+}
+
+.contrib-table-span {
+  width: 100% !important;
+  max-width: 640px !important;
+}
+
+.site-top-section-subheader {
+  width: 100%;
+}
+
+.site-category-subheader {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+  color: rgba(255,255,255,.87);
+}
+
+.inline-href-link {
+  color: rgba(255,255,255,0.90);
+}
+
+.full-width-element {
+	width: 100% !important;
+}
+
+.mdc-data-table__header-cell{
+  font-weight: bold;
+  color: rgba(255,255,255,1);
+}
+
+.site-card-small {
+  min-width: 150px !important;
+}
+
+.mdc-card__action--button {
+  height: 100%;
+}
+
+.resource-card-subtitle {
+  margin: 0;
+  color: rgba(255,255,255,.38);
+}
+
+.mdc-card, .mdc-data-table, #site-contrib-list {
+  border-radius: 8px !important;
+}
