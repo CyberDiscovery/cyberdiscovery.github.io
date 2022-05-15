@@ -14,6 +14,7 @@
 @use "@material/menu/mdc-menu";
 @use "@material/list";
 @use "@material/data-table";
+@use "@material/ripple";
 @use "@material/linear-progress/mdc-linear-progress";
 
 @include button.core-styles;
