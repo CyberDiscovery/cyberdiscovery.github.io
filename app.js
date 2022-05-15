@@ -13,7 +13,7 @@ const topAppBarMenu = new MDCMenu(document.querySelector('#additional-menu'));
 const discordURL = "https://discord.cyberdiscoverycommunity.uk";
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const selector = '.mdc-button, .mdc-list-item, .mdc-fab';
-const copyLinkBtn = document.querySelector('#copy-site-link');
+// const copyLinkBtn = document.querySelector('#copy-site-link');
 const discordInvBtn = document.querySelector('#join-server-btn');
 const additionalMenuBtn = document.querySelector('#additional-menu-btn');
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
@@ -61,6 +61,19 @@ const initModalDrawer = () => {
   });
 
   return drawer;
+}
+
+function showSnackbar(a, b, c, d) {
+  snackbar.timeoutMs = a;
+  snackbar.labelText = b;
+  snackbar.actionButtonText = c;
+  document.getElementById("site-snackbar-btn").onclick = d;
+  if (snackbar.isOpen){
+    snackbar.close();
+    snackbar.open();
+  } else {
+    snackbar.open();
+  }
 }
 
 const initPermanentDrawer = () => {
@@ -114,9 +127,7 @@ function copyTextToClipboard(text) {
 
 function copySiteLinkToClipboard(){
   copyTextToClipboard(window.location.href);
-  snackbar.timeoutMs = 4000;
-  snackbar.labelText = "Site link copied for sharing!";
-  snackbar.open();
+  showSnackbar(4000, "Site Link Copied to Clipboard", "Okay", doLiterallyNothing);
 }
 
 function openLinkHandler(siteLink){
@@ -126,21 +137,17 @@ function openLinkHandler(siteLink){
   newWindow.focus();
 }
 
-copyLinkBtn.addEventListener('click', function(event) {
-  copySiteLinkToClipboard();
-});
-
-function displayNotYetImplemented(){
-  snackbar.timeoutMs = 4000;
-  snackbar.labelText = "Feature hasn't been implmented yet!";
-  snackbar.open();
-}
-
 function guidGenerator() {
   var S4 = function() {
     return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
   };
   return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
+}
+
+function pauseCurrentlyPlaying(){
+  if (currentAudioSource != null) {
+    currentAudioSource.pause();
+  }
 }
 
 function audioHandler(audioUrl){
@@ -152,15 +159,6 @@ function audioHandler(audioUrl){
 }
 
 function doLiterallyNothing(){}
-
-function snowSnackbar(snackbarText, dismissText, dismissFunction, timeoutValue) {
-  snackbar.timeoutMs = timeoutValue;
-  snackbar.labelText = snackbarText;
-  snackbar.actionButtonText = dismissText;
-  var btn = document.getElementById("site-snackbar-btn");
-  btn.onclick = dismissFunction;
-  snackbar.open();
-}
 
 function loadSoundboard(){
   loadSoundboard = doLiterallyNothing;
@@ -196,6 +194,7 @@ function loadSoundboard(){
          setTimeout(function(){
             document.querySelector("#" + id).addEventListener('click', function(evt) {
               audioHandler(lnk);
+              showSnackbar(4000, `Playing ${evt.target.innerText}`, "Stop", pauseCurrentlyPlaying);
             });
         },10);
        })();
@@ -307,8 +306,7 @@ discordInvBtn.addEventListener('click', function(event) {
   openLinkHandler(discordURL);
 });
 additionalMenuBtn.addEventListener('click', function(event) {topAppBarMenu.open = !topAppBarMenu.open;});
-document.querySelector("#switchThemeMenu").addEventListener('click', function(event) {displayNotYetImplemented();});
-document.querySelector("#copySiteLnkMenu").addEventListener('click', function(event) {copySiteLinkToClipboard();});
+document.querySelector("#switchThemeMenu").addEventListener('click', function(event) {copySiteLinkToClipboard();});
 document.querySelector("#discordInvMenu").addEventListener('click', function(event) {openLinkHandler(discordURL);});
 
 document.querySelector("#bot-repo-btn").addEventListener('click', function(event) {openLinkHandler("https://github.com/CyberDiscovery/cyberdisc-bot");});
@@ -361,4 +359,4 @@ mainSiteContainer.addEventListener("scroll", detectPageBottom);
 
 drawer.listen('click', function(event) {changeTab(event.target.id)}, false);
 
-// REMEMBER TO ADD IN WIDGET: https://discord.com/widget?id=409851296116375565
+// ADD IN WIDGET LATER: https://discord.com/widget?id=409851296116375565
