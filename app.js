@@ -350,7 +350,7 @@ document.querySelector("#bac-gh-page").addEventListener('click', function(event)
 document.querySelector("#linucks-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/sh3llcod3");});
 document.querySelector("#Alic3C-gh-page").addEventListener('click', function(event) {openLinkHandler("https://github.com/Alic3C");});
 document.querySelector("#alphex-gh-page").addEventListener('click', function(event) {
-  document.getElementById("site-contrib-list").innerHTML = atob("PGlmcmFtZSBpZD0ieXRwbGF5ZXIiIHR5cGU9InRleHQvaHRtbCIgc3JjPSJodHRwczovL3d3dy55b3V0dWJlLmNvbS9lbWJlZC9PdWxCa1ltZ04wUT9hdXRvcGxheT0xJmNvbnRyb2xzPTAiIHN0eWxlPSJwb3NpdGlvbjpmaXhlZDsgdG9wOjA7IGxlZnQ6MDsgYm90dG9tOjA7IHJpZ2h0OjA7IHdpZHRoOjEwMCU7IGhlaWdodDoxMDAlOyBib3JkZXI6bm9uZTsgbWFyZ2luOjA7IHBhZGRpbmc6MDsgb3ZlcmZsb3c6aGlkZGVuOyB6LWluZGV4Ojk5OTk5OTsiIGZyYW1lYm9yZGVyPSIwIiBhbGxvdz0iYWNjZWxlcm9tZXRlcjsgYXV0b3BsYXk7IGVuY3J5cHRlZC1tZWRpYTsgZ3lyb3Njb3BlOyBwaWN0dXJlLWluLXBpY3R1cmUiIGFsbG93ZnVsbHNjcmVlbj48L2lmcmFtZT4=");
+  document.getElementById("site-contrib-list").innerHTML = atob("PGlmcmFtZSBpZD0ieXRwbGF5ZXIiIHR5cGU9InRleHQvaHRtbCIgc3JjPSJodHRwczovL3d3dy55b3V0dWJlLmNvbS9lbWJlZC9NdzdUMDMzbFJpMD9hdXRvcGxheT0xJmNvbnRyb2xzPTAiIHN0eWxlPSJwb3NpdGlvbjpmaXhlZDsgdG9wOjA7IGxlZnQ6MDsgYm90dG9tOjA7IHJpZ2h0OjA7IHdpZHRoOjEwMCU7IGhlaWdodDoxMDAlOyBib3JkZXI6bm9uZTsgbWFyZ2luOjA7IHBhZGRpbmc6MDsgb3ZlcmZsb3c6aGlkZGVuOyB6LWluZGV4Ojk5OTk5OTsiIGZyYW1lYm9yZGVyPSIwIiBhbGxvdz0iYWNjZWxlcm9tZXRlcjsgYXV0b3BsYXk7IGVuY3J5cHRlZC1tZWRpYTsgZ3lyb3Njb3BlOyBwaWN0dXJlLWluLXBpY3R1cmUiIGFsbG93ZnVsbHNjcmVlbj48L2lmcmFtZT4=");
 });
 document.querySelector("#faq-roles-link").addEventListener('click', function(event) {changeTab("opt7");});
 
